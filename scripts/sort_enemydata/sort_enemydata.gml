@@ -28,7 +28,6 @@ case sorttype.neargoal://拠点に近い順
 	quicksort(amount ,enemy_id , 0, global.enemy_amount-1, false);
 	global.enemy_neargoal_sorted_id = enemy_id;
 	global.enemy_neargoal_sorted = amount;
-	sdm(global.enemy_id)
 break
 
 case other:
