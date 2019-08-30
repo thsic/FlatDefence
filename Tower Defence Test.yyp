@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "741bd1b1-6033-472c-835a-017f82476f4f",
+            "Value": {
+                "id": "1ae0fe3d-b865-493d-83f9-5ac617dbd077",
+                "resourcePath": "scripts\\damage_to_enemy\\damage_to_enemy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "762845c5-9642-497a-ab46-103a9ee8bb16",
             "Value": {
                 "id": "77321999-bdee-4621-9650-bd6b4878b8ad",
@@ -343,7 +351,8 @@
         "5a0308bf-59db-4ecc-8f31-7bea843d0e9d",
         "19fac02d-a2c0-4437-b90c-77b0be6ee7f4",
         "17ff12a2-be7b-4407-9185-fec3170a82d4",
-        "1ae08602-8fc4-48c6-934d-3140069aebfb"
+        "1ae08602-8fc4-48c6-934d-3140069aebfb",
+        "741bd1b1-6033-472c-835a-017f82476f4f"
     ],
     "tutorial": ""
 }

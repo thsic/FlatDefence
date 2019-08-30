@@ -17,7 +17,9 @@ break
 
 #region 攻撃できるけど射程内に敵がいない
 case state.idle:
-	if(find_enemy() != false){
+	find_enemy_id = find_enemy();
+	if(find_enemy_id != false){
+
 		state = state.fire;
 	}
 break
@@ -31,7 +33,7 @@ case state.fire:
 	else{
 		target_id = find_enemy_id;
 	}
-	fire_to_enemy(target_id, 10, o_defender_bullet);
+	fire_to_enemy(target_id, bullet_speed, o_defender_bullet);
 	set_cooldown();
 	state = state.decrement_cooldown;
 break
