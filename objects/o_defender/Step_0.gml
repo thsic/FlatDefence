@@ -33,7 +33,7 @@ case state.fire:
 	else{
 		target_id = find_enemy_id;
 	}
-	fire_to_enemy(target_id, bullet_speed, o_defender_bullet);
+	fire_to_enemy(target_id, bullet_speed, o_defender_bullet, fire_damage);
 	set_cooldown();
 	state = state.decrement_cooldown;
 break

@@ -107,6 +107,20 @@
             "value": "10",
             "varName": "bullet_speed",
             "varType": 0
+        },
+        {
+            "id": "be16227e-cc85-4259-bd01-a3ee1bbe6a0c",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "5",
+            "varName": "fire_damage_default",
+            "varType": 0
         }
     ],
     "solid": false,
