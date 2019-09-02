@@ -40,7 +40,7 @@ if(DEBUGMODE or debug_mode){
 		instance_create_layer(mouse_x, mouse_y, "Instances", o_enemy);
 	}
 	if(mouse_check_button_pressed(mb_right)){
-		instance_create_layer(mouse_x, mouse_y, "Instances", o_defender);
+		instance_create_layer(mouse_x, mouse_y, "Defenders", o_defender);
 	}
 	if(keyboard_check_pressed(ord("R"))){
 		game_restart();

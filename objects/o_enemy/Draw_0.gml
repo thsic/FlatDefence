@@ -1,2 +1,2 @@
 draw_self();
-draw_hpbar(hp, hp_max);
+draw_bar("hp" ,hp, hp_max, c_yellow, c_gray);

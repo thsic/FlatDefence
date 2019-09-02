@@ -1,11 +1,12 @@
-
 random_set_seed(date_current_datetime());
 randomize();
-
+usefulwindow_surface = noone;//usefulwindowに必要
 global.enemy_x = 0;
+show_window = false;//defenderのステータス画面が開いているかどうか
 
-/*
 
+
+/*//ソートのテスト 使わない
 i = 0;
 repeat(10){
 	amount[i] = irandom(10);

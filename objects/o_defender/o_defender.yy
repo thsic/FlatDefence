@@ -63,7 +63,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "5",
-            "varName": "fire_cooldown_default",
+            "varName": "attack_per_second_default",
             "varType": 1
         },
         {
@@ -118,7 +118,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "5",
+            "value": "10",
             "varName": "fire_damage_default",
             "varType": 0
         }

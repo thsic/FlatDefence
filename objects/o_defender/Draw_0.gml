@@ -6,3 +6,4 @@ if(target_id != false){
 	}
 }
 draw_circle(x, y, range, true);
+draw_bar("cooldown", cooldown, room_speed / attack_per_second, c_aqua, c_gray);

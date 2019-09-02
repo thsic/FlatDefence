@@ -6,3 +6,5 @@ repeat(global.enemy_amount){
 	}
 	i++
 }
+
+

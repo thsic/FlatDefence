@@ -19,7 +19,6 @@ break
 case state.idle:
 	find_enemy_id = find_enemy();
 	if(find_enemy_id != false){
-
 		state = state.fire;
 	}
 break
@@ -38,5 +37,7 @@ case state.fire:
 	state = state.decrement_cooldown;
 break
 #endregion
+
 }
 #endregion
+

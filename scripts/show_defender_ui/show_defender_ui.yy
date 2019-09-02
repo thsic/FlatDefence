@@ -1,8 +1,8 @@
 {
-    "id": "e9553424-2b52-4c06-9445-5eb912a2f990",
+    "id": "ce832de4-0911-4177-96f7-78cf24eec683",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "draw_hpbar",
+    "name": "show_defender_ui",
     "IsCompatibility": false,
     "IsDnD": false
 }
