@@ -10,12 +10,23 @@ if(!show_window){
 					if(finded_defender_id.y-16 <= mouse_y and mouse_y <= finded_defender_id.y+16){
 						//ウィンドウ表示
 						show_window = true;
-						ui_window_x = finded_defender_id.x+16;
-						ui_window_y = finded_defender_id.y-16;
 						ui_window_width = 300;//要調整
 						ui_window_height = 200;
-						usefulwindow(s_window, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,0.8);
-						surface_set_target(usefulwindow_surface);
+						//オブジェクトの座標によってウィンドウの表示箇所をかえる 仮 なんかうざそうならもうちょっと凝る
+						if(finded_defender_id.x < room_width/2){
+							ui_window_x = finded_defender_id.x+16;
+						}
+						else{
+							ui_window_x = finded_defender_id.x-ui_window_width-16;
+						}
+						if(finded_defender_id.y < room_height/2){
+							ui_window_y = finded_defender_id.y-16;
+						}
+						else{
+							ui_window_y = finded_defender_id.y-ui_window_height+16;
+						}
+						usefulwindow(s_window, 0, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,0.8);
+						surface_set_target(global.usefulwindow_surface[0]);
 						draw_sprite(finded_defender_id.sprite_index, 0, 22, 24);//defenderの画像 32x32以外だと変になるかも middlecentreなのを忘れない
 						draw_text(42, 6, finded_defender_id.defender_name);
 						draw_set_color(c_gray);
@@ -23,7 +34,6 @@ if(!show_window){
 						draw_text(4, 38+16*2+4, "Speed");
 						draw_text(4, 38+16*4+8, "Range");
 						draw_set_color(c_dkgray);
-						//draw_text(50, 38+16*2+4, "(per second)");
 						draw_set_color(c_white);
 						draw_text(4, 38+16*1, finded_defender_id.fire_damage);
 						draw_text(4, 38+16*3+4, finded_defender_id.attack_per_second);
@@ -39,14 +49,14 @@ if(!show_window){
 }
 else{
 	//windowが開かれている状態
-	usefulwindow(s_window, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,0.8);
+	usefulwindow(s_window, 0, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,0.8);
 	if(mouse_check_button_pressed(mb_left)){//どこかがクリックされた
-		if(mouse_x <= ui_window_x or ui_window_x+ui_window_width <= mouse_x or mouse_y <= ui_window_y or ui_window_y+ui_window_height <= mouse_y){
-			//クリックされたのがウィンドウの外ならウィンドウを消す
+		//if(mouse_x <= ui_window_x or ui_window_x+ui_window_width <= mouse_x or mouse_y <= ui_window_y or ui_window_y+ui_window_height <= mouse_y){
+			//クリックされたのがウィンドウの外ならウィンドウを消す 嘘
 			show_window = false;
-			surface_free(usefulwindow_surface);//メモリ解放
+			surface_free(global.usefulwindow_surface[0]);//メモリ解放
 			show_defender_ui()//他のがクリックされてたらそれに反応
-		}
+		//}
 	}
 }
 

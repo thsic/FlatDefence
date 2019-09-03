@@ -1,8 +1,15 @@
+///開始時処理
+for(var i=0; i<=10; i++){//usefulwindowに必要
+	global.usefulwindow_surface[i] = noone;
+}
+
+global.enemy_x = 0;
+global.gold = 10000;//おかね
+show_window = false;//defenderのステータス画面が開いているかどうか
+shop_product = noone;
+
 random_set_seed(date_current_datetime());
 randomize();
-usefulwindow_surface = noone;//usefulwindowに必要
-global.enemy_x = 0;
-show_window = false;//defenderのステータス画面が開いているかどうか
 
 
 

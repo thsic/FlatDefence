@@ -121,6 +121,20 @@
             "value": "10",
             "varName": "fire_damage_default",
             "varType": 0
+        },
+        {
+            "id": "99681f31-3964-40cb-aa42-050e43ad052e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "100",
+            "varName": "cost",
+            "varType": 0
         }
     ],
     "solid": false,

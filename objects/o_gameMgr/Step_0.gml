@@ -31,6 +31,12 @@ if(global.enemy_amount != 0){
 
 #endregion
 
+#region shop処理
+defender_shop()
+
+
+#endregion
+
 #region デバッグ用
 if(DEBUGMODE or debug_mode){
 	if(mouse_check_button_pressed(mb_left)){
