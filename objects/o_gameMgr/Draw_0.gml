@@ -7,4 +7,4 @@ repeat(global.enemy_amount){
 	i++
 }
 
-
+draw_point(mouse_x, mouse_y)

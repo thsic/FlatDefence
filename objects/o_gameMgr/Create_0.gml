@@ -8,6 +8,8 @@ global.gold = 10000;//おかね
 show_window = false;//defenderのステータス画面が開いているかどうか
 shop_product = noone;
 
+database();
+
 random_set_seed(date_current_datetime());
 randomize();
 

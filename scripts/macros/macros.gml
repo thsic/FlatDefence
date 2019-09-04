@@ -6,8 +6,6 @@
 #macro HPLOW 1
 #macro HPHIGH 2
 
-//shop関連
 #macro DEFENDER 0
 #macro SPRITE_X 1
 #macro SPRITE_Y 2
-#macro COST 3
