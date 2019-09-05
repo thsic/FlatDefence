@@ -8,8 +8,8 @@ var height = argument3;
 draw_sprite(finded_defender_id.sprite_index, 0, x_offset+22, y_offset+24);//defenderの画像 32x32以外だと変になるかも middlecentreなのを忘れない
 draw_text(x_offset+42, y_offset+6, finded_defender_id.defender_name);
 draw_set_color(c_gray);
-draw_text(x_offset+4, y_offset+38, "Attack");
-draw_text(x_offset+4, y_offset+38+16*2+4, "Speed");
+draw_text(x_offset+4, y_offset+38, "Damage");
+draw_text(x_offset+4, y_offset+38+16*2+4, "AttackSpeed");
 draw_text(x_offset+4, y_offset+38+16*4+8, "Range");
 draw_set_color(c_dkgray);
 draw_set_color(c_white);

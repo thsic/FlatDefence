@@ -6,7 +6,13 @@ if(target_id != false){
 	}
 }
 draw_set_alpha(0.3);
-draw_set_color(c_gray);
+if(state = state.idle){
+	draw_set_color(c_aqua);
+}
+else{
+	draw_set_color(c_gray);
+}
+
 draw_circle(x, y, range, true);
 draw_set_alpha(1);
 draw_set_color(c_white);

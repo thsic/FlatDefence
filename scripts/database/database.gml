@@ -20,6 +20,7 @@ target = 1;
 global.defender_data[target, data.object] = o_dSniper;
 global.defender_data[target, data.damage] = 70;
 global.defender_data[target, data.attack_speed] = 0.5;
-global.defender_data[target, data.range] = 250;
+global.defender_data[target, data.range] = 200;
 global.defender_data[target, data.cost] = 150;
 
+global.defender_category_amount = target+1;//今実装されているdefenderのかず
