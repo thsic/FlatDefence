@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "7d5723e9-1059-4d88-824f-ac9bff06f584",
+            "Value": {
+                "id": "a7e99b0c-23f2-4fb6-870b-fedc53106ac3",
+                "resourcePath": "scripts\\defender_ui_text\\defender_ui_text.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7f79fd40-ebb8-4548-af12-5b2f2c87417c",
             "Value": {
                 "id": "69b53a88-72ea-489d-930b-4c187ffad7c1",
@@ -478,6 +486,7 @@
         "19fac02d-a2c0-4437-b90c-77b0be6ee7f4",
         "741bd1b1-6033-472c-835a-017f82476f4f",
         "ce832de4-0911-4177-96f7-78cf24eec683",
+        "7d5723e9-1059-4d88-824f-ac9bff06f584",
         "35d18f60-f39c-4452-97a6-bacae5443c44",
         "95f7a7f1-72cb-4bca-925b-16be5f632e9a",
         "7a3d34b5-2680-4f98-84b7-b7f35fce9a4a",

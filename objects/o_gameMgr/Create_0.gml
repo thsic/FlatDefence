@@ -13,7 +13,7 @@ database();
 random_set_seed(date_current_datetime());
 randomize();
 
-
+defender_ui_surface = noone;
 
 /*//ソートのテスト 使わない
 i = 0;
