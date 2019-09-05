@@ -1,7 +1,4 @@
 //データベース
-var basic = 0;
-var sniper = 1;
-
 
 enum data{
 	object,
@@ -23,6 +20,6 @@ target = 1;
 global.defender_data[target, data.object] = o_dSniper;
 global.defender_data[target, data.damage] = 70;
 global.defender_data[target, data.attack_speed] = 0.5;
-global.defender_data[target, data.range] = 300;
+global.defender_data[target, data.range] = 250;
 global.defender_data[target, data.cost] = 150;
 

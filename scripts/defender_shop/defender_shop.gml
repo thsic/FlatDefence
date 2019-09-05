@@ -11,7 +11,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 		if(shop_product[i, SPRITE_X]-16 <= mouse_x and mouse_x <= shop_product[i, SPRITE_X]+16){
 			if(shop_product[i, SPRITE_Y]-16 <= mouse_y and mouse_y <= shop_product[i, SPRITE_Y]+16){
 				//商品を掴んだ
-				sdm(i)
+				sdm(global.defender_data[i, data.cost])
 				global.gold -= global.defender_data[i, data.cost];//お金をへらす
 				grab_defender_id = shop_product[i, DEFENDER];
 				break;

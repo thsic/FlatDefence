@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "1156abe7-d881-42ae-ba87-64576113d0a2",
+            "Value": {
+                "id": "2cbad32b-b22a-42e3-9d36-4bbe0fcc0808",
+                "resourcePath": "sprites\\s_sniper\\s_sniper.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "117ec79f-b7a7-4bab-8a86-f49a09e662ca",
             "Value": {
                 "id": "30059ed8-6bfc-4431-bf0e-15a8286c99c6",
@@ -290,7 +298,7 @@
             "Key": "8d77f676-b0de-4d60-9acd-d9bfa70916cf",
             "Value": {
                 "id": "7e86e676-de63-4cec-8da4-d19827959ed4",
-                "resourcePath": "sprites\\s_novice\\s_novice.yy",
+                "resourcePath": "sprites\\s_basic\\s_basic.yy",
                 "resourceType": "GMSprite"
             }
         },

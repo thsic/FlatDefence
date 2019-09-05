@@ -53,34 +53,6 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "4acd49c8-af72-4991-87e1-87551680bff4",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "5",
-            "varName": "attack_per_second_default",
-            "varType": 1
-        },
-        {
-            "id": "bf391bf6-9421-41b7-94ab-dabe35893772",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "100",
-            "varName": "range_default",
-            "varType": 1
-        },
-        {
             "id": "5c59b54c-b8bb-4af3-b921-75c989f3d65e",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -109,7 +81,7 @@
             "varType": 0
         },
         {
-            "id": "be16227e-cc85-4259-bd01-a3ee1bbe6a0c",
+            "id": "c0dbcc96-9995-4317-99b5-16ade00f6009",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -118,23 +90,9 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "10",
-            "varName": "fire_damage_default",
-            "varType": 0
-        },
-        {
-            "id": "99681f31-3964-40cb-aa42-050e43ad052e",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "100",
-            "varName": "cost",
-            "varType": 0
+            "value": "test",
+            "varName": "defender_name",
+            "varType": 2
         }
     ],
     "solid": false,
