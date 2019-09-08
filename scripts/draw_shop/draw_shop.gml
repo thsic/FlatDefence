@@ -17,6 +17,16 @@ for(i=0; i<product_defender_amount; i++){//defenderを描画
 		draw_sprite(object_get_sprite(shop_product[i, DEFENDER]), 0, shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y]);
 	}
 }
+for(i=0; i<product_defender_amount; i++){//itemを描画
+	if(global.gold < global.itemdata[i, itemdata.cost]){
+		//お金が足りない商品は半透明にする
+		draw_sprite_ext(shop_item_product[i, SPRITE], 0, shop_item_product[i, SPRITE_X], shop_item_product[i, SPRITE_Y], 1, 1, 0, c_white, 0.3)
+	}
+	else{
+		//足りる場合
+		draw_sprite(shop_item_product[i, SPRITE], 0, shop_item_product[i, SPRITE_X], shop_item_product[i, SPRITE_Y]);
+	}
+}
 
 
 if(grab_defender_id != -1){//商品を掴んでいる
@@ -24,4 +34,7 @@ if(grab_defender_id != -1){//商品を掴んでいる
 	draw_set_alpha(0.1);
 	draw_circle(mouse_x, mouse_y, global.defender_data[defender_id_conversion(grab_defender_id), data.range], true);
 	draw_set_alpha(1);
+}
+if(grab_item_id != -1){//商品を掴んでいる
+	draw_sprite(shop_item_product[grab_item_id, SPRITE], 0, mouse_x, mouse_y);
 }

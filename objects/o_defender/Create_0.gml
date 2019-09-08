@@ -4,12 +4,17 @@ attack_per_second_default = global.defender_data[defender_number, data.attack_sp
 range_default = global.defender_data[defender_number, data.range]
 cost = global.defender_data[defender_number, data.cost]
 
+attack_per_second = attack_per_second_default;
 set_cooldown();
 range = range_default;
 fire_damage = fire_damage_default;
 
 target_id = false;
 draw_debug_line = false
+
+for(var i=0; i<global.item_category_amount; i++){//アイテムの装備設定を初期状態に
+	equipped_item[i] = false; 
+}
 
 state = state.decrement_cooldown;
 enum state{

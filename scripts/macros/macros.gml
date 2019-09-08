@@ -9,3 +9,8 @@
 #macro DEFENDER 0
 #macro SPRITE_X 1
 #macro SPRITE_Y 2
+
+#macro ITEM 0
+#macro SPRITE 3
+
+#macro SPRITE_SIZE 16
