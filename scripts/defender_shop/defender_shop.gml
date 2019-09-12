@@ -45,7 +45,28 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 if(grab_defender_id != -1){
 	if(!mouse_check_button(mb_left)){//離した
 		if(mouse_x < window_get_width()-shop_window_width){
-			instance_create_layer(mouse_x, mouse_y, "Defenders", grab_defender_id);
+			
+			var distance = 10000;
+			var markerid = instance_find(o_defenderMarker, 0);
+			for(var i=0; i<instance_number(o_defenderMarker); i++){//マーカーと重なっているか確認
+				var markerid = instance_find(o_defenderMarker, i);
+				if(!markerid.on_defender){//上にdefenderが乗っているので置けない
+					distance = point_distance(mouse_x, mouse_y, markerid.x, markerid.y)
+				
+					if(i=0 or nearest_distance >= distance){//一番近いマーカーを見つける
+						var nearest_marker = markerid;
+						var nearest_distance = distance;
+					}
+				}
+			}
+			drop_result = false;
+			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
+				sdm(nearest_marker)
+				instance_create_layer(nearest_marker.x, nearest_marker.y, "Defenders", grab_defender_id);
+				nearest_marker.on_defender = true;
+				var drop_result = true;
+			}
+			if(!drop_result){global.gold += global.defender_data[defender_id_conversion(grab_defender_id), data.cost];}//返金
 			grab_defender_id = -1;
 		}
 		else{
@@ -55,6 +76,7 @@ if(grab_defender_id != -1){
 		}
 	}
 }
+
 if(grab_item_id != -1){
 	if(!mouse_check_button(mb_left)){//離した
 		purchase_item = false;

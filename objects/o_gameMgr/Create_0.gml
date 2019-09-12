@@ -7,8 +7,9 @@ global.enemy_x = 0;
 global.gold = 1000;//おかね
 show_window = false;//defenderのステータス画面が開いているかどうか
 shop_product = noone;
+instance_create_layer(0, 0, "Instances", o_enemyGenerateMgr)
 
-database();
+database();//globalにいろいろデータをいれる
 
 random_set_seed(date_current_datetime());
 randomize();
