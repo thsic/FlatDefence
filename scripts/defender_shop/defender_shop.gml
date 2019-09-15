@@ -47,6 +47,7 @@ if(grab_defender_id != -1){
 		if(mouse_x < window_get_width()-shop_window_width){
 			
 			var distance = 10000;
+			var nearest_distance = 10000;
 			var markerid = instance_find(o_defenderMarker, 0);
 			for(var i=0; i<instance_number(o_defenderMarker); i++){//マーカーと重なっているか確認
 				var markerid = instance_find(o_defenderMarker, i);

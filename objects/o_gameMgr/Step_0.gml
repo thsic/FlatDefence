@@ -8,16 +8,20 @@ else{
 }
 i = 0;
 //リセット
-global.enemy_x = 0;
+//global.enemy_x = 0;
+//global.enemy_y = 0;
+global.enemy_position = 0;
 global.enemy_id = 0;
-global.enemy_y = 0;
+global.enemy_hp = 0
+
 repeat(global.enemy_amount){
 	if(instance_exists(o_enemy) != noone){//存在チェック
 		//データを入れる
-		global.enemy_x[i] = instance_find(o_enemy, i).x;
-		global.enemy_y[i] = instance_find(o_enemy, i).y;
+		//global.enemy_x[i] = instance_find(o_enemy, i).x;
+		//global.enemy_y[i] = instance_find(o_enemy, i).y;
 		global.enemy_hp[i] = instance_find(o_enemy, i).hp;
 		global.enemy_id[i] = instance_find(o_enemy, i).id;
+		global.enemy_position[i] = instance_find(o_enemy, i).path_position
 		i++;
 	}
 }

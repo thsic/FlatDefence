@@ -23,7 +23,7 @@ case sorttype.hphigh:
 break
 
 case sorttype.neargoal://拠点に近い順
-	amount = global.enemy_x;
+	amount = global.enemy_position;
 	enemy_id = global.enemy_id
 	quicksort(amount ,enemy_id , 0, global.enemy_amount-1, false);
 	global.enemy_neargoal_sorted_id = enemy_id;
