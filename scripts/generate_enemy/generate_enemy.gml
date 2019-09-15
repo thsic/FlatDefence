@@ -1,9 +1,6 @@
-///@param spawner_number,obj
+///敵を生成する
+//spawner_type_nowの所にgenerate_enemy_type_nowが出てくる
 
-var spawner_number = argument0;
-var object = argument1;
-
-with(instance_create_layer(spawner_x[spawner_number], spawner_y[spawner_number], "Enemies", object)){
-	
+with(instance_create_layer(spawner_x[spawner_type_now], spawner_y[spawner_type_now], "Enemies", generate_enemy_type_now)){
 	
 }

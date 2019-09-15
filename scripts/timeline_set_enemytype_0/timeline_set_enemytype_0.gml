@@ -1,0 +1,1 @@
+generate_enemy_type_now = generate_enemy_type[0];
