@@ -1,5 +1,6 @@
 //ステータスとか表示
 //drawイベント内に置くこと
+
 if(!show_window){
 	if(mouse_check_button_pressed(mb_left)){
 		for(i=0;i<=instance_number(o_defender);i++){

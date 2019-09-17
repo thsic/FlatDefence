@@ -16,4 +16,13 @@ draw_set_color(c_white);
 draw_text(x_offset+4, y_offset+38+16*1, finded_defender_id.fire_damage);
 draw_text(x_offset+4, y_offset+38+16*3+4, finded_defender_id.attack_per_second);
 draw_text(x_offset+4, y_offset+38+16*5+8, finded_defender_id.range);
-draw_set_color(c_white)
+draw_set_color(c_white);
+//アイテムスロット
+for(var i=0; i<finded_defender_id.itemslot_amount; i++){
+	if(finded_defender_id.itemslot[i] != -1){
+		draw_sprite(global.itemdata[finded_defender_id.itemslot[i], itemdata.sprite], 0, x_offset+22+i*36, y_offset+172);
+	}
+	else{
+		draw_sprite(s_itemSlot, 0, x_offset+22+i*36, y_offset+172);
+	}
+}

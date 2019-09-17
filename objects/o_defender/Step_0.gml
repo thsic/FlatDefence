@@ -3,13 +3,22 @@
 var fire_damage_temp = 0;
 var attack_per_second_temp = 0;
 var range_temp = 0;
-for(var i=0; i<global.item_category_amount; i++){
-	if(equipped_item[i]){//装備確認
+/*for(var i=0; i<global.item_category_amount; i++){
+	if(equipped_item[i]){
 		fire_damage_temp += global.itemdata[i, itemdata.damage];
 		attack_per_second_temp += global.itemdata[i, itemdata.attack_speed];
 		range_temp += global.itemdata[i, itemdata.range];
 	}
+}*/
+//装備確認
+for(var i=0; i<itemslot_amount; i++){
+	if(itemslot[i] != -1){
+		fire_damage_temp += global.itemdata[itemslot[i], itemdata.damage];
+		attack_per_second_temp += global.itemdata[itemslot[i], itemdata.attack_speed];
+		range_temp += global.itemdata[itemslot[i], itemdata.range];
+	}
 }
+//ステータス上昇
 fire_damage = fire_damage_temp + fire_damage_default;
 attack_per_second = attack_per_second_temp + attack_per_second_default;
 range = range_temp + range_default;

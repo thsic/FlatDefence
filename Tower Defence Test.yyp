@@ -711,6 +711,14 @@
             }
         },
         {
+            "Key": "f91abef8-7f32-4cc1-af7d-eacbaf09be43",
+            "Value": {
+                "id": "135e9407-c689-40e1-9c46-f8fe7d8af780",
+                "resourcePath": "sprites\\s_itemSlot\\s_itemSlot.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "fd096198-0749-47e8-9eae-d81100472894",
             "Value": {
                 "id": "ab5c7cbb-dc76-4088-bfba-245a29e308b6",

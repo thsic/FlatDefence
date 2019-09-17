@@ -8,7 +8,7 @@ var bar_backgloundcolor = argument4;
 switch(bartype){
 case "hp":
 	var bar_percent = now / maximum
-	var bar_width = 48;
+	var bar_width = 24;
 	var bar_height = 2;
 	//hpバーの位置指定
 	var bar_x = x - bar_width / 2

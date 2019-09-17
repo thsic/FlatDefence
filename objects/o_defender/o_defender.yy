@@ -93,6 +93,20 @@
             "value": "test",
             "varName": "defender_name",
             "varType": 2
+        },
+        {
+            "id": "5eb337f4-f4d9-4dd6-9289-37851a9df6f6",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "3",
+            "varName": "itemslot_amount",
+            "varType": 1
         }
     ],
     "solid": false,

@@ -8,8 +8,8 @@ case r_test:
 	
 	timeline_index = tl_enemyGenelateStage1;
 	timeline_running = true;
-	for(i=1; i<=30; i++){
-		set_enemy_generate_timeline(i*30, tl_enemyGenelateStage1, 0, 0, 0);
+	for(i=1; i<=60; i++){
+		set_enemy_generate_timeline(i*5, tl_enemyGenelateStage1, 0, 0, 0);
 	}
 	
 

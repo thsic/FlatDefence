@@ -87,8 +87,7 @@ if(grab_item_id != -1){
 				if(target.x - SPRITE_SIZE/2 < mouse_x and mouse_x < target.x + SPRITE_SIZE/2){
 					if(target.y - SPRITE_SIZE/2 < mouse_y and mouse_y < target.y + SPRITE_SIZE/2){
 						//重なっている
-						equip_item(grab_item_id, target);
-						var purchase_item = true;
+						var purchase_item = equip_item(grab_item_id, target);//装備できなかったらfalseになる
 						break
 					}
 				}

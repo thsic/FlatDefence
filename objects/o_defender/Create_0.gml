@@ -16,6 +16,10 @@ for(var i=0; i<global.item_category_amount; i++){//アイテムの装備設定�
 	equipped_item[i] = false; 
 }
 
+for(var i=0;i<itemslot_amount;i++){
+	itemslot[i] = -1//アイテムスロットを初期状態に
+}
+
 state = state.decrement_cooldown;
 enum state{
 	decrement_cooldown,//攻撃のクールダウン中
