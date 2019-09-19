@@ -4,12 +4,13 @@
 3の倍数のスプライトでないとバグるかも 
 drawイベントの中に置きましょう
 surfaceを使っている
-createイベントで先に "usefulwindow_surface = noone" と書いておく必要がある
+createイベントで先に "usefulwindow_surface[0] = noone" と書いておく必要がある
 要らなくなったら "surface_free(usefulwindow_surface)" と書いておく
 ------------------------------*/
 /*window_numberメモ
 0 defenderステータス表示
 1 shopウィンドウ
+2 tinyウィンドウ
 
 
 */

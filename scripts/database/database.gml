@@ -1,12 +1,6 @@
 //データベース
 
-enum data{
-	object,
-	damage,
-	attack_speed,
-	range,
-	cost
-}
+
 
 #region defender data
 //ここからデータ
@@ -25,19 +19,15 @@ global.defender_data[target, data.range] = 200;
 global.defender_data[target, data.cost] = 150;
 
 global.defender_category_amount = target+1;//今実装されているdefenderのかず
-
-#endregion
-
-enum itemdata{
-	number,
-	sprite,
-	name,
+enum data{
+	object,
 	damage,
 	attack_speed,
 	range,
-	cost,
-	effect
+	cost
 }
+#endregion
+
 #region item data
 target = 0;
 global.itemdata[target, itemdata.number] = target;
@@ -60,4 +50,15 @@ global.itemdata[target, itemdata.cost] = 200;
 global.itemdata[target, itemdata.effect] = false;
 
 global.item_category_amount = target+1;//今実装されているitemのかず
+
+enum itemdata{
+	number,
+	sprite,
+	name,
+	damage,
+	attack_speed,
+	range,
+	cost,
+	effect
+}
 #endregion

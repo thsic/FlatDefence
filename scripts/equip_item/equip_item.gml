@@ -12,5 +12,4 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 		break
 	}
 }
-sdm(result)
 return result

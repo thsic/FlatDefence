@@ -3,13 +3,7 @@
 var fire_damage_temp = 0;
 var attack_per_second_temp = 0;
 var range_temp = 0;
-/*for(var i=0; i<global.item_category_amount; i++){
-	if(equipped_item[i]){
-		fire_damage_temp += global.itemdata[i, itemdata.damage];
-		attack_per_second_temp += global.itemdata[i, itemdata.attack_speed];
-		range_temp += global.itemdata[i, itemdata.range];
-	}
-}*/
+
 //装備確認
 for(var i=0; i<itemslot_amount; i++){
 	if(itemslot[i] != -1){

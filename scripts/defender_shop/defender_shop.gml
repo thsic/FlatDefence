@@ -6,38 +6,31 @@ if(shop_product = noone){//初期状態なら商品の設定をする
 	shop_window_width = 256;//shopの横幅
 }
 if(mouse_check_button_pressed(mb_left)){//マウス押された
-	//defenderの場合
-	for(i=0; i < product_defender_amount; i++){//商品がクリックされたかどうかの確認
-		if(shop_product[i, SPRITE_X]-16 <= mouse_x and mouse_x <= shop_product[i, SPRITE_X]+16){
-			if(shop_product[i, SPRITE_Y]-16 <= mouse_y and mouse_y <= shop_product[i, SPRITE_Y]+16){
-				//商品をクリックした
-				if(global.gold >= global.defender_data[i, data.cost]){//残金チェック
-					global.gold -= global.defender_data[i, data.cost];//お金をへらす
-					grab_defender_id = shop_product[i, DEFENDER];
-					window_mouse_set(shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
-					rise_number(global.defender_data[i, data.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
-					break;
-				}
-				else{
-					//買えなかった場合 音とかならすといいと思う
-				}
+	var grab_number = near_point_search(2, 32, mouse_x, mouse_y, 0, 0,)
+	if(grab_number != -1){//なにか掴んでいる
+		if(grab_number < 10000){
+			//defenderを掴んだ
+			if(global.gold >= global.defender_data[grab_number, data.cost]){//残金チェック
+				global.gold -= global.defender_data[grab_number, data.cost];//お金をへらす
+				grab_defender_id = shop_product[grab_number, DEFENDER];
+				window_mouse_set(shop_product[grab_number, SPRITE_X], shop_product[grab_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
+				rise_number(global.defender_data[grab_number, data.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
+			}
+			else{
+				//買えなかった場合 音とかならすといいと思う
 			}
 		}
-	}
-	//アイテムの場合
-	for(i=0; i < product_item_amount; i++){//商品がクリックされたかどうかの確認
-		if(shop_item_product[i, SPRITE_X]-16 <= mouse_x and mouse_x <= shop_item_product[i, SPRITE_X]+16){
-			if(shop_item_product[i, SPRITE_Y]-16 <= mouse_y and mouse_y <= shop_item_product[i, SPRITE_Y]+16){
-				//商品をクリックした
-				if(global.gold >= global.itemdata[i, itemdata.cost]){//残金チェック
-					global.gold -= global.itemdata[i, itemdata.cost];//お金をへらす
-					grab_item_id = shop_item_product[i, ITEM];
-					rise_number(global.itemdata[i, itemdata.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
-					break;
-				}
-				else{
-					//買えなかった場合 音とかならすといいと思う
-				}
+		else{
+			//アイテムを掴んだ
+			grab_number -= 10000;//アイテムは10000~なのでその分を下げる
+			if(global.gold >= global.itemdata[grab_number, itemdata.cost]){//残金チェック
+				global.gold -= global.itemdata[grab_number, itemdata.cost];//お金をへらす
+				grab_item_id = shop_item_product[grab_number, ITEM];
+				window_mouse_set(shop_item_product[grab_number, SPRITE_X], shop_item_product[grab_number, SPRITE_Y]);
+				rise_number(global.itemdata[grab_number, itemdata.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
+			}
+			else{
+				//買えなかった場合 音とかならすといいと思う
 			}
 		}
 	}
@@ -63,7 +56,7 @@ if(grab_defender_id != -1){
 			}
 			drop_result = false;
 			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
-				sdm(nearest_marker)
+				sdm(string(object_get_name(grab_defender_id))+ "を設置")
 				instance_create_layer(nearest_marker.x, nearest_marker.y, "Defenders", grab_defender_id);
 				nearest_marker.on_defender = true;
 				var drop_result = true;
@@ -83,21 +76,31 @@ if(grab_item_id != -1){
 	if(!mouse_check_button(mb_left)){//離した
 		purchase_item = false;
 		if(mouse_x < window_get_width()-shop_window_width){
-			for(i=0; i<instance_number(o_defender); i++){//アイテムを離した所がdefenderと重なっているか確認
-				var target = instance_find(o_defender, i)
-				if(target.x - SPRITE_SIZE/2 < mouse_x and mouse_x < target.x + SPRITE_SIZE/2){
-					if(target.y - SPRITE_SIZE/2 < mouse_y and mouse_y < target.y + SPRITE_SIZE/2){
-						//重なっている
-						var purchase_item = equip_item(grab_item_id, target);//装備できなかったらfalseになる
-						break
+			var distance = 10000;
+			var nearest_distance = 10000;
+			for(var i=0; i<instance_number(o_defender); i++){//マーカーと重なっているか確認
+				var defender_id = instance_find(o_defender, i);
+				for(var j=0; j<defender_id.itemslot_amount; j++){//アイテムスロットに空きがあるか確認
+					if(defender_id.itemslot[j] = -1){
+					distance = point_distance(mouse_x, mouse_y, defender_id.x, defender_id.y)
+						if(i=0 or nearest_distance >= distance){
+							var nearest_defender = defender_id;
+							var nearest_distance = distance;
+						}
 					}
 				}
 			}
-			if(!purchase_item){global.gold += global.itemdata[grab_item_id, itemdata.cost];}
+			drop_result = false;//初期設定
+			if(nearest_distance <= 32){
+				sdm(string(global.itemdata[grab_item_id, itemdata.name])+ "を装備")
+				var purchase_item = equip_item(grab_item_id, nearest_defender);
+				var drop_result = true;
+			}
+			if(!purchase_item){global.gold += global.itemdata[grab_item_id, itemdata.cost];}//返金
 			grab_item_id = -1;
 		}
 		else{
-			global.gold += global.itemdata[grab_item_id, itemdata.cost];
+			global.gold += global.itemdata[grab_item_id, itemdata.cost];//返金
 			grab_item_id = -1;
 		}
 	}
