@@ -6,6 +6,7 @@
 //ここからデータ
 var target = 0;
 global.defender_data[target, data.object] = o_dBasic;
+global.defender_data[target, data.name] = "Basic"
 global.defender_data[target, data.damage] = 15;
 global.defender_data[target, data.attack_speed] = 2;
 global.defender_data[target, data.range] = 100;
@@ -13,6 +14,7 @@ global.defender_data[target, data.cost] = 100;
 
 target = 1;
 global.defender_data[target, data.object] = o_dSniper;
+global.defender_data[target, data.name] = "Sniper"
 global.defender_data[target, data.damage] = 70;
 global.defender_data[target, data.attack_speed] = 0.5;
 global.defender_data[target, data.range] = 200;
@@ -21,6 +23,7 @@ global.defender_data[target, data.cost] = 150;
 global.defender_category_amount = target+1;//今実装されているdefenderのかず
 enum data{
 	object,
+	name,
 	damage,
 	attack_speed,
 	range,

@@ -9,6 +9,7 @@ show_window = false;//defenderのステータス画面が開いているかど�
 shop_product = noone;
 instance_create_layer(0, 0, "Instances", o_enemyGenerateMgr)
 
+stage_setting();
 database();//globalにいろいろデータをいれる
 
 random_set_seed(date_current_datetime());

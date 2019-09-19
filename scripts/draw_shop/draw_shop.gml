@@ -7,7 +7,7 @@ usefulwindow(s_window, 1, window_get_width()-shop_window_width, 0, shop_window_w
 draw_set_color(c_yellow);
 draw_text(x_offset+16,24,global.gold)//お金描画
 draw_set_color(c_white);
-for(i=0; i<product_defender_amount; i++){//defenderを描画
+for(var i=0; i<product_defender_amount; i++){//defenderを描画
 	if(global.gold < global.defender_data[i, data.cost]){
 		//お金が足りない商品は半透明にする
 		draw_sprite_ext(object_get_sprite(shop_product[i, DEFENDER]), 0, shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y], 1, 1, 0, c_white, 0.3)
@@ -17,7 +17,16 @@ for(i=0; i<product_defender_amount; i++){//defenderを描画
 		draw_sprite(object_get_sprite(shop_product[i, DEFENDER]), 0, shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y]);
 	}
 }
-for(i=0; i<product_defender_amount; i++){//itemを描画
+
+for(var i=0;i<global.shop_defender_amount; i++){
+	if(shop_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_product[i, SPRITE_X]+SPRITE_SIZE){
+		if(shop_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_product[i, SPRITE_Y]+SPRITE_SIZE){
+			shop_description(0, i)
+		}
+	}
+}
+
+for(i=0; i<product_item_amount; i++){//itemを描画
 	if(global.gold < global.itemdata[i, itemdata.cost]){
 		//お金が足りない商品は半透明にする
 		draw_sprite_ext(shop_item_product[i, SPRITE], 0, shop_item_product[i, SPRITE_X], shop_item_product[i, SPRITE_Y], 1, 1, 0, c_white, 0.3)

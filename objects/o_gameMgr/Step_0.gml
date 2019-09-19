@@ -55,6 +55,9 @@ if(DEBUGMODE or debug_mode){
 	if(keyboard_check_pressed(vk_space)){
 		global.debug_stop = 1;
 	}
+	if(keyboard_check_pressed(vk_escape)){
+		game_end()
+	}
 	if(keyboard_check(vk_control)){
 		room_speed = FPS_DEFAULT*2;
 	}
