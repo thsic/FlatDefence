@@ -14,6 +14,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 				if(global.gold >= global.defender_data[i, data.cost]){//残金チェック
 					global.gold -= global.defender_data[i, data.cost];//お金をへらす
 					grab_defender_id = shop_product[i, DEFENDER];
+					window_mouse_set(shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
 					rise_number(global.defender_data[i, data.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
 					break;
 				}
