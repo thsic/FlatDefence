@@ -5,8 +5,11 @@ var x_offset = argument0;
 var y_offset = argument1;
 var width = argument2;
 var height = argument3;
-draw_sprite(finded_defender_id.sprite_index, 0, x_offset+22, y_offset+24);//defenderの画像 32x32以外だと変になるかも middlecentreなのを忘れない
+draw_set_color(COLOR_TEXT_WHITE);
+draw_sprite(finded_defender_id.sprite_index, 0, x_offset+22, y_offset+24);
 draw_text(x_offset+42, y_offset+6, global.defender_data[defender_id_conversion(finded_defender_id), data.name]);
+draw_set_color(COLOR_TEXT_ORANGE);
+draw_text(x_offset+42, y_offset+22, global.defender_data[defender_id_conversion(finded_defender_id), data.description]);
 //アイテムスロット
 var item_number = 0;
 for(var i=0; i<finded_defender_id.itemslot_amount; i++){
@@ -74,6 +77,8 @@ break
 #endregion
 
 var upgrade_text_y = y_offset+180//このyの値を変えるといっぺんに変えれる
+draw_set_color(COLOR_TEXT_WHITE);
+draw_text(x_offset+width/2, y_offset+38, "Choose Upgrade!");
 
 //アイテム説明テキスト
 draw_set_color(COLOR_TEXT_ORANGE);//アップグレード前と文章が違ったら色を変える
@@ -105,7 +110,7 @@ draw_set_color(COLOR_TEXT_WHITE);
 draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+26);
 draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+86);
 draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+146);
-draw_text(x_offset+width/2, y_offset+38, "Choose Upgrade!");
+
 draw_text(x_offset+80, upgrade_text_y+20, global.itemdata[1, itemdata.damage]);
 draw_text(x_offset+80, upgrade_text_y+80, global.itemdata[1, itemdata.attack_speed]);
 draw_text(x_offset+80, upgrade_text_y+140, global.itemdata[1, itemdata.range]);

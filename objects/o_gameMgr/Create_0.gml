@@ -19,9 +19,10 @@ random_set_seed(date_current_datetime());
 randomize();
 
 for(var i=0; i<POSSESSION_ITEM_MAX; i++){//アイテム初期化 持てる数は12個まで
-	global.item_possession[i] = 0;
+	global.item_possession[i] = -1;
 }
-global.item_possession[0] = 0;
+global.item_possession[0] = 1;
+global.item_possession[1] = 0;
 
 
 /*//ソートのテスト 使わない

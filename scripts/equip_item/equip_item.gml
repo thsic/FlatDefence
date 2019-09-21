@@ -4,8 +4,11 @@ var item_id = argument0;
 var defender_id = argument1;
 var result = false
 for(var i=0; i<defender_id.itemslot_amount; i++){
-	if(global.itemdata[item_id, itemdata.upgrade] = -1){//アップグレードオーブなら
-		result = upgrade_item(defender_id);
+	if(global.itemdata[item_id, itemdata.upgrade] = -1){//アップグレードオーブ使用
+		if(defender_id.itemslot[0] != -1){
+			upgrade_item(defender_id);//少なくとも1つはアイテムを装備していないといけない
+			result = true;//resultがtrueなのでお金を一旦消費するけど アップグレード画面にいってからでも返金可能
+		}
 		break
 	}
 	else if(defender_id.itemslot[i] = -1){//装備できるか確認
