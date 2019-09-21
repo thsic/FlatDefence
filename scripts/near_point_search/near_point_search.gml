@@ -61,6 +61,16 @@ case 2://shop
 			var nearest_distance = distance;
 		}
 	}
+	search_number_max = array_height_2d(global.item_possession);
+	for(i=0; i<POSSESSION_ITEM_MAX; i++){
+		if(item_possession_data[i, ITEM] != -1){
+			distance = point_distance(x1, y1, item_possession_data[i, SPRITE_X], item_possession_data[i, SPRITE_Y])
+			if(distance < nearest_distance){
+				var nearest_number = i + 20000;//所持アイテムは20000~
+				var nearest_distance = distance;
+			}
+		}
+	}
 break
 
 }

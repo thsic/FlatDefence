@@ -3,6 +3,7 @@ for(var i=0; i<=10; i++){//usefulwindowに必要
 	global.usefulwindow_surface[i] = noone;
 }
 
+
 global.enemy_x = 0;
 global.gold = 1000;//おかね
 show_window = false;//defenderのステータス画面が開いているかどうか
@@ -15,6 +16,10 @@ database();//globalにいろいろデータをいれる
 random_set_seed(date_current_datetime());
 randomize();
 
+for(var i=0; i<POSSESSION_ITEM_MAX; i++){//アイテム初期化 持てる数は12個まで
+	global.item_possession[i] = 0;
+}
+global.item_possession[0] = 0;
 /*//ソートのテスト 使わない
 i = 0;
 repeat(10){

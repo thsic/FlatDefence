@@ -9,8 +9,10 @@ case r_test:
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
+	global.shop_defender[2] = o_dBasic;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
+	global.shop_item[2] = 1;
 	
 break
 	

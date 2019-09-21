@@ -8,7 +8,7 @@ draw_set_color(c_yellow);
 draw_text(x_offset+16,24,global.gold)//お金描画
 draw_set_color(c_white);
 for(var i=0; i<product_defender_amount; i++){//defenderを描画
-	if(global.gold < global.defender_data[i, data.cost]){
+	if(global.gold < global.defender_data[defender_id_conversion(shop_product[i, DEFENDER]), data.cost]){
 		//お金が足りない商品は半透明にする
 		draw_sprite_ext(object_get_sprite(shop_product[i, DEFENDER]), 0, shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y], 1, 1, 0, c_white, 0.3)
 	}
@@ -27,7 +27,7 @@ for(var i=0;i<global.shop_defender_amount; i++){
 }
 
 for(i=0; i<product_item_amount; i++){//itemを描画
-	if(global.gold < global.itemdata[i, itemdata.cost]){
+	if(global.gold < global.itemdata[shop_item_product[i, ITEM], itemdata.cost]){
 		//お金が足りない商品は半透明にする
 		draw_sprite_ext(shop_item_product[i, SPRITE], 0, shop_item_product[i, SPRITE_X], shop_item_product[i, SPRITE_Y], 1, 1, 0, c_white, 0.3)
 	}
@@ -37,6 +37,11 @@ for(i=0; i<product_item_amount; i++){//itemを描画
 	}
 }
 
+for(i=0; i<POSSESSION_ITEM_MAX; i++){//所持itemを描画
+	if(item_possession_data[i, ITEM] != -1){
+		draw_sprite(item_possession_data[i, SPRITE], 0, item_possession_data[i, SPRITE_X], item_possession_data[i, SPRITE_Y])
+	}
+}
 
 if(grab_defender_id != -1){//商品を掴んでいる
 	draw_sprite(object_get_sprite(grab_defender_id), 0, window_mouse_get_x(), window_mouse_get_y());

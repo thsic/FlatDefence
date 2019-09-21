@@ -15,6 +15,8 @@
 
 #macro SPRITE_SIZE 16
 
+#macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
+
 //色
 #macro COLOR_TEXT_GRAY c_gray
 #macro COLOR_TEXT_DKGRAY c_dkgray

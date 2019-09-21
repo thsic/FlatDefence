@@ -13,3 +13,4 @@ for(i=0; i<product_item_amount; i++){
 	shop_item_product[i, SPRITE_Y] = 300;
 	shop_item_product[i, SPRITE] = global.itemdata[global.shop_item[i], itemdata.sprite];
 }
+

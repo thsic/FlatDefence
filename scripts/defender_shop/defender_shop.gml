@@ -1,37 +1,71 @@
-//ショップ
+//ショップ 所持アイテムの管理もしてる
 if(shop_product = noone){//初期状態なら商品の設定をする
 	grab_defender_id = -1;//商品を掴んでいるかどうか 掴んでいるならそのid
 	grab_item_id = -1;//アイテム
 	display_product();
 	shop_window_width = 256;//shopの横幅
 }
+#region 所持アイテム情報
+for(i=0; i<POSSESSION_ITEM_MAX; i++){
+	if(global.item_possession[i] != -1){
+		item_possession_data[i, ITEM] = global.itemdata[global.item_possession[i], itemdata.number];
+		item_possession_data[i, SPRITE] = global.itemdata[global.item_possession[i], itemdata.sprite];
+	}
+	else{
+		item_possession_data[i, ITEM] = -1;
+		item_possession_data[i, SPRITE] = -1;
+	}
+	if(i < 6){//2段にするための処理
+		item_possession_data[i, SPRITE_X] = window_get_width()-224+i*38;
+		item_possession_data[i, SPRITE_Y] = 450;
+	}
+	else{
+		item_possession_data[i, SPRITE_X] = window_get_width()-224+(i-6)*38;
+		item_possession_data[i, SPRITE_Y] = 490;
+	}
+}
+#endregion
 if(mouse_check_button_pressed(mb_left)){//マウス押された
 	var grab_number = near_point_search(2, 32, mouse_x, mouse_y, 0, 0,)
 	if(grab_number != -1){//なにか掴んでいる
 		if(grab_number < 10000){
 			//defenderを掴んだ
+			var grab_product_number = grab_number;//掴んだ商品のshopでの番号をいれておく
+			grab_number = defender_id_conversion(shop_product[grab_number, DEFENDER])//grab_numberの値をglobal.defender_dataで参照できる値に変換
 			if(global.gold >= global.defender_data[grab_number, data.cost]){//残金チェック
 				global.gold -= global.defender_data[grab_number, data.cost];//お金をへらす
 				grab_defender_id = shop_product[grab_number, DEFENDER];
-				window_mouse_set(shop_product[grab_number, SPRITE_X], shop_product[grab_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
+				window_mouse_set(shop_product[grab_product_number, SPRITE_X], shop_product[grab_product_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
 				rise_number(global.defender_data[grab_number, data.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
 			}
 			else{
 				//買えなかった場合 音とかならすといいと思う
 			}
 		}
-		else{
+		else if(grab_number < 20000){
 			//アイテムを掴んだ
 			grab_number -= 10000;//アイテムは10000~なのでその分を下げる
+			var grab_product_number = grab_number;
+			grab_number = shop_item_product[grab_number, ITEM]
 			if(global.gold >= global.itemdata[grab_number, itemdata.cost]){//残金チェック
 				global.gold -= global.itemdata[grab_number, itemdata.cost];//お金をへらす
 				grab_item_id = shop_item_product[grab_number, ITEM];
-				window_mouse_set(shop_item_product[grab_number, SPRITE_X], shop_item_product[grab_number, SPRITE_Y]);
+				grab_item_possession_id = -1;
+				window_mouse_set(shop_item_product[grab_product_number, SPRITE_X], shop_item_product[grab_product_number, SPRITE_Y]);
 				rise_number(global.itemdata[grab_number, itemdata.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
 			}
 			else{
 				//買えなかった場合 音とかならすといいと思う
 			}
+		}
+		else{
+			//所持アイテムを掴んだ
+			grab_number -= 20000;
+			
+			grab_item_id = item_possession_data[grab_number, ITEM];
+			
+			global.item_possession[grab_number] = -1;//所持アイテムを掴んだので一覧から消す
+			grab_item_possession_id = grab_number;//所持アイテムのマス目？番号
 		}
 	}
 }
@@ -96,11 +130,21 @@ if(grab_item_id != -1){
 				var purchase_item = equip_item(grab_item_id, nearest_defender);
 				var drop_result = true;
 			}
-			if(!purchase_item){global.gold += global.itemdata[grab_item_id, itemdata.cost];}//返金
+			if(grab_item_possession_id = -1){
+				if(!purchase_item){global.gold += global.itemdata[grab_item_id, itemdata.cost];}//返金
+			}
+			else{
+				if(!purchase_item){global.item_possession[grab_item_possession_id] = grab_item_id}
+			}
 			grab_item_id = -1;
 		}
 		else{
-			global.gold += global.itemdata[grab_item_id, itemdata.cost];//返金
+			if(grab_item_possession_id = -1){
+				global.gold += global.itemdata[grab_item_id, itemdata.cost];//返金
+			}
+			else{
+				global.item_possession[grab_item_possession_id] = grab_item_id
+			}
 			grab_item_id = -1;
 		}
 	}
