@@ -1,7 +1,7 @@
 //ステータスとか表示
 //drawイベント内に置くこと
 
-if(upgrade_ui){
+if(upgrade_ui){//なんか意味ない
 	var alpha = 0.8;
 }
 else{

@@ -16,7 +16,7 @@ if(offset_y+window_height > view_hport[0]){//小窓が下に行きすぎない�
 
 switch(description_type){
 case 0:
-	tiny_window(s_window, offset_x, offset_y, window_width, window_height, alpha);
+	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	draw_set_color(COLOR_TEXT_GRAY);
 	draw_text(offset_x+6, offset_y+24, "Damage");
 	draw_text(offset_x+6, offset_y+48, "AttackSpeed");
@@ -37,7 +37,7 @@ case 0:
 	
 break
 case 1:
-	tiny_window(s_window, offset_x, offset_y, window_width, window_height, alpha);
+	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	draw_set_color(COLOR_TEXT_GRAY);
 	draw_text(offset_x+6, offset_y+24, "Damage");
 	draw_text(offset_x+6, offset_y+48, "AttackSpeed");
@@ -60,7 +60,7 @@ case 1:
 break
 case 2://スキルアイテム
 	window_height = 100
-	tiny_window(s_window, offset_x, offset_y, window_width, window_height, alpha);
+	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	var skill_id = global.itemdata[target_id, itemdata.skill]
 	draw_set_color(COLOR_TEXT_GRAY);
 	draw_text(offset_x+6, offset_y+24, "Cooldown");

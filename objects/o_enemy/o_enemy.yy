@@ -103,6 +103,20 @@
             "value": "10",
             "varName": "shield",
             "varType": 1
+        },
+        {
+            "id": "d50ce9a0-f3b6-47e7-834c-250a3f600f74",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "test",
+            "varName": "name",
+            "varType": 2
         }
     ],
     "solid": false,
