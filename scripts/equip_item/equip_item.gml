@@ -4,7 +4,11 @@ var item_id = argument0;
 var defender_id = argument1;
 var result = false
 for(var i=0; i<defender_id.itemslot_amount; i++){
-	if(defender_id.itemslot[i] = -1){//装備できるか確認
+	if(global.itemdata[item_id, itemdata.upgrade] = -1){//アップグレードオーブなら
+		result = upgrade_item(defender_id);
+		break
+	}
+	else if(defender_id.itemslot[i] = -1){//装備できるか確認
 		if(global.itemdata[item_id, itemdata.skill] != -1){//アイテムがスキル装備なら
 			if(defender_id.skill_id = -1){//defenderがスキルを装備していないなら
 				defender_id.itemslot[i] = item_id;

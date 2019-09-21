@@ -25,6 +25,6 @@
 #macro COLOR_TEXT_WHITE c_white
 #macro COLOR_TEXT_YELLOW c_yellow
 #macro COLOR_TEXT_ORANGE c_orange
-
+#macro COLOR_TEXT_GREEN c_lime
 
 #macro COLOR_DEFAULT c_white

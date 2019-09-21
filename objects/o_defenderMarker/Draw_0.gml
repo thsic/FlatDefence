@@ -1,4 +1,4 @@
-if(on_defender){
+if(subimage = 0){
 	draw_sprite(sprite_index, 0, x, y);
 }
 else{

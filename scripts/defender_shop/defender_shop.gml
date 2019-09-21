@@ -70,32 +70,40 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 }
 //商品を掴んでいる
 if(grab_defender_id != -1){
+	var distance = 10000;
+	var nearest_distance = 10000;
+	var markerid = instance_find(o_defenderMarker, 0);
+	for(var i=0; i<instance_number(o_defenderMarker); i++){
+		//マーカーと重なっているか確認
+		var markerid = instance_find(o_defenderMarker, i);
+		if(!markerid.on_defender){//上にdefenderが乗っているので置けない
+			distance = point_distance(mouse_x, mouse_y, markerid.x, markerid.y)
+				
+			if(i=0 or nearest_distance >= distance){//一番近いマーカーを見つける
+				var nearest_marker = markerid;
+				var nearest_distance = distance;
+			}
+		}
+	}
+	
+	if(nearest_distance <= 32){
+		nearest_marker.subimage = 1;//一番近いマーカーの色を変える
+	}
+	sdm(nearest_marker)
+	drop_result = false;
 	if(!mouse_check_button(mb_left)){//離した
 		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){
-			
-			var distance = 10000;
-			var nearest_distance = 10000;
-			var markerid = instance_find(o_defenderMarker, 0);
-			for(var i=0; i<instance_number(o_defenderMarker); i++){//マーカーと重なっているか確認
-				var markerid = instance_find(o_defenderMarker, i);
-				if(!markerid.on_defender){//上にdefenderが乗っているので置けない
-					distance = point_distance(mouse_x, mouse_y, markerid.x, markerid.y)
-				
-					if(i=0 or nearest_distance >= distance){//一番近いマーカーを見つける
-						var nearest_marker = markerid;
-						var nearest_distance = distance;
-					}
-				}
-			}
-			drop_result = false;
 			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
 				sdm(string(object_get_name(grab_defender_id))+ "を設置")
 				instance_create_layer(nearest_marker.x, nearest_marker.y, "Defenders", grab_defender_id);
 				nearest_marker.on_defender = true;
+				grab_defender_id = -1;
 				var drop_result = true;
 			}
-			if(!drop_result){global.gold += global.defender_data[defender_id_conversion(grab_defender_id), data.cost];}//返金
-			grab_defender_id = -1;
+			else{
+				if(!drop_result){global.gold += global.defender_data[defender_id_conversion(grab_defender_id), data.cost];}//返金
+				grab_defender_id = -1;
+			}
 		}
 		else{
 			//shop画面の所でdefenderを離すと 払ったcostが戻ってくる
@@ -104,6 +112,7 @@ if(grab_defender_id != -1){
 		}
 	}
 }
+	
 
 if(grab_item_id != -1){
 	if(!mouse_check_button(mb_left)){//離した
@@ -113,13 +122,22 @@ if(grab_item_id != -1){
 			var nearest_distance = 10000;
 			for(var i=0; i<instance_number(o_defender); i++){//マーカーと重なっているか確認
 				var defender_id = instance_find(o_defender, i);
-				for(var j=0; j<defender_id.itemslot_amount; j++){//アイテムスロットに空きがあるか確認
-					if(defender_id.itemslot[j] = -1){
-					distance = point_distance(mouse_x, mouse_y, defender_id.x, defender_id.y)
-						if(i=0 or nearest_distance >= distance){
-							var nearest_defender = defender_id;
-							var nearest_distance = distance;
+				if(global.itemdata[grab_item_id, itemdata.upgrade] != -1){//アップグレードオーブ以外なら
+					for(var j=0; j<defender_id.itemslot_amount; j++){//アイテムスロットに空きがあるか確認
+						if(defender_id.itemslot[j] = -1){
+						distance = point_distance(mouse_x, mouse_y, defender_id.x, defender_id.y)
+							if(i=0 or nearest_distance >= distance){
+								var nearest_defender = defender_id;
+								var nearest_distance = distance;
+							}
 						}
+					}
+				}
+				else{//アップグレードオーブならアイテムスロットがいっぱいでも使える
+					distance = point_distance(mouse_x, mouse_y, defender_id.x, defender_id.y)
+					if(i=0 or nearest_distance >= distance){
+						var nearest_defender = defender_id;
+						var nearest_distance = distance;
 					}
 				}
 			}
