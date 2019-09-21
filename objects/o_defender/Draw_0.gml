@@ -16,4 +16,17 @@ else{
 draw_circle(x, y, range, true);
 draw_set_alpha(1);
 draw_set_color(c_white);
-draw_bar("cooldown", cooldown, room_speed / attack_per_second, c_aqua, c_gray);
+draw_bar("cooldown", cooldown, room_speed / attack_per_second, c_yellow, c_gray);
+if(skill_id != -1){
+	switch(skill_state){
+	case skillstate.cooldown:
+		draw_bar("skill", skill_cooldown, global.skilldata[skill_id, skilldata.cooldown], c_blue, c_gray);
+	break
+	case skillstate.up:
+		draw_bar("skill", skill_cooldown, global.skilldata[skill_id, skilldata.cooldown], c_aqua, c_gray);
+	break
+	case skillstate.active:
+		draw_bar("skill_active", skill_active_time, global.skilldata[skill_id, skilldata.skilltime], c_fuchsia, c_gray);
+	break
+	}
+}

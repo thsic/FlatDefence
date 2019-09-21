@@ -3,7 +3,6 @@ if(shop_product = noone){//初期状態なら商品の設定をする
 	grab_defender_id = -1;//商品を掴んでいるかどうか 掴んでいるならそのid
 	grab_item_id = -1;//アイテム
 	display_product();
-	shop_window_width = 256;//shopの横幅
 }
 #region 所持アイテム情報
 for(i=0; i<POSSESSION_ITEM_MAX; i++){
@@ -61,10 +60,10 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 		else{
 			//所持アイテムを掴んだ
 			grab_number -= 20000;
-			
 			grab_item_id = item_possession_data[grab_number, ITEM];
 			
 			global.item_possession[grab_number] = -1;//所持アイテムを掴んだので一覧から消す
+			item_possession_data[grab_number, ITEM] = -1;//同じく
 			grab_item_possession_id = grab_number;//所持アイテムのマス目？番号
 		}
 	}
@@ -72,7 +71,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 //商品を掴んでいる
 if(grab_defender_id != -1){
 	if(!mouse_check_button(mb_left)){//離した
-		if(mouse_x < window_get_width()-shop_window_width){
+		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){
 			
 			var distance = 10000;
 			var nearest_distance = 10000;
@@ -109,7 +108,7 @@ if(grab_defender_id != -1){
 if(grab_item_id != -1){
 	if(!mouse_check_button(mb_left)){//離した
 		purchase_item = false;
-		if(mouse_x < window_get_width()-shop_window_width){
+		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){
 			var distance = 10000;
 			var nearest_distance = 10000;
 			for(var i=0; i<instance_number(o_defender); i++){//マーカーと重なっているか確認
@@ -126,7 +125,7 @@ if(grab_item_id != -1){
 			}
 			drop_result = false;//初期設定
 			if(nearest_distance <= 32){
-				sdm(string(global.itemdata[grab_item_id, itemdata.name])+ "を装備")
+				//sdm(string(global.itemdata[grab_item_id, itemdata.name])+ "を装備")
 				var purchase_item = equip_item(grab_item_id, nearest_defender);
 				var drop_result = true;
 			}

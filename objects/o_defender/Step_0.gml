@@ -19,6 +19,39 @@ range = range_temp + range_default;
 
 #endregion
 
+#region skill
+enum skillstate{
+	cooldown,
+	up,
+	active
+}
+if(skill_id != -1){//スキルが装備されている場合
+	switch(skill_state){
+	case skillstate.cooldown:
+		skill_state = skillstate.cooldown
+		skill_cooldown--;
+		if(skill_cooldown <= 0){
+			skill_state = skillstate.up//スキル使用可能
+		}
+	break
+	case skillstate.up:
+		if(mouse_check_button(mb_right)){
+			if(x-sprite_width/2 < mouse_x and mouse_x < x+sprite_width/2){
+				if(y-sprite_height/2 < mouse_y and mouse_y < y+sprite_height/2){
+					//スプライトの上で右クリックされたらスキル発動
+					use_skill();
+				}
+			}
+		}
+	break
+	case skillstate.active:
+		//スキル使用中
+		skill_active()
+	break
+	}
+}
+#endregion
+
 #region State
 switch(state){
 #region 攻撃クールダウン

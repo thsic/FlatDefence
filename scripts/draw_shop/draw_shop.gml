@@ -1,8 +1,8 @@
 ///右側にでてくるショップ
 //drawに置け
 var window_height = window_get_height();
-var x_offset = window_get_width()-shop_window_width
-usefulwindow(s_window, 1, window_get_width()-shop_window_width, 0, shop_window_width, window_height, 1,1);
+var x_offset = window_get_width()-SHOP_WINDOW_WIDTH
+usefulwindow(s_window, 1, window_get_width()-SHOP_WINDOW_WIDTH, 0, SHOP_WINDOW_WIDTH, window_height, 1,1);
 
 draw_set_color(c_yellow);
 draw_text(x_offset+16,24,global.gold)//お金描画
@@ -15,14 +15,6 @@ for(var i=0; i<product_defender_amount; i++){//defenderを描画
 	else{
 		//足りる場合
 		draw_sprite(object_get_sprite(shop_product[i, DEFENDER]), 0, shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y]);
-	}
-}
-
-for(var i=0;i<global.shop_defender_amount; i++){
-	if(shop_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_product[i, SPRITE_X]+SPRITE_SIZE){
-		if(shop_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_product[i, SPRITE_Y]+SPRITE_SIZE){
-			shop_description(0, i)
-		}
 	}
 }
 
@@ -42,6 +34,50 @@ for(i=0; i<POSSESSION_ITEM_MAX; i++){//所持itemを描画
 		draw_sprite(item_possession_data[i, SPRITE], 0, item_possession_data[i, SPRITE_X], item_possession_data[i, SPRITE_Y])
 	}
 }
+
+//カーソルを合わせたときの小窓
+var draw_description = false //このフレームでdescriptionが描画されているならtrue
+for(var i=0;i<global.shop_defender_amount; i++){//defender
+	if(shop_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_product[i, SPRITE_X]+SPRITE_SIZE){
+		if(shop_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_product[i, SPRITE_Y]+SPRITE_SIZE){
+			draw_description = true
+			shop_description(0, i, false)
+		}
+	}
+}
+for(var i=0;i<global.shop_item_amount; i++){//item
+	if(shop_item_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_item_product[i, SPRITE_X]+SPRITE_SIZE){
+		if(shop_item_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_item_product[i, SPRITE_Y]+SPRITE_SIZE){
+			if(global.itemdata[shop_item_product[i, ITEM], itemdata.skill] = -1){
+				shop_description(1, shop_item_product[i, ITEM], false)
+			}
+			else{
+				shop_description(2, shop_item_product[i, ITEM], false)
+			}
+			draw_description = true
+		}
+	}
+}
+for(var i=0;i<POSSESSION_ITEM_MAX; i++){//possession item
+	if(item_possession_data[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < item_possession_data[i, SPRITE_X]+SPRITE_SIZE){
+		if(item_possession_data[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < item_possession_data[i, SPRITE_Y]+SPRITE_SIZE){
+			if(global.item_possession[i] != -1){
+				if(global.itemdata[global.item_possession[i], itemdata.skill] = -1){	
+					shop_description(1, global.item_possession[i], true)
+				}
+				else{
+					shop_description(2, global.item_possession[i], true)
+				}
+				draw_description = true
+			}
+		}
+	}
+}
+
+if(!draw_description){//このフレームでdescriptionが描画されていないならsurfaceを消す
+	surface_free(global.usefulwindow_surface[2]);
+}
+
 
 if(grab_defender_id != -1){//商品を掴んでいる
 	draw_sprite(object_get_sprite(grab_defender_id), 0, window_mouse_get_x(), window_mouse_get_y());

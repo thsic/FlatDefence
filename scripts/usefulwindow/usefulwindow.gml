@@ -4,8 +4,8 @@
 3の倍数のスプライトでないとバグるかも 
 drawイベントの中に置きましょう
 surfaceを使っている
-createイベントで先に "usefulwindow_surface[0] = noone" と書いておく必要がある
-要らなくなったら "surface_free(usefulwindow_surface)" と書いておく
+createイベントで先に "global.usefulwindow_surface[0] = noone" と書いておく必要がある
+要らなくなったら "global.surface_free(usefulwindow_surface[0])" と書いておく
 ------------------------------*/
 /*window_numberメモ
 0 defenderステータス表示

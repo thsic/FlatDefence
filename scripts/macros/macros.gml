@@ -15,11 +15,16 @@
 
 #macro SPRITE_SIZE 16
 
+//shop
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
+#macro SHOP_WINDOW_WIDTH 256 
 
 //色
 #macro COLOR_TEXT_GRAY c_gray
 #macro COLOR_TEXT_DKGRAY c_dkgray
 #macro COLOR_TEXT_WHITE c_white
 #macro COLOR_TEXT_YELLOW c_yellow
+#macro COLOR_TEXT_ORANGE c_orange
+
+
 #macro COLOR_DEFAULT c_white

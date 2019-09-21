@@ -23,7 +23,7 @@ case "hp":
 break
 case "cooldown":
 	var bar_percent = 1 - now / maximum //cooldownは0に近づくとゲージが増えるようにしたい
-	var bar_width = 40;
+	var bar_width = 24;
 	var bar_height = 2;
 	var bar_x = x - bar_width / 2
 	var bar_y = y + sprite_height/2 + 4;
@@ -31,7 +31,40 @@ case "cooldown":
 	if(sign(bar_percent) = -1){bar_percent = 0}
 	draw_set_color(bar_backgloundcolor);
 	draw_rectangle(bar_x, bar_y, bar_x+bar_width, bar_y+bar_height, false);
+	draw_set_color(bar_color);
+	draw_rectangle(bar_x, bar_y, bar_x+bar_width*bar_percent, bar_y+bar_height, false);
+	draw_set_color(c_white);
+break
+case "skill":
+	var bar_percent = 1 - now / maximum //cooldownは0に近づくとゲージが増えるようにしたい
+	var bar_width = 24;
+	var bar_height = 2;
+	var bar_x = x - bar_width / 2
+	var bar_y = y + sprite_height/2 + 8;
+
+	if(sign(bar_percent) = -1){bar_percent = 0}
+	draw_set_color(bar_backgloundcolor);
+	draw_rectangle(bar_x, bar_y, bar_x+bar_width, bar_y+bar_height, false);
 	draw_set_color(bar_color);//青
 	draw_rectangle(bar_x, bar_y, bar_x+bar_width*bar_percent, bar_y+bar_height, false);
 	draw_set_color(c_white);
+break
+case "skill_active":
+	var bar_percent = now / maximum//終わりが近づくと減っていく
+	var bar_width = 24;
+	var bar_height = 2;
+	var bar_x = x - bar_width / 2
+	var bar_y = y + sprite_height/2 + 8;
+
+	if(sign(bar_percent) = -1){bar_percent = 0}
+	draw_set_color(bar_backgloundcolor);
+	draw_rectangle(bar_x, bar_y, bar_x+bar_width, bar_y+bar_height, false);
+	draw_set_color(bar_color);
+	draw_rectangle(bar_x, bar_y, bar_x+bar_width*bar_percent, bar_y+bar_height, false);
+	draw_set_color(c_white);
+break
+case other:
+	sdm("error! draw_bar");
+break
+
 }
