@@ -89,7 +89,6 @@ if(grab_defender_id != -1){
 	if(nearest_distance <= 32){
 		nearest_marker.subimage = 1;//一番近いマーカーの色を変える
 	}
-	sdm(nearest_marker)
 	drop_result = false;
 	if(!mouse_check_button(mb_left)){//離した
 		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){

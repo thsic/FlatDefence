@@ -49,17 +49,41 @@ if(DEBUGMODE or debug_mode){
 	if(keyboard_check_pressed(ord("R"))){
 		game_restart();
 	}
-	if(keyboard_check_pressed(vk_space)){
-		global.debug_stop = 1;
-	}
 	if(keyboard_check_pressed(vk_escape)){
 		game_end()
 	}
+}
+#endregion
+
+#region キーボード操作
 	if(keyboard_check(vk_control)){
 		room_speed = FPS_DEFAULT*2;
 	}
 	else {
 		room_speed = FPS_DEFAULT;
 	}
+	if(keyboard_check_pressed(vk_space)){
+		if(global.gamestate = gamestate.main){
+			global.gamestate = gamestate.pause;
+			sdm("ポーズ")
+		}
+		else{
+			global.gamestate = gamestate.main
+			sdm("ポーズ解除")
+		}
+	}
+	
+
+#endregion
+
+#region ゲームステート
+switch(global.gamestate){
+case gamestate.stagestart:
+	global.gamestate = gamestate.main
+break
+case gamestate.main:
+	
+break
 }
+
 #endregion
