@@ -1,4 +1,5 @@
 if(global.gamestate = gamestate.main){
+	speed = bullet_speed
 	if(speed_temp != -1){
 		speed = speed_temp;
 		speed_temp = -1;
@@ -11,7 +12,7 @@ if(global.gamestate = gamestate.main){
 			direction_change_cooldown = direction_change_cooldown_default;
 		}
 		else{
-			instance_destroy();//ターゲットが存在しないので消滅
+			destroy_countdown = destroy_countdown_default;//ターゲットが存在しないので消滅
 		}
 	}
 }
@@ -20,4 +21,12 @@ else if(global.gamestate = gamestate.pause){//ポーズされたら止まる
 		speed_temp = speed;//speed_tempに一時的に保存
 		speed = 0;
 	}
+}
+
+if(destroy_countdown > 0){
+	speed = destroy_countdown/destroy_countdown_default*bullet_speed
+	destroy_countdown--;
+}
+else if(destroy_countdown = 0){
+	instance_destroy()
 }

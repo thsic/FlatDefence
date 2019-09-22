@@ -9,7 +9,6 @@ var button_sprite_width = sprite_get_width(button_sprite);
 var button_sprite_height = sprite_get_height(button_sprite);
 var closewindow = false;//ウィンドウを消すかどうか
 
-
 #region アップグレードアイテム変更ボタン
 var item_number = 0;
 for(var i=0; i<upgrade_defender_id.itemslot_amount; i++){
