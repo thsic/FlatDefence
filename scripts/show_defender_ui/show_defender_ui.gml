@@ -7,6 +7,16 @@ if(upgrade_ui){//なんか意味ない
 else{
 	var alpha = 0.95;
 }
+
+if(upgrade_ui){
+	ui_window_x = (view_wport[0]-SHOP_WINDOW_WIDTH-500)/2;
+	ui_window_y = 40;
+	ui_window_width = 550;
+	ui_window_height = view_hport[0]-60;
+	
+	upgrade_window_process();//アップグレードウィンドウ表示
+}
+
 if(!show_window){
 	if(mouse_check_button_pressed(mb_left)){
 		for(i=0;i<=instance_number(o_defender);i++){
@@ -18,18 +28,12 @@ if(!show_window){
 						show_window = true;
 						ui_window_width = 300;//要調整
 						ui_window_height = 200;
-						show_defender_ui_window(false);
+						show_defender_ui_window();
 						break//forからぬける
 					}
 				}
 			}
 		}
-	}
-	if(upgrade_ui){
-		show_window = true;
-		ui_window_width = 550;//要調整
-		ui_window_height = view_hport[0]-60;
-		show_defender_ui_window(true);
 	}
 }
 else{
@@ -41,12 +45,9 @@ else{
 	else{
 		defender_ui_text(ui_window_x, ui_window_y, ui_window_width, ui_window_height);
 	}
-	if(mouse_check_button_pressed(mb_left)){//どこかがクリックされた
+	if(mouse_check_button_pressed(mb_left) and !upgrade_ui){//どこかがクリックされた
 		//if(mouse_x <= ui_window_x or ui_window_x+ui_window_width <= mouse_x or mouse_y <= ui_window_y or ui_window_y+ui_window_height <= mouse_y){
 		show_window = false;
-		if(upgrade_ui){//アップグレード画面なら元にもどす
-			upgrade_ui = false;
-		}
 		if(surface_exists(global.usefulwindow_surface[0])){//存在チェック
 			surface_set_target(global.usefulwindow_surface[0])
 			draw_clear_alpha(c_black, 0);//これがないとなんかwindowを表示する度濃くなる

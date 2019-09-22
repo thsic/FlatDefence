@@ -12,7 +12,8 @@ case r_test:
 	global.shop_defender[2] = o_dBasic;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
-	global.shop_item[2] = 5;
+	global.shop_item[2] = 3;
+	global.shop_item[3] = 5;
 	
 break
 	

@@ -44,7 +44,7 @@ defender_shop()
 #region デバッグ用
 if(DEBUGMODE or debug_mode){
 	if(mouse_check_button(mb_middle)){
-		instance_create_layer(mouse_x, mouse_y, "Instances", o_enemy);
+		global.gold++;
 	}
 	if(keyboard_check_pressed(ord("R"))){
 		game_restart();

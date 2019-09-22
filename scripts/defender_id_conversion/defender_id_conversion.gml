@@ -3,10 +3,8 @@
 
 var original_id = argument0;
 
-if(is_real(original_id)){
-	if(original_id >= 100000){
-		sdm("error! defender_id_conversion")
-	}
+if(!is_real(original_id)){
+	sdm("error! defender_id_conversion")
 }
 
 for(var i=0; i<global.defender_category_amount; i++){

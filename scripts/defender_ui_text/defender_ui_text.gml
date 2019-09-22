@@ -8,7 +8,6 @@ var height = argument3;
 draw_sprite(finded_defender_id.sprite_index, 0, x_offset+22, y_offset+24);//defenderの画像 32x32以外だと変になるかも middlecentreなのを忘れない
 draw_set_color(COLOR_TEXT_ORANGE);
 draw_text(x_offset+42, y_offset+22, global.defender_data[defender_id_conversion(finded_defender_id.object_index), data.description])
-sdm(finded_defender_id)
 draw_set_color(COLOR_TEXT_GRAY);
 draw_text(x_offset+4, y_offset+38, "Damage");
 draw_text(x_offset+4, y_offset+38+16*2+4, "AttackSpeed");

@@ -15,7 +15,7 @@ if(offset_y+window_height > view_hport[0]){//小窓が下に行きすぎない�
 }
 
 switch(description_type){
-case 0:
+case 0://defender
 	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	draw_set_color(COLOR_TEXT_GRAY);
 	draw_text(offset_x+6, offset_y+24, "Damage");
@@ -36,7 +36,7 @@ case 0:
 	
 	
 break
-case 1:
+case 1://item
 	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	draw_set_color(COLOR_TEXT_GRAY);
 	draw_text(offset_x+6, offset_y+24, "Damage");

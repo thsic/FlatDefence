@@ -86,5 +86,5 @@ if(grab_defender_id != -1){//商品を掴んでいる
 	draw_set_alpha(1);
 }
 if(grab_item_id != -1){//商品を掴んでいる
-	draw_sprite(shop_item_product[grab_item_id, SPRITE], 0, window_mouse_get_x(), window_mouse_get_y());
+	draw_sprite(global.itemdata[grab_item_id, itemdata.sprite], 0, window_mouse_get_x(), window_mouse_get_y());
 }

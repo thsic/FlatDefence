@@ -4,10 +4,12 @@ if(mouse_check_button_pressed(mb_left)){
 		surface_free(global.usefulwindow_surface[3])
 	}
 	for(var i=0;i<global.enemy_amount; i++){
-		if(global.enemy_id[i].x-SPRITE_SIZE < mouse_x and mouse_x < global.enemy_id[i].x+SPRITE_SIZE){
-			if(global.enemy_id[i].y-SPRITE_SIZE < mouse_y and mouse_y < global.enemy_id[i].y+SPRITE_SIZE){
-				window_follow_enemy_id = global.enemy_id[i]
+		if(instance_exists(global.enemy_id[i])){
+			if(global.enemy_id[i].x-SPRITE_SIZE < mouse_x and mouse_x < global.enemy_id[i].x+SPRITE_SIZE){
+				if(global.enemy_id[i].y-SPRITE_SIZE < mouse_y and mouse_y < global.enemy_id[i].y+SPRITE_SIZE){
+					window_follow_enemy_id = global.enemy_id[i]
 				
+				}
 			}
 		}
 	}

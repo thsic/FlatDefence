@@ -44,11 +44,11 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 		else if(grab_number < 20000){
 			//アイテムを掴んだ
 			grab_number -= 10000;//アイテムは10000~なのでその分を下げる
-			var grab_product_number = grab_number;
+			var grab_product_number = grab_number; //ここからgrab_numberはItemidになる
 			grab_number = shop_item_product[grab_number, ITEM]
 			if(global.gold >= global.itemdata[grab_number, itemdata.cost]){//残金チェック
 				global.gold -= global.itemdata[grab_number, itemdata.cost];//お金をへらす
-				grab_item_id = shop_item_product[grab_number, ITEM];
+				grab_item_id = shop_item_product[grab_product_number, ITEM];
 				grab_item_possession_id = -1;
 				window_mouse_set(shop_item_product[grab_product_number, SPRITE_X], shop_item_product[grab_product_number, SPRITE_Y]);
 				rise_number(global.itemdata[grab_number, itemdata.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
@@ -121,7 +121,7 @@ if(grab_item_id != -1){
 			var nearest_distance = 10000;
 			for(var i=0; i<instance_number(o_defender); i++){//マーカーと重なっているか確認
 				var defender_id = instance_find(o_defender, i);
-				if(global.itemdata[grab_item_id, itemdata.upgrade] != -1){//アップグレードオーブ以外なら
+				if(global.itemdata[grab_item_id, itemdata.upgraded] != -1){//アップグレードオーブ以外なら
 					for(var j=0; j<defender_id.itemslot_amount; j++){//アイテムスロットに空きがあるか確認
 						if(defender_id.itemslot[j] = -1){
 						distance = point_distance(mouse_x, mouse_y, defender_id.x, defender_id.y)
@@ -143,8 +143,13 @@ if(grab_item_id != -1){
 			drop_result = false;//初期設定
 			if(nearest_distance <= 32){
 				//sdm(string(global.itemdata[grab_item_id, itemdata.name])+ "を装備")
-				var purchase_item = equip_item(grab_item_id, nearest_defender);
+				var purchase_item = equip_item(grab_item_id, nearest_defender);//装備
 				var drop_result = true;
+				if(global.itemdata[grab_item_id, itemdata.upgraded] = -1){//アップグレードオーブで
+					if(grab_item_possession_id = -1){//ショップで購入したオーブの場合
+						purchased_upgrade_orb = true//あとで返金するために購入したオーブだということをいれておく
+					}
+				}
 			}
 			if(grab_item_possession_id = -1){
 				if(!purchase_item){global.gold += global.itemdata[grab_item_id, itemdata.cost];}//返金

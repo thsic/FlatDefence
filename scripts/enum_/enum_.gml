@@ -14,3 +14,10 @@ enum gamestate{
 	gameover
 	
 }
+
+enum upgradebutton{
+	sprite_x,
+	sprite_y,
+	state,
+	possibleupgrade
+}
