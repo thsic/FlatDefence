@@ -10,6 +10,7 @@ enum gamestate{
 	rest,
 	pause,
 	main,
+	waveclear,
 	stageclear,
 	gameover
 	

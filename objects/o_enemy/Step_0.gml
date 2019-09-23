@@ -18,5 +18,6 @@ if(path_position = 1){//最後まで到達した
 }
 
 if(destroy_enemy = true){//死亡時処理
+	global.enemy_wave_total_amount--;
 	instance_destroy();
 }

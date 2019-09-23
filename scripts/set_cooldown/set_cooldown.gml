@@ -1,3 +1,3 @@
 ///アイテムとか込みでのクールダウン設定
 
-cooldown = room_speed / attack_per_second;
+cooldown = FPS_DEFAULT / attack_per_second;

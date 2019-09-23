@@ -5,7 +5,8 @@ global.shop_defender = noone;
 global.shop_item = noone;
 switch(room){
 case r_test:
-	global.life = 10
+	global.life = 10//体力
+	global.gold = 1000;//おかね
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;

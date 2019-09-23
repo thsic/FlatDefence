@@ -13,12 +13,13 @@
 #macro ITEM 0
 #macro SPRITE 3
 
-#macro SPRITE_SIZE 16
-
 //shop
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
 #macro SHOP_WINDOW_WIDTH 256 
 
+//
+#macro REST_TIME 600//休憩時間の長さ
+#macro SPRITE_SIZE 16
 //色
 #macro COLOR_TEXT_GRAY c_gray
 #macro COLOR_TEXT_DKGRAY c_dkgray

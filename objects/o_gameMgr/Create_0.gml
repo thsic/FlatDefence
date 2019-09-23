@@ -3,18 +3,19 @@ for(var i=0; i<=10; i++){//usefulwindowに必要
 	global.usefulwindow_surface[i] = noone;
 }
 
+global.debugmode = DEBUGMODE
 global.gamestate = gamestate.stagestart;
 global.enemy_x = 0;
-global.gold = 1000;//おかね
+
 show_window = false;//defenderのステータス画面が開いているかどうか
 shop_product = noone;
 upgrade_ui = false;//upgrade画面が開いているかどうか
 window_follow_enemy_id = -1;//敵ステータスウィンドウが追尾してるid
 purchased_upgrade_orb = false;//お店でこうにゅうしたオーブかどうか
-instance_create_layer(0, 0, "Instances", o_enemyGenerateMgr)
 
-stage_setting();
+
 database();//globalにいろいろデータをいれる
+
 
 random_set_seed(date_current_datetime());
 randomize();
