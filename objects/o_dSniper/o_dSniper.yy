@@ -4,16 +4,7 @@
     "mvc": "1.0",
     "name": "o_dSniper",
     "eventList": [
-        {
-            "id": "77383922-512e-4672-9da9-632230dee15d",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "72dba724-c921-48a1-b52c-c2c0611811b5"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": [

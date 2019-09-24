@@ -5,11 +5,11 @@
     "name": "bd3bbdf3-1d8b-49bd-829b-caadf9f74de7",
     "children": [
         "7ce8fc2c-5b4b-4527-831c-dedcd23634b2",
+        "f462e6ff-5c9a-42f5-8831-f6ccc09996f1",
         "0ddf0962-8328-49e3-8181-1e798723027a",
         "42ac0b68-cab3-463f-9804-7183cc7b380d",
         "4ab2cc8a-f90e-4a9a-8e8a-d6e58a1977b8",
-        "40d15a4a-ce69-4079-b104-0f7b1cbab40c",
-        "f462e6ff-5c9a-42f5-8831-f6ccc09996f1"
+        "40d15a4a-ce69-4079-b104-0f7b1cbab40c"
     ],
     "filterType": "GMScript",
     "folderName": "enemy_generate",

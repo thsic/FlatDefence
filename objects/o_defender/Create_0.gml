@@ -1,3 +1,10 @@
+for(var i=0; i<global.defender_category_amount; i++){//データから自分を探す
+	if(global.defender_data[i, data.object] = object_index){
+		defender_number = i;
+		break
+	}
+}
+
 //databaseからdefenderのデータをいれる
 fire_damage_default = global.defender_data[defender_number, data.damage]
 attack_per_second_default = global.defender_data[defender_number, data.attack_speed]

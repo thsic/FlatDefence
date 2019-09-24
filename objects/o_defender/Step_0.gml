@@ -1,6 +1,6 @@
 
 if(global.gamestate = gamestate.main){
-#region item
+	#region item
 	var fire_damage_temp = 0;
 	var attack_per_second_temp = 0;
 	var range_temp = 0;
@@ -20,7 +20,7 @@ if(global.gamestate = gamestate.main){
 
 	#endregion
 
-#region skill
+	#region skill
 	enum skillstate{
 		cooldown,
 		up,
@@ -53,7 +53,7 @@ if(global.gamestate = gamestate.main){
 	}
 	#endregion
 
-#region State
+	#region State
 	switch(state){
 	#region 攻撃クールダウン
 	case state.decrement_cooldown:

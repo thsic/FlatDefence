@@ -1,4 +1,4 @@
-///@param spr,x,y,w,h,alpha
+///@param spr,surfase_number,x,y,w,h,alpha
 var sprite = argument0;
 var surface_number = argument1
 var window_x = argument2;

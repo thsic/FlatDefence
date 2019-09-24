@@ -7,7 +7,9 @@ enum defender_status{
 enum gamestate{
 	stagestart,
 	wavestart,
+	reststart,
 	rest,
+	restpause,
 	pause,
 	main,
 	waveclear,
@@ -21,4 +23,11 @@ enum upgradebutton{
 	sprite_y,
 	state,
 	possibleupgrade
+}
+
+enum spawnenemy{
+	objectid,
+	amount,
+	number
+	
 }

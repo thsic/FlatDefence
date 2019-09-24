@@ -5,11 +5,13 @@ if(target_id != false){
 		//draw_line(x, y, target_id.x, target_id.y);
 	}
 }
-draw_set_alpha(0.3);
+
 if(state = state.idle){
+	draw_set_alpha(0.1);
 	draw_set_color(c_aqua);
 }
 else{
+	draw_set_alpha(0.1);
 	draw_set_color(c_gray);
 }
 

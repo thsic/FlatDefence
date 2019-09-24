@@ -5,14 +5,14 @@
 drawイベントの中に置きましょう
 surfaceを使っている
 createイベントで先に "global.usefulwindow_surface[0] = noone" と書いておく必要がある
-要らなくなったら "global.surface_free(usefulwindow_surface[0])" と書いておく
+要らなくなったら "surface_free(global.usefulwindow_surface[0])" と書いておく
 ------------------------------*/
 /*window_numberメモ
 0 defenderステータス表示
 1 shopウィンドウ
 2 shop説明用小窓
 3 敵ステータス表示
-
+4 その他ui
 */
 
 

@@ -3,8 +3,9 @@
 global.life = noone;
 global.shop_defender = noone;
 global.shop_item = noone;
-switch(room){
-case r_test:
+
+switch(global.stage){
+case 0:
 	global.life = 10//体力
 	global.gold = 1000;//おかね
 	

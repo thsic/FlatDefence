@@ -63,48 +63,6 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "866016b3-b175-4cd0-9811-d18b4bc0d8db",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "100",
-            "varName": "hp_max",
-            "varType": 1
-        },
-        {
-            "id": "097cb389-089e-4aa1-97c8-1a45844df56a",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "1",
-            "varName": "speed",
-            "varType": 0
-        },
-        {
-            "id": "6ee7416f-e910-4b71-9f03-f4622a4ba676",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "10",
-            "varName": "shield",
-            "varType": 1
-        },
-        {
             "id": "d50ce9a0-f3b6-47e7-834c-250a3f600f74",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",

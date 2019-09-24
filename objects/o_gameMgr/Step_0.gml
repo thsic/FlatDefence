@@ -1,9 +1,23 @@
 #region ゲームステート
 switch(global.gamestate){
 case gamestate.stagestart://ステージ開始時処理
-	stage_setting();
+	switch(room){
+	case r_test:
+		global.stage = 0;
+	break
+	
+	}
+	global.enemy_amount = 0;
 	global.wave_now = 0;
+	stage_setting();
+	
+	global.gamestate = gamestate.reststart;
+break
+
+case gamestate.reststart://休憩タイム開始
 	rest_time = REST_TIME;
+	global.wave_now++;
+	instance_create_layer(0, 0, "Instances", o_enemyGenerateMgr);
 	
 	global.gamestate = gamestate.rest;
 break
@@ -11,20 +25,20 @@ break
 case gamestate.rest://ウェーブの間の休憩
 	if(rest_time > 0){
 		rest_time--;
-		if(frac(rest_time/60) = 0){
-			sdm(rest_time/60)
-		}
 	}
 	else{
 		global.gamestate = gamestate.wavestart;	
 	}
+	if(keyboard_check_pressed(vk_space)){
+		sdm("ポーズ")
+		global.gamestate = gamestate.restpause;
+	}
 break
 
 case gamestate.wavestart://ウェーブ開始処理
-	global.enemy_wave_total_amount = 0;
-	global.wave_now++;
+
+
 	sdm("wave"+string(global.wave_now)+"開始")
-	instance_create_layer(0, 0, "Instances", o_enemyGenerateMgr);
 	
 	global.gamestate = gamestate.main;
 break
@@ -68,6 +82,13 @@ case gamestate.main://ゲーム中処理
 
 	#endregion
 	#endregion
+	if(global.life <= 0){//ゲームオーバー
+		global.gamestate = gamestate.gameover;
+	}
+	if(keyboard_check_pressed(vk_space)){//スペースでポーズにする
+		sdm("ポーズ")
+		global.gamestate = gamestate.pause;
+	}
 	if(global.enemy_wave_total_amount <= 0){//敵が全員居なくなった
 		global.gamestate = gamestate.waveclear;
 	}
@@ -77,38 +98,56 @@ case gamestate.waveclear://ウェーブクリア処理
 	sdm("wave"+string(global.wave_now)+"をクリア")
 	instance_destroy(o_enemyGenerateMgr);
 	timeline_delete(global.generate_timeline_id);//タイムラインを一旦全部けしてリセットする
-	rest_time = REST_TIME;
+	with(o_defender){
+		cooldown = 0;//全てのdefenderのクールダウンを解消
+		state = state.idle
+	}
 	
-	global.gamestate = gamestate.rest;
+	global.gamestate = gamestate.reststart;
+break
+
+case gamestate.stageclear://ステージクリア処理
+
+break
+
+case gamestate.gameover://ゲームオーバー処理
+	show_message("GameOver!");
+	game_restart();
+break
+
+case gamestate.pause:
+	if(keyboard_check_pressed(PAUSE_BUTTON)){
+		sdm("ポーズ解除")
+		global.gamestate = gamestate.main;
+	}
+break
+
+case gamestate.restpause:
+	if(keyboard_check_pressed(PAUSE_BUTTON)){
+		sdm("ポーズ解除")
+		global.gamestate = gamestate.rest;
+	}
 break
 }
 #region shop処理 キーボード操作
 switch(global.gamestate){
 case gamestate.wavestart:
+case gamestate.reststart:
 case gamestate.rest:
+case gamestate.restpause:
 case gamestate.pause:
 case gamestate.main:
 case gamestate.waveclear:
 case gamestate.stageclear:
 	defender_shop()
-#region 
+#region キーボード操作
 	if(keyboard_check(vk_control)){
 		room_speed = FPS_DEFAULT*2;
 	}
 	else {
 		room_speed = FPS_DEFAULT;
 	}
-	if(keyboard_check_pressed(vk_space)){
-		if(global.gamestate != gamestate.pause){
-			before_pause_state = global.gamestate//ポーズ前のステートを保存
-			global.gamestate = gamestate.pause;
-			sdm("ポーズ")
-		}
-		else{
-			global.gamestate = before_pause_state
-			sdm("ポーズ解除")
-		}
-	}
+
 #endregion
 break
 }

@@ -146,7 +146,7 @@ enum itemdata{
 }
 #endregion
 
-#region Skill
+#region Skill data
 target = 0;
 global.skilldata[target, skilldata.number] = target;
 global.skilldata[target, skilldata.name] = "AttackUp";
@@ -177,5 +177,33 @@ enum skilldata{
 	magnification,
 	magnification_type,
 	effect
+}
+#endregion
+
+#region Enemy data
+target = 0;
+global.enemydata[target, enemydata.object] = o_eNormal;
+global.enemydata[target, enemydata.name] = "Normal";
+global.enemydata[target, enemydata.hp] = 60
+global.enemydata[target, enemydata.shield] = 5;
+global.enemydata[target, enemydata.speed] = 1;
+global.enemydata[target, enemydata.description] = "hutuu";
+
+target = 1;
+global.enemydata[target, enemydata.object] = o_eFast;
+global.enemydata[target, enemydata.name] = "Fast";
+global.enemydata[target, enemydata.hp] = 30
+global.enemydata[target, enemydata.shield] = 3;
+global.enemydata[target, enemydata.speed] = 3;
+global.enemydata[target, enemydata.description] = "hayaizo";
+
+global.enemy_category_amount = target+1;
+enum enemydata{
+	object,
+	name,
+	hp,
+	shield,
+	speed,
+	description
 }
 #endregion
