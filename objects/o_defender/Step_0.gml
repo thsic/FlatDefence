@@ -1,25 +1,24 @@
+#region item 
+//アイテムだけはステータスウィンドウに反映するためにポーズ中以外でも動く
+var fire_damage_temp = 0;
+var attack_per_second_temp = 0;
+var range_temp = 0;
 
-if(global.gamestate = gamestate.main){
-	#region item
-	var fire_damage_temp = 0;
-	var attack_per_second_temp = 0;
-	var range_temp = 0;
-
-	//装備確認
-	for(var i=0; i<itemslot_amount; i++){
-		if(itemslot[i] != -1){
-			fire_damage_temp += global.itemdata[itemslot[i], itemdata.damage];
-			attack_per_second_temp += global.itemdata[itemslot[i], itemdata.attack_speed];
-			range_temp += global.itemdata[itemslot[i], itemdata.range];
-		}
+//装備確認
+for(var i=0; i<itemslot_amount; i++){
+	if(itemslot[i] != -1){
+		fire_damage_temp += global.itemdata[itemslot[i], itemdata.damage];
+		attack_per_second_temp += global.itemdata[itemslot[i], itemdata.attack_speed];
+		range_temp += global.itemdata[itemslot[i], itemdata.range];
 	}
-	//ステータス上昇
-	fire_damage = fire_damage_temp + fire_damage_default;
-	attack_per_second = attack_per_second_temp + attack_per_second_default;
-	range = range_temp + range_default;
+}
+//ステータス上昇
+fire_damage = fire_damage_temp + fire_damage_default;
+attack_per_second = attack_per_second_temp + attack_per_second_default;
+range = range_temp + range_default;
 
-	#endregion
-
+#endregion
+if(global.gamestate = gamestate.main){
 	#region skill
 	enum skillstate{
 		cooldown,

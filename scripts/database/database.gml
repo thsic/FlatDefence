@@ -36,9 +36,9 @@ enum data{
 target = 0;
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = -1;//アップグレードさせることができるアイテム
-global.itemdata[target, itemdata.upgradeid] = -1
-global.itemdata[target, itemdata.sprite] = s_upgradeOrb
-global.itemdata[target, itemdata.name] = "UpgradeOrb"
+global.itemdata[target, itemdata.upgradeid] = -1;
+global.itemdata[target, itemdata.sprite] = s_upgradeOrb;
+global.itemdata[target, itemdata.name] = "UpgradeOrb";
 global.itemdata[target, itemdata.damage] = 0;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 0;
@@ -51,8 +51,8 @@ target = 1;//basicsword
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
 global.itemdata[target, itemdata.upgradeid] = target+1;
-global.itemdata[target, itemdata.sprite] = s_basicsword
-global.itemdata[target, itemdata.name] = "BasicSword"
+global.itemdata[target, itemdata.sprite] = s_basicsword;
+global.itemdata[target, itemdata.name] = "BasicSword";
 global.itemdata[target, itemdata.damage] = 20;
 global.itemdata[target, itemdata.attack_speed] = 0.5;
 global.itemdata[target, itemdata.range] = 0;
@@ -64,8 +64,8 @@ target = 2;
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 1;
 global.itemdata[target, itemdata.upgradeid] = target+1;
-global.itemdata[target, itemdata.sprite] = s_basicsword
-global.itemdata[target, itemdata.name] = "BasicSword+"
+global.itemdata[target, itemdata.sprite] = s_basicsword;
+global.itemdata[target, itemdata.name] = "BasicSword+";
 global.itemdata[target, itemdata.damage] = 40;
 global.itemdata[target, itemdata.attack_speed] = 1;
 global.itemdata[target, itemdata.range] = 0;
@@ -78,8 +78,8 @@ target = 3;//poweraxe
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
 global.itemdata[target, itemdata.upgradeid] = target+1;
-global.itemdata[target, itemdata.sprite] = s_basicsword
-global.itemdata[target, itemdata.name] = "PowerAxe"
+global.itemdata[target, itemdata.sprite] = s_powerAxe;
+global.itemdata[target, itemdata.name] = "PowerAxe";
 global.itemdata[target, itemdata.damage] = 90;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 100;
@@ -91,8 +91,8 @@ target = 4;
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 1;
 global.itemdata[target, itemdata.upgradeid] = target+1;
-global.itemdata[target, itemdata.sprite] = s_basicsword
-global.itemdata[target, itemdata.name] = "PowerAxe+"
+global.itemdata[target, itemdata.sprite] = s_powerAxe;
+global.itemdata[target, itemdata.name] = "PowerAxe+";
 global.itemdata[target, itemdata.damage] = 120;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 150;
@@ -105,8 +105,8 @@ target = 5;//powerup
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
 global.itemdata[target, itemdata.upgradeid] = target+1;
-global.itemdata[target, itemdata.sprite] = s_attackup
-global.itemdata[target, itemdata.name] = "PowerUp"
+global.itemdata[target, itemdata.sprite] = s_attackup;
+global.itemdata[target, itemdata.name] = "PowerUp";
 global.itemdata[target, itemdata.damage] = 0;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 0;
@@ -118,8 +118,8 @@ target = 6;
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 1;
 global.itemdata[target, itemdata.upgradeid] = target+1;
-global.itemdata[target, itemdata.sprite] = s_attackup
-global.itemdata[target, itemdata.name] = "PowerUp+"
+global.itemdata[target, itemdata.sprite] = s_attackup;
+global.itemdata[target, itemdata.name] = "PowerUp+";
 global.itemdata[target, itemdata.damage] = 0;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 0;
@@ -159,7 +159,7 @@ global.skilldata[target, skilldata.effect] = -1;
 target = 1;
 global.skilldata[target, skilldata.number] = target;
 global.skilldata[target, skilldata.name] = "AttackUp+";
-global.skilldata[target, skilldata.cooldown] = 5*FPS_DEFAULT;
+global.skilldata[target, skilldata.cooldown] = 15*FPS_DEFAULT;
 global.skilldata[target, skilldata.skilltime] = 5*FPS_DEFAULT;
 global.skilldata[target, skilldata.magnification] = 2;
 global.skilldata[target, skilldata.magnification_type] = 0;//attack
@@ -184,18 +184,20 @@ enum skilldata{
 target = 0;
 global.enemydata[target, enemydata.object] = o_eNormal;
 global.enemydata[target, enemydata.name] = "Normal";
-global.enemydata[target, enemydata.hp] = 60
-global.enemydata[target, enemydata.shield] = 5;
+global.enemydata[target, enemydata.hp] = 150;
+global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
+global.enemydata[target, enemydata.dropgold] = 10;
 
 target = 1;
 global.enemydata[target, enemydata.object] = o_eFast;
 global.enemydata[target, enemydata.name] = "Fast";
-global.enemydata[target, enemydata.hp] = 30
+global.enemydata[target, enemydata.hp] = 50;
 global.enemydata[target, enemydata.shield] = 3;
 global.enemydata[target, enemydata.speed] = 3;
 global.enemydata[target, enemydata.description] = "hayaizo";
+global.enemydata[target, enemydata.dropgold] = 12;
 
 global.enemy_category_amount = target+1;
 enum enemydata{
@@ -204,6 +206,7 @@ enum enemydata{
 	hp,
 	shield,
 	speed,
-	description
+	description,
+	dropgold
 }
 #endregion

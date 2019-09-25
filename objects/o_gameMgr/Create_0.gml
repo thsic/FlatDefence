@@ -12,7 +12,7 @@ shop_product = noone;
 upgrade_ui = false;//upgrade画面が開いているかどうか
 window_follow_enemy_id = -1;//敵ステータスウィンドウが追尾してるid
 purchased_upgrade_orb = false;//お店でこうにゅうしたオーブかどうか
-
+timemachine_grab = 0//タイムマシンが掴まれているかどうか
 
 database();//globalにいろいろデータをいれる
 

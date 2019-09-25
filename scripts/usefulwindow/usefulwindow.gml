@@ -13,6 +13,7 @@ createイベントで先に "global.usefulwindow_surface[0] = noone" と書い�
 2 shop説明用小窓
 3 敵ステータス表示
 4 その他ui
+5 タイムマシン
 */
 
 

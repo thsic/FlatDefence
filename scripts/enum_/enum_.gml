@@ -31,3 +31,13 @@ enum spawnenemy{
 	number
 	
 }
+
+enum timemachine{
+	window_x,
+	window_y,
+	state,
+	
+	
+}
+
+

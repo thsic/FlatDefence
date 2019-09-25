@@ -9,6 +9,11 @@ case gamestate.stagestart://ステージ開始時処理
 	}
 	global.enemy_amount = 0;
 	global.wave_now = 0;
+	global.timemachine[timemachine.window_x] = window_get_width()-SHOP_WINDOW_WIDTH-TIMEMACHINE_WIDTH-4;
+	global.timemachine[timemachine.window_y] = window_get_height()-TIMEMACHINE_HEIGHT-4;
+	timemachine_button_state[0] = 2;
+	timemachine_button_state[1] = 0;
+	timemachine_button_state[2] = 0;
 	stage_setting();
 	
 	global.gamestate = gamestate.reststart;
@@ -28,10 +33,6 @@ case gamestate.rest://ウェーブの間の休憩
 	}
 	else{
 		global.gamestate = gamestate.wavestart;	
-	}
-	if(keyboard_check_pressed(vk_space)){
-		sdm("ポーズ")
-		global.gamestate = gamestate.restpause;
 	}
 break
 
@@ -85,10 +86,6 @@ case gamestate.main://ゲーム中処理
 	if(global.life <= 0){//ゲームオーバー
 		global.gamestate = gamestate.gameover;
 	}
-	if(keyboard_check_pressed(vk_space)){//スペースでポーズにする
-		sdm("ポーズ")
-		global.gamestate = gamestate.pause;
-	}
 	if(global.enemy_wave_total_amount <= 0){//敵が全員居なくなった
 		global.gamestate = gamestate.waveclear;
 	}
@@ -116,17 +113,11 @@ case gamestate.gameover://ゲームオーバー処理
 break
 
 case gamestate.pause:
-	if(keyboard_check_pressed(PAUSE_BUTTON)){
-		sdm("ポーズ解除")
-		global.gamestate = gamestate.main;
-	}
+
 break
 
 case gamestate.restpause:
-	if(keyboard_check_pressed(PAUSE_BUTTON)){
-		sdm("ポーズ解除")
-		global.gamestate = gamestate.rest;
-	}
+
 break
 }
 #region shop処理 キーボード操作
@@ -139,16 +130,8 @@ case gamestate.pause:
 case gamestate.main:
 case gamestate.waveclear:
 case gamestate.stageclear:
-	defender_shop()
-#region キーボード操作
-	if(keyboard_check(vk_control)){
-		room_speed = FPS_DEFAULT*2;
-	}
-	else {
-		room_speed = FPS_DEFAULT;
-	}
-
-#endregion
+	defender_shop();
+	time_machine_process();
 break
 }
 #endregion

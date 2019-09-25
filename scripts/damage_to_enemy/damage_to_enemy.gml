@@ -16,4 +16,5 @@ else{
 
 if(target_id.hp <= 0){
 	target_id.destroy_enemy = true;
+	global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを増やす
 }

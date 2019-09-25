@@ -25,6 +25,10 @@
 #macro PAUSE_BUTTON vk_space
 #macro DOUBLE_SPEED_BUTTON vk_control
 
+//timemachine
+#macro TIMEMACHINE_WIDTH 244
+#macro TIMEMACHINE_HEIGHT 112
+
 //色
 #macro COLOR_TEXT_GRAY c_gray
 #macro COLOR_TEXT_DKGRAY c_dkgray

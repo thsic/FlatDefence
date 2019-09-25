@@ -19,6 +19,7 @@ case gamestate.pause:
 case gamestate.main:
 case gamestate.waveclear:
 case gamestate.stageclear:
+	draw_time_machine();
 	draw_shop();
 	show_defender_ui();
 break
