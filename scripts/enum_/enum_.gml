@@ -40,4 +40,11 @@ enum timemachine{
 	
 }
 
+enum stageselectbutton{
+	window_x,
+	window_y,
+	state
+	
+}
+
 

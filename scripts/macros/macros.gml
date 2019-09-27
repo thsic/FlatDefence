@@ -1,5 +1,6 @@
 #macro DEBUGMODE true
 #macro FPS_DEFAULT 60
+#macro START_ROOM r_title
 
 //ソート
 #macro NEARGOAL 0
@@ -28,6 +29,11 @@
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
 #macro TIMEMACHINE_HEIGHT 112
+
+//ステージセレクト
+#macro STAGESELECT_BUTTON_WIDTH 300
+#macro STAGESELECT_BUTTON_HEIGHT 48
+#macro STAGESELECT_BUTTON_AMOUNT 5
 
 //色
 #macro COLOR_TEXT_GRAY c_gray

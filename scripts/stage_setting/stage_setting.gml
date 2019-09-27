@@ -8,6 +8,7 @@ switch(global.stage){
 case 0:
 	global.life = 10//体力
 	global.gold = 1000;//おかね
+	global.wave_total = 5;//総ウェーブ数
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -19,11 +20,14 @@ case 0:
 	
 break
 	
-case other:
+default:
 	global.life = 1
+	global.gold = 50;
+	global.wave_total = 1;
 	global.shop_defender[0] = o_dBasic;
 	global.shop_item[0] = 0;
 	sdm("error! stage_setting")
+break
 }
 
 global.shop_defender_amount = array_length_1d(global.shop_defender);
