@@ -10,10 +10,12 @@ createイベントで先に "global.usefulwindow_surface[0] = noone" と書い�
 /*window_numberメモ
 0 defenderステータス表示
 1 shopウィンドウ
-2 shop説明用小窓
+2 shop説明用小窓 + マウスかざすと出てくる小窓
 3 敵ステータス表示
 4 その他ui
 5 タイムマシン
+6 defender ui の小窓
+7 defender ui のアイテム
 */
 
 
@@ -57,6 +59,7 @@ if(!surface_exists(global.usefulwindow_surface[window_number]))//surfaceが作�
 	
 	surface_reset_target()//開放
 	surface_free(temp_surface)//仮の方はもう使わないので破棄
+	draw_surface(global.usefulwindow_surface[window_number],window_x,window_y)
 }
 else//既に作られているなら
 {

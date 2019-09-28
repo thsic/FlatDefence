@@ -29,8 +29,8 @@ case gamestate.restpause:
 			draw_text(x_offset+110, y_offset+2, "x");
 			draw_set_color(COLOR_TEXT_GRAY);
 			draw_text(x_offset+38, y_offset+18, "HP");
-			draw_text(x_offset+190, y_offset+18, "Speed");
 			draw_text(x_offset+106, y_offset+18, "Shield");
+			draw_text(x_offset+190, y_offset+18, "Speed");
 			draw_set_color(COLOR_TEXT_BLUE);
 			draw_text(x_offset+140, y_offset+2,string(global.spawn_enemy[target_objectid, spawnenemy.amount]));
 			draw_set_color(COLOR_DEFAULT);

@@ -47,4 +47,7 @@ enum stageselectbutton{
 	
 }
 
-
+enum effectnow{
+	number,
+	time
+}

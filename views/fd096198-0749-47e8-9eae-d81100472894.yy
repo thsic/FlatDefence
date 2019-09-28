@@ -13,7 +13,8 @@
         "7d5723e9-1059-4d88-824f-ac9bff06f584",
         "ebf53101-7d99-4caf-93b4-1532af37a219",
         "072eb50a-79c4-4896-bf89-94c7275f7aef",
-        "9125c68b-f9b5-4b1b-8cca-d5339f6b88a0"
+        "9125c68b-f9b5-4b1b-8cca-d5339f6b88a0",
+        "b5a78d98-e277-4c21-babf-3858d7f17941"
     ],
     "filterType": "GMScript",
     "folderName": "defender",

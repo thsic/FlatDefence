@@ -44,6 +44,7 @@ else{
 	}
 	else{
 		defender_ui_text(ui_window_x, ui_window_y, ui_window_width, ui_window_height);
+		
 	}
 	if(mouse_check_button_pressed(mb_left) and !upgrade_ui){//どこかがクリックされた
 		//if(mouse_x <= ui_window_x or ui_window_x+ui_window_width <= mouse_x or mouse_y <= ui_window_y or ui_window_y+ui_window_height <= mouse_y){
@@ -54,6 +55,8 @@ else{
 			surface_reset_target();
 		}
 		surface_free(global.usefulwindow_surface[0]);//メモリ解放
+		surface_free(global.usefulwindow_surface[6]);//メモリ解放
+		surface_free(global.usefulwindow_surface[7]);//メモリ解放
 		show_defender_ui()//他のがクリックされてたらそれに反応
 		//}
 	}

@@ -77,7 +77,7 @@ if(grab_defender_id != -1){
 		//マーカーと重なっているか確認
 		var markerid = instance_find(o_defenderMarker, i);
 		if(!markerid.on_defender){//上にdefenderが乗っているので置けない
-			distance = point_distance(mouse_x, mouse_y, markerid.x, markerid.y)
+			distance = point_distance(mouse_x, mouse_y, markerid.x+SPRITE_SIZE, markerid.y+SPRITE_SIZE)
 				
 			if(i=0 or nearest_distance >= distance){//一番近いマーカーを見つける
 				var nearest_marker = markerid;
@@ -94,7 +94,7 @@ if(grab_defender_id != -1){
 		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){
 			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
 				sdm(string(object_get_name(grab_defender_id))+ "を設置")
-				var create_defender = instance_create_layer(nearest_marker.x, nearest_marker.y, "Defenders", grab_defender_id);
+				var create_defender = instance_create_layer(nearest_marker.x+SPRITE_SIZE, nearest_marker.y+SPRITE_SIZE, "Defenders", grab_defender_id);
 				nearest_marker.on_defender = true;
 				grab_defender_id = -1;
 				if(global.gamestate = gamestate.rest or global.gamestate = gamestate.restpause){

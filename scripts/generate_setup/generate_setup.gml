@@ -4,8 +4,8 @@ for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){
 }
 
 switch(global.stage){
-case 0:
-	set_spawner(0, -16, 288);
+case -1:
+	set_spawner(0, -16, 272);
 	route_type[0] = p_stage1route0;
 	switch(global.wave_now){
 	case 1:
@@ -18,14 +18,14 @@ case 0:
 	}
 break	
 	
-case other:
+default:
 	sdm("error! generate_setup")
 break
 }
 
 for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){//グローバル変数に出てくる敵を入れておく
 	global.spawn_enemy[i, spawnenemy.objectid] = generate_enemy_type[i]//オブジェクトid
-	
+
 	//databaseでのnumberもいれておく
 	for(var j=0; j<global.enemy_category_amount; j++){
 		if(global.enemydata[j, enemydata.object] = global.spawn_enemy[i, spawnenemy.objectid]){

@@ -1,6 +1,6 @@
 #macro DEBUGMODE true
 #macro FPS_DEFAULT 60
-#macro START_ROOM r_title
+#macro START_ROOM r_test
 
 //ソート
 #macro NEARGOAL 0
@@ -26,6 +26,10 @@
 #macro PAUSE_BUTTON vk_space
 #macro DOUBLE_SPEED_BUTTON vk_control
 
+//defender
+#macro EFFECT_SLOT_MAX 10//持てるエフェクトの数 ちなみに10ももてない
+#macro EFFECT_BLAST_SIZE 64
+
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
 #macro TIMEMACHINE_HEIGHT 112
@@ -34,6 +38,16 @@
 #macro STAGESELECT_BUTTON_WIDTH 300
 #macro STAGESELECT_BUTTON_HEIGHT 48
 #macro STAGESELECT_BUTTON_AMOUNT 5
+
+//説明
+#macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
+#macro ENEMY_SHIELD_DESCRIPTION "敵のシールドです。ダメージを数値分だけ軽減します。 1回攻撃を受ける毎に1減少します。"
+#macro ENEMY_SPEED_DESCRIPTION "敵の速度です。高いほど速いです。"
+#macro DEFENDER_DAMAGE_DESCRIPTION "現在の攻撃力です。どれだけシールドが高い敵でも1/10のダメージは与えることができます。"
+#macro DEFENDER_ATTACK_SPEED_DESCRIPTION "現在の1秒間に攻撃できる回数です。高いほど攻撃回数が増えます。"
+#macro DEFENDER_RANGE_DESCRIPTION "現在の射程です。高いほど遠くの敵に攻撃できます。"
+
+
 
 //色
 #macro COLOR_TEXT_GRAY c_gray

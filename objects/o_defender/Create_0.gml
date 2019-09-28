@@ -10,6 +10,14 @@ fire_damage_default = global.defender_data[defender_number, data.damage]
 attack_per_second_default = global.defender_data[defender_number, data.attack_speed]
 range_default = global.defender_data[defender_number, data.range]
 cost = global.defender_data[defender_number, data.cost]
+//エフェクトをいれる
+for(var i=0; i<EFFECT_SLOT_MAX; i++){
+	effect_now[i, effectnow.number] = -1;
+}
+if(global.defender_data[defender_number, data.effect] != -1){
+	effect_now[0, effectnow.number] = global.defender_data[defender_number,data.effect];
+	effect_now[0, effectnow.time] = -1//無限
+}
 
 attack_per_second = attack_per_second_default;
 set_cooldown();

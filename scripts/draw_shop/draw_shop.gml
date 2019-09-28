@@ -84,6 +84,9 @@ if(grab_defender_id != -1){//商品を掴んでいる
 	draw_set_alpha(0.2);
 	draw_circle(window_mouse_get_x(), window_mouse_get_y(), global.defender_data[defender_id_conversion(grab_defender_id), data.range], true);
 	draw_set_alpha(1);
+	with(o_defenderMarker){
+		subimage = 2
+	}
 }
 if(grab_item_id != -1){//商品を掴んでいる
 	draw_sprite(global.itemdata[grab_item_id, itemdata.sprite], 0, window_mouse_get_x(), window_mouse_get_y());

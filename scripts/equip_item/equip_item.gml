@@ -24,6 +24,16 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 		else{//通常装備
 			defender_id.itemslot[i] = item_id;
 			//なんか処理があるならここでいれる
+			if(global.itemdata[item_id, itemdata.effect] != -1){//エフェクトがあるか確認
+				for(var i=0; i<EFFECT_SLOT_MAX; i++){
+					if(defender_id.effect_now[i, effectnow.number] = -1){//空きスロットを見つける
+						defender_id.effect_now[i, effectnow.number] = global.itemdata[item_id, itemdata.effect]
+						defender_id.effect_now[i, effectnow.time] = -1;//効果時間無限
+						break
+					}
+				}
+			}
+			
 			defender_id.equipped_item[item_id] = true;
 			result = true
 		}

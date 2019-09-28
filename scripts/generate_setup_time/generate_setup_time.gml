@@ -7,13 +7,14 @@ timeline_running = true;
 global.enemy_wave_total_amount = 0;
 for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){
 	global.spawn_enemy[i, spawnenemy.amount] = 0;
+	global.spawn_enemy[i, spawnenemy.objectid] = -1;
 }
 
 //敵出現時間指定 ルームとかウェーブごとにいちいち設定しよう！
 //最低でも4f開けないとバグる
 switch(global.stage){
 #region stage0 (teststage)
-case 0:
+case -1:
 	switch(global.wave_now){
 	case 1:
 		for(var i=1; i<=3; i++){
@@ -39,7 +40,7 @@ case 0:
 break
 #endregion -----------------
 
-case other:
+default:
 	sdm("error! generate_setup_time");
 break
 }

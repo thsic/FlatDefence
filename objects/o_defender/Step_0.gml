@@ -18,6 +18,23 @@ attack_per_second = attack_per_second_temp + attack_per_second_default;
 range = range_temp + range_default;
 
 #endregion
+
+#region effect
+//エフェクト効果時間関連
+for(var i=0; i<EFFECT_SLOT_MAX; i++){
+	if(effect_now[i, effectnow.number] != -1 and effect_now[i, effectnow.time] != -1){
+		if(effect_now[i, effectnow.time] > 0){
+			effect_now[i, effectnow.time]--;//エフェクト効果時間減らす
+		}
+		else{
+			//エフェクト効果時間が切れた
+			effect_now[i, effectnow.number] = -1;
+			effect_now[i, effectnow.time] = -2;
+		}
+	}
+}
+
+#endregion
 if(global.gamestate = gamestate.main){
 	#region skill
 	enum skillstate{
@@ -86,7 +103,7 @@ if(global.gamestate = gamestate.main){
 		else{
 			target_id = find_enemy_id;
 		}
-		fire_to_enemy(target_id, bullet_speed, o_defender_bullet, fire_damage);
+		fire_to_enemy(target_id, bullet_speed, o_defender_bullet, fire_damage, id);
 		set_cooldown();
 		state = state.decrement_cooldown;
 	break

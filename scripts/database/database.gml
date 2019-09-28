@@ -10,6 +10,7 @@ global.defender_data[target, data.attack_speed] = 2;
 global.defender_data[target, data.range] = 100;
 global.defender_data[target, data.cost] = 100;
 global.defender_data[target, data.description] = "be-sikku";
+global.defender_data[target, data.effect] = -1;
 
 target = 1;
 global.defender_data[target, data.object] = o_dSniper;
@@ -19,6 +20,17 @@ global.defender_data[target, data.attack_speed] = 0.5;
 global.defender_data[target, data.range] = 200;
 global.defender_data[target, data.cost] = 150;
 global.defender_data[target, data.description] = "sunaipa-";
+global.defender_data[target, data.effect] = -1;
+
+target = 2;
+global.defender_data[target, data.object] = o_dBomber;
+global.defender_data[target, data.name] = "Bomber"
+global.defender_data[target, data.damage] = 30;
+global.defender_data[target, data.attack_speed] = 1;
+global.defender_data[target, data.range] = 70;
+global.defender_data[target, data.cost] = 150;
+global.defender_data[target, data.description] = "boma-";
+global.defender_data[target, data.effect] = 0;
 
 global.defender_category_amount = target+1;//今実装されているdefenderのかず
 enum data{
@@ -28,7 +40,8 @@ enum data{
 	attack_speed,
 	range,
 	cost,
-	description
+	description,
+	effect
 }
 #endregion
 
@@ -46,7 +59,9 @@ global.itemdata[target, itemdata.cost] = 300;
 global.itemdata[target, itemdata.effect] = false;
 global.itemdata[target, itemdata.skill] = -1;
 global.itemdata[target, itemdata.description] = "item wo upgrade dekiru";
+global.itemdata[target, itemdata.description2] = ""
 
+#region 1~6
 target = 1;//basicsword
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
@@ -57,9 +72,10 @@ global.itemdata[target, itemdata.damage] = 20;
 global.itemdata[target, itemdata.attack_speed] = 0.5;
 global.itemdata[target, itemdata.range] = 0;
 global.itemdata[target, itemdata.cost] = 100;
-global.itemdata[target, itemdata.effect] = false;
+global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = -1;
-global.itemdata[target, itemdata.description] = "item setumei 1";
+global.itemdata[target, itemdata.description] = "";
+global.itemdata[target, itemdata.description2] = ""
 target = 2;
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 1;
@@ -70,9 +86,10 @@ global.itemdata[target, itemdata.damage] = 40;
 global.itemdata[target, itemdata.attack_speed] = 1;
 global.itemdata[target, itemdata.range] = 0;
 global.itemdata[target, itemdata.cost] = 100;
-global.itemdata[target, itemdata.effect] = false;
+global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = -1;
-global.itemdata[target, itemdata.description] = "upgrade!";
+global.itemdata[target, itemdata.description] = "";
+global.itemdata[target, itemdata.description2] = ""
 
 target = 3;//poweraxe
 global.itemdata[target, itemdata.number] = target;
@@ -84,9 +101,10 @@ global.itemdata[target, itemdata.damage] = 90;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 100;
 global.itemdata[target, itemdata.cost] = 200;
-global.itemdata[target, itemdata.effect] = false;
+global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = -1;
-global.itemdata[target, itemdata.description] = "item setumei 2";
+global.itemdata[target, itemdata.description] = "";
+global.itemdata[target, itemdata.description2] = ""
 target = 4;
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 1;
@@ -97,9 +115,10 @@ global.itemdata[target, itemdata.damage] = 120;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 150;
 global.itemdata[target, itemdata.cost] = 200;
-global.itemdata[target, itemdata.effect] = false;
+global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = -1;
-global.itemdata[target, itemdata.description] = "item setumei 2";
+global.itemdata[target, itemdata.description] = "";
+global.itemdata[target, itemdata.description2] = ""
 
 target = 5;//powerup
 global.itemdata[target, itemdata.number] = target;
@@ -111,9 +130,10 @@ global.itemdata[target, itemdata.damage] = 0;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 0;
 global.itemdata[target, itemdata.cost] = 200;
-global.itemdata[target, itemdata.effect] = false;
+global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = 0;
 global.itemdata[target, itemdata.description] = "kougeki 1.5bai";
+global.itemdata[target, itemdata.description2] = ""
 target = 6;
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 1;
@@ -124,10 +144,99 @@ global.itemdata[target, itemdata.damage] = 0;
 global.itemdata[target, itemdata.attack_speed] = 0;
 global.itemdata[target, itemdata.range] = 0;
 global.itemdata[target, itemdata.cost] = 200;
-global.itemdata[target, itemdata.effect] = false;
+global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = 1;
 global.itemdata[target, itemdata.description] = "kougeki 2bai";
+global.itemdata[target, itemdata.description2] = ""
+#endregion
+#region 7~12
+target = 7;//demonsfire
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 0;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_demonsFire;
+global.itemdata[target, itemdata.name] = "DemonsFire";
+global.itemdata[target, itemdata.damage] = 0;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 250;
+global.itemdata[target, itemdata.effect] = 3;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "arayuru dame-zi wo +5";
+global.itemdata[target, itemdata.description2] = ""
+target = 8;
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 1;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_demonsFire;
+global.itemdata[target, itemdata.name] = "DemonsFire";
+global.itemdata[target, itemdata.damage] = 0;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 250;
+global.itemdata[target, itemdata.effect] = 3;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "arayuru dame-zi wo +10";
+global.itemdata[target, itemdata.description2] = ""
 
+target = 9;//Reaper's Sickle
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 0;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_reapersSickle;
+global.itemdata[target, itemdata.name] = "Reaper's Sickle";
+global.itemdata[target, itemdata.damage] = 10;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 250;
+global.itemdata[target, itemdata.effect] = 4;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "tekiwotaosuCooldown 40% kaisyou";
+global.itemdata[target, itemdata.description2] = ""
+target = 10;
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 1;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_reapersSickle;
+global.itemdata[target, itemdata.name] = "Reaper's Sickle+";
+global.itemdata[target, itemdata.damage] = 20;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 250;
+global.itemdata[target, itemdata.effect] = 4;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "tekiwotaosu saraniCooldown 40% kaisyou";
+global.itemdata[target, itemdata.description2] = ""
+
+target = 11;//Cursed Sword
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 0;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_cursedSword;
+global.itemdata[target, itemdata.name] = "Cursed Sword";
+global.itemdata[target, itemdata.damage] = 60;
+global.itemdata[target, itemdata.attack_speed] = 1;
+global.itemdata[target, itemdata.range] = 20;
+global.itemdata[target, itemdata.cost] = 300;
+global.itemdata[target, itemdata.effect] = 5;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "";
+global.itemdata[target, itemdata.description2] = "Skill igaide tekini damage wo ataerarenai"
+target = 12;
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 0;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_cursedSword;
+global.itemdata[target, itemdata.name] = "Cursed Sword+";
+global.itemdata[target, itemdata.damage] = 110;
+global.itemdata[target, itemdata.attack_speed] = 2;
+global.itemdata[target, itemdata.range] = 20;
+global.itemdata[target, itemdata.cost] = 300;
+global.itemdata[target, itemdata.effect] = 5;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "";
+global.itemdata[target, itemdata.description2] = "Skill igaide tekini damage wo ataerarenai";
+#endregion
 global.item_category_amount = target+1;//今実装されているitemのかず
 
 enum itemdata{
@@ -142,7 +251,18 @@ enum itemdata{
 	cost,
 	effect,
 	skill,
-	description
+	description,
+	description2
+}
+
+enum itemnumber{
+	UpgradeOrb,
+	BasicSword,
+	UpgBasicSword,
+	PowerAxe,
+	UpgPowerAxe,
+	PowerUp,
+	UpgPowerUp,
 }
 #endregion
 
@@ -209,4 +329,65 @@ enum enemydata{
 	description,
 	dropgold
 }
+#endregion
+
+#region Effect data
+target = 0;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "kougeki bakuhuu";
+global.effectdata[target, effectdata.description] = "kougekiga bakuhuuni narimasu";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = true;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+
+target = 1;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "zokusei fire";
+global.effectdata[target, effectdata.description] = "kougekiga shield wo kantuu";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+
+target = 2;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "zokusei ice";
+global.effectdata[target, effectdata.description] = "tekiwo osoku suru";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = true;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+
+target = 3;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "demonsfire";
+global.effectdata[target, effectdata.description] = "arayuru kougeki +5";
+global.effectdata[target, effectdata.value] = 5;
+global.effectdata[target, effectdata.overlap] = true;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+
+target = 4;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Cooldown kaisyo rod";
+global.effectdata[target, effectdata.description] = "tekiwo taosu 40%";
+global.effectdata[target, effectdata.value] = 0.4;
+global.effectdata[target, effectdata.overlap] = true;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+
+target = 5;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Cursed";
+global.effectdata[target, effectdata.description] = "Skill igai de no damage";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_RED
+
+enum effectdata{
+	number,
+	name,
+	description,
+	value,
+	overlap,
+	color
+}
+global.effect_category_amount = target+1;
+
 #endregion

@@ -5,21 +5,46 @@ global.shop_defender = noone;
 global.shop_item = noone;
 
 switch(global.stage){
-case 0:
+case -1:
 	global.life = 10//体力
 	global.gold = 1000;//おかね
 	global.wave_total = 5;//総ウェーブ数
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
-	global.shop_defender[2] = o_dBasic;
+	global.shop_defender[2] = o_dBomber;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
 	global.shop_item[2] = 3;
 	global.shop_item[3] = 5;
+	global.shop_item[4] = 7;
+	global.shop_item[5] = 9;
+	global.shop_item[6] = 11;
 	
 break
+case 0:
+	global.life = 10//体力
+	global.gold = 1000;//おかね
+	global.wave_total = 5;//総ウェーブ数
+
+	global.shop_defender[0] = o_dBasic;
+	global.shop_defender[1] = o_dSniper;
+	global.shop_item[0] = 0;
+	global.shop_item[1] = 1;
+	global.shop_item[2] = 7;
 	
+break
+case 1:
+	global.life = 10//体力
+	global.gold = 1000;//おかね
+	global.wave_total = 5;//総ウェーブ数
+
+	global.shop_defender[0] = o_dBasic;
+	global.shop_defender[1] = o_dSniper;
+	global.shop_item[0] = 0;
+	global.shop_item[1] = 1;
+	global.shop_item[2] = 7;
+
 default:
 	global.life = 1
 	global.gold = 50;

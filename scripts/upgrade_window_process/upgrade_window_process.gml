@@ -133,6 +133,15 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 
 				sdm(string(object_get_name(upgrade_defender_id.object_index))+"の"+string(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name])+"をアップグレード")
 				upgrade_defender_id.itemslot[i] = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid];//アップグレードアイテムで上書き
+				if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect]) != -1{//アイテムにエフェクトがついていた場合 エフェクトをもう一つ追加する
+					for(var j=0; j<EFFECT_SLOT_MAX; j++){
+						if(upgrade_defender_id.effect_now[j, effectnow.number] = -1){
+							upgrade_defender_id.effect_now[j, effectnow.number] = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect];
+							upgrade_defender_id.effect_now[j, effectnow.time] = -1;
+							break
+						}
+					}
+				}
 				
 				if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.skill] != -1){//スキル装備をアップグレードした時
 					upgrade_defender_id.skill_id = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.skill];

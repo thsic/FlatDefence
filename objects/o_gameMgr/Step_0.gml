@@ -3,10 +3,13 @@ switch(global.gamestate){
 case gamestate.stagestart://ステージ開始時処理
 	switch(room){
 	case r_test:
-		global.stage = 0;
+		global.stage = -1;
 	break
-	
+	case r_tutorial:
+		global.stage = 1;
+	break
 	}
+	
 	global.enemy_amount = 0;
 	global.wave_now = 0;
 	global.timemachine[timemachine.window_x] = window_get_width()-SHOP_WINDOW_WIDTH-TIMEMACHINE_WIDTH-4;
@@ -99,7 +102,9 @@ case gamestate.waveclear://ウェーブクリア処理
 		cooldown = 0;//全てのdefenderのクールダウンを解消
 		state = state.idle
 	}
-	
+	if(global.life <= 0){//ゲームオーバー
+		global.gamestate = gamestate.gameover;
+	}
 	global.gamestate = gamestate.reststart;
 break
 
