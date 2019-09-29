@@ -11,6 +11,8 @@ var blast_level = 0;
 var demons_fire_level = 0;
 var cooldown_reduction_40 = 0;
 var cursed = 0;
+var penetration = 0;
+var penetration_plus = 0;
 //最初にエフェクトを確認しておく
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(defender_id.effect_now[i, effectnow.number] != -1){
@@ -34,6 +36,11 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		case 5:
 			cursed++;//スキル時以外攻撃不可
 		break
+		case 6:
+			penetration++;//貫通攻撃
+		break
+		case 7:
+			penetration_plus++;//貫通攻撃アップグレード
 		}
 	}
 	else{
@@ -86,7 +93,7 @@ else{
 		if(instance_exists(enemy_id)){
 			if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_level){
 				
-				damage_result = damage;
+				damage_result = damage/2;//爆風ダメージは半減する
 				if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
 					damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
 				}

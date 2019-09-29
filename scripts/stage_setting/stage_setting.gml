@@ -20,6 +20,7 @@ case -1:
 	global.shop_item[4] = 7;
 	global.shop_item[5] = 9;
 	global.shop_item[6] = 11;
+	global.shop_item[6] = 13;
 	
 break
 case 0:

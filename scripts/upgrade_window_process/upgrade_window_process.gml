@@ -135,6 +135,9 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 				upgrade_defender_id.itemslot[i] = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid];//アップグレードアイテムで上書き
 				if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect]) != -1{//アイテムにエフェクトがついていた場合 エフェクトをもう一つ追加する
 					for(var j=0; j<EFFECT_SLOT_MAX; j++){
+						if(global.effectdata[global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect], effectdata.deleteeffect] = upgrade_defender_id.effect_now[j, effectnow.number]){
+							upgrade_defender_id.effect_now[j, effectnow.number] = -1;//deleteeffectがあった場合そのエフェクトを消す
+						}
 						if(upgrade_defender_id.effect_now[j, effectnow.number] = -1){
 							upgrade_defender_id.effect_now[j, effectnow.number] = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect];
 							upgrade_defender_id.effect_now[j, effectnow.time] = -1;

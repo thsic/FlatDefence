@@ -26,9 +26,9 @@ target = 2;
 global.defender_data[target, data.object] = o_dBomber;
 global.defender_data[target, data.name] = "Bomber"
 global.defender_data[target, data.damage] = 30;
-global.defender_data[target, data.attack_speed] = 1;
+global.defender_data[target, data.attack_speed] = 0.5;
 global.defender_data[target, data.range] = 70;
-global.defender_data[target, data.cost] = 150;
+global.defender_data[target, data.cost] = 250;
 global.defender_data[target, data.description] = "boma-";
 global.defender_data[target, data.effect] = 0;
 
@@ -99,7 +99,7 @@ global.itemdata[target, itemdata.sprite] = s_powerAxe;
 global.itemdata[target, itemdata.name] = "PowerAxe";
 global.itemdata[target, itemdata.damage] = 90;
 global.itemdata[target, itemdata.attack_speed] = 0;
-global.itemdata[target, itemdata.range] = 100;
+global.itemdata[target, itemdata.range] = 20;
 global.itemdata[target, itemdata.cost] = 200;
 global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = -1;
@@ -111,9 +111,9 @@ global.itemdata[target, itemdata.upgraded] = 1;
 global.itemdata[target, itemdata.upgradeid] = target+1;
 global.itemdata[target, itemdata.sprite] = s_powerAxe;
 global.itemdata[target, itemdata.name] = "PowerAxe+";
-global.itemdata[target, itemdata.damage] = 120;
+global.itemdata[target, itemdata.damage] = 190;
 global.itemdata[target, itemdata.attack_speed] = 0;
-global.itemdata[target, itemdata.range] = 150;
+global.itemdata[target, itemdata.range] = 20;
 global.itemdata[target, itemdata.cost] = 200;
 global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = -1;
@@ -215,9 +215,9 @@ global.itemdata[target, itemdata.upgradeid] = target+1;
 global.itemdata[target, itemdata.sprite] = s_cursedSword;
 global.itemdata[target, itemdata.name] = "Cursed Sword";
 global.itemdata[target, itemdata.damage] = 60;
-global.itemdata[target, itemdata.attack_speed] = 1;
+global.itemdata[target, itemdata.attack_speed] = 1.5;
 global.itemdata[target, itemdata.range] = 20;
-global.itemdata[target, itemdata.cost] = 300;
+global.itemdata[target, itemdata.cost] = 250;
 global.itemdata[target, itemdata.effect] = 5;
 global.itemdata[target, itemdata.skill] = -1;
 global.itemdata[target, itemdata.description] = "";
@@ -229,14 +229,46 @@ global.itemdata[target, itemdata.upgradeid] = target+1;
 global.itemdata[target, itemdata.sprite] = s_cursedSword;
 global.itemdata[target, itemdata.name] = "Cursed Sword+";
 global.itemdata[target, itemdata.damage] = 110;
-global.itemdata[target, itemdata.attack_speed] = 2;
+global.itemdata[target, itemdata.attack_speed] = 3;
 global.itemdata[target, itemdata.range] = 20;
-global.itemdata[target, itemdata.cost] = 300;
+global.itemdata[target, itemdata.cost] = 250;
 global.itemdata[target, itemdata.effect] = 5;
 global.itemdata[target, itemdata.skill] = -1;
 global.itemdata[target, itemdata.description] = "";
 global.itemdata[target, itemdata.description2] = "Skill igaide tekini damage wo ataerarenai";
 #endregion
+#region 13~
+target = 13;//Imperial Lance
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 0;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_imperialLance;
+global.itemdata[target, itemdata.name] = "ImperialLance";
+global.itemdata[target, itemdata.damage] = 40;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 350;
+global.itemdata[target, itemdata.effect] = 6;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "3tai kanntuu";
+global.itemdata[target, itemdata.description2] = "attack speed hangen";
+target = 14;
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 1;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_imperialLance;
+global.itemdata[target, itemdata.name] = "ImperialLance+";
+global.itemdata[target, itemdata.damage] = 40;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 20;
+global.itemdata[target, itemdata.cost] = 350;
+global.itemdata[target, itemdata.effect] = 6;
+global.itemdata[target, itemdata.skill] = -1;
+global.itemdata[target, itemdata.description] = "zenninn kanntuu";
+global.itemdata[target, itemdata.description2] = "attack speed hangen";
+
+#endregion
+
 global.item_category_amount = target+1;//今実装されているitemのかず
 
 enum itemdata{
@@ -338,7 +370,9 @@ global.effectdata[target, effectdata.name] = "kougeki bakuhuu";
 global.effectdata[target, effectdata.description] = "kougekiga bakuhuuni narimasu";
 global.effectdata[target, effectdata.value] = 0;
 global.effectdata[target, effectdata.overlap] = true;
-global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;//アップグレードする時に指定のエフェクトを消す
 
 target = 1;
 global.effectdata[target, effectdata.number] = target;
@@ -346,7 +380,9 @@ global.effectdata[target, effectdata.name] = "zokusei fire";
 global.effectdata[target, effectdata.description] = "kougekiga shield wo kantuu";
 global.effectdata[target, effectdata.value] = 0;
 global.effectdata[target, effectdata.overlap] = false;
-global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
 
 target = 2;
 global.effectdata[target, effectdata.number] = target;
@@ -354,7 +390,9 @@ global.effectdata[target, effectdata.name] = "zokusei ice";
 global.effectdata[target, effectdata.description] = "tekiwo osoku suru";
 global.effectdata[target, effectdata.value] = 0;
 global.effectdata[target, effectdata.overlap] = true;
-global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
 
 target = 3;
 global.effectdata[target, effectdata.number] = target;
@@ -362,7 +400,9 @@ global.effectdata[target, effectdata.name] = "demonsfire";
 global.effectdata[target, effectdata.description] = "arayuru kougeki +5";
 global.effectdata[target, effectdata.value] = 5;
 global.effectdata[target, effectdata.overlap] = true;
-global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
 
 target = 4;
 global.effectdata[target, effectdata.number] = target;
@@ -370,7 +410,9 @@ global.effectdata[target, effectdata.name] = "Cooldown kaisyo rod";
 global.effectdata[target, effectdata.description] = "tekiwo taosu 40%";
 global.effectdata[target, effectdata.value] = 0.4;
 global.effectdata[target, effectdata.overlap] = true;
-global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
 
 target = 5;
 global.effectdata[target, effectdata.number] = target;
@@ -378,7 +420,40 @@ global.effectdata[target, effectdata.name] = "Cursed";
 global.effectdata[target, effectdata.description] = "Skill igai de no damage";
 global.effectdata[target, effectdata.value] = 0;
 global.effectdata[target, effectdata.overlap] = false;
-global.effectdata[target, effectdata.color] = COLOR_TEXT_RED
+global.effectdata[target, effectdata.color] = COLOR_TEXT_RED;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 6;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Kantu";
+global.effectdata[target, effectdata.description] = "3tai kantu";
+global.effectdata[target, effectdata.value] = 3;
+global.effectdata[target, effectdata.overlap] = true;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = 8;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 7;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Kantu";
+global.effectdata[target, effectdata.description] = "zenninn kantu";
+global.effectdata[target, effectdata.value] = -1;
+global.effectdata[target, effectdata.overlap] = true;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = 8;
+global.effectdata[target, effectdata.deleteeffect] = 6
+
+target = 8;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "attack speed hangen";
+global.effectdata[target, effectdata.description] = "attack speed hangen";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_RED;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
 
 enum effectdata{
 	number,
@@ -386,7 +461,9 @@ enum effectdata{
 	description,
 	value,
 	overlap,
-	color
+	color,
+	addeffect,
+	deleteeffect
 }
 global.effect_category_amount = target+1;
 
