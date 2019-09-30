@@ -1,4 +1,5 @@
-if(global.gamestate = gamestate.main){
+switch(global.gamestate){
+case gamestate.main:
 	var penetration = 0;
 	var penetration_plus = 0;
 	for(var i=0; i<EFFECT_SLOT_MAX; i++){
@@ -44,12 +45,16 @@ if(global.gamestate = gamestate.main){
 			instance_destroy();
 		}
 	}
-}
-else if(global.gamestate = gamestate.pause){//ポーズされたら止まる
+break
+case gamestate.pause://ポーズされたら止まる
 	if(speed_temp = -1){
 		speed_temp = speed;//speed_tempに一時的に保存
 		speed = 0;
 	}
+break
+case gamestate.rest:
+	instance_destroy()//ステージが終わったので消す
+break
 }
 
 if(destroy_countdown > 0){

@@ -64,7 +64,7 @@ break
 
 //アップグレード決定ボタン(-1)
 upgrade_button[10, upgradebutton.sprite_x] = x_offset+width/2-button_sprite_width/2;
-upgrade_button[10, upgradebutton.sprite_y] = y_offset+height-50-button_sprite_height/2;
+upgrade_button[10, upgradebutton.sprite_y] = y_offset+height-34-button_sprite_height/2;
 
 //s_upgradeButtonは座標がtop leftなのでそれ用にずらす
 for(i=0; i<item_number; i++){
@@ -136,16 +136,49 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 				if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect]) != -1{//アイテムにエフェクトがついていた場合 エフェクトをもう一つ追加する
 					for(var j=0; j<EFFECT_SLOT_MAX; j++){
 						if(global.effectdata[global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect], effectdata.deleteeffect] = upgrade_defender_id.effect_now[j, effectnow.number]){
+							
+							if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid] = 16){//フリーズロッド+だった場合
+								var freeze_level = 0
+								for(var k=0; k<EFFECT_SLOT_MAX; k++){
+									freeze_level++;//スローレベル記憶
+								}
+							}
+							
 							upgrade_defender_id.effect_now[j, effectnow.number] = -1;//deleteeffectがあった場合そのエフェクトを消す
+							if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid] = 16){effect_sort(upgrade_defender_id)}//フリーズロッド専用処理 ここでソートする
 						}
 						if(upgrade_defender_id.effect_now[j, effectnow.number] = -1){
 							upgrade_defender_id.effect_now[j, effectnow.number] = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect];
 							upgrade_defender_id.effect_now[j, effectnow.time] = -1;
-							break
+
+							if(global.effectdata[global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect], effectdata.addeffect] = -1){
+								break
+							}
+							else{//addeffectがある場合それも追加する
+								for(var k=0; k<EFFECT_SLOT_MAX; k++){
+									if(upgrade_defender_id.effect_now[k, effectnow.number] = -1){
+										if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid] != 16){//フリーズロッド+だった場合のみ仕様が異なる
+											upgrade_defender_id.effect_now[k, effectnow.number] = global.effectdata[global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect], effectdata.addeffect];
+											upgrade_defender_id.effect_now[k, effectnow.time] = -1;
+											break
+										}
+										else{
+											upgrade_defender_id.effect_now[k, effectnow.number] = global.effectdata[2, effectdata.number];
+											upgrade_defender_id.effect_now[k, effectnow.time] = -1;
+											freeze_level--;
+											if(freeze_level <= 0){
+												upgrade_defender_id.effect_now[k+1, effectnow.number] = global.effectdata[12, effectdata.number];
+												upgrade_defender_id.effect_now[k+1, effectnow.time] = -1;
+												break
+											}
+										}
+									}
+								}
+								break
+							}
 						}
 					}
 				}
-				
 				if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.skill] != -1){//スキル装備をアップグレードした時
 					upgrade_defender_id.skill_id = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.skill];
 					//クールダウンを保持する

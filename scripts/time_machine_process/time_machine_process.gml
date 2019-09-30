@@ -82,6 +82,16 @@ if(window_x < mouse_x and mouse_x < window_x+width and window_y < mouse_y and mo
 		}
 	}
 }
+else{
+	if(mouse_check_button_pressed(mb_left) and global.double_speed){
+		//タイムマシンの外で押された+倍速状態だった
+		for(var i=0; i<3; i++){//全部リセットしてボタン0を押す
+			timemachine_button_state[i] = 0;
+		}
+		timemachine_button_state[0] = 2;
+		timemachine_change_state(0);
+	}
+}
 
 
 if(timemachine_grab = 2){

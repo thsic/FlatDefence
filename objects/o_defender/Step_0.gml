@@ -20,6 +20,74 @@ range = range_temp + range_default;
 #endregion
 
 #region effect
+var attack_speed_halve = 0;
+var true_basic = 0;
+var range_halve = 0;
+var attack_halve = 0;
+var attack_halve_disempower = 0;
+for(var i=0; i<EFFECT_SLOT_MAX; i++){
+	if(effect_now[i, effectnow.number] != -1){
+		//何かしらのエフェクトがある
+		switch(effect_now[i, effectnow.number]){
+		case 8://as半減
+			attack_speed_halve++;
+		break
+		case 9://全エフェクトを無効化する
+			true_basic++;
+		break
+		case 10:
+			range_halve++;
+		break
+		case 11:
+			attack_halve++
+		break
+		case 13:
+			attack_halve_disempower++;
+		break
+		
+		}
+	}
+	else{
+		break
+	}
+}
+
+if(attack_speed_halve){
+	attack_per_second *= 0.5;
+}
+if(range_halve){
+	range *= 0.5;
+}
+if(attack_halve_disempower){
+	for(var i=0; i<EFFECT_SLOT_MAX; i++){
+		if(effect_now[i, effectnow.number] = -1){
+			break
+		}
+		else if(effect_now[i, effectnow.number] = 11){//攻撃半減を消す
+			effect_now[i, effectnow.number] = -1;
+			effect_sort(id);
+		}
+	}
+}
+if(attack_halve){
+	fire_damage *= 0.5;
+}
+
+
+if(true_basic){
+	for(var i=0; i<EFFECT_SLOT_MAX; i++){
+		if(effect_now[i, effectnow.number] != 9){//true basic以外を消す
+			effect_now[i, effectnow.number] = -1;
+			effect_now[i, effectnow.time] = -2;
+		}
+	}
+	effect_sort(id);//ソート
+}
+//切り上げ
+fire_damage = ceil(fire_damage);
+range = ceil(range);
+
+
 //エフェクト効果時間関連
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(effect_now[i, effectnow.number] != -1 and effect_now[i, effectnow.time] != -1){
@@ -30,6 +98,7 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 			//エフェクト効果時間が切れた
 			effect_now[i, effectnow.number] = -1;
 			effect_now[i, effectnow.time] = -2;
+			effect_sort(id)
 		}
 	}
 }

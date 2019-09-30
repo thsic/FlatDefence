@@ -2,7 +2,7 @@
     "id": "ea2da9df-05cb-4b50-8a92-eeaf85d24a41",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "s_imperialLance1",
+    "name": "s_freezeRod",
     "For3D": false,
     "HTile": false,
     "VTile": false,

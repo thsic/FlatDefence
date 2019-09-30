@@ -41,7 +41,7 @@ for(var i=0;i<global.shop_defender_amount; i++){//defender
 	if(shop_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_product[i, SPRITE_X]+SPRITE_SIZE){
 		if(shop_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_product[i, SPRITE_Y]+SPRITE_SIZE){
 			draw_description = true
-			shop_description(0, i, false)
+			shop_description(0, i, false, false)
 		}
 	}
 }
@@ -49,10 +49,10 @@ for(var i=0;i<global.shop_item_amount; i++){//item
 	if(shop_item_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_item_product[i, SPRITE_X]+SPRITE_SIZE){
 		if(shop_item_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_item_product[i, SPRITE_Y]+SPRITE_SIZE){
 			if(global.itemdata[shop_item_product[i, ITEM], itemdata.skill] = -1){
-				shop_description(1, shop_item_product[i, ITEM], false)
+				shop_description(1, shop_item_product[i, ITEM], false, false)
 			}
 			else{
-				shop_description(2, shop_item_product[i, ITEM], false)
+				shop_description(2, shop_item_product[i, ITEM], false, false)
 			}
 			draw_description = true
 		}
@@ -63,10 +63,10 @@ for(var i=0;i<POSSESSION_ITEM_MAX; i++){//possession item
 		if(item_possession_data[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < item_possession_data[i, SPRITE_Y]+SPRITE_SIZE){
 			if(global.item_possession[i] != -1){
 				if(global.itemdata[global.item_possession[i], itemdata.skill] = -1){	
-					shop_description(1, global.item_possession[i], true)
+					shop_description(1, global.item_possession[i], true, false)
 				}
 				else{
-					shop_description(2, global.item_possession[i], true)
+					shop_description(2, global.item_possession[i], true, false)
 				}
 				draw_description = true
 			}

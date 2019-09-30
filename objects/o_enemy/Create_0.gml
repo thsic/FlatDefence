@@ -13,3 +13,5 @@ hp = hp_max;
 direction = 0;
 destroy_enemy = false;
 speed_temp = -1;
+freeze_time = -1;//凍る時間
+freeze_lv = 0;

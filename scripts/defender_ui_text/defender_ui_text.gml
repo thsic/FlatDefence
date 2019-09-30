@@ -12,6 +12,7 @@ draw_set_color(COLOR_TEXT_GRAY);
 draw_text(x_offset+4, y_offset+38, "Damage");
 draw_text(x_offset+4, y_offset+38+16*2+4, "AttackSpeed");
 draw_text(x_offset+4, y_offset+38+16*4+8, "Range");
+draw_text(x_offset+150, y_offset+20, "Effect");
 draw_set_color(COLOR_TEXT_WHITE);
 draw_text(x_offset+42, y_offset+6, global.defender_data[defender_id_conversion(finded_defender_id.object_index), data.name]);
 draw_text(x_offset+4, y_offset+38+16*1, finded_defender_id.fire_damage);
@@ -73,8 +74,15 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		if(x_offset+150 < mouse_x and mouse_x < x_offset+width){
 			if(y_offset+38+16*i < mouse_y and mouse_y < y_offset+38+16+i*16){
 				var description = global.effectdata[effect_order[i], effectdata.description]
-				tiny_window(s_window, 6, mouse_x+12, mouse_y, string_width(description)+24, 28, 1);
-				draw_text(mouse_x+16, mouse_y+4, description);
+				description = string_replace(description, "@", "");
+				if(mouse_x+string_width(description)+16 < window_get_width()){
+					var window_x = mouse_x;
+				}
+				else{
+					var window_x = window_get_width()-string_width(description)-16
+				}
+				tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
+				draw_text(window_x+4, mouse_y+16, description);
 				break
 			}
 		}
@@ -99,8 +107,21 @@ for(var i=0; i<finded_defender_id.itemslot_amount; i++){
 		if(x_offset+22+i*36-16 < mouse_x and mouse_x < x_offset+22+i*36+SPRITE_SIZE*2-16){
 			if(y_offset+172-16 < mouse_y and mouse_y < y_offset+172+SPRITE_SIZE*2-16){
 				//マウスカーソルをかざすとアイテムのデータ表示
-				shop_description(3, finded_defender_id.itemslot[i], false)
+				if(global.itemdata[finded_defender_id.itemslot[i], itemdata.skill] = -1){
+					shop_description(1, finded_defender_id.itemslot[i], true, true)
+				}
+				else{
+					shop_description(2, finded_defender_id.itemslot[i], true, true)
+				}
 			}
 		}
 	}
 }
+
+//開かれている間は射程範囲表示
+draw_set_alpha(0.025);
+draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
+draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, false)
+draw_set_alpha(0.2);
+draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, true)
+draw_set_alpha(1);

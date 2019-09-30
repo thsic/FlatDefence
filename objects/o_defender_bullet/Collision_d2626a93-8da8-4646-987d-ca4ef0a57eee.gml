@@ -25,21 +25,28 @@ if(!penetration and !penetration_plus){
 }
 else{
 	var enemy_id_check = true//以前当たった敵と被りがないか
-	for(var i=0; i<100; i++){
+	for(var i=0; i<IMPERIALLANCE_PENETRATION_MAX; i++){
 		if(penetration_enemy_id[i] = other){
 			enemy_id_check = false//被りがあった
 		}
 	}
 	if(enemy_id_check){//被りがなかった
-		for(var i=0; i<100; i++){
+		if(penetration_plus){
+			//貫通攻撃は一定の敵接触回数を超えると消える
+			var penetration_count_max = IMPERIALLANCE_PENETRATION_MAX;
+		}
+		else{
+			var penetration_count_max = global.effectdata[6, effectdata.value]*penetration;
+		}
+		
+		for(var i=0; i<IMPERIALLANCE_PENETRATION_MAX; i++){
 			if(penetration_enemy_id[i] = -1){
 				penetration_enemy_id[i] = other;//当たった敵を記録する
-				if(!penetration_plus){
-					//弱貫通攻撃は敵接触回数を超えると消える
-					if(i+1 >= global.effectdata[6, effectdata.value]*penetration){
-						instance_destroy();
-					}
+
+				if(i+1 >= penetration_count_max){
+					instance_destroy();
 				}
+				
 				break
 			}
 		}

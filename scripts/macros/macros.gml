@@ -28,7 +28,9 @@
 
 //defender
 #macro EFFECT_SLOT_MAX 10//持てるエフェクトの数 ちなみに10ももてない
-#macro EFFECT_BLAST_SIZE 64
+#macro EFFECT_BLAST_SIZE 32
+#macro FREEZE_STRENGTH 0.5//倍率
+#macro SHIELD_BREAK_STRENGTH 1//シールド削り値
 
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
@@ -38,6 +40,10 @@
 #macro STAGESELECT_BUTTON_WIDTH 300
 #macro STAGESELECT_BUTTON_HEIGHT 48
 #macro STAGESELECT_BUTTON_AMOUNT 5
+
+//アイテム
+#macro IMPERIALLANCE_PENETRATION_MAX 40//インペリアルランス+が貫通できる敵の数
+#macro FREEZEROD_UPGRADE_
 
 //説明
 #macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
@@ -59,5 +65,9 @@
 #macro COLOR_TEXT_RED c_red
 #macro COLOR_TEXT_PURPLE c_fuchsia
 #macro COLOR_TEXT_BLUE c_aqua
+#macro COLOR_TEXT_DARKGREEN c_teal
+
+#macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
+#macro COLOR_CIRCLE_RANGE_IDLE c_aqua
 
 #macro COLOR_DEFAULT c_white

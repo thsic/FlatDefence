@@ -10,6 +10,7 @@ case gamestate.stagestart://ステージ開始時処理
 	break
 	}
 	
+	global.double_speed = false;
 	global.enemy_amount = 0;
 	global.wave_now = 0;
 	global.timemachine[timemachine.window_x] = window_get_width()-SHOP_WINDOW_WIDTH-TIMEMACHINE_WIDTH-4;

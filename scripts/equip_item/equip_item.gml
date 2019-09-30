@@ -25,10 +25,21 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 			defender_id.itemslot[i] = item_id;
 			//なんか処理があるならここでいれる
 			if(global.itemdata[item_id, itemdata.effect] != -1){//エフェクトがあるか確認
-				for(var i=0; i<EFFECT_SLOT_MAX; i++){
-					if(defender_id.effect_now[i, effectnow.number] = -1){//空きスロットを見つける
-						defender_id.effect_now[i, effectnow.number] = global.itemdata[item_id, itemdata.effect]
-						defender_id.effect_now[i, effectnow.time] = -1;//効果時間無限
+				for(var j=0; j<EFFECT_SLOT_MAX; j++){
+					if(defender_id.effect_now[j, effectnow.number] = -1){//空きスロットを見つける
+						defender_id.effect_now[j, effectnow.number] = global.itemdata[item_id, itemdata.effect]
+						defender_id.effect_now[j, effectnow.time] = -1;//効果時間無限
+						//addeffect入れる
+						if(global.effectdata[global.itemdata[item_id, itemdata.effect], effectdata.addeffect] != -1){
+							 
+							for(var k=0; k<EFFECT_SLOT_MAX; k++){
+								if(defender_id.effect_now[k, effectnow.number] = -1){
+									defender_id.effect_now[k, effectnow.number] = global.effectdata[global.itemdata[item_id, itemdata.effect], effectdata.addeffect];
+									defender_id.effect_now[k, effectnow.time] = -1;
+									break
+								}
+							}
+						}
 						break
 					}
 				}

@@ -14,9 +14,13 @@ cost = global.defender_data[defender_number, data.cost]
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	effect_now[i, effectnow.number] = -1;
 }
-if(global.defender_data[defender_number, data.effect] != -1){
+if(global.defender_data[defender_number, data.effect] != -1){//エフェクト1
 	effect_now[0, effectnow.number] = global.defender_data[defender_number,data.effect];
 	effect_now[0, effectnow.time] = -1//無限
+}
+if(global.defender_data[defender_number, data.effect2] != -1){//エフェクト2があるならそれもいれる
+	effect_now[1, effectnow.number] = global.defender_data[defender_number,data.effect2];
+	effect_now[1, effectnow.time] = -1
 }
 
 attack_per_second = attack_per_second_default;

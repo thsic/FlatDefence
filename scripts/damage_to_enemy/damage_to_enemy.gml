@@ -13,6 +13,9 @@ var cooldown_reduction_40 = 0;
 var cursed = 0;
 var penetration = 0;
 var penetration_plus = 0;
+var freeze_all = 0;
+var shield_break = 0;
+
 //最初にエフェクトを確認しておく
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(defender_id.effect_now[i, effectnow.number] != -1){
@@ -41,6 +44,14 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		break
 		case 7:
 			penetration_plus++;//貫通攻撃アップグレード
+		break
+		case 12:
+			freeze_all++;//あらゆる攻撃でスローに
+		break
+		case 14:
+			shield_break++;//シールド破壊値+3
+		break
+		
 		}
 	}
 	else{
@@ -53,54 +64,97 @@ if(cursed != 0){
 		damage = 0;//呪われているのでスキル中以外ダメージ0
 	}
 }
-if(blast_level = 0){
-	if(fire_level = 0){
-		//通常
-		if(target_id.shield > 0){//シールド削り
-			target_id.shield -= 1
+
+if(fire_level = 0){
+	//通常
+	if(target_id.shield > 0){//シールド削り
+		if(shield_break > 0){//シールドブレイクがあるなら追加で削る
+			for(var i=0; i<shield_break; i++){
+				target_id.shield -= global.effectdata[14, effectdata.value];
+			}
+			if(target_id.shield <= SHIELD_BREAK_STRENGTH){
+				target_id.shield = SHIELD_BREAK_STRENGTH;//あとで1削られるので1だけ残す
+			}
 		}
-		if(damage/10 > damage - target_id.shield){
-			var damage_result = ceil(damage/10);//攻撃力の1/10は最低保障ダメージ
+		target_id.shield -= SHIELD_BREAK_STRENGTH;
+	}
+	if(damage/10 > damage - target_id.shield){
+		var damage_result = ceil(damage/10);//攻撃力の1/10は最低保障ダメージ
+	}
+	else{
+		var damage_result = ceil(damage - target_id.shield);
+	}
+}
+else{
+	//炎属性
+	var damage_result = damage;
+}
+if(ice_level > 0){//スローをかける
+	if(penetration or penetration_plus){
+		//貫通攻撃の場合
+		if(target_id = bullet_target){//攻撃対象に当たらないとスローにならない
+			slow_to_enemy(target_id, ice_level, damage);
 		}
-		else{
-			var damage_result = ceil(damage - target_id.shield);
+		else if(freeze_all){//強化ロッドなら全部スローになる
+			slow_to_enemy(target_id, ice_level, damage);
 		}
 	}
 	else{
-		//炎属性
-		var damage_result = damage;
+		//普通
+		slow_to_enemy(target_id, ice_level, damage);
 	}
-	if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
-		
-		damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
-	}
-	//最終的なダメージ
-	target_id.hp -= damage_result;
 	
-	if(target_id.hp <= 0){
-		target_id.destroy_enemy = true;
-		global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを増やす
-		if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
+}
+if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
+	damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
+}
+//最終的なダメージ
+target_id.hp -= damage_result;
+	
+if(target_id.hp <= 0){//敵が死んだ
+	target_id.destroy_enemy = true;
+	global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを増やす
+	if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
+		if(penetration or penetration_plus){
+			//貫通攻撃がついている場合は狙った対象が死んだ場合のみcd短縮が発動
+			if(target_id = bullet_target){
+				cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
+			}
+		}
+		else{
+			//普通
 			cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
 		}
 	}
 }
-else{
+
+if(blast_level > 0){
 	//範囲攻撃
-	blast_effect(target_id.x, target_id.y, 2*blast_level, c_maroon, 20);
+	var blast_power = 2
+	for(var i=0; i<blast_level; i++){
+		blast_power *= 1.5;
+	}
+	sdm(blast_power)
+	blast_power -= 1;
+	blast_effect(target_id.x, target_id.y, blast_power, c_maroon, 20);
 	for(var i=0; i<global.enemy_amount; i++){
 		var enemy_id = global.enemy_id[i]
 		if(instance_exists(enemy_id)){
-			if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_level){
+			if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power){
 				
 				damage_result = damage/2;//爆風ダメージは半減する
+				if(freeze_all){//強化ロッドなら爆風でもスロー
+					slow_to_enemy(enemy_id, ice_level, damage);
+				}
 				if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
 					damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
 				}
 				//範囲内の敵にダメージを与える
-				enemy_id.hp -= damage_result;
+				if(target_id != enemy_id){//ただしターゲットには既にダメージを与えているのであたえない
+					enemy_id.hp -= damage_result;
+				}
 				
-				//ターゲットにだけ通常攻撃時効果がつく
+				/*//ターゲットにだけ通常攻撃時効果がつく
 				if(target_id = enemy_id){
 					//ターゲット死亡判定
 					if(target_id.hp <= 0){
@@ -110,7 +164,7 @@ else{
 							cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
 						}
 					}
-				}
+				}*/
 				
 				//死亡判定
 				if(enemy_id.hp <= 0){

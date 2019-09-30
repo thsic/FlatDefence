@@ -13,12 +13,12 @@ for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){
 //敵出現時間指定 ルームとかウェーブごとにいちいち設定しよう！
 //最低でも4f開けないとバグる
 switch(global.stage){
-#region stage0 (teststage)
+#region stage-1 (teststage)
 case -1:
 	switch(global.wave_now){
 	case 1:
 		for(var i=1; i<=3; i++){
-			for(var l=1; l<=5; l++){
+			for(var l=1; l<=12; l++){
 				set_enemy_generate_timeline(i*300+l*15, global.generate_timeline_id, 0, 0, 0);
 			}
 		}

@@ -6,6 +6,20 @@ if(global.gamestate = gamestate.main){
 		path_speed = 1;
 		speed_temp = -1;
 	}
+	
+	if(freeze_time != -1){
+		var freeze_power = 1
+		for(var i=0; i<freeze_lv; i++){
+			freeze_power *= 0.5
+		}
+		path_speed = global.enemydata[enemy_number, enemydata.speed]*freeze_power//スロー
+		freeze_time--;
+	}
+	else{
+		freeze_lv = 0
+		path_speed = global.enemydata[enemy_number, enemydata.speed];
+	}
+
 }
 else{
 	if(speed_temp = -1){
@@ -13,6 +27,7 @@ else{
 		path_speed = 0;
 	}
 }
+
 if(path_position = 1){//最後まで到達した
 	damage_to_player_life();
 	destroy_enemy = true;

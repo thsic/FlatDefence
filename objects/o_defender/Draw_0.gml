@@ -8,11 +8,11 @@ if(target_id != false){
 
 if(state = state.idle){
 	draw_set_alpha(0.1);
-	draw_set_color(c_aqua);
+	draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
 }
 else{
 	draw_set_alpha(0.1);
-	draw_set_color(c_gray);
+	draw_set_color(COLOR_CIRCLE_RANGE_COOLDOWN);
 }
 
 draw_circle(x, y, range, true);
