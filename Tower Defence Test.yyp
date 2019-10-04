@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "193a6e7a-6bd7-4b57-9398-48bf1bc76f0e",
+            "Value": {
+                "id": "b7f681af-7cc4-459a-8ebd-437886883ad0",
+                "resourcePath": "sprites\\s_thief\\s_thief.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "19fac02d-a2c0-4437-b90c-77b0be6ee7f4",
             "Value": {
                 "id": "14ac2413-727b-46dd-aafc-944215159625",
@@ -263,6 +271,14 @@
             }
         },
         {
+            "Key": "2ca40614-884f-4bb6-b720-b0c38d7bbdb0",
+            "Value": {
+                "id": "ee6232d8-a9e8-4ce7-a099-828adfaa1ba4",
+                "resourcePath": "sprites\\s_Crystal\\s_Crystal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2eca34ff-0f90-451b-ac8c-a0b48af35698",
             "Value": {
                 "id": "fdd11fb7-2124-433c-b436-5d8ea476151a",
@@ -291,6 +307,14 @@
             "Value": {
                 "id": "9a95d08e-8196-4652-aa18-1d41a7d8198c",
                 "resourcePath": "scripts\\enemy_id_conversion\\enemy_id_conversion.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "34a56ad3-6f18-4dd5-ad23-f6b98c51086d",
+            "Value": {
+                "id": "fd90eaff-6cec-42f2-aab0-1522c67df43e",
+                "resourcePath": "scripts\\chronomancer_slow\\chronomancer_slow.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -467,6 +491,14 @@
             "Value": {
                 "id": "272d259f-f099-4960-86bd-07ac31ab022c",
                 "resourcePath": "scripts\\select_enemy\\select_enemy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5c344593-f850-43a6-bee4-cc3156914a72",
+            "Value": {
+                "id": "a5fc1e3f-b7b8-4fb4-9347-f3bf6e3d9310",
+                "resourcePath": "scripts\\equip_crystal\\equip_crystal.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1039,6 +1071,14 @@
             }
         },
         {
+            "Key": "e1a1618c-6f50-4262-b8d7-f668bff39934",
+            "Value": {
+                "id": "9de3ebf6-5b40-4813-854e-9f8e47deae30",
+                "resourcePath": "objects\\o_dBlaster\\o_dBlaster.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e1dc2030-a135-4ad2-9d8d-efe55be50360",
             "Value": {
                 "id": "e56d98d7-3046-4dd9-823c-2d210b8761da",
@@ -1175,6 +1215,14 @@
             }
         },
         {
+            "Key": "f4525fe0-a715-4652-9069-95cad6698d9e",
+            "Value": {
+                "id": "9e828b16-cabf-417c-af34-fff1677685a1",
+                "resourcePath": "sprites\\s_blaster\\s_blaster.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f462e6ff-5c9a-42f5-8831-f6ccc09996f1",
             "Value": {
                 "id": "c3124bf5-8a59-4485-8ba1-12ec4cfedc52",
@@ -1223,6 +1271,14 @@
             }
         },
         {
+            "Key": "facf0ce9-72f7-4911-ba4e-ca46094a0e94",
+            "Value": {
+                "id": "108acd55-4219-4712-a498-1a43e0c2b02f",
+                "resourcePath": "objects\\o_dThief\\o_dThief.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fb81b5a3-b000-4395-b94e-38437500d178",
             "Value": {
                 "id": "7a7fe8e9-09dd-4e5c-98ca-958a0773692d",
@@ -1252,6 +1308,7 @@
         "9125c68b-f9b5-4b1b-8cca-d5339f6b88a0",
         "b5a78d98-e277-4c21-babf-3858d7f17941",
         "1ca3b51b-102b-4c22-8742-dcdb945f7479",
+        "34a56ad3-6f18-4dd5-ad23-f6b98c51086d",
         "35d18f60-f39c-4452-97a6-bacae5443c44",
         "95f7a7f1-72cb-4bca-925b-16be5f632e9a",
         "7a3d34b5-2680-4f98-84b7-b7f35fce9a4a",
@@ -1287,6 +1344,7 @@
         "d553e7fe-4479-4dc9-8158-13b6d2a1a6ba",
         "d66151f7-adf7-4a8f-91f1-97469667f062",
         "e347054e-3763-4549-9af4-fa17f8f2a692",
+        "5c344593-f850-43a6-bee4-cc3156914a72",
         "0ddf0962-8328-49e3-8181-1e798723027a",
         "42ac0b68-cab3-463f-9804-7183cc7b380d",
         "4ab2cc8a-f90e-4a9a-8e8a-d6e58a1977b8",

@@ -6,10 +6,11 @@ for(var i=0; i<global.defender_category_amount; i++){//データから自分を�
 }
 
 //databaseからdefenderのデータをいれる
-fire_damage_default = global.defender_data[defender_number, data.damage]
-attack_per_second_default = global.defender_data[defender_number, data.attack_speed]
-range_default = global.defender_data[defender_number, data.range]
-cost = global.defender_data[defender_number, data.cost]
+fire_damage_default = global.defender_data[defender_number, data.damage];
+attack_per_second_default = global.defender_data[defender_number, data.attack_speed];
+range_default = global.defender_data[defender_number, data.range];
+cost = global.defender_data[defender_number, data.cost];
+itemslot_amount = global.defender_data[defender_number, data.itemslot];
 //エフェクトをいれる
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	effect_now[i, effectnow.number] = -1;
@@ -27,6 +28,9 @@ attack_per_second = attack_per_second_default;
 set_cooldown();
 range = range_default;
 fire_damage = fire_damage_default;
+chronomancer_timing = 0;//フリーザーのクリスタルの範囲スローの発生頻度
+remaining_bullets = 0;//ブラスターの残りショット数
+blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;//ブラスターのショットのクールダウン
 
 //スキル関連
 skill_cooldown = -1;//一応

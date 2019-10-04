@@ -10,7 +10,7 @@ if(global.gamestate = gamestate.main){
 	if(freeze_time != -1){
 		var freeze_power = 1
 		for(var i=0; i<freeze_lv; i++){
-			freeze_power *= 0.5
+			freeze_power *= FREEZE_SLOW_PERCENT;
 		}
 		path_speed = global.enemydata[enemy_number, enemydata.speed]*freeze_power//スロー
 		freeze_time--;
@@ -21,7 +21,7 @@ if(global.gamestate = gamestate.main){
 	}
 
 }
-else{
+else{//ポーズ中とか
 	if(speed_temp = -1){
 		speed_temp = path_speed;
 		path_speed = 0;

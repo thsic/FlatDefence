@@ -39,7 +39,7 @@ case 3:
 		upgrade_button[i-1, upgradebutton.sprite_y] = y_offset+100;
 	}
 break
-case 4://アイテム4つの時だけ2段になる
+case 4://アイテム4つ以上だと2段になる
 	for(i=1; i<=4; i++){
 		switch(i){
 		case 1:
@@ -59,6 +59,65 @@ case 4://アイテム4つの時だけ2段になる
 			upgrade_button[3, upgradebutton.sprite_y] = y_offset+132;
 		}
 	}
+break
+case 5:
+	for(i=1; i<=5; i++){
+		switch(i){
+		case 1:
+			upgrade_button[0, upgradebutton.sprite_x] = x_offset+width/7*2;
+			upgrade_button[0, upgradebutton.sprite_y] = y_offset+80;
+		break
+		case 2:
+			upgrade_button[1, upgradebutton.sprite_x] = x_offset+width/7*5;
+			upgrade_button[1, upgradebutton.sprite_y] = y_offset+80;
+		break
+		case 3:
+			upgrade_button[2, upgradebutton.sprite_x] = x_offset+width/6*1;
+			upgrade_button[2, upgradebutton.sprite_y] = y_offset+132;
+		break
+		case 4:
+			upgrade_button[3, upgradebutton.sprite_x] = x_offset+width/6*3;
+			upgrade_button[3, upgradebutton.sprite_y] = y_offset+132;
+		break
+		case 5:
+			upgrade_button[4, upgradebutton.sprite_x] = x_offset+width/6*5;
+			upgrade_button[4, upgradebutton.sprite_y] = y_offset+132;
+		break
+		}
+		
+	}
+break
+case 6:
+	for(i=1; i<=6; i++){
+		switch(i){
+		case 1:
+			upgrade_button[0, upgradebutton.sprite_x] = x_offset+width/6*1;
+			upgrade_button[0, upgradebutton.sprite_y] = y_offset+80;
+		break
+		case 2:
+			upgrade_button[1, upgradebutton.sprite_x] = x_offset+width/6*3;
+			upgrade_button[1, upgradebutton.sprite_y] = y_offset+80;
+		break
+		case 3:
+			upgrade_button[2, upgradebutton.sprite_x] = x_offset+width/6*5;
+			upgrade_button[2, upgradebutton.sprite_y] = y_offset+80;
+		break
+		case 4:
+			upgrade_button[3, upgradebutton.sprite_x] = x_offset+width/6*1;
+			upgrade_button[3, upgradebutton.sprite_y] = y_offset+132;
+		break
+		case 5:
+			upgrade_button[4, upgradebutton.sprite_x] = x_offset+width/6*3;
+			upgrade_button[4, upgradebutton.sprite_y] = y_offset+132;
+		break
+		case 6:
+			upgrade_button[5, upgradebutton.sprite_x] = x_offset+width/6*5;
+			upgrade_button[5, upgradebutton.sprite_y] = y_offset+132;
+		}
+	}
+break
+default:
+	sdm("error! wpgrade_window_process")
 break
 }
 

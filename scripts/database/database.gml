@@ -5,47 +5,74 @@
 var target = 0;
 global.defender_data[target, data.object] = o_dBasic;
 global.defender_data[target, data.name] = "Basic"
-global.defender_data[target, data.damage] = 15;
-global.defender_data[target, data.attack_speed] = 2;
-global.defender_data[target, data.range] = 100;
-global.defender_data[target, data.cost] = 100;
 global.defender_data[target, data.description] = "be-sikku";
+global.defender_data[target, data.damage] = 15;
+global.defender_data[target, data.attack_speed] = 1.5;
+global.defender_data[target, data.range] = 120;
+global.defender_data[target, data.cost] = 100;
+global.defender_data[target, data.itemslot] = 4;
 global.defender_data[target, data.effect] = -1;
 global.defender_data[target, data.effect2] = -1;
 
 target = 1;
 global.defender_data[target, data.object] = o_dSniper;
 global.defender_data[target, data.name] = "Sniper"
+global.defender_data[target, data.description] = "sunaipa-";
 global.defender_data[target, data.damage] = 70;
 global.defender_data[target, data.attack_speed] = 0.5;
 global.defender_data[target, data.range] = 200;
 global.defender_data[target, data.cost] = 150;
-global.defender_data[target, data.description] = "sunaipa-";
+global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = -1;
 global.defender_data[target, data.effect2] = -1;
 
 target = 2;
 global.defender_data[target, data.object] = o_dBomber;
 global.defender_data[target, data.name] = "Bomber"
+global.defender_data[target, data.description] = "boma-";
 global.defender_data[target, data.damage] = 30;
 global.defender_data[target, data.attack_speed] = 0.5;
 global.defender_data[target, data.range] = 70;
 global.defender_data[target, data.cost] = 250;
-global.defender_data[target, data.description] = "boma-";
+global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 0;
 global.defender_data[target, data.effect2] = 0;
 
 target = 3;
 global.defender_data[target, data.object] = o_dFreezer;
 global.defender_data[target, data.name] = "Freezer"
+global.defender_data[target, data.description] = "huri-za-";
 global.defender_data[target, data.damage] = 50;
 global.defender_data[target, data.attack_speed] = 1;
-global.defender_data[target, data.range] = 90;
+global.defender_data[target, data.range] = 150;
 global.defender_data[target, data.cost] = 200;
-global.defender_data[target, data.description] = "huri-za-";
+global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 2;
 global.defender_data[target, data.effect2] = 13;
 
+target = 4;
+global.defender_data[target, data.object] = o_dBlaster;
+global.defender_data[target, data.name] = "Blaster"
+global.defender_data[target, data.description] = "burasuta-";
+global.defender_data[target, data.damage] = 20;
+global.defender_data[target, data.attack_speed] = 1;
+global.defender_data[target, data.range] = 100;
+global.defender_data[target, data.cost] = 200;
+global.defender_data[target, data.itemslot] = 3;
+global.defender_data[target, data.effect] = 21;
+global.defender_data[target, data.effect2] = -1;
+
+target = 5;
+global.defender_data[target, data.object] = o_dThief;
+global.defender_data[target, data.name] = "Thief"
+global.defender_data[target, data.description] = "si-hu";
+global.defender_data[target, data.damage] = 10;
+global.defender_data[target, data.attack_speed] = 2;
+global.defender_data[target, data.range] = 100;
+global.defender_data[target, data.cost] = 120;
+global.defender_data[target, data.itemslot] = 3;
+global.defender_data[target, data.effect] = 22;
+global.defender_data[target, data.effect2] = -1;
 
 global.defender_category_amount = target+1;//今実装されているdefenderのかず
 #region enum
@@ -58,7 +85,8 @@ enum data{
 	cost,
 	description,
 	effect,
-	effect2
+	effect2,
+	itemslot
 }
 #endregion
 #endregion
@@ -86,8 +114,8 @@ global.itemdata[target, itemdata.upgraded] = 0;
 global.itemdata[target, itemdata.upgradeid] = target+1;
 global.itemdata[target, itemdata.sprite] = s_basicsword;
 global.itemdata[target, itemdata.name] = "BasicSword";
-global.itemdata[target, itemdata.damage] = 20;
-global.itemdata[target, itemdata.attack_speed] = 0.5;
+global.itemdata[target, itemdata.damage] = 15;
+global.itemdata[target, itemdata.attack_speed] = 0.3;
 global.itemdata[target, itemdata.range] = 0;
 global.itemdata[target, itemdata.cost] = 100;
 global.itemdata[target, itemdata.effect] = -1;
@@ -385,6 +413,31 @@ global.itemdata[target, itemdata.range] = 0;
 global.itemdata[target, itemdata.cost] = 200;
 global.itemdata[target, itemdata.effect] = 14;
 global.itemdata[target, itemdata.skill] = -1;
+
+target = 23;//Crystal
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 0;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_Crystal;
+global.itemdata[target, itemdata.name] = "Crystal";
+global.itemdata[target, itemdata.damage] = 0;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 300;
+global.itemdata[target, itemdata.effect] = -1;
+global.itemdata[target, itemdata.skill] = -1;
+target = 24;//Crystal
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 1;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_Crystal;
+global.itemdata[target, itemdata.name] = "Crystal+";
+global.itemdata[target, itemdata.damage] = 0;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 300;
+global.itemdata[target, itemdata.effect] = -1;
+global.itemdata[target, itemdata.skill] = -1;
 #endregion
 
 global.item_category_amount = target+1;//今実装されているitemのかず
@@ -645,6 +698,89 @@ global.effectdata[target, effectdata.overlap] = true;
 global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
 global.effectdata[target, effectdata.addeffect] = -1;
 global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 15;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Item slot+2";
+global.effectdata[target, effectdata.description] = "aitemu hueru";
+global.effectdata[target, effectdata.value] = 2;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+#endregion
+#region 16=20
+target = 16;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Range x2";
+global.effectdata[target, effectdata.description] = "range 2bai";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = true;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 17;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "bakuhuu dmgup";
+global.effectdata[target, effectdata.description] = "mannnaka damageup";
+global.effectdata[target, effectdata.value] = 1.5;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 18;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "hanni slow";
+global.effectdata[target, effectdata.description] = "zenbu slow";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 19;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "rensyasokudo dansoku up";
+global.effectdata[target, effectdata.description] = "hayai ne";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 20;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "gold get plus";
+global.effectdata[target, effectdata.description] = "gold x1.2";
+global.effectdata[target, effectdata.value] = 0.2;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+#endregion
+#region 21~25
+target = 21;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "3ren kougeki";
+global.effectdata[target, effectdata.description] = "VH";
+global.effectdata[target, effectdata.value] = 3;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 22;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "gold get";
+global.effectdata[target, effectdata.description] = "teki taosu +3G";
+global.effectdata[target, effectdata.value] = 3;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
 #endregion
 global.effect_category_amount = target+1;
 #region enum

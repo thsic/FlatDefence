@@ -15,14 +15,6 @@
             "objectId": "eac5d7c3-c9d1-4115-8757-2a028c602fe9",
             "propertyId": "c5c7ace9-855c-478a-9823-6e22386ee8dc",
             "value": "30"
-        },
-        {
-            "id": "561a2b0f-56df-4cd5-a0d8-7f4618ace558",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "eac5d7c3-c9d1-4115-8757-2a028c602fe9",
-            "propertyId": "c0dbcc96-9995-4317-99b5-16ade00f6009",
-            "value": "Sniper"
         }
     ],
     "parentObjectId": "eac5d7c3-c9d1-4115-8757-2a028c602fe9",

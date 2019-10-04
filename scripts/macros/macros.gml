@@ -27,10 +27,13 @@
 #macro DOUBLE_SPEED_BUTTON vk_control
 
 //defender
-#macro EFFECT_SLOT_MAX 10//持てるエフェクトの数 ちなみに10ももてない
+#macro EFFECT_SLOT_MAX 10//持てるエフェクトの数
 #macro EFFECT_BLAST_SIZE 32
 #macro FREEZE_STRENGTH 0.5//倍率
 #macro SHIELD_BREAK_STRENGTH 1//シールド削り値
+#macro FREEZE_SLOW_PERCENT 0.4//フリーズLV1のスロー 通常はLV2
+#macro BLASTER_SHOT_COOLDOWN 10//ブラスターの連射中のクールダウン
+#macro BLASTER_SHOT_COOLDOWN_UPGRADE 2
 
 //timemachine
 #macro TIMEMACHINE_WIDTH 244

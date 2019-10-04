@@ -25,6 +25,12 @@ var true_basic = 0;
 var range_halve = 0;
 var attack_halve = 0;
 var attack_halve_disempower = 0;
+var itemslot_plus = 0;
+var range_x2 = 0;
+var chronomancer = 0;
+var strong_blaster = 0;
+var triple_shot = 0;
+var gold_get = 0;
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(effect_now[i, effectnow.number] != -1){
 		//何かしらのエフェクトがある
@@ -41,10 +47,24 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		case 11:
 			attack_halve++
 		break
-		case 13:
+		case 13://攻撃半減無効
 			attack_halve_disempower++;
 		break
-		
+		case 15://アイテム枠+2
+			itemslot_plus++;
+		break
+		case 16://射程2倍
+			range_x2++;
+		break
+		case 18://射程内全員スロー 処理はかなりしたのほうに
+			chronomancer++;
+		break
+		case 19://連射速度と弾速上昇
+			strong_blaster++;
+		break
+		case 21://3連続攻撃
+			triple_shot++;
+		break
 		}
 	}
 	else{
@@ -52,6 +72,7 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	}
 }
 
+//まずステータス減少系
 if(attack_speed_halve){
 	attack_per_second *= 0.5;
 }
@@ -72,8 +93,22 @@ if(attack_halve_disempower){
 if(attack_halve){
 	fire_damage *= 0.5;
 }
+if(range_x2){
+	for(var i=0; i<range_x2; i++){
+		range *= 2;
+	}
+}
 
 
+//
+if(itemslot_plus){
+	itemslot_amount = global.defender_data[defender_number, data.itemslot]+2;
+}
+if(strong_blaster){
+	bullet_speed = 30;
+}
+
+//最後にtruebasic
 if(true_basic){
 	for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		if(effect_now[i, effectnow.number] != 9){//true basic以外を消す
@@ -142,7 +177,6 @@ if(global.gamestate = gamestate.main){
 	switch(state){
 	#region 攻撃クールダウン
 	case state.decrement_cooldown:
-		--cooldown;
 		if(cooldown <= 0){
 			find_enemy_id = find_enemy();//敵idが返ってくる
 			if(find_enemy_id != false){//射程内に敵がいるか確認 
@@ -150,6 +184,26 @@ if(global.gamestate = gamestate.main){
 			}
 			else{
 				state = state.idle;//居ないので待つ
+			}
+		}
+		else{
+			--cooldown;
+			if(triple_shot){
+				if(remaining_bullets > 0){
+					if(blaster_shot_cooldown <= 0){
+						fire_to_enemy(target_id, bullet_speed, o_defender_bullet, fire_damage, id);
+						remaining_bullets--;
+						if(strong_blaster){
+							blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN_UPGRADE;
+						}
+						else{
+							blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;
+						}
+					}
+					else{
+						blaster_shot_cooldown--;
+					}
+				}
 			}
 		}
 	break
@@ -174,10 +228,25 @@ if(global.gamestate = gamestate.main){
 		}
 		fire_to_enemy(target_id, bullet_speed, o_defender_bullet, fire_damage, id);
 		set_cooldown();
+		if(triple_shot){
+			remaining_bullets = 2
+			if(strong_blaster){
+				blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN_UPGRADE;
+			}
+			else{
+				blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;
+			}
+		}
 		state = state.decrement_cooldown;
 	break
 	#endregion
 
+	}
+	#endregion
+
+	#region chronomancer
+	if(chronomancer){
+		chronomancer_slow(false);
 	}
 	#endregion
 

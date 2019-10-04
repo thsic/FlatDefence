@@ -24,6 +24,9 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 		else{//通常装備
 			defender_id.itemslot[i] = item_id;
 			//なんか処理があるならここでいれる
+			if(item_id = 23){//クリスタルなら特殊な処理に
+				equip_crystal(defender_id);
+			}
 			if(global.itemdata[item_id, itemdata.effect] != -1){//エフェクトがあるか確認
 				for(var j=0; j<EFFECT_SLOT_MAX; j++){
 					if(defender_id.effect_now[j, effectnow.number] = -1){//空きスロットを見つける

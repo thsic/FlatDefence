@@ -14,6 +14,8 @@ case -1:
 	global.shop_defender[1] = o_dSniper;
 	global.shop_defender[2] = o_dBomber;
 	global.shop_defender[3] = o_dFreezer;
+	global.shop_defender[4] = o_dBlaster;
+	global.shop_defender[5] = o_dThief;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
 	global.shop_item[2] = 3;
@@ -26,6 +28,7 @@ case -1:
 	global.shop_item[9] = 17;
 	global.shop_item[10] = 19;
 	global.shop_item[11] = 21;
+	global.shop_item[12] = 23;
 	
 	
 break
