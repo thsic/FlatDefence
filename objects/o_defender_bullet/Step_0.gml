@@ -57,7 +57,10 @@ case gamestate.rest:
 break
 }
 
-if(destroy_countdown > 0){
+if(destroy_countdown > 0){//消える
+	if(point_distance(x, y, defender_id.x, defender_id.y)+speed > defender_id.range){//射程外になると消える
+		instance_destroy();
+	}
 	speed = destroy_countdown/destroy_countdown_default*bullet_speed
 	destroy_countdown--;
 }

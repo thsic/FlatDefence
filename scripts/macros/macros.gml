@@ -31,7 +31,8 @@
 #macro EFFECT_BLAST_SIZE 32
 #macro FREEZE_STRENGTH 0.5//倍率
 #macro SHIELD_BREAK_STRENGTH 1//シールド削り値
-#macro FREEZE_SLOW_PERCENT 0.4//フリーズLV1のスロー 通常はLV2
+#macro FREEZE_SLOW_PERCENT 0.7//フリーズLV1にかかったときのスピード倍率 通常はLV2
+#macro FREEZE_INTERVAL 60//フリーザークリスタルの時の範囲スローの発生頻度
 #macro BLASTER_SHOT_COOLDOWN 10//ブラスターの連射中のクールダウン
 #macro BLASTER_SHOT_COOLDOWN_UPGRADE 2
 

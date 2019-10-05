@@ -11,6 +11,7 @@ attack_per_second_default = global.defender_data[defender_number, data.attack_sp
 range_default = global.defender_data[defender_number, data.range];
 cost = global.defender_data[defender_number, data.cost];
 itemslot_amount = global.defender_data[defender_number, data.itemslot];
+
 //エフェクトをいれる
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	effect_now[i, effectnow.number] = -1;

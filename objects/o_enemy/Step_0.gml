@@ -12,6 +12,7 @@ if(global.gamestate = gamestate.main){
 		for(var i=0; i<freeze_lv; i++){
 			freeze_power *= FREEZE_SLOW_PERCENT;
 		}
+		
 		path_speed = global.enemydata[enemy_number, enemydata.speed]*freeze_power//スロー
 		freeze_time--;
 	}

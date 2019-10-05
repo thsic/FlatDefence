@@ -18,6 +18,9 @@ var shield_break = 0;
 var blast_damageup = 0;
 var gold_get_plus = 0;
 var gold_get = 0;
+var one_shot_one_kill = 0;
+var one_shot_one_kill_plus = 0;
+var blast_onhit_effect = 0;
 
 //最初にエフェクトを確認しておく
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
@@ -54,13 +57,23 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		case 14:
 			shield_break++;//シールド破壊値+3
 		break
-		case 17://範囲攻撃中心だけダメージup
-			blast_damageup++;
+		case 17:
+			blast_damageup++;//範囲攻撃中心だけダメージup
 		break
 		case 20:
-			gold_get_plus++;
+			gold_get_plus++;//敵撃破ゴールド1.2倍
+		break
 		case 22:
-			gold_get++;
+			gold_get++;//敵撃破時ゴールド+3G
+		break
+		case 23:
+			one_shot_one_kill++;//射程150以上の敵に攻撃した時ダメージ1.5倍
+		break
+		case 25:
+			one_shot_one_kill_plus++;//射程250以上の敵に攻撃した時ダメージ2倍
+		break
+		case 26:
+			blast_onhit_effect++;//爆風の中心はonhitになる
 		break
 		}
 	}
@@ -72,6 +85,17 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 if(cursed != 0){
 	if(defender_id.skill_state != skillstate.active){
 		damage = 0;//呪われているのでスキル中以外ダメージ0
+	}
+}
+
+if(one_shot_one_kill){
+	if(point_distance(defender_id.x, defender_id.y, target_id.x, target_id.y) >= 150){
+		damage *= global.effectdata[23, effectdata.value];
+	}
+}
+if(one_shot_one_kill_plus){
+	if(point_distance(defender_id.x, defender_id.y, target_id.x, target_id.y) >= 250){
+		damage *= global.effectdata[25, effectdata.value];
 	}
 }
 
@@ -168,6 +192,12 @@ if(blast_level > 0){
 					if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power/2){
 						//爆風範囲の中心にいるとダメージup
 						damage_result *= global.effectdata[17, effectdata.value];
+						
+						if(blast_onhit_effect){//クリスタルアップグレードされてあると通常攻撃時効果が膜風の中心にのる
+							if(ice_level){//スロー
+								slow_to_enemy(enemy_id, ice_level+1, damage);
+							}
+						}
 					}
 				}
 				if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
@@ -179,22 +209,22 @@ if(blast_level > 0){
 					enemy_id.hp -= damage_result;
 				}
 				
-				/*//ターゲットにだけ通常攻撃時効果がつく
-				if(target_id = enemy_id){
-					//ターゲット死亡判定
-					if(target_id.hp <= 0){
-						target_id.destroy_enemy = true;
-						global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを増やす
-						if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
-							cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
-						}
-					}
-				}*/
-				
 				//死亡判定
 				if(enemy_id.hp <= 0){
 					enemy_id.destroy_enemy = true;
 					global.gold += global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold];
+					if(gold_get){//ゴールドゲットあるならそれも
+						global.gold += global.effectdata[22, effectdata.value]
+					}
+					if(gold_get_plus){
+						var get_gold = global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value]
+						global.gold += ceil(get_gold*global.effectdata[20, effectdata.value]);
+					}
+					if(blast_onhit_effect){
+						if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
+							cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
+						}
+					}
 				}
 			}
 		}

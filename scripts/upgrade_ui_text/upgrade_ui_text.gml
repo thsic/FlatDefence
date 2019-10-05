@@ -158,22 +158,85 @@ draw_set_halign(fa_middle);
 draw_set_color(COLOR_TEXT_WHITE);//アップグレード前と文章が違ったら色を変える
 var description1 = ""
 var description2 = ""
-if(global.itemdata[choosing_id, itemdata.effect] != -1){
-	description1 = global.effectdata[global.itemdata[choosing_id, itemdata.effect], effectdata.description];
-	if(global.effectdata[global.itemdata[choosing_id, itemdata.effect], effectdata.addeffect] != -1){
-		description2 = global.effectdata[global.effectdata[global.itemdata[choosing_id, itemdata.effect], effectdata.addeffect], effectdata.description];
+var crystal_upgrade = false
+if(choosing_id = 23){
+	#region crystal
+	var defender_number = upgrade_defender_id.defender_number
+	switch(defender_number){
+	case 0://basic
+		var effect_id = 15;
+	break
+	case 1://sniper
+		var effect_id = 16;
+	break
+	case 2://bomber
+		var effect_id = 17;
+	break
+	case 3://freezer
+		var effect_id = 18;
+	break
+	case 4://blaster
+		var effect_id = 19;
+	break
+	case 5://thief
+		var effect_id = 20;
+	break
+	}
+	description1 = global.effectdata[effect_id, effectdata.description];
+	if(global.effectdata[effect_id, effectdata.addeffect] != -1){
+		description2 = global.effectdata[global.effectdata[effect_id, effectdata.addeffect], effectdata.description];
+	}
+	crystal_upgrade = true
+	#endregion
+}
+else{//普通
+	if(global.itemdata[choosing_id, itemdata.effect] != -1){
+		description1 = global.effectdata[global.itemdata[choosing_id, itemdata.effect], effectdata.description];
+		if(global.effectdata[global.itemdata[choosing_id, itemdata.effect], effectdata.addeffect] != -1){
+			description2 = global.effectdata[global.effectdata[global.itemdata[choosing_id, itemdata.effect], effectdata.addeffect], effectdata.description];
+		}
 	}
 }
-if(possible_upgrade){
+
+var description1_upgrade = ""
+var description2_upgrade = ""
+if(possible_upgrade){//upgrade先
 	var freeze_rod = false
 	if(choosing_after_upgrade_id = 16){//フリーズロッドの場合
 		var description1_upgrade = global.effectdata[2, effectdata.description];
 		var description2_upgrade = global.effectdata[12, effectdata.description];
 		var freeze_rod = true
 	}
+	else if(crystal_upgrade){//クリスタルの場合
+		#region クリスタル
+		var defender_number = upgrade_defender_id.defender_number
+		switch(defender_number){
+			case 0://basic
+				var effect_id = 24;
+			break
+			case 1://sniper
+				var effect_id = 25;
+			break
+			case 2://bomber
+				var effect_id = 26;
+			break
+			case 3://freezer
+				var effect_id = 27;
+			break
+			case 4://blaster
+				var effect_id = 28;
+			break
+			case 5://thief
+				var effect_id = 29;
+			break
+		}
+		description1_upgrade = global.effectdata[effect_id, effectdata.description];
+		if(global.effectdata[effect_id, effectdata.addeffect] != -1){
+			description2_upgrade = global.effectdata[global.effectdata[effect_id, effectdata.addeffect], effectdata.description];
+		}
+		#endregion
+	}
 	else{//普通
-		var description1_upgrade = ""
-		var description2_upgrade = ""
 		if(global.itemdata[choosing_after_upgrade_id, itemdata.effect] != -1){
 			description1_upgrade = global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.description];
 			if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.addeffect] != -1){
@@ -183,6 +246,7 @@ if(possible_upgrade){
 	}
 	
 }
+
 var line_feed = false
 if(string_width(description1) < 216){
 	var text_x = x_offset+width/5*1
@@ -214,15 +278,20 @@ if(possible_upgrade){
 	description1_upgrade = string_replace(description1_upgrade, "@", "");
 	
 	if(description1 != description1_upgrade){//文章比較
-		if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.number] != 9){
-			draw_set_color(COLOR_TEXT_GREEN);
+		if(!crystal_upgrade){
+			if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.number] != 9){//効果違ったら緑で
+				draw_set_color(COLOR_TEXT_GREEN);
+			}
+			else{
+				//例外でbasicsword+のTrue Basicだけはデメリット効果として赤で表示する
+				draw_set_color(COLOR_TEXT_RED);			
+			}
 		}
 		else{
-			//例外でbasicsword+のTrue Basicだけはデメリット効果として赤で表示する
-			draw_set_color(COLOR_TEXT_RED);			
+			draw_set_color(COLOR_TEXT_GREEN);//クリスタルは全部緑
 		}
 	}
-	else if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.overlap]){//重なるなら緑に
+	else if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.overlap]){//LVupするなら緑にする
 		draw_set_color(COLOR_TEXT_GREEN);
 	}
 	else{

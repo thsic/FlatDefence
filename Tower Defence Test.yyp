@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "2863b1ae-e690-4035-bdb1-6812fd538fd9",
+            "Value": {
+                "id": "4636aede-544e-47fd-b0a6-946b5a4d2b50",
+                "resourcePath": "scripts\\upgrade_crystal\\upgrade_crystal.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "29f67918-2045-4db9-a7d1-3cf7858e18d4",
             "Value": {
                 "id": "fb7bfc19-82a2-4cf8-800f-65b3857743a0",
@@ -276,6 +284,14 @@
                 "id": "ee6232d8-a9e8-4ce7-a099-828adfaa1ba4",
                 "resourcePath": "sprites\\s_Crystal\\s_Crystal.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2e6b0ffd-43cc-4f25-bf07-a2773646dc4a",
+            "Value": {
+                "id": "5f0f5e73-4ae0-4e9c-849e-feb670866639",
+                "resourcePath": "scripts\\upgrade_text_crystal\\upgrade_text_crystal.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1345,6 +1361,8 @@
         "d66151f7-adf7-4a8f-91f1-97469667f062",
         "e347054e-3763-4549-9af4-fa17f8f2a692",
         "5c344593-f850-43a6-bee4-cc3156914a72",
+        "2863b1ae-e690-4035-bdb1-6812fd538fd9",
+        "2e6b0ffd-43cc-4f25-bf07-a2773646dc4a",
         "0ddf0962-8328-49e3-8181-1e798723027a",
         "42ac0b68-cab3-463f-9804-7183cc7b380d",
         "4ab2cc8a-f90e-4a9a-8e8a-d6e58a1977b8",

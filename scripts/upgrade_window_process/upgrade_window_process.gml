@@ -192,6 +192,9 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 
 				sdm(string(object_get_name(upgrade_defender_id.object_index))+"の"+string(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name])+"をアップグレード")
 				upgrade_defender_id.itemslot[i] = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid];//アップグレードアイテムで上書き
+				if(upgrade_defender_id.itemslot[i] = 24){//クリスタルをアップグレードする場合
+					upgrade_crystal(upgrade_defender_id);
+				}
 				if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect]) != -1{//アイテムにエフェクトがついていた場合 エフェクトをもう一つ追加する
 					for(var j=0; j<EFFECT_SLOT_MAX; j++){
 						if(global.effectdata[global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect], effectdata.deleteeffect] = upgrade_defender_id.effect_now[j, effectnow.number]){
@@ -216,12 +219,12 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 							else{//addeffectがある場合それも追加する
 								for(var k=0; k<EFFECT_SLOT_MAX; k++){
 									if(upgrade_defender_id.effect_now[k, effectnow.number] = -1){
-										if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid] != 16){//フリーズロッド+だった場合のみ仕様が異なる
+										if(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid] != 16){
 											upgrade_defender_id.effect_now[k, effectnow.number] = global.effectdata[global.itemdata[upgrade_defender_id.itemslot[i], itemdata.effect], effectdata.addeffect];
 											upgrade_defender_id.effect_now[k, effectnow.time] = -1;
 											break
 										}
-										else{
+										else{//フリーズロッド+だった場合のみ仕様が異なる
 											upgrade_defender_id.effect_now[k, effectnow.number] = global.effectdata[2, effectdata.number];
 											upgrade_defender_id.effect_now[k, effectnow.time] = -1;
 											freeze_level--;

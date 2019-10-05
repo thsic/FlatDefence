@@ -23,7 +23,7 @@ global.defender_data[target, data.attack_speed] = 0.5;
 global.defender_data[target, data.range] = 200;
 global.defender_data[target, data.cost] = 150;
 global.defender_data[target, data.itemslot] = 3;
-global.defender_data[target, data.effect] = -1;
+global.defender_data[target, data.effect] = 23;
 global.defender_data[target, data.effect2] = -1;
 
 target = 2;
@@ -781,6 +781,76 @@ global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
 global.effectdata[target, effectdata.addeffect] = -1;
 global.effectdata[target, effectdata.deleteeffect] = -1;
 
+target = 23;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "One Shot One Kill";
+global.effectdata[target, effectdata.description] = "150+ range teki dmgx1.5";
+global.effectdata[target, effectdata.value] = 1.5;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 24;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Basicist";
+global.effectdata[target, effectdata.description] = "basicsword zidou upgrade";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 25;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "One_Shot_One_Kill+";
+global.effectdata[target, effectdata.description] = "250+ range teki dmgx2";
+global.effectdata[target, effectdata.value] = 2;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+#endregion
+#region 26~30
+target = 26;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "bakuhuu onhit";
+global.effectdata[target, effectdata.description] = "mannnaka onhit effect";
+global.effectdata[target, effectdata.value] = 2;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 27;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "hanni dot dmg";
+global.effectdata[target, effectdata.description] = "range zenninn dmg";
+global.effectdata[target, effectdata.value] = 0.2;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 28;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "7ren kougeki";
+global.effectdata[target, effectdata.description] = "7ren kougeki";
+global.effectdata[target, effectdata.value] = 7;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = 11;
+global.effectdata[target, effectdata.deleteeffect] = -1;
+
+target = 29;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "Item Steel";
+global.effectdata[target, effectdata.description] = "shop hitotu muryou";
+global.effectdata[target, effectdata.value] = 1;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
 #endregion
 global.effect_category_amount = target+1;
 #region enum
