@@ -118,7 +118,15 @@ case 1://item
 		draw_set_color(COLOR_TEXT_YELLOW);
 		draw_set_halign(fa_right);
 		var nesessary_gold = global.itemdata[target_id, itemdata.cost];
-		for(var i=0; i<shop_item_product[target_id, SALES]; i++){
+		
+		for(var i=0; i<global.item_category_amount; i++){//みつける
+			if(shop_item_product[i, ITEM] = global.itemdata[target_id, itemdata.number]){
+				var item_shop_id = i
+				break
+			}
+		}
+		
+		for(var i=0; i<shop_item_product[item_shop_id, SALES]; i++){
 			nesessary_gold *= PRICE_INCREASE;
 		}
 		draw_text(offset_x+window_width-6, offset_y+4, floor(nesessary_gold));
@@ -156,7 +164,13 @@ case 2://スキルアイテム
 		draw_set_color(COLOR_TEXT_YELLOW);
 		draw_set_halign(fa_right);
 		var nesessary_gold = global.itemdata[target_id, itemdata.cost];
-		for(var i=0; i<shop_item_product[target_id, SALES]; i++){
+		for(var i=0; i<global.item_category_amount; i++){//みつける
+			if(shop_item_product[i, ITEM] = global.itemdata[target_id, itemdata.number]){
+				var item_shop_id = i
+				break
+			}
+		}
+		for(var i=0; i<shop_item_product[item_shop_id, SALES]; i++){
 			nesessary_gold *= PRICE_INCREASE;
 		}
 		draw_text(offset_x+window_width-6, offset_y+4, floor(nesessary_gold));
