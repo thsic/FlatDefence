@@ -623,6 +623,14 @@
             }
         },
         {
+            "Key": "798cb6a2-c25e-42f8-94d1-08e4410e6a05",
+            "Value": {
+                "id": "500aa463-f168-4c58-ac51-d20d78e65d73",
+                "resourcePath": "scripts\\sell_defender\\sell_defender.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "799527e2-1fc6-443b-b75c-f7d9299f7a44",
             "Value": {
                 "id": "b1e6ce89-dd89-432f-8042-912efd507406",
@@ -644,6 +652,14 @@
                 "id": "456ed045-4c7e-4bf9-8b7a-516dabfb31b5",
                 "resourcePath": "scripts\\display_product\\display_product.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7a745f6c-5120-497f-b85d-37d4b9424f69",
+            "Value": {
+                "id": "66a58bfe-1d8f-419f-9724-3fb2c055de9b",
+                "resourcePath": "sprites\\s_sellButton\\s_sellButton.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1325,6 +1341,7 @@
         "b5a78d98-e277-4c21-babf-3858d7f17941",
         "1ca3b51b-102b-4c22-8742-dcdb945f7479",
         "34a56ad3-6f18-4dd5-ad23-f6b98c51086d",
+        "798cb6a2-c25e-42f8-94d1-08e4410e6a05",
         "35d18f60-f39c-4452-97a6-bacae5443c44",
         "95f7a7f1-72cb-4bca-925b-16be5f632e9a",
         "7a3d34b5-2680-4f98-84b7-b7f35fce9a4a",

@@ -43,8 +43,21 @@ else{
 		upgrade_ui_text(ui_window_x, ui_window_y, ui_window_width, ui_window_height);
 	}
 	else{
+		sellbutton = 0;
+		var sell = false;
+		if(ui_window_x+ui_window_width-6-sprite_get_width(s_sellButton) < mouse_x and mouse_x < ui_window_x+ui_window_width-6){
+			if(ui_window_y+6 < mouse_y and mouse_y < ui_window_y+6+sprite_get_height(s_sellButton)){
+				sellbutton = 1;
+				if(mouse_check_button(mb_left)){
+					//defender売る
+					sell = true
+				}
+			}
+		}
 		defender_ui_text(ui_window_x, ui_window_y, ui_window_width, ui_window_height);
-		
+		if(sell){
+			sell_defender(finded_defender_id);
+		}
 	}
 	if(mouse_check_button_pressed(mb_left) and !upgrade_ui){//どこかがクリックされた
 		//if(mouse_x <= ui_window_x or ui_window_x+ui_window_width <= mouse_x or mouse_y <= ui_window_y or ui_window_y+ui_window_height <= mouse_y){

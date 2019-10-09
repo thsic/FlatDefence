@@ -118,6 +118,33 @@ for(var i=0; i<finded_defender_id.itemslot_amount; i++){
 	}
 }
 
+//defender売却
+var sellbutton_subimage = sellbutton;
+draw_sprite(s_sellButton, sellbutton_subimage, ui_window_x+ui_window_width-6-sprite_get_width(s_sellButton), ui_window_y+6); 
+draw_set_color(COLOR_TEXT_GRAY);
+draw_set_halign(fa_middle);
+draw_text(ui_window_x+ui_window_width-6-sprite_get_width(s_sellButton)/2, ui_window_y+10, "Sell");
+
+
+if(sellbutton = 1){
+	var get_gold = 0;
+	for(var i=0; i<finded_defender_id.itemslot_amount; i++){
+		if(finded_defender_id.itemslot[i] != -1){
+			 get_gold += global.itemdata[finded_defender_id.itemslot[i], itemdata.cost]/2;
+		}
+		else{
+			break
+		}
+	}
+	
+	get_gold += global.defender_data[finded_defender_id.defender_number, data.cost]/2;
+	var sellgold_window_width = string_width("+"+string(get_gold)+"gold")+8;
+	tiny_window(s_window, 2, mouse_x+16, mouse_y, sellgold_window_width, 20, 0.8);
+	draw_set_color(COLOR_TEXT_YELLOW);
+	draw_text(mouse_x+sellgold_window_width/2+16, mouse_y+2, "+"+string(get_gold)+"gold");
+}
+draw_set_halign(fa_left);
+
 //開かれている間は射程範囲表示
 draw_set_alpha(0.025);
 draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
