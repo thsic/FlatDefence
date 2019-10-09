@@ -31,11 +31,18 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			//defenderを掴んだ
 			var grab_product_number = grab_number;//掴んだ商品のshopでの番号をいれておく
 			grab_number = defender_id_conversion(shop_product[grab_number, DEFENDER])//grab_numberの値をglobal.defender_dataで参照できる値に変換
-			if(global.gold >= global.defender_data[grab_number, data.cost]){//残金チェック
-				global.gold -= global.defender_data[grab_number, data.cost];//お金をへらす
+			
+			var reduce_gold = global.defender_data[grab_number, data.cost];
+			for(var i=0; i<shop_product[grab_number, SALES]; i++){//販売数によって減らすお金が増える
+				reduce_gold *= PRICE_INCREASE;
+			}
+			if(global.gold >= reduce_gold){//残金チェック
+				global.gold -= floor(reduce_gold);//お金をへらす
+				
 				grab_defender_id = shop_product[grab_number, DEFENDER];
+				grab_defender_shop_id = grab_number
 				window_mouse_set(shop_product[grab_product_number, SPRITE_X], shop_product[grab_product_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
-				rise_number(global.defender_data[grab_number, data.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
+				rise_number(floor(reduce_gold), mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
 			}
 			else{
 				//買えなかった場合 音とかならすといいと思う
@@ -46,12 +53,19 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			grab_number -= 10000;//アイテムは10000~なのでその分を下げる
 			var grab_product_number = grab_number; //ここからgrab_numberはItemidになる
 			grab_number = shop_item_product[grab_number, ITEM]
-			if(global.gold >= global.itemdata[grab_number, itemdata.cost]){//残金チェック
-				global.gold -= global.itemdata[grab_number, itemdata.cost];//お金をへらす
+			
+			var reduce_gold = global.itemdata[grab_number, itemdata.cost];
+			for(var i=0; i<shop_item_product[grab_number, SALES]; i++){//販売数によって減らすお金が増える
+				reduce_gold *= PRICE_INCREASE;
+			}
+			if(global.gold >= reduce_gold){//残金チェック
+				global.gold -= floor(reduce_gold);//お金をへらす
+				
 				grab_item_id = shop_item_product[grab_product_number, ITEM];
+				grab_item_shop_id = grab_product_number;
 				grab_item_possession_id = -1;
 				window_mouse_set(shop_item_product[grab_product_number, SPRITE_X], shop_item_product[grab_product_number, SPRITE_Y]);
-				rise_number(global.itemdata[grab_number, itemdata.cost], mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
+				rise_number(floor(reduce_gold), mouse_x, mouse_y, 3, 20, c_yellow, 1, true);
 			}
 			else{
 				//買えなかった場合 音とかならすといいと思う
@@ -101,18 +115,29 @@ if(grab_defender_id != -1){
 					create_defender.cooldown = 0;//休憩中なら設置したdefenderのクールダウンを即解消
 					create_defender.state = state.idle;
 				}
-				
+				//販売数増やす
+				shop_product[grab_defender_shop_id, SALES] += 1;
 				
 				var drop_result = true;
 			}
 			else{
-				if(!drop_result){global.gold += global.defender_data[defender_id_conversion(grab_defender_id), data.cost];}//返金
+				if(!drop_result){
+				var return_gold = global.defender_data[defender_id_conversion(grab_defender_id), data.cost]
+				for(var i=0; i<shop_product[grab_defender_shop_id, SALES]; i++){
+					return_gold *= PRICE_INCREASE;
+				}
+				global.gold += floor(return_gold);
+				}//返金
 				grab_defender_id = -1;
 			}
 		}
 		else{
 			//shop画面の所でdefenderを離すと 払ったcostが戻ってくる
-			global.gold += global.defender_data[defender_id_conversion(grab_defender_id), data.cost];
+			var return_gold = global.defender_data[defender_id_conversion(grab_defender_id), data.cost]
+			for(var i=0; i<shop_product[grab_defender_shop_id, SALES]; i++){
+				return_gold *= PRICE_INCREASE;
+			}
+			global.gold += floor(return_gold);
 			grab_defender_id = -1;
 		}
 	}
@@ -156,9 +181,18 @@ if(grab_item_id != -1){
 						purchased_upgrade_orb = true//あとで返金するために購入したオーブだということをいれておく
 					}
 				}
+				if(purchase_item){shop_item_product[grab_item_shop_id, SALES] += 1;}//販売数増やす
 			}
 			if(grab_item_possession_id = -1){
-				if(!purchase_item){global.gold += global.itemdata[grab_item_id, itemdata.cost];}//返金
+				if(!purchase_item){
+					//返金
+					var return_gold = global.itemdata[grab_item_id, itemdata.cost];
+					for(var j=0; j<shop_item_product[grab_item_shop_id, SALES]; j++){
+						return_gold *= PRICE_INCREASE;
+					}
+					global.gold += floor(return_gold)
+					
+				}
 			}
 			else{
 				if(!purchase_item){global.item_possession[grab_item_possession_id] = grab_item_id}
@@ -166,8 +200,12 @@ if(grab_item_id != -1){
 			grab_item_id = -1;
 		}
 		else{
-			if(grab_item_possession_id = -1){
-				global.gold += global.itemdata[grab_item_id, itemdata.cost];//返金
+			if(grab_item_possession_id = -1){//返金
+				var return_gold = global.itemdata[grab_item_id, itemdata.cost];
+				for(var j=0; j<shop_item_product[grab_item_shop_id, SALES]; j++){
+					return_gold *= PRICE_INCREASE;
+				}
+				global.gold += floor(return_gold);
 			}
 			else{
 				global.item_possession[grab_item_possession_id] = grab_item_id

@@ -52,7 +52,11 @@ case 0://defender
 	draw_text(offset_x+6, offset_y+96, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.description]);
 	draw_set_color(COLOR_TEXT_YELLOW);
 	draw_set_halign(fa_right);
-	draw_text(offset_x+window_width-6, offset_y+4, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.cost]);
+	var nesessary_gold = global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.cost];
+	for(var i=0; i<shop_product[target_id, SALES]; i++){
+		nesessary_gold *= PRICE_INCREASE;
+	}
+	draw_text(offset_x+window_width-6, offset_y+4, floor(nesessary_gold));
 	draw_set_halign(fa_left);
 	draw_set_color(COLOR_DEFAULT);
 	
@@ -113,7 +117,11 @@ case 1://item
 	if(!possession){//所持品ならコストを表示しない
 		draw_set_color(COLOR_TEXT_YELLOW);
 		draw_set_halign(fa_right);
-		draw_text(offset_x+window_width-6, offset_y+4, global.itemdata[target_id, itemdata.cost]);
+		var nesessary_gold = global.itemdata[target_id, itemdata.cost];
+		for(var i=0; i<shop_item_product[target_id, SALES]; i++){
+			nesessary_gold *= PRICE_INCREASE;
+		}
+		draw_text(offset_x+window_width-6, offset_y+4, floor(nesessary_gold));
 		draw_set_halign(fa_left);
 	}
 	draw_set_color(COLOR_DEFAULT);
@@ -147,7 +155,11 @@ case 2://スキルアイテム
 	if(!possession){//所持品ならコストを表示しない
 		draw_set_color(COLOR_TEXT_YELLOW);
 		draw_set_halign(fa_right);
-		draw_text(offset_x+window_width-6, offset_y+4, global.itemdata[target_id, itemdata.cost]);
+		var nesessary_gold = global.itemdata[target_id, itemdata.cost];
+		for(var i=0; i<shop_item_product[target_id, SALES]; i++){
+			nesessary_gold *= PRICE_INCREASE;
+		}
+		draw_text(offset_x+window_width-6, offset_y+4, floor(nesessary_gold));
 		draw_set_halign(fa_left);
 	}
 	draw_set_color(COLOR_DEFAULT);

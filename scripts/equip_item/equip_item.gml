@@ -56,5 +56,6 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 }
 if(result){
 	sdm(string(global.itemdata[item_id, itemdata.name]) + "を装備")
+	shop_item_product[grab_item_shop_id, SALES] += 1;//販売数増やす
 }
 return result

@@ -8,7 +8,11 @@ draw_set_color(c_yellow);
 draw_text(x_offset+16,24,global.gold)//お金描画
 draw_set_color(c_white);
 for(var i=0; i<product_defender_amount; i++){//defenderを描画
-	if(global.gold < global.defender_data[defender_id_conversion(shop_product[i, DEFENDER]), data.cost]){
+	var necessary_gold = global.defender_data[defender_id_conversion(shop_product[i, DEFENDER]), data.cost]
+	for(var j=0; j<shop_product[i, SALES]; j++){
+		necessary_gold *= PRICE_INCREASE;
+	}
+	if(global.gold < necessary_gold){
 		//お金が足りない商品は半透明にする
 		draw_sprite_ext(object_get_sprite(shop_product[i, DEFENDER]), 0, shop_product[i, SPRITE_X], shop_product[i, SPRITE_Y], 1, 1, 0, c_white, 0.3)
 	}
@@ -19,12 +23,15 @@ for(var i=0; i<product_defender_amount; i++){//defenderを描画
 }
 
 for(i=0; i<product_item_amount; i++){//itemを描画
-	if(global.gold < global.itemdata[shop_item_product[i, ITEM], itemdata.cost]){
-		//お金が足りない商品は半透明にする
+	var necessary_gold = global.itemdata[shop_item_product[i, ITEM], itemdata.cost];
+	for(var j=0; j<shop_item_product[i, SALES]; j++){
+		necessary_gold *= PRICE_INCREASE;
+	}
+	if(global.gold < necessary_gold){
+		//半透明
 		draw_sprite_ext(shop_item_product[i, SPRITE], 0, shop_item_product[i, SPRITE_X], shop_item_product[i, SPRITE_Y], 1, 1, 0, c_white, 0.3)
 	}
 	else{
-		//足りる場合
 		draw_sprite(shop_item_product[i, SPRITE], 0, shop_item_product[i, SPRITE_X], shop_item_product[i, SPRITE_Y]);
 	}
 }

@@ -1325,6 +1325,14 @@
                 "resourcePath": "views\\fd096198-0749-47e8-9eae-d81100472894.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "fe6a0248-3a07-4bc5-a115-145d95b61f57",
+            "Value": {
+                "id": "99be56b0-cbd7-4f06-847a-7ce1af103a1b",
+                "resourcePath": "scripts\\shop_prise_increase\\shop_prise_increase.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "script_order": [
@@ -1348,6 +1356,7 @@
         "404309a2-3f52-4ecf-959e-9ba0713bb6e2",
         "5564806c-ca89-4429-bcf1-6b48f2b00fb5",
         "4aa6b239-a1c7-424b-a0d5-381424a431ed",
+        "fe6a0248-3a07-4bc5-a115-145d95b61f57",
         "17ff12a2-be7b-4407-9185-fec3170a82d4",
         "1ae08602-8fc4-48c6-934d-3140069aebfb",
         "8a40716b-89a2-4c55-9748-13a3a8a805fd",
