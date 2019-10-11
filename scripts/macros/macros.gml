@@ -76,4 +76,9 @@
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_aqua
 
+#macro COLOR_BULLET_DEFAULT c_ltgray
+#macro COLOR_BULLET_FREEZE c_aqua
+#macro COLOR_BULLET_FIRE c_red
+#macro COLOR_BULLET_MIX c_purple
+
 #macro COLOR_DEFAULT c_white

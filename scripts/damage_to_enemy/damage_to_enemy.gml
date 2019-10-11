@@ -178,7 +178,7 @@ if(blast_level > 0){
 		blast_power *= 1.5;
 	}
 	blast_power -= 1;
-	blast_effect(target_id.x, target_id.y, blast_power, c_maroon, 20);
+	blast_effect(target_id.x, target_id.y, blast_power, c_maroon, 20, 1);
 	for(var i=0; i<global.enemy_amount; i++){
 		var enemy_id = global.enemy_id[i]
 		if(instance_exists(enemy_id)){
@@ -192,6 +192,8 @@ if(blast_level > 0){
 					if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power/2){
 						//爆風範囲の中心にいるとダメージup
 						damage_result *= global.effectdata[17, effectdata.value];
+						//効果範囲に追加で円を表示
+						blast_effect(target_id.x, target_id.y, blast_power/2, c_maroon, 20, 0.1);
 						
 						if(blast_onhit_effect){//クリスタルアップグレードされてあると通常攻撃時効果が膜風の中心にのる
 							if(ice_level){//スロー

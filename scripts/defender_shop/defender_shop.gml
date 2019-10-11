@@ -181,7 +181,9 @@ if(grab_item_id != -1){
 						purchased_upgrade_orb = true//あとで返金するために購入したオーブだということをいれておく
 					}
 				}
-				if(purchase_item){shop_item_product[grab_item_shop_id, SALES] += 1;}//販売数増やす
+				if(grab_item_possession_id = -1){
+					if(purchase_item){shop_item_product[grab_item_shop_id, SALES] += 1;}//販売数増やす
+				}
 			}
 			if(grab_item_possession_id = -1){
 				if(!purchase_item){

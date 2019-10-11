@@ -1159,6 +1159,14 @@
             }
         },
         {
+            "Key": "e93f5835-3f72-4ee9-8d5e-d35c6c709570",
+            "Value": {
+                "id": "b765d07e-6063-48f8-a0f0-97673d031870",
+                "resourcePath": "scripts\\bullet_fire\\bullet_fire.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e9553424-2b52-4c06-9445-5eb912a2f990",
             "Value": {
                 "id": "38cf6763-40b6-4382-b821-b65b24a0b0c8",
@@ -1381,6 +1389,7 @@
         "7b6bd47d-c338-4df5-96f2-e2c4e02dc61b",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
+        "e93f5835-3f72-4ee9-8d5e-d35c6c709570",
         "a6c84869-b4a0-4c6a-a528-47a472e81580",
         "d1bf863f-2964-46ee-b3ce-315838f9e1fd",
         "d553e7fe-4479-4dc9-8158-13b6d2a1a6ba",
