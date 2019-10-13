@@ -117,8 +117,9 @@ if(grab_defender_id != -1){
 				}
 				//販売数増やす
 				shop_product[grab_defender_shop_id, SALES] += 1;
-				
 				var drop_result = true;
+				
+				drop_defender_effect(create_defender.x, create_defender.y)
 			}
 			else{
 				if(!drop_result){

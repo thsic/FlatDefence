@@ -81,4 +81,6 @@
 #macro COLOR_BULLET_FIRE c_red
 #macro COLOR_BULLET_MIX c_purple
 
+#macro COLOR_LIFEBLOOD c_red
+
 #macro COLOR_DEFAULT c_white

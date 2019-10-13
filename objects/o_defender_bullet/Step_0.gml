@@ -87,12 +87,14 @@ case gamestate.main:
 
 #region 衝突判定
 	if(!penetration and !penetration_plus){//インペリアルランス無し 普通の場合
-		if(collision_circle(bullet_target.x, bullet_target.y, SPRITE_SIZE, id, false, false)){
-			var penetration = 0;
-			var penetration_plus = 0;
-			var other_object = bullet_target
-			damage_to_enemy(damage, bullet_target, defender_id);
-			instance_destroy();
+		if(instance_exists(bullet_target.x)){//存在チェック
+			if(collision_circle(bullet_target.x, bullet_target.y, SPRITE_SIZE, id, false, false)){
+				var penetration = 0;
+				var penetration_plus = 0;
+				var other_object = bullet_target
+				damage_to_enemy(damage, bullet_target, defender_id);
+				instance_destroy();
+			}
 		}
 	}
 	else{//インペリアルランス有り

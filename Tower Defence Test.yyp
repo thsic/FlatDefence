@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "1bb549cb-3f7e-4ea9-9fc7-bf07dc8feaa4",
+            "Value": {
+                "id": "71e51224-fa8a-4418-927b-750eb5a63730",
+                "resourcePath": "scripts\\line_effect\\line_effect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1ca3b51b-102b-4c22-8742-dcdb945f7479",
             "Value": {
                 "id": "0c48e0f0-161d-4395-a594-4d2f8d04e0af",
@@ -975,6 +983,14 @@
             }
         },
         {
+            "Key": "c4c03aa2-499f-4503-bb30-6d22524abdf9",
+            "Value": {
+                "id": "e97bfc4c-7cec-44de-949b-54c8c7d0a37e",
+                "resourcePath": "scripts\\drop_defender_effect\\drop_defender_effect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c9a2c4da-cbfd-43a7-94f3-7db95e24a0bb",
             "Value": {
                 "id": "94749c6b-5759-42c8-b71f-540a35a33104",
@@ -1116,6 +1132,14 @@
                 "id": "e56d98d7-3046-4dd9-823c-2d210b8761da",
                 "resourcePath": "sprites\\s_attackup\\s_attackup.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e29bb528-5103-470f-b93a-fcf82bd6ed74",
+            "Value": {
+                "id": "9e8643fb-b81c-42e0-bfa6-fa64f67be1e0",
+                "resourcePath": "scripts\\disk_effect\\disk_effect.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1390,6 +1414,9 @@
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
         "e93f5835-3f72-4ee9-8d5e-d35c6c709570",
+        "e29bb528-5103-470f-b93a-fcf82bd6ed74",
+        "1bb549cb-3f7e-4ea9-9fc7-bf07dc8feaa4",
+        "c4c03aa2-499f-4503-bb30-6d22524abdf9",
         "a6c84869-b4a0-4c6a-a528-47a472e81580",
         "d1bf863f-2964-46ee-b3ce-315838f9e1fd",
         "d553e7fe-4479-4dc9-8158-13b6d2a1a6ba",
