@@ -109,8 +109,6 @@ if(grab_defender_id != -1){
 			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
 				sdm(string(object_get_name(grab_defender_id))+ "を設置")
 				var create_defender = instance_create_layer(nearest_marker.x+SPRITE_SIZE, nearest_marker.y+SPRITE_SIZE, "Defenders", grab_defender_id);
-				nearest_marker.on_defender = true;
-				grab_defender_id = -1;
 				if(global.gamestate = gamestate.rest or global.gamestate = gamestate.restpause){
 					create_defender.cooldown = 0;//休憩中なら設置したdefenderのクールダウンを即解消
 					create_defender.state = state.idle;
@@ -119,7 +117,9 @@ if(grab_defender_id != -1){
 				shop_product[grab_defender_shop_id, SALES] += 1;
 				var drop_result = true;
 				
-				drop_defender_effect(create_defender.x, create_defender.y)
+				drop_defender_effect(create_defender.x, create_defender.y, grab_defender_id)//配置エフェクト
+				nearest_marker.on_defender = true;
+				grab_defender_id = -1;
 			}
 			else{
 				if(!drop_result){
