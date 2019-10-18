@@ -43,7 +43,9 @@ if(!do_createevent){
 	case 4://線
 
 	break
-	
+	case 5://爆発
+		
+	break
 	}
 	
 	

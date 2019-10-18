@@ -24,7 +24,7 @@ repeat(5){//何回か色を抽出して平均の色を求める
 	//なんかバグでうまくいかない 指定座標を0に近づけるとバグの発生率が下がる
 	color = merge_color(color, surface_getpixel(global.temp_surface, 0, 0), 0.5); 
 }
-color = make_color_hsv(color_get_hue(color), 200, 255)//色を明るく
+color = make_color_hsv(color_get_hue(color), 200, 235)//色を明るく
 surface_reset_target();
 surface_free(global.temp_surface);//不要になったので破棄
 
@@ -49,8 +49,14 @@ for(var i=0; i<line_amount; i++){
 		}
 		if(decision){break}//四角から出ているのでbreak
 	}
-	var line_color = merge_color(color, c_white, random(0.2))
+	//色をランダムで変える
+	var hue = color_get_hue(color)+irandom_range(-7, 7);
+	var saturation = color_get_saturation(color)+irandom_range(-20, 20);
+	var value = color_get_value(color)+irandom_range(-20, 20);
+	if(hue > 255){hue -= 255}
+	var line_color = make_color_hsv(hue, saturation, value);
+	
 	var time = random_range(7, 14)
-	line_effect(line_x, line_y, 12, line_angle[i], time, time, line_color, 0.05, 0.05, 2)
+	line_effect(line_x, line_y, 12, line_angle[i], time, time, line_color, 2, 0)
 }
 display_reset(8, false);
