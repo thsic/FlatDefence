@@ -32,10 +32,12 @@ fire_damage = fire_damage_default;
 chronomancer_timing = 0;//フリーザーのクリスタルの範囲スローの発生頻度
 remaining_bullets = 0;//ブラスターの残りショット数
 blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;//ブラスターのショットのクールダウン
+item_equip_effect_time = 0//アイテム装備時の小さいパーティクル
 
 //スキル関連
 skill_cooldown = -1;//一応
 skill_state = skillstate.cooldown//デフォルト
+skill_particle_time = 0//スキル発動中のエフェクト
 
 target_id = false;
 draw_debug_line = false

@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "2220ced3-414f-4c5b-b15d-6ff1bbca77dc",
+            "Value": {
+                "id": "47dd7022-4a33-4ea1-bd1f-c3d51ee1344d",
+                "resourcePath": "scripts\\skill_active_effect\\skill_active_effect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2312331f-484f-4e30-a459-2b375693b1d7",
             "Value": {
                 "id": "1e1d0af0-de52-4e05-a088-81485fbf62e2",
@@ -1271,6 +1279,14 @@
             }
         },
         {
+            "Key": "f0fa6bf8-3e9d-41f3-8055-c3f6f467f237",
+            "Value": {
+                "id": "6e0db241-6802-4330-a092-f9d0257de5fa",
+                "resourcePath": "scripts\\item_equipped_particle\\item_equipped_particle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f21a8c93-0c2d-4e6f-b9f1-4a63583f37ac",
             "Value": {
                 "id": "d9df6cc7-d747-4290-85b3-b30227a1b424",
@@ -1435,6 +1451,8 @@
         "c4c03aa2-499f-4503-bb30-6d22524abdf9",
         "a3687b98-af70-4bc6-9a37-03e9958cb440",
         "dd9d7169-6555-4db3-a456-071f84547803",
+        "f0fa6bf8-3e9d-41f3-8055-c3f6f467f237",
+        "2220ced3-414f-4c5b-b15d-6ff1bbca77dc",
         "a6c84869-b4a0-4c6a-a528-47a472e81580",
         "d1bf863f-2964-46ee-b3ce-315838f9e1fd",
         "d553e7fe-4479-4dc9-8158-13b6d2a1a6ba",

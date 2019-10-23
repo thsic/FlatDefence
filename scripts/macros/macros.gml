@@ -51,6 +51,7 @@
 #macro IMPERIALLANCE_PENETRATION_MAX 40//インペリアルランス+が貫通できる敵の数
 #macro FREEZEROD_UPGRADE_
 
+
 //説明
 #macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
 #macro ENEMY_SHIELD_DESCRIPTION "敵のシールドです。ダメージを数値分だけ軽減します。 1回攻撃を受ける毎に1減少します。"
@@ -82,5 +83,6 @@
 #macro COLOR_BULLET_MIX c_purple
 
 #macro COLOR_LIFEBLOOD c_red
+#macro COLOR_ITEM_EFFECT c_yellow
 
 #macro COLOR_DEFAULT c_white

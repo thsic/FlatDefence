@@ -88,6 +88,7 @@ case 5:
 	surface_set_target(surface_id);
 	draw_clear_alpha(c_black, 0)
 	draw_set_color(effect_color);
+	draw_set_alpha(effect_alpha);
 	
 	if(blast_size > 0){
 		var circle_smooth = 20//円の滑らかさ
@@ -99,12 +100,15 @@ case 5:
 			var temp_x = lengthdir_x(circle_size, angle)+effect_size;
 			var temp_y = lengthdir_y(circle_size, angle)+effect_size;
 			draw_vertex(temp_x, temp_y);
+			var angle2 = angle
+			var angle2 = point_direction(blast_x, blast_y, temp_x-effect_size, temp_y-effect_size);
 			
 			//偶数 内側の円
-			var temp_x2 = lengthdir_x(blast_size, angle)+effect_size+blast_x;
-			var temp_y2 = lengthdir_y(blast_size, angle)+effect_size+blast_y;
+			var temp_x2 = lengthdir_x(blast_size, angle2)+effect_size+blast_x;
+			var temp_y2 = lengthdir_y(blast_size, angle2)+effect_size+blast_y;
+			//draw_line_color(temp_x, temp_y, temp_x2, temp_y2, c_blue, c_blue) テスト用
 			//内側の円が外側の円からはみ出ようとした時にはみ出ないように
-			if(angle > 90 and angle < 270){
+			if(angle2 > 90 and angle2 < 270){
 				if(temp_x > temp_x2){
 					temp_x2 = temp_x;
 				}
@@ -114,7 +118,7 @@ case 5:
 					temp_x2 = temp_x;
 				}
 			}
-			if(angle < 180){
+			if(angle2 < 180){
 				if(temp_y > temp_y2){
 					temp_y2 = temp_y
 				}
@@ -126,6 +130,7 @@ case 5:
 			}
 			//描画
 			draw_vertex(temp_x2, temp_y2);
+			
 		}
 		draw_primitive_end();
 		/*
@@ -139,6 +144,7 @@ case 5:
 	}
 	surface_reset_target();
 	draw_set_color(COLOR_DEFAULT);
+	draw_set_alpha(1);
 	draw_surface(surface_id, x-effect_size, y-effect_size);
 	
 break

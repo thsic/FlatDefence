@@ -3,19 +3,22 @@
 var fire_damage_temp = 0;
 var attack_per_second_temp = 0;
 var range_temp = 0;
-
+var item_amount = 0
 //装備確認
 for(var i=0; i<itemslot_amount; i++){
 	if(itemslot[i] != -1){
 		fire_damage_temp += global.itemdata[itemslot[i], itemdata.damage];
 		attack_per_second_temp += global.itemdata[itemslot[i], itemdata.attack_speed];
 		range_temp += global.itemdata[itemslot[i], itemdata.range];
+		item_amount++;
 	}
 }
 //ステータス上昇
 fire_damage = fire_damage_temp + fire_damage_default;
 attack_per_second = attack_per_second_temp + attack_per_second_default;
 range = range_temp + range_default;
+//アイテム装備時の小さいエフェクト
+item_equipped_particle(x, y, item_amount, 16, 10, 4);
 
 #endregion
 
@@ -198,6 +201,7 @@ if(global.gamestate = gamestate.main){
 		case skillstate.active:
 			//スキル使用中
 			skill_active()
+			skill_active_effect(x, y, 16, 10, 1);
 		break
 		}
 	}

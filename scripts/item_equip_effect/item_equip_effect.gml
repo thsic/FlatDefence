@@ -4,7 +4,7 @@ var effect_y = argument1;
 var itemid = argument2;
 var color = c_yellow
 
-blast_circle(effect_x, effect_y, 0, 0, 48, color, 20, 8);
+blast_circle(effect_x, effect_y, 0, 0, 48, color, 20, 8, 1);
 
 var line_amount = 8
 var line_addangle = 360/line_amount
