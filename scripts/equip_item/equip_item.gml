@@ -56,6 +56,6 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 }
 if(result){
 	sdm(string(global.itemdata[item_id, itemdata.name]) + "を装備")
-	item_equip_effect(defender_id.x, defender_id.y, item_id);//装備エフェクト
+	item_equip_effect(mean(mouse_x, defender_id.x), mean(mouse_y, defender_id.y), item_id);//装備エフェクト
 }
 return result

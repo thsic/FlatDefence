@@ -2,9 +2,9 @@
 var effect_x = argument0;
 var effect_y = argument1;
 var item_amount = argument2;
-var effect_range = argument3;
-var effect_freq = argument4;
-var effect_prob = argument5;
+var effect_range = 16;
+var effect_freq = 10;
+var effect_prob = 2;
 
 
 

@@ -14,6 +14,6 @@ for(var i=0; i<line_amount; i++){
 	var angle = line_addangle*-i+angle_default
 	var line_x = lengthdir_x(48, angle)+effect_x;
 	var line_y = lengthdir_y(48, angle)+effect_y;
-	line_effect(line_x, line_y, 16, angle, 6, 8, color, 2, 12);
+	line_effect(line_x, line_y, 16, angle, 6, 8, color, 2, 12, 0);
 }
 

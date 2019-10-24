@@ -43,6 +43,7 @@ case 4:
 		effect_delay--;
 	}
 	
+	speed = effect_speed;
 	var tip_x = lengthdir_x(effect_length*line_tip, direction)+x;
 	var tip_y = lengthdir_y(effect_length*line_tip, direction)+y;
 	var terminal_x = lengthdir_x(effect_length*line_terminal, direction)+x;

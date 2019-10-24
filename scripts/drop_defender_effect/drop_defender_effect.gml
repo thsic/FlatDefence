@@ -57,6 +57,6 @@ for(var i=0; i<line_amount; i++){
 	var line_color = make_color_hsv(hue, saturation, value);
 	
 	var time = random_range(7, 14)
-	line_effect(line_x, line_y, 12, line_angle[i], time, time, line_color, 2, 0)
+	line_effect(line_x, line_y, 12, line_angle[i], time, time, line_color, 2, 0, 0)
 }
 display_reset(8, false);

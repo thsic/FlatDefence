@@ -84,5 +84,6 @@
 
 #macro COLOR_LIFEBLOOD c_red
 #macro COLOR_ITEM_EFFECT c_yellow
+#macro COLOR_SKILL_ACTIVE_BASE c_purple
 
 #macro COLOR_DEFAULT c_white

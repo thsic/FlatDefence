@@ -1,4 +1,4 @@
-///@param x,y,len,dir,1sttime,2ndtime,col,size,delay
+///@param x,y,len,dir,1sttime,2ndtime,col,size,delay,speed
 
 var effect_x = argument0;
 var effect_y = argument1;
@@ -9,6 +9,7 @@ var second_phase_time = argument5;
 var color = argument6;
 var size = argument7;
 var delay = argument8;
+var e_speed = argument9;
 
 with(instance_create_layer(effect_x, effect_y, "Effects", o_effect)){
 	type = 4;
@@ -19,6 +20,7 @@ with(instance_create_layer(effect_x, effect_y, "Effects", o_effect)){
 	display_color = color;
 	effect_size = size;
 	effect_delay = delay;
+	effect_speed = e_speed;
 	
 	alarm[0] = first_phase_time_default+second_phase_time_default+effect_delay;
 	first_phase_time_now = first_phase_time_default;

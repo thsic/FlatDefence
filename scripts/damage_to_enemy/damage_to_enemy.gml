@@ -179,10 +179,10 @@ if(blast_level > 0){
 	}
 	blast_power -= 1;
 	var blast_alpha = 1;
-	for(var i=0; i<blast_level; i++){
-		blast_alpha *= 0.9;
+	for(var i=0; i<blast_level-1; i++){
+		blast_alpha *= 0.8;
 	}
-	blast_effect(target_id.x, target_id.y, blast_power*EFFECT_BLAST_SIZE, c_red, 12, blast_alpha);
+	blast_effect(target_id.x, target_id.y, blast_power*EFFECT_BLAST_SIZE, c_red, 14+blast_level*1, blast_alpha);
 	for(var i=0; i<global.enemy_amount; i++){
 		var enemy_id = global.enemy_id[i]
 		if(instance_exists(enemy_id)){
