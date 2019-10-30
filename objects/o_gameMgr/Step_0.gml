@@ -20,6 +20,7 @@ case gamestate.stagestart://ステージ開始時処理
 	timemachine_button_state[2] = 0;
 	stage_setting();
 	
+	instance_create_layer(0, 0, "Background", o_backgroungMgr);
 	global.gamestate = gamestate.reststart;
 break
 

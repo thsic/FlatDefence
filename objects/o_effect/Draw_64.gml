@@ -13,6 +13,21 @@ case 0:
 	draw_set_color(c_white);
 	draw_set_alpha(1);
 break
+case 2:
+if(do_createevent){
+	draw_set_color(display_color);
+	draw_set_alpha(display_alpha);
+	draw_primitive_begin(pr_trianglestrip);
+	draw_vertex(x1, y1);
+	draw_vertex(x2, y2);
+	draw_vertex(x3, y3);
+	draw_vertex(x4, y4);
+	draw_primitive_end()
+	draw_set_color(COLOR_DEFAULT);
+	draw_set_alpha(1)
+	
+}
+break
 case 4:
 	if(effect_delay <= 0){
 		if(first_phase_time_now > 0){//第一段階 先端を動かす

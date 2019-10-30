@@ -51,20 +51,13 @@ case gamestate.main:
 		//貫通攻撃は射程外になると消える
 		if(point_distance(x, y, defender_id.x, defender_id.y)+speed > defender_id.range){
 			instance_destroy();
+			//誰にもダメージを与えられないまま射程外になったときはターゲットにダメージを与える
+			if(penetration_enemy_id[0] = -1){
+				damage_to_enemy(damage, bullet_target, defender_id);
+			}
 		}
 	}
 	
-	//弾の軌道に炎を作る
-	var fire_interval = 3;
-	var bullet_direction = direction;
-
-	var xx = lengthdir_x(fire_interval_now, bullet_direction)+x;
-	var yy = lengthdir_y(fire_interval_now, bullet_direction)+y;
-
-	var distance = point_distance(xx, yy, xprev, yprev);
-	var fire_amount = floor(distance/fire_interval);
-	fire_interval_now = distance-fire_amount*fire_interval;
-
 	//色設定
 	var bullet_fire_color = COLOR_BULLET_DEFAULT;
 	if(effect_freeze){
@@ -76,13 +69,8 @@ case gamestate.main:
 	if(effect_freeze and effect_fire){
 		bullet_fire_color = COLOR_BULLET_MIX;
 	}
+	bullet_fire(x, y, xprev, yprev, direction, dirprev, bullet_fire_color, 0.3, 5, 2);
 
-	for(var i=0; i<fire_amount; i++){
-		var fire_x = lengthdir_x(fire_interval*i, bullet_direction)+xprev;
-		var fire_y = lengthdir_y(fire_interval*i, bullet_direction)+yprev;
-		bullet_fire(fire_x, fire_y, bullet_fire_color, 0.3, 30);
-	}
-	
 	
 
 #region 衝突判定
@@ -139,6 +127,7 @@ case gamestate.main:
 #endregion
 	
 break
+
 case gamestate.pause://ポーズされたら止まる
 	if(speed_temp = -1){
 		speed_temp = speed;//speed_tempに一時的に保存
@@ -159,11 +148,12 @@ if(destroy_countdown > 0){//消える
 }
 else if(destroy_countdown = 0){
 	instance_destroy()
+	
 }
 
 
 
 xprev = x
 yprev = y
-
+dirprev = direction
 

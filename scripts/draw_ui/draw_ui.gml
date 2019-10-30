@@ -3,14 +3,14 @@
 draw_set_color(COLOR_TEXT_WHITE);
 draw_text(0, 0, "Stage"+string(global.stage)+" Wave"+string(global.wave_now));
 draw_text(50, 20, string(global.life));
-draw_set_color(COLOR_TEXT_PURPLE);
+//draw_set_color(COLOR_TEXT_PURPLE);
 draw_text(0, 20, "Life");
 
 draw_set_color(COLOR_TEXT_WHITE)
 switch(global.gamestate){
 case gamestate.rest://休憩タイム
 case gamestate.restpause:
-	draw_set_color(COLOR_TEXT_GRAY)
+	//draw_set_color(COLOR_TEXT_GRAY)
 	draw_text(0, 52, "NextWave "+string(floor(rest_time/FPS_DEFAULT)));
 	for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){
 		if(global.spawn_enemy[i, spawnenemy.objectid] != -1){

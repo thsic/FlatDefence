@@ -13,6 +13,7 @@ global.defender_data[target, data.cost] = 100;
 global.defender_data[target, data.itemslot] = 4;
 global.defender_data[target, data.effect] = -1;
 global.defender_data[target, data.effect2] = -1;
+global.defender_data[target, data.color] = make_color_rgb(46, 49, 146);
 
 target = 1;
 global.defender_data[target, data.object] = o_dSniper;
@@ -25,6 +26,7 @@ global.defender_data[target, data.cost] = 150;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 23;
 global.defender_data[target, data.effect2] = -1;
+global.defender_data[target, data.color] = make_color_rgb(60, 184, 120);
 
 target = 2;
 global.defender_data[target, data.object] = o_dBomber;
@@ -37,6 +39,7 @@ global.defender_data[target, data.cost] = 250;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 0;
 global.defender_data[target, data.effect2] = 0;
+global.defender_data[target, data.color] = make_color_rgb(243, 108, 79);
 
 target = 3;
 global.defender_data[target, data.object] = o_dFreezer;
@@ -49,6 +52,7 @@ global.defender_data[target, data.cost] = 200;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 2;
 global.defender_data[target, data.effect2] = 13;
+global.defender_data[target, data.color] = make_color_rgb(125, 167, 217);
 
 target = 4;
 global.defender_data[target, data.object] = o_dBlaster;
@@ -61,6 +65,7 @@ global.defender_data[target, data.cost] = 200;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 21;
 global.defender_data[target, data.effect2] = -1;
+global.defender_data[target, data.color] = make_color_rgb(135, 129, 190);
 
 target = 5;
 global.defender_data[target, data.object] = o_dThief;
@@ -73,6 +78,7 @@ global.defender_data[target, data.cost] = 120;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 22;
 global.defender_data[target, data.effect2] = -1;
+global.defender_data[target, data.color] = make_color_rgb(244, 154, 194);
 
 global.defender_category_amount = target+1;//今実装されているdefenderのかず
 #region enum
@@ -86,7 +92,8 @@ enum data{
 	description,
 	effect,
 	effect2,
-	itemslot
+	itemslot,
+	color
 }
 #endregion
 #endregion
@@ -514,8 +521,8 @@ enum skilldata{
 target = 0;
 global.enemydata[target, enemydata.object] = o_eNormal;
 global.enemydata[target, enemydata.name] = "Normal";
-global.enemydata[target, enemydata.hp] = 150;
-global.enemydata[target, enemydata.shield] = 15;
+global.enemydata[target, enemydata.hp] = 50;
+global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
 global.enemydata[target, enemydata.dropgold] = 10;

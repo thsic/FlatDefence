@@ -17,7 +17,17 @@ if(!do_createevent){
 		part_particles_create(particle_id, x, y, particle_type_id, 1);
 	break
 	case 2:
+		var line_width = linewidth;
+		x1 = lengthdir_x(line_width/2, direction-90)+x;
+		x2 = lengthdir_x(line_width/2, direction+90)+x;
+		x3 = lengthdir_x(line_width/2, direction-90)+effect_xprev;
+		x4 = lengthdir_x(line_width/2, direction+90)+effect_xprev;
+		y1 = lengthdir_y(line_width/2, direction-90)+y;
+		y2 = lengthdir_y(line_width/2, direction+90)+y;
+		y3 = lengthdir_y(line_width/2, direction-90)+effect_yprev;
+		y4 = lengthdir_y(line_width/2, direction+90)+effect_yprev;
 		alarm[0] = lifetime;
+		/*
 		particle_id = part_type_create()
 		part_type_shape(particle_id, pt_shape_explosion);
 		part_type_size(particle_id, 0.1, 0.1, -0.003, 0);
@@ -25,7 +35,7 @@ if(!do_createevent){
 		part_type_life(particle_id, lifetime, lifetime);
 		part_type_alpha2(particle_id, alpha, 0);
 		particle_type_id = part_system_create();
-		part_particles_create(particle_id, x, y, particle_type_id, 1);
+		part_particles_create(particle_id, x, y, particle_type_id, 1);*/
 	break
 	case 3:
 		alarm[0] = lifetime;

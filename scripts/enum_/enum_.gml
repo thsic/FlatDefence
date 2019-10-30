@@ -51,3 +51,8 @@ enum effectnow{
 	number,
 	time
 }
+
+
+
+
+

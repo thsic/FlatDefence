@@ -11,6 +11,7 @@ random_set_seed(date_current_datetime())
 randomize();
 
 //色決める defenderのスプライトから色を抽出する
+/* スプライトから抽出することはせず、予め決めてたcolorから
 var defender_sprite = object_get_sprite(object_id);
 var s_width = sprite_get_width(defender_sprite);
 var s_height = sprite_get_height(defender_sprite);
@@ -24,10 +25,12 @@ repeat(5){//何回か色を抽出して平均の色を求める
 	//なんかバグでうまくいかない 指定座標を0に近づけるとバグの発生率が下がる
 	color = merge_color(color, surface_getpixel(global.temp_surface, 0, 0), 0.5); 
 }
+
 color = make_color_hsv(color_get_hue(color), 200, 235)//色を明るく
 surface_reset_target();
-surface_free(global.temp_surface);//不要になったので破棄
+surface_free(global.temp_surface);//不要になったので破棄*/
 
+color = global.defender_data[defender_id_conversion(object_id), data.color];
 var angle_critelia = random(360);
 var line_angle_interval = 360/line_amount;
 var square_size = SPRITE_SIZE+2

@@ -8,7 +8,7 @@ if(target_id != false){
 
 if(state = state.idle){
 	draw_set_alpha(0.1);
-	draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
+	draw_set_color(global.defender_data[defender_number, data.color]);
 }
 else{
 	draw_set_alpha(0.1);

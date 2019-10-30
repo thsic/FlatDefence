@@ -19,7 +19,7 @@ if(item_equip_effect_time = 0){
 	repeat(particle_amount){//判定が成功した回数だけパーティクル描画
 		//エフェクト発生
 		var particle_id = part_type_create();
-		part_type_shape(particle_id, pt_shape_spark);
+		part_type_shape(particle_id, pt_shape_disk);
 		part_type_color1(particle_id, COLOR_ITEM_EFFECT);
 		part_type_size(particle_id, 0.06, 0.12, 0, 0);
 		part_type_alpha3(particle_id, 0, 0.5, 0);

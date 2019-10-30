@@ -75,7 +75,7 @@
 #macro COLOR_TEXT_DARKGREEN c_teal
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
-#macro COLOR_CIRCLE_RANGE_IDLE c_aqua
+#macro COLOR_CIRCLE_RANGE_IDLE c_lime
 
 #macro COLOR_BULLET_DEFAULT c_ltgray
 #macro COLOR_BULLET_FREEZE c_aqua
