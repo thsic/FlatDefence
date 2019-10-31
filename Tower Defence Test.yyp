@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "3309b9d4-03cc-4d10-94c6-3cac60485f78",
+            "Value": {
+                "id": "270f3a57-3362-48b5-b963-0a0c26cfd2e4",
+                "resourcePath": "objects\\o_routeArrow\\o_routeArrow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "346a71dc-4a3f-48c3-a6dc-2812ae4f1213",
             "Value": {
                 "id": "9a95d08e-8196-4652-aa18-1d41a7d8198c",
@@ -628,6 +636,14 @@
                 "id": "77321999-bdee-4621-9650-bd6b4878b8ad",
                 "resourcePath": "views\\762845c5-9642-497a-ab46-103a9ee8bb16.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7755223e-8a55-4e92-a413-ad564637bcec",
+            "Value": {
+                "id": "a003464b-312e-4893-875c-6cccab6a559e",
+                "resourcePath": "scripts\\create_route_arrow\\create_route_arrow.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1263,6 +1279,14 @@
             }
         },
         {
+            "Key": "ed90280d-8d2a-4a4b-9257-cf5008148c28",
+            "Value": {
+                "id": "228c83be-067b-44b4-b4f6-e25bc2b6bb90",
+                "resourcePath": "sprites\\s_routeArrow\\s_routeArrow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ee3449f8-aa06-4ca1-8f5e-2c3d586356a6",
             "Value": {
                 "id": "330c88bd-debb-4011-aa6c-8f010377b16e",
@@ -1459,6 +1483,7 @@
         "ee3449f8-aa06-4ca1-8f5e-2c3d586356a6",
         "acaa4d5d-4ced-4c55-b7d3-4ebd647bf54b",
         "7b6bd47d-c338-4df5-96f2-e2c4e02dc61b",
+        "7755223e-8a55-4e92-a413-ad564637bcec",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
         "e93f5835-3f72-4ee9-8d5e-d35c6c709570",

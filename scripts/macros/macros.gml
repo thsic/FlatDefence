@@ -24,6 +24,7 @@
 #macro REST_TIME 600//休憩時間の長さ
 #macro SPRITE_SIZE 16
 #macro SPAWN_ENEMY_TYPE_AMOUNT 5
+#macro ARROW_CREATE_COOLDOWN_DEFAULT 150//休憩時間に流れる敵ルート矢印の頻度
 
 #macro PAUSE_BUTTON vk_space
 #macro DOUBLE_SPEED_BUTTON vk_control

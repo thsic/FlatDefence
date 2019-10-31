@@ -11,7 +11,8 @@
         "eb43e12d-19b6-43ca-b308-e9d86b3f0823",
         "4e9f6765-92d9-4738-9f12-f749f542868e",
         "ce4a4c23-0996-4f22-9e5e-22a99f614071",
-        "f4c53fb3-60d8-4eeb-9b05-128eaac28be5"
+        "f4c53fb3-60d8-4eeb-9b05-128eaac28be5",
+        "ed90280d-8d2a-4a4b-9257-cf5008148c28"
     ],
     "filterType": "GMSprite",
     "folderName": "UI",

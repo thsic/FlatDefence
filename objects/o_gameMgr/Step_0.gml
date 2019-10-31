@@ -28,17 +28,27 @@ case gamestate.reststart://休憩タイム開始
 	rest_time = REST_TIME;
 	global.wave_now++;
 	instance_create_layer(0, 0, "Instances", o_enemyGenerateMgr);
-	
+	arrow_create_cooldown = ARROW_CREATE_COOLDOWN_DEFAULT;
 	global.gamestate = gamestate.rest;
 break
+
+
 
 case gamestate.rest://ウェーブの間の休憩
 	if(rest_time > 0){
 		rest_time--;
+		if(arrow_create_cooldown = 0){
+			create_route_arrow(o_enemyGenerateMgr.spowner_amount);//ルート表示用の矢印表示
+			arrow_create_cooldown = ARROW_CREATE_COOLDOWN_DEFAULT;
+		}
+		else{
+			arrow_create_cooldown--
+		}
 	}
 	else{
 		global.gamestate = gamestate.wavestart;	
 	}
+		
 break
 
 case gamestate.wavestart://ウェーブ開始処理
@@ -124,7 +134,13 @@ case gamestate.pause:
 break
 
 case gamestate.restpause:
-
+	if(arrow_create_cooldown = 0){//休憩時間中の矢印
+			create_route_arrow(o_enemyGenerateMgr.spowner_amount);//ルート表示用の矢印表示
+			arrow_create_cooldown = ARROW_CREATE_COOLDOWN_DEFAULT;
+		}
+		else{
+			arrow_create_cooldown--
+		}
 break
 }
 #region shop処理 キーボード操作
