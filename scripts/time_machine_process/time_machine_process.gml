@@ -12,20 +12,30 @@ for(var i=0; i<3; i++){
 
 #region キーボードショートカットでのステート変更処理
 if(keyboard_check_pressed(DOUBLE_SPEED_BUTTON)){
-	for(var i=0; i<3; i++){
-		timemachine_button_state[i] = 0;
+	if(timemachine_button_state[2] = 2){
+		for(var i=0; i<3; i++){
+			timemachine_button_state[i] = 0;
+		}
+		timemachine_button_state[0] = 2//等速に
+		timemachine_change_state(0);
 	}
-	timemachine_button_state[2] = 2//コントロールキーが押されると強制的に倍速に
-	timemachine_change_state(2);
+	else{
+		for(var i=0; i<3; i++){
+			timemachine_button_state[i] = 0;
+		}
+		timemachine_button_state[2] = 2//コントロールキーが押されると倍速に
+		timemachine_change_state(2);
+	}
+	
 
 }
-if(keyboard_check_released(DOUBLE_SPEED_BUTTON)){
+/*if(keyboard_check_released(DOUBLE_SPEED_BUTTON)){
 	for(var i=0; i<3; i++){
 		timemachine_button_state[i] = 0;
 	}
 	timemachine_button_state[0] = 2//コントロールキーが離されると強制的に等速に
 	timemachine_change_state(0);
-}
+}*/
 if(keyboard_check_pressed(PAUSE_BUTTON)){
 	for(var i=0; i<3; i++){//スペース押されるとポーズかポーズ解除
 		if(timemachine_button_state[i] = 2){

@@ -1437,6 +1437,14 @@
                 "resourcePath": "scripts\\shop_prise_increase\\shop_prise_increase.yy",
                 "resourceType": "GMScript"
             }
+        },
+        {
+            "Key": "fec8d822-51ea-4512-8609-cc33c3714150",
+            "Value": {
+                "id": "a8dd3bd3-6334-4830-8ea5-a79353a3b338",
+                "resourcePath": "sprites\\s_wavestartButton\\s_wavestartButton.yy",
+                "resourceType": "GMSprite"
+            }
         }
     ],
     "script_order": [
