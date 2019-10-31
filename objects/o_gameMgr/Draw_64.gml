@@ -1,5 +1,5 @@
 /// @description UI表示
-
+draw_set_font(fo_default)
 switch(global.gamestate){
 case gamestate.wavestart:
 	surface_free(global.usefulwindow_surface[4]);

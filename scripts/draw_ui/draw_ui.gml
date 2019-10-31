@@ -52,10 +52,10 @@ case gamestate.pause:
 			tiny_window(s_window, 4, x_offset, y_offset, 176, 40, 1);
 			draw_set_color(COLOR_TEXT_WHITE);
 			draw_sprite(object_get_sprite(global.spawn_enemy[target_objectid, spawnenemy.objectid]), 0, x_offset+4+SPRITE_SIZE, y_offset+4+SPRITE_SIZE);
-			draw_text(x_offset+38, y_offset+8, global.enemydata[target_number, enemydata.name]);
-			draw_text(x_offset+110, y_offset+8, "x");
+			draw_text(x_offset+38, y_offset+12, global.enemydata[target_number, enemydata.name]);
+			draw_text(x_offset+110, y_offset+12, "x");
 			draw_set_color(COLOR_TEXT_BLUE);
-			draw_text(x_offset+140, y_offset+8,string(global.spawn_enemy[target_objectid, spawnenemy.amount]));
+			draw_text(x_offset+140, y_offset+12,string(global.spawn_enemy[target_objectid, spawnenemy.amount]));
 			draw_set_color(COLOR_DEFAULT);
 		}
 	}

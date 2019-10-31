@@ -64,7 +64,7 @@
 
 
 //色
-#macro COLOR_TEXT_GRAY c_gray
+#macro COLOR_TEXT_GRAY c_dkgray
 #macro COLOR_TEXT_DKGRAY c_dkgray
 #macro COLOR_TEXT_WHITE c_white
 #macro COLOR_TEXT_YELLOW c_yellow
@@ -78,7 +78,7 @@
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime
 
-#macro COLOR_BULLET_DEFAULT c_ltgray
+#macro COLOR_BULLET_DEFAULT c_dkgray
 #macro COLOR_BULLET_FREEZE c_aqua
 #macro COLOR_BULLET_FIRE c_red
 #macro COLOR_BULLET_MIX c_purple
