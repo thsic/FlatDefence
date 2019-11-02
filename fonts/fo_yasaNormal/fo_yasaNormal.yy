@@ -2,7 +2,7 @@
     "id": "c1808228-c6ae-4b41-a7a1-44393f11c762",
     "modelName": "GMFont",
     "mvc": "1.1",
-    "name": "fo_default",
+    "name": "fo_yasaNormal",
     "AntiAlias": 1,
     "TTFName": "",
     "ascenderOffset": 0,

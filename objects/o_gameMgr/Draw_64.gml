@@ -1,5 +1,5 @@
 /// @description UI表示
-draw_set_font(fo_default)
+draw_set_font(fo_yasaNormal)
 switch(global.gamestate){
 case gamestate.wavestart:
 	surface_free(global.usefulwindow_surface[4]);
@@ -19,6 +19,7 @@ case gamestate.pause:
 case gamestate.main:
 case gamestate.waveclear:
 case gamestate.stageclear:
+case gamestate.gameover:
 	draw_time_machine();
 	draw_shop();
 	show_defender_ui();
@@ -27,6 +28,12 @@ break
 switch(global.gamestate){
 case gamestate.main:
 	show_enemy_ui();
+break
+case gamestate.gameover:
+	gameover_ui();
+break
+case gamestate.stageclear:
+	stageclear_ui();
 break
 //ウェーブ強制スタートボタン
 case gamestate.rest:
@@ -49,10 +56,10 @@ case gamestate.restpause:
 		global.gamestate = gamestate.wavestart;
 	}
 	
-	draw_sprite(s_wavestartButton, button_subimage, 150, 6);
+	draw_sprite_ext(s_wavestartButton, button_subimage, 150, 6, 1, 1, 0, c_aqua, 1);
 	draw_set_halign(fa_middle);
 	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(button_x+button_width/2, button_y, "WaveStart");
+	draw_text(button_x+button_width/2, button_y+2, "WaveStart");
 	draw_set_halign(fa_left);
 	draw_set_color(COLOR_DEFAULT);
 break

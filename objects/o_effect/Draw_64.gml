@@ -164,4 +164,41 @@ case 5:
 	draw_surface(surface_id, x-effect_size, y-effect_size);
 	
 break
+case 6:
+	if(time < fall_time){
+		time++;
+		var time_percent = time/fall_time
+		var temp = (time_percent-1)*(time_percent-1)+1;
+		var text_y = y+fall_length*(1-temp);
+		var alpha = 1-temp+1
+	}
+	else{
+		var text_y = y;
+		var alpha = 1
+	}
+	draw_set_font(text_font);
+	draw_set_halign(text_halign);
+	draw_set_color(display_color);
+	draw_set_alpha(alpha);
+	draw_text(x, text_y, text);
+	draw_set_color(COLOR_DEFAULT);
+	draw_set_halign(fa_left);
+	draw_set_font(FONT_DEFAULT)
+	draw_set_alpha(1);
+break
+case 7:
+	var draw_score_total_time = 30
+	time++;
+	if(time <= draw_score_total_time){
+		draw_score = floor(time/draw_score_total_time*score_total);
+	}
+	else{
+		draw_score = score_total;
+	}
+	draw_set_color(c_ltgray);
+	draw_set_font(fo_yasaSuperBig);
+	draw_text(x, y, draw_score);
+	draw_set_color(COLOR_DEFAULT);
+	draw_set_font(FONT_DEFAULT);
+break
 }

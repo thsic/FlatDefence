@@ -13,7 +13,9 @@
         "a3687b98-af70-4bc6-9a37-03e9958cb440",
         "dd9d7169-6555-4db3-a456-071f84547803",
         "f0fa6bf8-3e9d-41f3-8055-c3f6f467f237",
-        "2220ced3-414f-4c5b-b15d-6ff1bbca77dc"
+        "2220ced3-414f-4c5b-b15d-6ff1bbca77dc",
+        "95243186-e385-40f0-986a-a3303c05e470",
+        "43984f56-c314-4fd3-a560-62dab1ed3539"
     ],
     "filterType": "GMScript",
     "folderName": "effect",

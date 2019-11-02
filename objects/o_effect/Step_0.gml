@@ -56,6 +56,9 @@ if(!do_createevent){
 	case 5://爆発
 		
 	break
+	case 6://文字
+		time = 0;
+	break
 	}
 	
 	

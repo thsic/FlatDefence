@@ -13,6 +13,8 @@ upgrade_ui = false;//upgrade画面が開いているかどうか
 window_follow_enemy_id = -1;//敵ステータスウィンドウが追尾してるid
 purchased_upgrade_orb = false;//お店でこうにゅうしたオーブかどうか
 timemachine_grab = 0//タイムマシンが掴まれているかどうか
+gameover_frame = -1//ゲームオーバーになってから経過した時間
+stageclear_frame = -1;
 
 database();//globalにいろいろデータをいれる
 

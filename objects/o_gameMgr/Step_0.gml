@@ -117,7 +117,16 @@ case gamestate.waveclear://ウェーブクリア処理
 	if(global.life <= 0){//ゲームオーバー
 		global.gamestate = gamestate.gameover;
 	}
-	global.gamestate = gamestate.reststart;
+	
+	if(global.wave_now >= global.wave_total){
+		//ステージクリア
+		global.gamestate = gamestate.stageclear;
+	}
+	else{
+		//次ウェーブへ
+		global.gamestate = gamestate.reststart;
+	}
+	
 break
 
 case gamestate.stageclear://ステージクリア処理
@@ -125,8 +134,8 @@ case gamestate.stageclear://ステージクリア処理
 break
 
 case gamestate.gameover://ゲームオーバー処理
-	show_message("GameOver!");
-	game_restart();
+	//show_message("GameOver!");
+	//game_restart();
 break
 
 case gamestate.pause:

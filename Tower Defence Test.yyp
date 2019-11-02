@@ -447,6 +447,14 @@
             }
         },
         {
+            "Key": "43984f56-c314-4fd3-a560-62dab1ed3539",
+            "Value": {
+                "id": "613d42fe-b194-4e4a-9222-3137db1c502a",
+                "resourcePath": "scripts\\stageclear_draw_score\\stageclear_draw_score.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4667c75d-c403-44c9-977e-cecbc568cc9f",
             "Value": {
                 "id": "b11c6e74-7a41-47c3-bd34-9030a534c7dc",
@@ -492,6 +500,14 @@
                 "id": "c1947912-49a9-4cf4-804c-62aebc41e2c8",
                 "resourcePath": "sprites\\s_cursedSword\\s_cursedSword.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4b363657-8275-44f9-8f57-5049064a1f2a",
+            "Value": {
+                "id": "163a118a-67f3-4382-87c3-febbf492d1d9",
+                "resourcePath": "scripts\\gameover_ui\\gameover_ui.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -823,6 +839,22 @@
             }
         },
         {
+            "Key": "91a5af9c-28ee-4abc-a16a-4440f636114a",
+            "Value": {
+                "id": "ad1b721e-ef16-4f53-9f88-3a8e4f3d2ab0",
+                "resourcePath": "scripts\\stageclear_ui\\stageclear_ui.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "95243186-e385-40f0-986a-a3303c05e470",
+            "Value": {
+                "id": "c37cf9ef-bf10-4ccc-87d8-c2e258e44743",
+                "resourcePath": "scripts\\fall_text\\fall_text.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "95f7a7f1-72cb-4bca-925b-16be5f632e9a",
             "Value": {
                 "id": "0952afcb-0a51-454b-bb4d-5110c7436f78",
@@ -1010,7 +1042,7 @@
             "Key": "c1808228-c6ae-4b41-a7a1-44393f11c762",
             "Value": {
                 "id": "822b40ef-7ce2-4403-a422-7dbcc8c847f2",
-                "resourcePath": "fonts\\fo_default\\fo_default.yy",
+                "resourcePath": "fonts\\fo_yasaNormal\\fo_yasaNormal.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -1100,6 +1132,14 @@
                 "id": "63e437bc-7e5b-4e22-b939-5c6748522199",
                 "resourcePath": "objects\\o_defenderMarker\\o_defenderMarker.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d2ddf024-5f87-459d-bf9f-27a260db2072",
+            "Value": {
+                "id": "4f0db14a-5a81-4d8e-8e1b-680becab0f42",
+                "resourcePath": "fonts\\fo_yasaSuperBig\\fo_yasaSuperBig.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1500,6 +1540,8 @@
         "acaa4d5d-4ced-4c55-b7d3-4ebd647bf54b",
         "7b6bd47d-c338-4df5-96f2-e2c4e02dc61b",
         "7755223e-8a55-4e92-a413-ad564637bcec",
+        "4b363657-8275-44f9-8f57-5049064a1f2a",
+        "91a5af9c-28ee-4abc-a16a-4440f636114a",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
         "e93f5835-3f72-4ee9-8d5e-d35c6c709570",
@@ -1510,6 +1552,8 @@
         "dd9d7169-6555-4db3-a456-071f84547803",
         "f0fa6bf8-3e9d-41f3-8055-c3f6f467f237",
         "2220ced3-414f-4c5b-b15d-6ff1bbca77dc",
+        "95243186-e385-40f0-986a-a3303c05e470",
+        "43984f56-c314-4fd3-a560-62dab1ed3539",
         "a6c84869-b4a0-4c6a-a528-47a472e81580",
         "d1bf863f-2964-46ee-b3ce-315838f9e1fd",
         "d553e7fe-4479-4dc9-8158-13b6d2a1a6ba",

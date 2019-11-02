@@ -88,3 +88,5 @@
 #macro COLOR_SKILL_ACTIVE_BASE c_purple
 
 #macro COLOR_DEFAULT c_white
+
+#macro FONT_DEFAULT fo_yasaNormal

@@ -22,6 +22,7 @@ for(var i=0; i<3; i++){//ボタン描画
 		var button = 2;
 	break
 	}
-	draw_sprite(sprite, timemachine_button_state[button], window_x+button_offset_x+i*68, window_y+button_offset_y);
+	var color = make_color_hsv(55, 30, 200);
+	draw_sprite_ext(sprite, timemachine_button_state[button], window_x+button_offset_x+i*68, window_y+button_offset_y, 1, 1, 0, color, 1);
 }
 

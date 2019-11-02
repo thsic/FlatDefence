@@ -8,7 +8,7 @@ switch(global.stage){
 case -1:
 	global.life = 10//体力
 	global.gold = 1000;//おかね
-	global.wave_total = 5;//総ウェーブ数
+	global.wave_total = 2;//総ウェーブ数
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;

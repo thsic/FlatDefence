@@ -101,22 +101,24 @@ if(one_shot_one_kill_plus){
 
 if(fire_level = 0){
 	//通常
-	if(target_id.shield > 0){//シールド削り
-		if(shield_break > 0){//シールドブレイクがあるなら追加で削る
-			for(var i=0; i<shield_break; i++){
-				target_id.shield -= global.effectdata[14, effectdata.value];
+	if(instance_exists(target_id)){
+		if(target_id.shield > 0){//シールド削り
+			if(shield_break > 0){//シールドブレイクがあるなら追加で削る
+				for(var i=0; i<shield_break; i++){
+					target_id.shield -= global.effectdata[14, effectdata.value];
+				}
+				if(target_id.shield <= SHIELD_BREAK_STRENGTH){
+					target_id.shield = SHIELD_BREAK_STRENGTH;//あとで1削られるので1だけ残す
+				}
 			}
-			if(target_id.shield <= SHIELD_BREAK_STRENGTH){
-				target_id.shield = SHIELD_BREAK_STRENGTH;//あとで1削られるので1だけ残す
-			}
+			target_id.shield -= SHIELD_BREAK_STRENGTH;
 		}
-		target_id.shield -= SHIELD_BREAK_STRENGTH;
-	}
-	if(damage/10 > damage - target_id.shield){
-		var damage_result = ceil(damage/10);//攻撃力の1/10は最低保障ダメージ
-	}
-	else{
-		var damage_result = ceil(damage - target_id.shield);
+		if(damage/10 > damage - target_id.shield){
+			var damage_result = ceil(damage/10);//攻撃力の1/10は最低保障ダメージ
+		}
+		else{
+			var damage_result = ceil(damage - target_id.shield);
+		}
 	}
 }
 else{
