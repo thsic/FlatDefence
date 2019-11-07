@@ -24,7 +24,7 @@ draw_rectangle(0, 0, view_wport[0], view_hport[0], false)
 
 //ゲームオーバーの文字
 if(gameover_frame = 45){
-	fall_text(view_wport[0]/2, room_height/5*2-32, room_height/5*2, 30, "GAMEOVER", c_red, fo_yasaSuperBig, fa_middle)
+	fall_text(view_wport[0]/2, room_height/5*2-32, room_height/5*2, 30, "GAMEOVER", c_red, FONT_SUPERBIG, fa_middle)
 }
 /*if(gameover_flame > 90){
 	var gameover_text_y_default = room_height/5*2;
@@ -45,7 +45,7 @@ if(gameover_frame = 45){
 
 
 
-draw_set_font(fo_yasaNormal);
+draw_set_font(FONT_DEFAULT);
 draw_set_halign(fa_left);
 draw_set_alpha(1);
 draw_set_color(COLOR_DEFAULT)

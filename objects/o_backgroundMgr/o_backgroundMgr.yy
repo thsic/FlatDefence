@@ -2,7 +2,7 @@
     "id": "f57e57d8-a02d-42c6-9427-3c4e37a8862f",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_backgroungMgr",
+    "name": "o_backgroundMgr",
     "eventList": [
         {
             "id": "b44444b8-d958-419a-a5df-a276a40c65c1",

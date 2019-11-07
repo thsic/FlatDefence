@@ -145,10 +145,10 @@ if(sellbutton = 1){
 draw_set_halign(fa_left);
 
 //開かれている間は射程範囲表示
-draw_set_alpha(0.04);
+draw_set_alpha(0.2);
 //draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
 draw_set_color(global.defender_data[finded_defender_id.defender_number, data.color])
 draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, false)
-draw_set_alpha(0.3);
+draw_set_alpha(0.5);
 draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, true)
 draw_set_alpha(1);

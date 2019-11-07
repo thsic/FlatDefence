@@ -943,6 +943,14 @@
             }
         },
         {
+            "Key": "a50d761e-4229-445c-967d-5a3b7ec9b75f",
+            "Value": {
+                "id": "6e076ab9-f7ca-4ffd-b5ed-ad9c7fe3297f",
+                "resourcePath": "fonts\\fo_ostrichSans48\\fo_ostrichSans48.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "a6c84869-b4a0-4c6a-a528-47a472e81580",
             "Value": {
                 "id": "a24c8414-b803-47b5-91ff-db2fd1b4fb01",
@@ -1138,8 +1146,16 @@
             "Key": "d2ddf024-5f87-459d-bf9f-27a260db2072",
             "Value": {
                 "id": "4f0db14a-5a81-4d8e-8e1b-680becab0f42",
-                "resourcePath": "fonts\\fo_yasaSuperBig\\fo_yasaSuperBig.yy",
+                "resourcePath": "fonts\\fo_notoSuperBig\\fo_notoSuperBig.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "d433973d-6a46-420f-88e7-4f7952f8e229",
+            "Value": {
+                "id": "4ed2f213-8190-47d8-815c-edc74e81df54",
+                "resourcePath": "scripts\\change_room_1\\change_room_1.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1426,7 +1442,7 @@
             "Key": "f57e57d8-a02d-42c6-9427-3c4e37a8862f",
             "Value": {
                 "id": "857b1cb9-3f96-4a81-9af7-bbffecded8a8",
-                "resourcePath": "objects\\o_backgroungMgr\\o_backgroungMgr.yy",
+                "resourcePath": "objects\\o_backgroundMgr\\o_backgroundMgr.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1542,6 +1558,7 @@
         "7755223e-8a55-4e92-a413-ad564637bcec",
         "4b363657-8275-44f9-8f57-5049064a1f2a",
         "91a5af9c-28ee-4abc-a16a-4440f636114a",
+        "d433973d-6a46-420f-88e7-4f7952f8e229",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
         "e93f5835-3f72-4ee9-8d5e-d35c6c709570",

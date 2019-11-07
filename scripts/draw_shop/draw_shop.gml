@@ -88,8 +88,11 @@ if(!draw_description){//このフレームでdescriptionが描画されていな
 
 if(grab_defender_id != -1){//商品を掴んでいる
 	draw_sprite(object_get_sprite(grab_defender_id), 0, window_mouse_get_x(), window_mouse_get_y());
-	draw_set_alpha(0.2);
+	draw_set_alpha(0.6);//円
+	//draw_set_color(global.defender_data[defender_id_conversion(grab_defender_id), data.color]);
+	draw_set_color(c_dkgray);
 	draw_circle(window_mouse_get_x(), window_mouse_get_y(), global.defender_data[defender_id_conversion(grab_defender_id), data.range], true);
+	draw_set_color(COLOR_DEFAULT);
 	draw_set_alpha(1);
 	with(o_defenderMarker){
 		subimage = 2

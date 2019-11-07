@@ -196,7 +196,7 @@ case 7:
 		draw_score = score_total;
 	}
 	draw_set_color(c_ltgray);
-	draw_set_font(fo_yasaSuperBig);
+	draw_set_font(FONT_SUPERBIG);
 	draw_text(x, y, draw_score);
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_font(FONT_DEFAULT);

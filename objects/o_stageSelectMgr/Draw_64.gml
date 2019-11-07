@@ -1,3 +1,4 @@
+
 for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
 	if(stage_select_button[i, stageselectbutton.state] = 0){
 		tiny_window(s_window, 0, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 1);

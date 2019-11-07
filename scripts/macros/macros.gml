@@ -1,6 +1,7 @@
 #macro DEBUGMODE true
 #macro FPS_DEFAULT 60
-#macro START_ROOM r_test
+#macro START_ROOM r_title
+#macro GAMENAME "FLAT DEFENCE"
 
 //ソート
 #macro NEARGOAL 0
@@ -74,6 +75,7 @@
 #macro COLOR_TEXT_PURPLE c_fuchsia
 #macro COLOR_TEXT_BLUE c_aqua
 #macro COLOR_TEXT_DARKGREEN c_teal
+#macro COLOR_TEXT_LTGRAY c_gray
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime
@@ -87,6 +89,11 @@
 #macro COLOR_ITEM_EFFECT c_yellow
 #macro COLOR_SKILL_ACTIVE_BASE c_purple
 
+#macro COLOR_BACKGROUND make_color_rgb(200, 200, 160)
+
 #macro COLOR_DEFAULT c_white
 
+//フォント
 #macro FONT_DEFAULT fo_yasaNormal
+#macro FONT_SUPERBIG fo_notoSuperBig
+#macro FONT_TITLE fo_ostrichSans48
