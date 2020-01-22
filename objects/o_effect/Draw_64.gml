@@ -79,10 +79,18 @@ case 4:
 break
 case 5:
 	//最初に広がる円
+	
 	var time_percent = 1-total_time/total_time_default;
 	circle_size = (log2(time_percent*2)+5)/6*effect_size // "/￣" みたいなグラフ
 	total_time--;
 	if(!surface_exists(surface_id)){
+		if(effect_size*2 > 1500){//surfaceがでかすぎるなら負荷軽減のためにサイズを小さくする
+			surface_half_size = true
+			effect_size /= 2
+		}
+		else{
+			surface_half_size = false
+		}
 		surface_id = surface_create(effect_size*2, effect_size*2);//存在しないなら生成
 	}
 	var blast_size = 0;
@@ -106,13 +114,13 @@ case 5:
 	draw_set_color(effect_color);
 	draw_set_alpha(effect_alpha);
 	
-	if(blast_size > 0){
-		var circle_smooth = 20//円の滑らかさ
-		var circle_addangle = 360/circle_smooth
+	//if(blast_size > 0){
+		var circle_smooth = polygon_number;//円の滑らかさ
+		var circle_addangle = 360/circle_smooth;
 		draw_primitive_begin(pr_trianglestrip);
 		for(var i=0; i<circle_smooth+1; i++){
 			//奇数の点設定 外側の円
-			var angle = circle_addangle*i
+			var angle = circle_addangle*i+circle_random_angle;
 			var temp_x = lengthdir_x(circle_size, angle)+effect_size;
 			var temp_y = lengthdir_y(circle_size, angle)+effect_size;
 			draw_vertex(temp_x, temp_y);
@@ -154,15 +162,19 @@ case 5:
 		draw_set_color(c_black);
 		draw_circle(effect_size, effect_size, blast_size, false);
 		draw_set_alpha(1);*/
-	}
+	/*}
 	else{
 		draw_circle(effect_size, effect_size, circle_size, false);
-	}
+	}*/
 	surface_reset_target();
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_alpha(1);
-	draw_surface(surface_id, x-effect_size, y-effect_size);
-	
+	if(surface_half_size){
+		draw_surface_ext(surface_id, x-effect_size*2, y-effect_size*2, 2, 2, 0, c_white, 1);
+	}
+	else{
+		draw_surface_ext(surface_id, x-effect_size, y-effect_size, 1, 1, 0, c_white, 1);
+	}
 break
 case 6:
 	if(time < fall_time){

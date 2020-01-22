@@ -26,7 +26,7 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 			surface_free(global.usefulwindow_surface[1]);
 			switch(selecting_button){
 			case 0://ステージ移動
-				room_change(r_test);
+				stage_goto = r_test;
 				
 			break
 				

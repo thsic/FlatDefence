@@ -20,7 +20,7 @@ case gamestate.stagestart://ステージ開始時処理
 	timemachine_button_state[2] = 0;
 	stage_setting();
 	
-	instance_create_layer(0, 0, "Background", o_backgroungMgr);
+	instance_create_layer(0, 0, "Background", o_backgroundMgr);
 	global.gamestate = gamestate.reststart;
 break
 
@@ -172,7 +172,7 @@ break
 #region デバッグ用
 	if(global.debugmode or debug_mode){
 		if(mouse_check_button(mb_middle)){
-			global.gold++;
+			global.gold += 10;
 		}
 		if(keyboard_check_pressed(ord("R"))){
 			game_restart();

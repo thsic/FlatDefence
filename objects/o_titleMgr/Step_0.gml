@@ -19,19 +19,3 @@ if(mouse_check_button_pressed(mb_left)){
 	}
 }*/
 
-if(goto_stageselect != -1){
-	if(goto_stageselect <= 0){
-		room_change(r_stageSelect);
-	}
-	else{
-		goto_stageselect--;
-	}
-}
-else{
-	if(mouse_check_button(mb_left)){
-		goto_stageselect = 30;
-	}
-}
-sdm(goto_stageselect)
-
-

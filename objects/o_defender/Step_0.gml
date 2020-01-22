@@ -156,7 +156,7 @@ fire_damage = ceil(fire_damage);
 range = ceil(range);
 
 
-//エフェクト効果時間関連
+//エフェクト効果時間関連/*
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(effect_now[i, effectnow.number] != -1 and effect_now[i, effectnow.time] != -1){
 		if(effect_now[i, effectnow.time] > 0){

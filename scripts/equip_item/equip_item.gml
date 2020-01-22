@@ -5,6 +5,7 @@ var defender_id = argument1;
 var result = false
 for(var i=0; i<defender_id.itemslot_amount; i++){
 	if(global.itemdata[item_id, itemdata.upgraded] = -1){//アップグレードオーブ使用
+		var draw_equid_effect = false
 		if(defender_id.itemslot[0] != -1){
 			upgrade_item(defender_id);//少なくとも1つはアイテムを装備していないといけない
 			result = true;//resultがtrueなのでお金を一旦消費するけど アップグレード画面にいってからでも返金可能
@@ -12,6 +13,8 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 		break
 	}
 	else if(defender_id.itemslot[i] = -1){//装備できるか確認
+		var equipped_item_count = i-1
+		var draw_equid_effect = true
 		if(global.itemdata[item_id, itemdata.skill] != -1){//アイテムがスキル装備なら
 			if(defender_id.skill_id = -1){//defenderがスキルを装備していないなら
 				defender_id.itemslot[i] = item_id;
@@ -32,6 +35,7 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 					if(defender_id.effect_now[j, effectnow.number] = -1){//空きスロットを見つける
 						defender_id.effect_now[j, effectnow.number] = global.itemdata[item_id, itemdata.effect]
 						defender_id.effect_now[j, effectnow.time] = -1;//効果時間無限
+						
 						//addeffect入れる
 						if(global.effectdata[global.itemdata[item_id, itemdata.effect], effectdata.addeffect] != -1){
 							 
@@ -56,6 +60,8 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 }
 if(result){
 	sdm(string(global.itemdata[item_id, itemdata.name]) + "を装備")
-	item_equip_effect(mean(mouse_x, defender_id.x), mean(mouse_y, defender_id.y), item_id);//装備エフェクト
+	if(draw_equid_effect){
+		item_equip_effect(mean(mouse_x, defender_id.x), mean(mouse_y, defender_id.y), item_id, equipped_item_count);//装備エフェクト
+	}
 }
 return result

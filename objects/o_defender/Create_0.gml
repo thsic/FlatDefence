@@ -25,6 +25,7 @@ if(global.defender_data[defender_number, data.effect2] != -1){//エフェクト2
 	effect_now[1, effectnow.time] = -1
 }
 
+
 attack_per_second = attack_per_second_default;
 set_cooldown();
 range = range_default;

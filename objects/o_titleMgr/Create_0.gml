@@ -4,5 +4,5 @@ center_y = window_get_height()/2;
 random_set_seed(date_current_datetime());
 randomize();
 
-goto_stageselect = -1
-//color_hsv = random(255);
+change_room_frame_1 = -1
+change_room = false

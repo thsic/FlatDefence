@@ -28,7 +28,13 @@ draw_text(center_x, center_y+room_height/4, "Click to start")
 draw_set_halign(fa_left);
 draw_set_color(COLOR_DEFAULT);
 
-if(goto_stageselect != -1){
+if(mouse_check_button(mb_left)){
+	change_room = true
+}
+if(change_room){
+	change_room_1(r_stageSelect, 30, COLOR_BACKGROUND);
+}
+/*if(goto_stageselect != -1){
 	draw_set_alpha(1-goto_stageselect/30);
 	draw_set_color(COLOR_BACKGROUND);
 	draw_rectangle(0, 0, room_width, room_height, false);

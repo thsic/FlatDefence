@@ -1,3 +1,6 @@
+draw_set_color(COLOR_BACKGROUND);
+draw_rectangle(0, 0, room_width, room_height, false);
+
 
 for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
 	if(stage_select_button[i, stageselectbutton.state] = 0){
@@ -35,3 +38,8 @@ if(selecting_button != -1){
 	draw_set_halign(fa_left);
 }
 
+if(stage_goto != -1){
+	change_room_1(stage_goto, 30, COLOR_BACKGROUND);
+}
+
+change_room_2(30, COLOR_BACKGROUND);

@@ -1,0 +1,1 @@
+change_room_2(30, COLOR_BACKGROUND)

@@ -1,10 +1,11 @@
-///@param x,y,itemid
+///@param x,y,itemid,itemcount
 var effect_x = argument0;
 var effect_y = argument1;
 var itemid = argument2;
+var item_count = argument3;//装備者がすでに装備してるアイテム数
 var color = c_yellow
 
-blast_circle(effect_x, effect_y, 0, 0, 48, color, 20, 8, 1);
+blast_circle(effect_x, effect_y, 0, 0, 48, color, 20, 8, 1, item_count+4);
 
 var line_amount = 8
 var line_addangle = 360/line_amount

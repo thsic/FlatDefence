@@ -1,9 +1,9 @@
 if(gameover_frame = -1){
 	//ゲームオーバーになった瞬間の設定
 	gameover_frame = 0;
+	menutext_alpha = 0;
 	room_speed = FPS_DEFAULT;
 	
-
 }
 else{
 	gameover_frame++;
@@ -24,8 +24,27 @@ draw_rectangle(0, 0, view_wport[0], view_hport[0], false)
 
 //ゲームオーバーの文字
 if(gameover_frame = 45){
-	fall_text(view_wport[0]/2, room_height/5*2-32, room_height/5*2, 30, "GAMEOVER", c_red, FONT_SUPERBIG, fa_middle)
+	fall_text(view_wport[0]/2, room_height/6*2-32, room_height/6*2, 30, "GAMEOVER", c_red, FONT_SUPERBIG, fa_middle)
 }
+
+//メニュー描画
+if(gameover_frame > 65){
+	if(menutext_alpha < 1){
+		menutext_alpha += 0.04
+	}
+}
+
+draw_set_alpha(menutext_alpha);
+draw_set_font(FONT_DEFAULT);
+draw_set_halign(fa_middle);
+draw_set_color(c_white);
+draw_text(view_wport[0]/2, room_height/6*4, "Retry");
+draw_text(view_wport[0]/2, room_height/6*4+32, "StageSelect");
+draw_set_halign(fa_left);
+
+
+
+
 /*if(gameover_flame > 90){
 	var gameover_text_y_default = room_height/5*2;
 	if(gameover_flame < 90+60){
