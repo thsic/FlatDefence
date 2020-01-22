@@ -14,7 +14,6 @@ else{
 }
 
 draw_set_alpha(1-change_room_frame_1/frame_default);
-sdm(1-change_room_frame_1/frame_default)
 draw_set_color(color);
 draw_rectangle(0, 0, view_wport[0], view_hport[0], false);
 draw_set_color(COLOR_DEFAULT);

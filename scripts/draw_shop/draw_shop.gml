@@ -61,6 +61,9 @@ for(var i=0;i<global.shop_item_amount; i++){//item
 			else{
 				shop_description(2, shop_item_product[i, ITEM], false, false)
 			}
+			if(shop_item_product[i, ITEM]) = 23{
+				shop_description(1, shop_item_product[i, ITEM], false, false)
+			}
 			draw_description = true
 		}
 	}
@@ -100,4 +103,51 @@ if(grab_defender_id != -1){//商品を掴んでいる
 }
 if(grab_item_id != -1){//商品を掴んでいる
 	draw_sprite(global.itemdata[grab_item_id, itemdata.sprite], 0, window_mouse_get_x(), window_mouse_get_y());
+	
+	//クリスタルの場合のみアイテムを装備した時の効果を表示
+	
+	if(grab_item_id = 23){
+		var nearest_defender = instance_nearest(mouse_x,mouse_y,o_defender);
+		if(nearest_defender != noone){
+			if(point_distance(mouse_x, mouse_y, nearest_defender.x, nearest_defender.y) < 32){
+				var defender_number = nearest_defender.defender_number;
+				switch(defender_number){
+				case 0://basic
+					var effect_id = 15;
+				break
+				case 1://sniper
+					var effect_id = 16;
+				break
+				case 2://bomber
+					var effect_id = 17;
+				break
+				case 3://freezer
+					var effect_id = 18;
+				break
+				case 4://blaster
+					var effect_id = 19;
+				break
+				case 5://thief
+					var effect_id = 20;
+				break
+				default:
+					var effect_id = 0;
+					sdm("error!draw_shop");
+				break
+				}
+				//説明表示
+				var description = global.effectdata[effect_id, effectdata.description]
+				description = string_replace(description, "@", "");
+				if(mouse_x+string_width(description)+16 < window_get_width()){
+					var window_x = mouse_x;
+				}
+				else{
+					var window_x = window_get_width()-string_width(description)-16
+				}
+				surface_free(global.usefulwindow_surface[6]);
+				tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
+				draw_text(window_x+4, mouse_y+16, description);
+			}	
+		}
+	}
 }

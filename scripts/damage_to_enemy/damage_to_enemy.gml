@@ -145,98 +145,99 @@ if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメー�
 	damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
 }
 //最終的なダメージ
-target_id.hp -= damage_result;
+if(instance_exists(target_id)){
+	target_id.hp -= damage_result;
+
+	if(target_id.hp <= 0){//敵が死んだ
+		target_id.destroy_enemy = true;
+		global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを落とす
 	
-if(target_id.hp <= 0){//敵が死んだ
-	target_id.destroy_enemy = true;
-	global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを落とす
+		if(gold_get){//ゴールドゲットあるならそれも
+			global.gold += global.effectdata[22, effectdata.value]
+		}
+		if(gold_get_plus){
+			var get_gold = global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value]
+			global.gold += ceil(get_gold*global.effectdata[20, effectdata.value]);
+		}
 	
-	if(gold_get){//ゴールドゲットあるならそれも
-		global.gold += global.effectdata[22, effectdata.value]
-	}
-	if(gold_get_plus){
-		var get_gold = global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value]
-		global.gold += ceil(get_gold*global.effectdata[20, effectdata.value]);
-	}
-	
-	if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
-		if(penetration or penetration_plus){
-			//貫通攻撃がついている場合は狙った対象が死んだ場合のみcd短縮が発動
-			if(target_id = bullet_target){
+		if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
+			if(penetration or penetration_plus){
+				//貫通攻撃がついている場合は狙った対象が死んだ場合のみcd短縮が発動
+				if(target_id = bullet_target){
+					cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
+				}
+			}
+			else{
+				//普通
 				cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
 			}
 		}
-		else{
-			//普通
-			cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
-		}
 	}
-}
 
-if(blast_level > 0){
-	//範囲攻撃
-	var blast_power = 2
-	for(var i=0; i<blast_level; i++){
-		blast_power *= 1.5;
-	}
-	blast_power -= 1;
-	var blast_alpha = 1;
-	for(var i=0; i<blast_level-1; i++){
-		blast_alpha *= 0.8;
-	}
-	blast_effect(target_id.x, target_id.y, blast_power*EFFECT_BLAST_SIZE, c_red, 10+blast_level*1, blast_alpha);
-	for(var i=0; i<global.enemy_amount; i++){
-		var enemy_id = global.enemy_id[i]
-		if(instance_exists(enemy_id)){
-			if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power){
+	if(blast_level > 0){
+		//範囲攻撃
+		var blast_power = 2
+		for(var i=0; i<blast_level; i++){
+			blast_power *= 1.5;
+		}
+		blast_power -= 1;
+		var blast_alpha = 1;
+		for(var i=0; i<blast_level-1; i++){
+			blast_alpha *= 0.8;
+		}
+		blast_effect(target_id.x, target_id.y, blast_power*EFFECT_BLAST_SIZE, c_red, 10+blast_level*1, blast_alpha);
+		for(var i=0; i<global.enemy_amount; i++){
+			var enemy_id = global.enemy_id[i]
+			if(instance_exists(enemy_id)){
+				if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power){
 				
-				damage_result = damage/2;//爆風ダメージは半減する
-				if(freeze_all){//強化ロッドなら爆風でもスロー
-					slow_to_enemy(enemy_id, ice_level+1, damage);
-				}
-				if(blast_damageup){//クリスタルのダメージupあるなら
-					if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power/2){
-						//爆風範囲の中心にいるとダメージup
-						damage_result *= global.effectdata[17, effectdata.value];
-						//効果範囲に追加で円を表示
-						//blast_effect(target_id.x, target_id.y, blast_power/2, c_maroon, 16, 0.1);
+					damage_result = damage/2;//爆風ダメージは半減する
+					if(freeze_all){//強化ロッドなら爆風でもスロー
+						slow_to_enemy(enemy_id, ice_level+1, damage);
+					}
+					if(blast_damageup){//クリスタルのダメージupあるなら
+						if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power/2){
+							//爆風範囲の中心にいるとダメージup
+							damage_result *= global.effectdata[17, effectdata.value];
+							//効果範囲に追加で円を表示
+							//blast_effect(target_id.x, target_id.y, blast_power/2, c_maroon, 16, 0.1);
 						
-						if(blast_onhit_effect){//クリスタルアップグレードされてあると通常攻撃時効果が膜風の中心にのる
-							if(ice_level){//スロー
-								slow_to_enemy(enemy_id, ice_level+1, damage);
+							if(blast_onhit_effect){//クリスタルアップグレードされてあると通常攻撃時効果が膜風の中心にのる
+								if(ice_level){//スロー
+									slow_to_enemy(enemy_id, ice_level+1, damage);
+								}
+							}
+						}
+					}
+					if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
+						damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
+					}
+				
+					//範囲内の敵にダメージを与える
+					if(target_id != enemy_id){//ただしターゲットには既にダメージを与えているのであたえない
+						enemy_id.hp -= damage_result;
+					}
+				
+					//死亡判定
+					if(enemy_id.hp <= 0){
+						enemy_id.destroy_enemy = true;
+						global.gold += global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold];
+						if(gold_get){//ゴールドゲットあるならそれも
+							global.gold += global.effectdata[22, effectdata.value]
+						}
+						if(gold_get_plus){
+							var get_gold = global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value]
+							global.gold += ceil(get_gold*global.effectdata[20, effectdata.value]);
+						}
+						if(blast_onhit_effect){
+							if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
+								cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
 							}
 						}
 					}
 				}
-				if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
-					damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
-				}
-				
-				//範囲内の敵にダメージを与える
-				if(target_id != enemy_id){//ただしターゲットには既にダメージを与えているのであたえない
-					enemy_id.hp -= damage_result;
-				}
-				
-				//死亡判定
-				if(enemy_id.hp <= 0){
-					enemy_id.destroy_enemy = true;
-					global.gold += global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold];
-					if(gold_get){//ゴールドゲットあるならそれも
-						global.gold += global.effectdata[22, effectdata.value]
-					}
-					if(gold_get_plus){
-						var get_gold = global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value]
-						global.gold += ceil(get_gold*global.effectdata[20, effectdata.value]);
-					}
-					if(blast_onhit_effect){
-						if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
-							cooldown_reduction(defender_id, global.effectdata[4, effectdata.value], cooldown_reduction_40);
-						}
-					}
-				}
 			}
 		}
 	}
 }
-
 

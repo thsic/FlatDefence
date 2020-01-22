@@ -65,26 +65,37 @@ break
 case 1://item
 	var effect1 = -1
 	var effect2 = -1
-	if(global.itemdata[target_id, itemdata.effect] != -1){//エフェクトの説明文を入れる
-		var effect1 = global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.number]
-		var description1 = global.effectdata[effect1, effectdata.description];
-		var description1_color = global.effectdata[effect1, effectdata.color];
+	if(target_id = 23){var crystal = true}//クリスタル専用処理
+	if(global.itemdata[target_id, itemdata.effect] != -1 or crystal){//エフェクトの説明文を入れる
+		if(!crystal){
+			var effect1 = global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.number]
+			var description1 = global.effectdata[effect1, effectdata.description];
+			var description1_color = global.effectdata[effect1, effectdata.color];
+		}
+		else{
+			//クリスタルなら説明文が特殊
+			var description1 = CRYSTAL_SHOP_DESCRIPTION;
+			var description1_color = COLOR_TEXT_BLUE;
+			sdm("crystalaa")
+		}
+		
 		//説明文が長いならそれに応じてウィンドウの長さも変える
 		if(window_width < string_width(description1)+6){
 			offset_x -= string_width(description1)+12-window_width;
 			window_width = string_width(description1)+12;
 		}
-		
-		if(global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.addeffect] != -1){//説明2
-			var effect2 = global.effectdata[global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.addeffect], effectdata.number]
-			var description2 = global.effectdata[effect2, effectdata.description];
-			var description2_color = global.effectdata[effect2, effectdata.color];
-			if(window_width < string_width(description2)+6){
-				offset_x -= string_width(description2)+12-window_width;
-				window_width = string_width(description2)+12;
-			}
-			if(effect2 != -1){//説明文が2行なのでその分
-				window_height += 16
+		if(!crystal){
+			if(global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.addeffect] != -1){//説明2
+				var effect2 = global.effectdata[global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.addeffect], effectdata.number]
+				var description2 = global.effectdata[effect2, effectdata.description];
+				var description2_color = global.effectdata[effect2, effectdata.color];
+				if(window_width < string_width(description2)+6){
+					offset_x -= string_width(description2)+12-window_width;
+					window_width = string_width(description2)+12;
+				}
+				if(effect2 != -1){//説明文が2行なのでその分
+					window_height += 16
+				}
 			}
 		}
 	}
@@ -103,7 +114,7 @@ case 1://item
 	draw_text(offset_x+150, offset_y+72, global.itemdata[target_id, itemdata.range]);
 	
 	draw_set_color(COLOR_TEXT_ORANGE);
-	if(effect1 != -1){//説明文が存在する
+	if(effect1 != -1 or crystal){//説明文が存在する もしくはクリスタル
 		draw_set_color(description1_color);
 		description1 = string_replace(description1, "@", "");
 		draw_text(offset_x+6, offset_y+96, description1);

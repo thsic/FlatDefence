@@ -1,13 +1,6 @@
 /// @description UI表示
 draw_set_font(fo_yasaNormal)
-switch(global.gamestate){
-case gamestate.wavestart:
-	surface_free(global.usefulwindow_surface[4]);
-break
-case gamestate.reststart:
-	surface_free(global.usefulwindow_surface[4]);
-break
-}
+
 
 draw_ui();
 switch(global.gamestate){
@@ -65,4 +58,11 @@ case gamestate.restpause:
 break
 }
 
-
+switch(global.gamestate){
+case gamestate.wavestart:
+	surface_free(global.usefulwindow_surface[4]);
+break
+case gamestate.reststart:
+	surface_free(global.usefulwindow_surface[4]);
+break
+}
