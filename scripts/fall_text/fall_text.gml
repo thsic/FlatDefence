@@ -1,4 +1,4 @@
-///@param x,y,y2,time,text,color,font,halign
+///@param x,y,y2,time,text,color,font,halign,begin
 
 var x1 = argument0;
 var y1 = argument1;
@@ -8,7 +8,7 @@ var display_text = argument4;
 var color = argument5;
 var font = argument6;
 var halign = argument7;
-
+var _begin = argument8
 with(instance_create_layer(x1, y2, "UI", o_effect)){
 	type = 6;
 	text = display_text;
@@ -19,5 +19,6 @@ with(instance_create_layer(x1, y2, "UI", o_effect)){
 	time = 0
 	text_font = font
 	text_halign = halign
+	draw_begin = _begin;
 }
 

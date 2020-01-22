@@ -15,7 +15,9 @@ purchased_upgrade_orb = false;//お店でこうにゅうしたオーブかどう
 timemachine_grab = 0//タイムマシンが掴まれているかどうか
 gameover_frame = -1//ゲームオーバーになってから経過した時間
 stageclear_frame = -1;
+change_room_frame_1 = -1;
 change_room_frame_2 = -1;
+change_screen = -1;//これから行くルームが入る
 
 database();//globalにいろいろデータをいれる
 

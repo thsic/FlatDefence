@@ -110,7 +110,7 @@ case 5:
 	
 	//描画
 	surface_set_target(surface_id);
-	draw_clear_alpha(c_black, 0)
+	draw_clear_alpha(c_black, 0);
 	draw_set_color(effect_color);
 	draw_set_alpha(effect_alpha);
 	
@@ -177,26 +177,28 @@ case 5:
 	}
 break
 case 6:
-	if(time < fall_time){
-		time++;
-		var time_percent = time/fall_time
-		var temp = (time_percent-1)*(time_percent-1)+1;
-		var text_y = y+fall_length*(1-temp);
-		var alpha = 1-temp+1
+	if(!draw_begin){
+		if(time < fall_time){
+			time++;
+			var time_percent = time/fall_time
+			var temp = (time_percent-1)*(time_percent-1)+1;
+			var text_y = y+fall_length*(1-temp);
+			var alpha = 1-temp+1
+		}
+		else{
+			var text_y = y;
+			var alpha = 1
+		}
+		draw_set_font(text_font);
+		draw_set_halign(text_halign);
+		draw_set_color(display_color);
+		draw_set_alpha(alpha);
+		draw_text(x, text_y, text);
+		draw_set_color(COLOR_DEFAULT);
+		draw_set_halign(fa_left);
+		draw_set_font(FONT_DEFAULT)
+		draw_set_alpha(1);
 	}
-	else{
-		var text_y = y;
-		var alpha = 1
-	}
-	draw_set_font(text_font);
-	draw_set_halign(text_halign);
-	draw_set_color(display_color);
-	draw_set_alpha(alpha);
-	draw_text(x, text_y, text);
-	draw_set_color(COLOR_DEFAULT);
-	draw_set_halign(fa_left);
-	draw_set_font(FONT_DEFAULT)
-	draw_set_alpha(1);
 break
 case 7:
 	var draw_score_total_time = 30
