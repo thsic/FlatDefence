@@ -1,4 +1,4 @@
-if(mouse_check_button_pressed(mb_left)){
+if(mouse_check_button(mb_left)){
 	if(window_follow_enemy_id != -1){
 		window_follow_enemy_id = -1;//どこかクリックされると解除
 		surface_free(global.usefulwindow_surface[3])

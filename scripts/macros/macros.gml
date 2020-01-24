@@ -31,7 +31,7 @@
 #macro DOUBLE_SPEED_BUTTON vk_control
 
 //defender
-#macro EFFECT_SLOT_MAX 10//持てるエフェクトの数
+#macro EFFECT_SLOT_MAX 18//持てるエフェクトの数
 #macro EFFECT_BLAST_SIZE 32
 #macro FREEZE_STRENGTH 0.5//倍率
 #macro SHIELD_BREAK_STRENGTH 1//シールド削り値
@@ -51,8 +51,9 @@
 
 //アイテム
 #macro IMPERIALLANCE_PENETRATION_MAX 40//インペリアルランス+が貫通できる敵の数
-#macro FREEZEROD_UPGRADE_
-
+#macro FREEZEROD_UPGRADE_ 10//?
+#macro POISONDAGGER_MAGNIFICATION 0.3//ポイズンダガー装備中の追加ダメージ倍率
+#macro CURSEDSWORD_MAGNIFICATION 0.1//呪いの剣装備中のダメージ倍率
 
 //説明
 #macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
@@ -62,6 +63,7 @@
 #macro DEFENDER_ATTACK_SPEED_DESCRIPTION "現在の1秒間に攻撃できる回数です。高いほど攻撃回数が増えます。"
 #macro DEFENDER_RANGE_DESCRIPTION "現在の射程です。高いほど遠くの敵に攻撃できます。"
 #macro CRYSTAL_SHOP_DESCRIPTION "tokusyu nouryoku"
+#macro UPGRADEORB_SHOP_DESCRIPTION "upgrade dekiru"
 
 
 //色
@@ -91,9 +93,16 @@
 
 #macro COLOR_BACKGROUND make_color_rgb(200, 200, 160)
 
+#macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
+
 #macro COLOR_DEFAULT c_white
 
 //フォント
 #macro FONT_DEFAULT fo_yasaNormal
 #macro FONT_SUPERBIG fo_notoSuperBig
 #macro FONT_TITLE fo_ostrichSans48
+#macro FONT_SHOP fo_noto24
+#macro FONT_DAMAGE_VERYSMALL fo_yasa8
+#macro FONT_DAMAGE_SMALL fo_yasa10
+#macro FONT_DAMAGE_NORMAL fo_yasaNormal
+#macro FONT_DAMAGE_BIG fo_yasa16

@@ -1,9 +1,10 @@
 ///@param damage,target_id,defenderid
 //敵にダメージを与える
-var damage = argument0;
+var basedamage = argument0;
 var target_id = argument1;
 var defender_id = argument2;
-
+var damage = basedamage;//元々のダメージ 爆風やインペリアルランスのダメージに使う
+var defender_fire_damage = defender_id.fire_damage//defenderの攻撃力 スローとかに
 
 var fire_level = 0;
 var ice_level = 0;
@@ -21,6 +22,9 @@ var gold_get = 0;
 var one_shot_one_kill = 0;
 var one_shot_one_kill_plus = 0;
 var blast_onhit_effect = 0;
+var odd_add_damage = 0;
+var hpmax_add_damage = 0;
+var hpmax_add_damage_plus = 0;
 
 //最初にエフェクトを確認しておく
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
@@ -75,6 +79,15 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		case 26:
 			blast_onhit_effect++;//爆風の中心はonhitになる
 		break
+		case 30:
+			odd_add_damage++;//敵のHPが奇数の場合は追加ダメージ
+		break
+		case 31:
+			hpmax_add_damage++;//敵のhpが最大の場合追加ダメージ
+		break
+		case 32:
+			hpmax_add_damage_plus++;//敵のHPが最大の場合もっと追加ダメージ
+		break
 		}
 	}
 	else{
@@ -84,10 +97,12 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 
 if(cursed != 0){
 	if(defender_id.skill_state != skillstate.active){
-		damage = 0;//呪われているのでスキル中以外ダメージ0
+		damage *= CURSEDSWORD_MAGNIFICATION;//呪われているのでダメージ0.1倍
+		basedamage *= CURSEDSWORD_MAGNIFICATION//例外でこれだけはbasedamageにも効果がある
 	}
 }
 
+//スナイパーの固有エフェクト
 if(one_shot_one_kill){
 	if(point_distance(defender_id.x, defender_id.y, target_id.x, target_id.y) >= 150){
 		damage *= global.effectdata[23, effectdata.value];
@@ -98,6 +113,34 @@ if(one_shot_one_kill_plus){
 		damage *= global.effectdata[25, effectdata.value];
 	}
 }
+
+//敵HPが奇数なら追加ダメージ インペリアルランスの通過した敵には追加効果が発生しない
+if(odd_add_damage and target_id = bullet_target){
+	if(instance_exists(target_id)){
+		repeat(odd_add_damage){
+			if(target_id.hp mod 2 = 1){
+				damage += defender_fire_damage * POISONDAGGER_MAGNIFICATION
+			}
+		}
+	}
+}
+
+//敵HPがMAXなら追加ダメージ インペリアルランスの通過した敵には追加効果が発生しない
+if(hpmax_add_damage or hpmax_add_damage_plus){
+	if(instance_exists(target_id) and target_id = bullet_target){
+		if(target_id.hp = target_id.hp_max){
+			if(hpmax_add_damage){
+				damage += defender_fire_damage * global.effectdata[31, effectdata.value];
+				
+			}
+			else if(hpmax_add_damage_plus){
+				damage += defender_fire_damage * global.effectdata[32, effectdata.value];
+			}
+		}
+	}
+}
+
+
 
 if(fire_level = 0){
 	//通常
@@ -129,25 +172,26 @@ if(ice_level > 0){//スローをかける
 	if(penetration or penetration_plus){
 		//貫通攻撃の場合
 		if(target_id = bullet_target){//攻撃対象に当たらないとスローにならない
-			slow_to_enemy(target_id, ice_level+1, damage);
+			slow_to_enemy(target_id, ice_level+1, defender_fire_damage);
 		}
 		else if(freeze_all){//強化ロッドなら全部スローになる
-			slow_to_enemy(target_id, ice_level+1, damage);
+			slow_to_enemy(target_id, ice_level+1, defender_fire_damage);
 		}
 	}
 	else{
 		//普通
-		slow_to_enemy(target_id, ice_level+1, damage);
+		slow_to_enemy(target_id, ice_level+1, defender_fire_damage);
 	}
-	
 }
 if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
 	damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
 }
+
 //最終的なダメージ
 if(instance_exists(target_id)){
 	target_id.hp -= damage_result;
-
+	draw_damage_value(target_id.x, target_id.y, damage_result);
+	
 	if(target_id.hp <= 0){//敵が死んだ
 		target_id.destroy_enemy = true;
 		global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを落とす
@@ -185,15 +229,16 @@ if(instance_exists(target_id)){
 		for(var i=0; i<blast_level-1; i++){
 			blast_alpha *= 0.8;
 		}
+		
 		blast_effect(target_id.x, target_id.y, blast_power*EFFECT_BLAST_SIZE, c_red, 10+blast_level*1, blast_alpha);
 		for(var i=0; i<global.enemy_amount; i++){
 			var enemy_id = global.enemy_id[i]
 			if(instance_exists(enemy_id)){
 				if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power){
 				
-					damage_result = damage/2;//爆風ダメージは半減する
+					damage_result = basedamage/2;//爆風ダメージは半減する
 					if(freeze_all){//強化ロッドなら爆風でもスロー
-						slow_to_enemy(enemy_id, ice_level+1, damage);
+						slow_to_enemy(enemy_id, ice_level+1, defender_fire_damage);
 					}
 					if(blast_damageup){//クリスタルのダメージupあるなら
 						if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power/2){
@@ -204,9 +249,27 @@ if(instance_exists(target_id)){
 						
 							if(blast_onhit_effect){//クリスタルアップグレードされてあると通常攻撃時効果が膜風の中心にのる
 								if(ice_level){//スロー
-									slow_to_enemy(enemy_id, ice_level+1, damage);
+									slow_to_enemy(enemy_id, ice_level+1, defender_fire_damage);
+								}
+								if(odd_add_damage){//奇数追加ダメージ
+									repeat(odd_add_damage){
+										if(enemy_id.hp mod 2 = 1){
+											damage += defender_fire_damage * POISONDAGGER_MAGNIFICATION
+										}
+									}
+								}
+								if(hpmax_add_damage){//hpmaxで追加ダメージ
+									if(enemy_id.hp = enemy_id.hp_max){
+											damage += defender_fire_damage * global.effectdata[31, effectdata.value];
+									}
+								}
+								if(hpmax_add_damage_plus){//hpmaxで追加ダメージ アップグレード
+									if(enemy_id.hp = enemy_id.hp_max){
+										damage += defender_fire_damage * global.effectdata[32, effectdata.value];
+									}
 								}
 							}
+							
 						}
 					}
 					if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
@@ -216,6 +279,7 @@ if(instance_exists(target_id)){
 					//範囲内の敵にダメージを与える
 					if(target_id != enemy_id){//ただしターゲットには既にダメージを与えているのであたえない
 						enemy_id.hp -= damage_result;
+						draw_damage_value(enemy_id.x, enemy_id.y, damage_result);
 					}
 				
 					//死亡判定

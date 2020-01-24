@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "2a918512-b0b6-4727-bfde-9dc0efeab091",
+            "Value": {
+                "id": "b6621af2-73e4-44da-a02d-00d68f0d3943",
+                "resourcePath": "scripts\\draw_damage_value\\draw_damage_value.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2c7f37dc-66a1-4df9-a545-8f761c170a22",
             "Value": {
                 "id": "dafbde71-cb47-4330-855b-0501f676ce00",
@@ -343,6 +351,14 @@
             }
         },
         {
+            "Key": "341d4337-944c-4003-bbd2-b197b799dbc6",
+            "Value": {
+                "id": "487d87e9-d091-4e58-90d8-884edc84e441",
+                "resourcePath": "fonts\\fo_yasa16\\fo_yasa16.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "346a71dc-4a3f-48c3-a6dc-2812ae4f1213",
             "Value": {
                 "id": "9a95d08e-8196-4652-aa18-1d41a7d8198c",
@@ -370,7 +386,7 @@
             "Key": "3687ce78-f689-4be7-b96e-9b6abf467abd",
             "Value": {
                 "id": "c653c06a-7d05-40f9-a98d-de3ae68cf39e",
-                "resourcePath": "sprites\\s_titansClub\\s_titansClub.yy",
+                "resourcePath": "sprites\\s_spikeKnuckle\\s_spikeKnuckle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -580,6 +596,14 @@
                 "id": "75c5c432-972e-4445-9afa-349571677507",
                 "resourcePath": "views\\63c71ac2-d042-47f8-a16d-fb0781e3acbe.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "65be85df-ecc9-4a41-a468-975cb26e3ab9",
+            "Value": {
+                "id": "c91b2b6d-7abb-49fb-aa02-6588a2459977",
+                "resourcePath": "fonts\\fo_yasa8\\fo_yasa8.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1023,6 +1047,14 @@
             }
         },
         {
+            "Key": "b9eccdbc-c56b-4cdc-8493-0fc3970bc318",
+            "Value": {
+                "id": "43577928-3a5b-4080-84fe-d47dbfc5def6",
+                "resourcePath": "sprites\\s_titansClub\\s_titansClub.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bd3bbdf3-1d8b-49bd-829b-caadf9f74de7",
             "Value": {
                 "id": "c145328c-5b73-4e10-a95e-61053fa29eb4",
@@ -1215,6 +1247,14 @@
             }
         },
         {
+            "Key": "db1106aa-1b32-4ded-a2a6-b64ca68a3324",
+            "Value": {
+                "id": "64301099-c4cf-4bfd-9861-3697056545a1",
+                "resourcePath": "fonts\\fo_yasa10\\fo_yasa10.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "dcab3564-c3d4-4c0d-a73b-6c4df87d8bd6",
             "Value": {
                 "id": "887072a6-fc18-4fb1-989e-10f4414adc68",
@@ -1236,6 +1276,14 @@
                 "id": "bf41bbc1-b595-46a9-9faf-cfc633163260",
                 "resourcePath": "scripts\\blast_circle\\blast_circle.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "de627560-4d9b-45fe-a7c5-43790e47306b",
+            "Value": {
+                "id": "809d4fd9-c226-4342-8f1c-f38e464e1d6f",
+                "resourcePath": "sprites\\s_poisonDagger\\s_poisonDagger.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1292,6 +1340,14 @@
                 "id": "e0060748-18e4-4746-8519-16aa92d72417",
                 "resourcePath": "scripts\\timeline_set_enemytype_3\\timeline_set_enemytype_3.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e586ccdb-a735-48c4-ad94-781f69dd2aaf",
+            "Value": {
+                "id": "b62b76df-f155-4fe9-ae42-4fbda08b075d",
+                "resourcePath": "fonts\\fo_noto24\\fo_noto24.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1534,6 +1590,7 @@
         "1ca3b51b-102b-4c22-8742-dcdb945f7479",
         "34a56ad3-6f18-4dd5-ad23-f6b98c51086d",
         "798cb6a2-c25e-42f8-94d1-08e4410e6a05",
+        "2a918512-b0b6-4727-bfde-9dc0efeab091",
         "35d18f60-f39c-4452-97a6-bacae5443c44",
         "95f7a7f1-72cb-4bca-925b-16be5f632e9a",
         "7a3d34b5-2680-4f98-84b7-b7f35fce9a4a",

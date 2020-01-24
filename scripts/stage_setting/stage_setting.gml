@@ -28,7 +28,8 @@ case -1:
 	global.shop_item[9] = 17;
 	global.shop_item[10] = 19;
 	global.shop_item[11] = 21;
-	//global.shop_item[12] = 23;
+	global.shop_item[12] = 25;
+	global.shop_item[13] = 27;
 	
 	
 break

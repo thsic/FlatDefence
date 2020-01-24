@@ -143,10 +143,39 @@ if(basicist){
 
 //最後にtruebasic
 if(true_basic){
-	for(var i=0; i<EFFECT_SLOT_MAX; i++){//true basic Itemslot+2 Basicist以外を消す
+	for(var i=0; i<EFFECT_SLOT_MAX; i++){//true basic Itemslot+2 Basicist defender固有の能力以外を消す
 		if(effect_now[i, effectnow.number] != 9 and effect_now[i, effectnow.number] != 15 and effect_now[i, effectnow.number] != 24){
-			effect_now[i, effectnow.number] = -1;
-			effect_now[i, effectnow.time] = -2;
+			//defender固有能力
+			if(effect_now[i, effectnow.number] != 21 and effect_now[i, effectnow.number] != 22 and effect_now[i, effectnow.number] != 23){
+				effect_now[i, effectnow.number] = -1;
+				effect_now[i, effectnow.time] = -2;
+			}
+			
+		}
+	}
+	//ボマーとフリーザーは特殊処理
+	if(defender_number = 2){
+		//ボマーは全部消したあと新たに爆風lv2を追加する
+		repeat(2){
+			for(var i=0; i<EFFECT_SLOT_MAX; i++){
+				if(effect_now[i, effectnow.number] = -1){
+					effect_now[i, effectnow.number] = 0;
+					effect_now[i, effectnow.time] = -1;
+					break;
+				}
+			}
+		}
+	}
+	else if(defender_number = 3){
+		//フリーザーの場合スローと攻撃半減無効入れる 攻撃半減無効はもともと無効なので意味ない
+		for(var i=0; i<EFFECT_SLOT_MAX; i++){
+			if(effect_now[i, effectnow.number] = -1){
+				effect_now[i, effectnow.number] = 2;
+				effect_now[i, effectnow.time] = -1;
+				effect_now[i+1, effectnow.number] = 13;
+				effect_now[i+1, effectnow.time] = -1;
+				break;
+			}
 		}
 	}
 	effect_sort(id);//ソート

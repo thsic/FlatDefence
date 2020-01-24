@@ -5,7 +5,14 @@ var x_offset = window_get_width()-SHOP_WINDOW_WIDTH
 usefulwindow(s_window, 1, window_get_width()-SHOP_WINDOW_WIDTH, 0, SHOP_WINDOW_WIDTH, window_height, 1,1);
 
 draw_set_color(c_yellow);
-draw_text(x_offset+16,24,global.gold)//お金描画
+draw_text(x_offset+16,24,global.gold);//お金描画
+draw_text(x_offset+68,24,"Gold")
+draw_set_font(FONT_SHOP);
+draw_set_color(COLOR_TEXT_SHOP)
+draw_text(x_offset+14,72,"Defender");
+draw_text(x_offset+14,190,"Item");
+draw_text(x_offset+14,388,"Belongings");
+draw_set_font(FONT_DEFAULT);
 draw_set_color(c_white);
 for(var i=0; i<product_defender_amount; i++){//defenderを描画
 	var necessary_gold = global.defender_data[defender_id_conversion(shop_product[i, DEFENDER]), data.cost]
@@ -105,7 +112,6 @@ if(grab_item_id != -1){//商品を掴んでいる
 	draw_sprite(global.itemdata[grab_item_id, itemdata.sprite], 0, window_mouse_get_x(), window_mouse_get_y());
 	
 	//クリスタルの場合のみアイテムを装備した時の効果を表示
-	
 	if(grab_item_id = 23){
 		var nearest_defender = instance_nearest(mouse_x,mouse_y,o_defender);
 		if(nearest_defender != noone){

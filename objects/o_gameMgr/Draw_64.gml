@@ -20,6 +20,7 @@ break
 }
 switch(global.gamestate){
 case gamestate.main:
+case gamestate.pause:
 	show_enemy_ui();
 break
 case gamestate.gameover:
