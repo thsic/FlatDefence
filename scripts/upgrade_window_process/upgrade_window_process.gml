@@ -191,6 +191,7 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 				}
 
 				sdm(string(object_get_name(upgrade_defender_id.object_index))+"の"+string(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name])+"をアップグレード")
+				upgrade_effect(upgrade_defender_id);
 				upgrade_defender_id.itemslot[i] = global.itemdata[upgrade_defender_id.itemslot[i], itemdata.upgradeid];//アップグレードアイテムで上書き
 				if(upgrade_defender_id.itemslot[i] = 24){//クリスタルをアップグレードする場合
 					upgrade_crystal(upgrade_defender_id);

@@ -22,6 +22,7 @@ var gold_get = 0;
 var one_shot_one_kill = 0;
 var one_shot_one_kill_plus = 0;
 var blast_onhit_effect = 0;
+var gold_ammo = 0;
 var odd_add_damage = 0;
 var hpmax_add_damage = 0;
 var hpmax_add_damage_plus = 0;
@@ -78,6 +79,9 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		break
 		case 26:
 			blast_onhit_effect++;//爆風の中心はonhitになる
+		break
+		case 29:
+			gold_ammo++;//お金を1%消費して消費したゴールド*10の追加ダメージ
 		break
 		case 30:
 			odd_add_damage++;//敵のHPが奇数の場合は追加ダメージ
@@ -140,6 +144,17 @@ if(hpmax_add_damage or hpmax_add_damage_plus){
 	}
 }
 
+//金の弾丸
+if(gold_ammo){
+	if(instance_exists(target_id)){
+		if(global.gold > 100){//お金が100g以下なら発動しない
+			var consume_gold = floor(global.gold/100);
+			global.gold -= consume_gold;//1%を消費する
+			damage += consume_gold*global.effectdata[29, effectdata.value]
+			
+		}
+	}
+}
 
 
 if(fire_level = 0){

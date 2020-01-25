@@ -217,4 +217,49 @@ case 7:
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_font(FONT_DEFAULT);
 break
+case 8:
+	var star_amount = 7//星の数
+	particle_type_id = part_type_create();
+	part_type_shape(particle_type_id, pt_shape_star);
+	part_type_size(particle_type_id, 0.15, 0.15, 0, 0);
+	part_type_color1(particle_type_id, COLOR_UPGRADE_STAR_EFFECT);
+	part_type_alpha3(particle_type_id, 1, 0.5, 0);
+	part_type_life(particle_type_id, 80, 90);
+	part_type_speed(particle_type_id, 1.8, 2.4, 0, 0);
+	part_type_gravity(particle_type_id, 0.05, 270);
+	particle_system_id = part_system_create()
+	repeat(2){
+		for(var i=0; i<star_amount; i++){
+			var correction_value = irandom(32/star_amount)+i*(32/star_amount);
+			correction_value -= 16;
+			var star_direction = 90+correction_value;
+			part_type_direction(particle_type_id, star_direction, star_direction, 0, 0);
+			var _x = x-correction_value;
+			var _y = irandom_range(-8, 8)+y;
+			part_particles_create(particle_system_id, _x, _y, particle_type_id, 1);
+		}
+	}
+	instance_destroy();
+break
+case 9://アップグレード時の四角を少し遅れて表示するだけのエフェクト
+	if(effect_delay < 0){
+		var particle_id = part_type_create();
+		part_type_sprite(particle_id, s_partSquare, false , 0, 0);
+		part_type_alpha3(particle_id, 0.9, 0.7, 0);
+		part_type_life(particle_id, 16, 16);
+		part_type_size(particle_id, 1, 1, 0, 0);
+		part_type_speed(particle_id, 0.2, 0.2, 0.01, 0);
+		part_type_color1(particle_id, effect_color);
+		part_type_direction(particle_id, direction, direction, 0, 0)
+		var particle_system_id = part_system_create();
+		part_particles_create(particle_system_id, x, y, particle_id, 1);
+		
+		instance_destroy()
+	}
+	else{
+		effect_delay--;
+	}
+	
+	
+break
 }

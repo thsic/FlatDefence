@@ -87,13 +87,19 @@
 #macro COLOR_BULLET_FIRE c_red
 #macro COLOR_BULLET_MIX c_purple
 
-#macro COLOR_LIFEBLOOD c_red
-#macro COLOR_ITEM_EFFECT c_yellow
-#macro COLOR_SKILL_ACTIVE_BASE c_purple
+
 
 #macro COLOR_BACKGROUND make_color_rgb(200, 200, 160)
 
 #macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
+
+//パーティクル
+#macro COLOR_LIFEBLOOD c_red
+#macro COLOR_ITEM_EFFECT c_yellow
+#macro COLOR_SKILL_ACTIVE_BASE c_purple
+#macro COLOR_UPGRADE_STAR_EFFECT c_yellow
+#macro COLOR_ITEM_EQUIP_EFFECT c_yellow
+#macro COLOR_UPGRADE_EFFECT c_purple
 
 #macro COLOR_DEFAULT c_white
 

@@ -18,7 +18,7 @@ fire_damage = fire_damage_temp + fire_damage_default;
 attack_per_second = attack_per_second_temp + attack_per_second_default;
 range = range_temp + range_default;
 //アイテム装備時の小さいエフェクト
-item_equipped_particle(x, y, item_amount);
+item_equipped_particle(id, item_amount);
 
 #endregion
 

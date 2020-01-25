@@ -162,6 +162,11 @@ if(grab_item_id != -1){
 								var nearest_distance = distance;
 							}
 						}
+						else if(grab_item_id = 23){//クリスタルをすでに装備していて、さらに装備させようとしている
+							if(defender_id.itemslot[j] = 23){
+								break
+							}
+						}
 					}
 				}
 				else{//アップグレードオーブならアイテムスロットがいっぱいでも使える
@@ -172,9 +177,9 @@ if(grab_item_id != -1){
 					}
 				}
 			}
-			drop_result = false;//初期設定
+			
+			
 			if(nearest_distance <= 32){
-				//sdm(string(global.itemdata[grab_item_id, itemdata.name])+ "を装備")
 				var purchase_item = equip_item(grab_item_id, nearest_defender);//装備
 				var drop_result = true;
 				if(global.itemdata[grab_item_id, itemdata.upgraded] = -1){//アップグレードオーブで

@@ -113,47 +113,58 @@ if(grab_item_id != -1){//商品を掴んでいる
 	
 	//クリスタルの場合のみアイテムを装備した時の効果を表示
 	if(grab_item_id = 23){
+		var draw_description_crystal = true
 		var nearest_defender = instance_nearest(mouse_x,mouse_y,o_defender);
 		if(nearest_defender != noone){
 			if(point_distance(mouse_x, mouse_y, nearest_defender.x, nearest_defender.y) < 32){
-				var defender_number = nearest_defender.defender_number;
-				switch(defender_number){
-				case 0://basic
-					var effect_id = 15;
-				break
-				case 1://sniper
-					var effect_id = 16;
-				break
-				case 2://bomber
-					var effect_id = 17;
-				break
-				case 3://freezer
-					var effect_id = 18;
-				break
-				case 4://blaster
-					var effect_id = 19;
-				break
-				case 5://thief
-					var effect_id = 20;
-				break
-				default:
-					var effect_id = 0;
-					sdm("error!draw_shop");
-				break
+				//一番近いdefenderがすでにクリスタルを持っていたら説明を表示しない
+				for(var i=0; i<nearest_defender.itemslot_amount; i++){
+					if(nearest_defender.itemslot[i] = 23){
+						draw_description_crystal = false
+						break
+					}
 				}
-				//説明表示
-				var description = global.effectdata[effect_id, effectdata.description]
-				description = string_replace(description, "@", "");
-				if(mouse_x+string_width(description)+16 < window_get_width()){
-					var window_x = mouse_x;
+				
+				if(draw_description_crystal){
+					var defender_number = nearest_defender.defender_number;
+					switch(defender_number){
+					case 0://basic
+						var effect_id = 15;
+					break
+					case 1://sniper
+						var effect_id = 16;
+					break
+					case 2://bomber
+						var effect_id = 17;
+					break
+					case 3://freezer
+						var effect_id = 18;
+					break
+					case 4://blaster
+						var effect_id = 19;
+					break
+					case 5://thief
+						var effect_id = 20;
+					break
+					default:
+						var effect_id = 0;
+						sdm("error!draw_shop");
+					break
+					}
+					//説明表示
+					var description = global.effectdata[effect_id, effectdata.description]
+					description = string_replace(description, "@", "");
+					if(mouse_x+string_width(description)+16 < window_get_width()){
+						var window_x = mouse_x;
+					}
+					else{
+						var window_x = window_get_width()-string_width(description)-16
+					}
+					surface_free(global.usefulwindow_surface[6]);
+					tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
+					draw_text(window_x+4, mouse_y+16, description);
 				}
-				else{
-					var window_x = window_get_width()-string_width(description)-16
-				}
-				surface_free(global.usefulwindow_surface[6]);
-				tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
-				draw_text(window_x+4, mouse_y+16, description);
-			}	
+			}
 		}
 	}
 }
