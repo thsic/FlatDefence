@@ -89,7 +89,7 @@
 
 
 
-#macro COLOR_BACKGROUND make_color_rgb(200, 200, 160)
+#macro COLOR_BACKGROUND make_color_rgb(200, 200, 170)
 
 #macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
 

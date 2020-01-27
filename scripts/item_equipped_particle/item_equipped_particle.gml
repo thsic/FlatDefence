@@ -9,7 +9,6 @@ var effect_freq = 10;
 var effect_prob = 2
 
 var upgrade_item_amount = 0;
-sdm(defender_id.itemslot[0])
 for(var i=0; i<defender_id.itemslot_amount; i++){//アップグレード済みのアイテムを数える
 	if(defender_id.itemslot[i] != -1){
 		if(global.itemdata[defender_id.itemslot[i], itemdata.upgraded] = true){
@@ -40,11 +39,11 @@ if(item_equip_effect_time = 0){
 		//アップグレード済みアイテムの多さで色が変わったりする ランダム
 		if(upgrade_item_persent < random(1)){
 			part_type_color1(particle_id, COLOR_ITEM_EFFECT);
-			part_type_alpha3(particle_id, 0, 0.5, 0);
+			part_type_alpha3(particle_id, 0, 0.35, 0);
 		}
 		else{
 			part_type_color1(particle_id, COLOR_UPGRADE_EFFECT);
-			part_type_alpha3(particle_id, 0.1, 0.7, 0);
+			part_type_alpha3(particle_id, 0.1, 0.6, 0);
 		}
 		
 		var particle_system_id = part_system_create();
