@@ -51,41 +51,43 @@ for(i=0; i<POSSESSION_ITEM_MAX; i++){//所持itemを描画
 
 //カーソルを合わせたときの小窓
 var draw_description = false //このフレームでdescriptionが描画されているならtrue
-for(var i=0;i<global.shop_defender_amount; i++){//defender
-	if(shop_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_product[i, SPRITE_X]+SPRITE_SIZE){
-		if(shop_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_product[i, SPRITE_Y]+SPRITE_SIZE){
-			draw_description = true
-			shop_description(0, i, false, false)
+if(global.gamestate != gamestate.gameover and global.gamestate != gamestate.stageclear){//ゲームオーバーやクリア画面では表示されない
+	for(var i=0;i<global.shop_defender_amount; i++){//defender
+		if(shop_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_product[i, SPRITE_X]+SPRITE_SIZE){
+			if(shop_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_product[i, SPRITE_Y]+SPRITE_SIZE){
+				draw_description = true
+				shop_description(0, i, false, false)
+			}
 		}
 	}
-}
-for(var i=0;i<global.shop_item_amount; i++){//item
-	if(shop_item_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_item_product[i, SPRITE_X]+SPRITE_SIZE){
-		if(shop_item_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_item_product[i, SPRITE_Y]+SPRITE_SIZE){
-			if(global.itemdata[shop_item_product[i, ITEM], itemdata.skill] = -1){
-				shop_description(1, shop_item_product[i, ITEM], false, false)
-			}
-			else{
-				shop_description(2, shop_item_product[i, ITEM], false, false)
-			}
-			if(shop_item_product[i, ITEM]) = 23{
-				shop_description(1, shop_item_product[i, ITEM], false, false)
-			}
-			draw_description = true
-		}
-	}
-}
-for(var i=0;i<POSSESSION_ITEM_MAX; i++){//possession item
-	if(item_possession_data[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < item_possession_data[i, SPRITE_X]+SPRITE_SIZE){
-		if(item_possession_data[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < item_possession_data[i, SPRITE_Y]+SPRITE_SIZE){
-			if(global.item_possession[i] != -1){
-				if(global.itemdata[global.item_possession[i], itemdata.skill] = -1){	
-					shop_description(1, global.item_possession[i], true, false)
+	for(var i=0;i<global.shop_item_amount; i++){//item
+		if(shop_item_product[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < shop_item_product[i, SPRITE_X]+SPRITE_SIZE){
+			if(shop_item_product[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < shop_item_product[i, SPRITE_Y]+SPRITE_SIZE){
+				if(global.itemdata[shop_item_product[i, ITEM], itemdata.skill] = -1){
+					shop_description(1, shop_item_product[i, ITEM], false, false)
 				}
 				else{
-					shop_description(2, global.item_possession[i], true, false)
+					shop_description(2, shop_item_product[i, ITEM], false, false)
+				}
+				if(shop_item_product[i, ITEM]) = 23{
+					shop_description(1, shop_item_product[i, ITEM], false, false)
 				}
 				draw_description = true
+			}
+		}
+	}
+	for(var i=0;i<POSSESSION_ITEM_MAX; i++){//possession item
+		if(item_possession_data[i, SPRITE_X]-SPRITE_SIZE < window_mouse_get_x() and window_mouse_get_x() < item_possession_data[i, SPRITE_X]+SPRITE_SIZE){
+			if(item_possession_data[i, SPRITE_Y]-SPRITE_SIZE < window_mouse_get_y() and window_mouse_get_y() < item_possession_data[i, SPRITE_Y]+SPRITE_SIZE){
+				if(global.item_possession[i] != -1){
+					if(global.itemdata[global.item_possession[i], itemdata.skill] = -1){	
+						shop_description(1, global.item_possession[i], true, false)
+					}
+					else{
+						shop_description(2, global.item_possession[i], true, false)
+					}
+					draw_description = true
+				}
 			}
 		}
 	}
@@ -98,12 +100,21 @@ if(!draw_description){//このフレームでdescriptionが描画されていな
 
 if(grab_defender_id != -1){//商品を掴んでいる
 	draw_sprite(object_get_sprite(grab_defender_id), 0, window_mouse_get_x(), window_mouse_get_y());
-	draw_set_alpha(0.6);//円
-	//draw_set_color(global.defender_data[defender_id_conversion(grab_defender_id), data.color]);
-	draw_set_color(c_dkgray);
+	
+	//円描画
+	draw_set_alpha(0.6);
+	//円の色を少しわかりやすくする
+	var circle_color_default = global.defender_data[defender_id_conversion(grab_defender_id), data.color]
+	var defender_color_hue = color_get_hue(circle_color_default);
+	var defender_color_saturation = color_get_saturation(circle_color_default)+60;
+	var defender_color_value = color_get_value(circle_color_default)-50;
+	var circle_color = make_color_hsv(defender_color_hue, defender_color_saturation, defender_color_value)
+	draw_set_color(circle_color);
+	//draw_set_color(global.defender_data[grab_defender_id, data.color]);
 	draw_circle(window_mouse_get_x(), window_mouse_get_y(), global.defender_data[defender_id_conversion(grab_defender_id), data.range], true);
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_alpha(1);
+	
 	with(o_defenderMarker){
 		subimage = 2
 	}

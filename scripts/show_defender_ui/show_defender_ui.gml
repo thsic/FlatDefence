@@ -22,14 +22,16 @@ if(!show_window){
 		for(i=0;i<=instance_number(o_defender);i++){
 			finded_defender_id = instance_find(o_defender, i)
 			if(instance_exists(finded_defender_id)){
-				//ここらへんの16は判定の大きさ 要調整
-				if(finded_defender_id.x-16 <= mouse_x and mouse_x <= finded_defender_id.x+16){
-					if(finded_defender_id.y-16 <= mouse_y and mouse_y <= finded_defender_id.y+16){
-						show_window = true;
-						ui_window_width = 300;//要調整
-						ui_window_height = 200;
-						show_defender_ui_window();
-						break//forからぬける
+				if(global.gamestate != gamestate.gameover and global.gamestate != gamestate.stageclear){//ゲームオーバーやクリア画面でない
+					//ここらへんの16は判定の大きさ 要調整
+					if(finded_defender_id.x-16 <= mouse_x and mouse_x <= finded_defender_id.x+16){
+						if(finded_defender_id.y-16 <= mouse_y and mouse_y <= finded_defender_id.y+16){
+							show_window = true;
+							ui_window_width = 300;//要調整
+							ui_window_height = 200;
+							show_defender_ui_window();
+							break//forからぬける
+						}
 					}
 				}
 			}
@@ -72,6 +74,19 @@ else{
 		surface_free(global.usefulwindow_surface[7]);//メモリ解放
 		show_defender_ui()//他のがクリックされてたらそれに反応
 		//}
+	}
+	else if(global.gamestate = gamestate.gameover or global.gamestate = gamestate.stageclear){
+		//ステージクリア画面とゲームオーバー画面では削除される
+		show_window = false;
+		if(surface_exists(global.usefulwindow_surface[0])){//存在チェック
+			surface_set_target(global.usefulwindow_surface[0])
+			draw_clear_alpha(c_black, 0);//これがないとなんかwindowを表示する度濃くなる
+			surface_reset_target();
+		}
+		surface_free(global.usefulwindow_surface[0]);//メモリ解放
+		surface_free(global.usefulwindow_surface[6]);//メモリ解放
+		surface_free(global.usefulwindow_surface[7]);//メモリ解放
+		show_defender_ui()//他のがクリックされてたらそれに反応
 	}
 }
 

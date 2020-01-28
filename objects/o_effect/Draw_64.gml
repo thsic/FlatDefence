@@ -211,10 +211,12 @@ case 7:
 	else{
 		draw_score = score_total;
 	}
-	draw_set_color(c_ltgray);
-	draw_set_font(FONT_SUPERBIG);
+	draw_set_color(text_color);
+	draw_set_halign(text_halign);
+	draw_set_font(FONT_STAGECLEAR_TOTALSCORE);
 	draw_text(x, y, draw_score);
 	draw_set_color(COLOR_DEFAULT);
+	draw_set_halign(fa_left);
 	draw_set_font(FONT_DEFAULT);
 break
 case 8:

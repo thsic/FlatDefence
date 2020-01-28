@@ -49,6 +49,11 @@
 #macro STAGESELECT_BUTTON_HEIGHT 48
 #macro STAGESELECT_BUTTON_AMOUNT 5
 
+//スコア
+#macro STAGECLEAR_SCORE 10000//ステージクリアしたときのボーナススコア
+#macro LIFE_SCORE 1000//ライフ1ごとのスコア
+#macro GOLD_SCORE 10//ゴールド1ごとのスコア
+
 //アイテム
 #macro IMPERIALLANCE_PENETRATION_MAX 40//インペリアルランス+が貫通できる敵の数
 #macro FREEZEROD_UPGRADE_ 10//?
@@ -112,3 +117,5 @@
 #macro FONT_DAMAGE_SMALL fo_yasa10
 #macro FONT_DAMAGE_NORMAL fo_yasaNormal
 #macro FONT_DAMAGE_BIG fo_yasa16
+#macro FONT_STAGECLEAR_TEXT fo_noto24
+#macro FONT_STAGECLEAR_TOTALSCORE fo_yasa16

@@ -161,7 +161,6 @@ case gamestate.restpause:
 case gamestate.pause:
 case gamestate.main:
 case gamestate.waveclear:
-case gamestate.stageclear:
 	defender_shop();
 	time_machine_process();
 break

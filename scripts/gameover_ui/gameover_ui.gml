@@ -37,10 +37,11 @@ if(gameover_frame > 90){
 	}
 }
 
+var button_width = 200
 var mouse_on_retry_button = false
 var mouse_on_stageselect_button = false
 if(menutext_opacity){
-	if(view_wport[0]/2-150 < mouse_x and mouse_x < view_wport[0]/2+150){
+	if(view_wport[0]/2-button_width/2 < mouse_x and mouse_x < view_wport[0]/2+button_width/2){
 		if(view_hport[0]/6*4-28 < mouse_y and mouse_y < view_hport[0]/6*4+24){
 			//retry
 			mouse_on_retry_button = true
@@ -80,8 +81,9 @@ else{
 	draw_text(view_wport[0]/2, view_hport[0]/6*4+32, "StageSelect");
 }
 
+//-----------------------------------------
 //ルーム変更処理はo_gameMgrのdraw_endにある
-
+//-----------------------------------------
 
 draw_set_font(FONT_DEFAULT);
 draw_set_halign(fa_left);

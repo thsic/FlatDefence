@@ -572,7 +572,7 @@ enum skilldata{
 target = 0;
 global.enemydata[target, enemydata.object] = o_eNormal;
 global.enemydata[target, enemydata.name] = "Normal";
-global.enemydata[target, enemydata.hp] = 150;
+global.enemydata[target, enemydata.hp] = 15;
 global.enemydata[target, enemydata.shield] = 20;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
@@ -581,7 +581,7 @@ global.enemydata[target, enemydata.dropgold] = 10;
 target = 1;
 global.enemydata[target, enemydata.object] = o_eFast;
 global.enemydata[target, enemydata.name] = "Fast";
-global.enemydata[target, enemydata.hp] = 50;
+global.enemydata[target, enemydata.hp] = 5;
 global.enemydata[target, enemydata.shield] = 3;
 global.enemydata[target, enemydata.speed] = 3;
 global.enemydata[target, enemydata.description] = "hayaizo";
