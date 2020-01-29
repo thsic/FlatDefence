@@ -1,3 +1,4 @@
+
 #region item 
 //アイテムだけはステータスウィンドウに反映するためにポーズ中以外でも動く
 var fire_damage_temp = 0;
@@ -13,6 +14,13 @@ for(var i=0; i<itemslot_amount; i++){
 		item_amount++;
 	}
 }
+
+if(marker_id.enhancement){//マーカーの強化バフもここで処理する
+	fire_damage_temp += fire_damage_default*(MARKER_ENHANCEMENT_MAGNIFICATION*marker_id.enhancement_attack);
+	range_temp += range_default*(MARKER_ENHANCEMENT_MAGNIFICATION*marker_id.enhancement_range);
+	attack_per_second_temp += attack_per_second_default*(MARKER_ENHANCEMENT_MAGNIFICATION*marker_id.enhancement_attackspeed);
+}
+
 //ステータス上昇
 fire_damage = fire_damage_temp + fire_damage_default;
 attack_per_second = attack_per_second_temp + attack_per_second_default;

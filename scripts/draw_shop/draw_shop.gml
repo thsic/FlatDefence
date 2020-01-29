@@ -115,6 +115,55 @@ if(grab_defender_id != -1){//商品を掴んでいる
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_alpha(1);
 	
+	//バフ付きマーカーにカーソルをあわせた場合説明表示
+	var draw_enhancement_description = true
+		var nearest_marker = instance_nearest(mouse_x-16,mouse_y-16,o_defenderMarker);
+		if(nearest_marker != noone){
+			if(point_distance(mouse_x-16, mouse_y-16, nearest_marker.x, nearest_marker.y) < 32){
+				//一番近いマーカーにdefenderが置かれてたら説明非表示
+				if(nearest_marker.on_defender){
+					draw_enhancement_description = false;
+				}
+			}
+			var enhancement_type = -1;
+			var enhancement_name = "";
+			var enhancement_value = 0;
+			if(nearest_marker.enhancement){
+				//どのバフなのか
+				if(nearest_marker.enhancement_attack){
+					enhancement_type = 0;
+					enhancement_name = FIRE_DAMAGE_TEXT;
+					enhancement_value = 1+(nearest_marker.enhancement_attack*MARKER_ENHANCEMENT_MAGNIFICATION);
+				}
+				if(nearest_marker.enhancement_range){
+					enhancement_type = 1;
+					enhancement_name = RANGE_TEXT;
+					enhancement_value = 1+(nearest_marker.enhancement_range*MARKER_ENHANCEMENT_MAGNIFICATION);
+				}
+				if(nearest_marker.enhancement_attackspeed){
+					enhancement_type = 2;
+					enhancement_name = ATTACKSPEED_TEXT;
+					enhancement_value = 1+(nearest_marker.enhancement_attackspeed*MARKER_ENHANCEMENT_MAGNIFICATION);
+				}
+				//バフのレベルはどのくらいなのか調べる
+				
+				
+				//説明表示
+				var description = MARKER_ENHANCEMENT_DESCRIPTION1+enhancement_name+MARKER_ENHANCEMENT_DESCRIPTION2+string_format(enhancement_value, 1, 1)+MARKER_ENHANCEMENT_DESCRIPTION3;
+				description = string_replace(description, "@", "");
+				if(mouse_x+string_width(description)+16 < window_get_width()){
+					var window_x = mouse_x;
+				}
+				else{
+					var window_x = window_get_width()-string_width(description)-16
+				}
+				surface_free(global.usefulwindow_surface[6]);
+				tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
+				draw_text(window_x+4, mouse_y+16, description);
+			}
+		}
+				
+	
 	with(o_defenderMarker){
 		subimage = 2
 	}
@@ -135,6 +184,7 @@ if(grab_item_id != -1){//商品を掴んでいる
 						break
 					}
 				}
+				
 				
 				if(draw_description_crystal){
 					var defender_number = nearest_defender.defender_number;

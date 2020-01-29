@@ -113,6 +113,7 @@ if(grab_defender_id != -1){
 					create_defender.cooldown = 0;//休憩中なら設置したdefenderのクールダウンを即解消
 					create_defender.state = state.idle;
 				}
+				create_defender.marker_id = nearest_marker;//マーカーとdefenderを紐付け
 				//販売数増やす
 				shop_product[grab_defender_shop_id, SALES] += 1;
 				var drop_result = true;

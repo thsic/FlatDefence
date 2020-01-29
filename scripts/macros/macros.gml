@@ -39,6 +39,7 @@
 #macro FREEZE_INTERVAL 60//フリーザークリスタルの時の範囲スローの発生頻度
 #macro BLASTER_SHOT_COOLDOWN 10//ブラスターの連射中のクールダウン
 #macro BLASTER_SHOT_COOLDOWN_UPGRADE 2
+#macro MARKER_ENHANCEMENT_MAGNIFICATION 0.1 //マーカーのトークン1つにつき上昇するステータス倍率
 
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
@@ -69,7 +70,14 @@
 #macro DEFENDER_RANGE_DESCRIPTION "現在の射程です。高いほど遠くの敵に攻撃できます。"
 #macro CRYSTAL_SHOP_DESCRIPTION "tokusyu nouryoku"
 #macro UPGRADEORB_SHOP_DESCRIPTION "upgrade dekiru"
+#macro MARKER_ENHANCEMENT_DESCRIPTION1 "kokoni okuto "
+#macro MARKER_ENHANCEMENT_DESCRIPTION2 " x"
+#macro MARKER_ENHANCEMENT_DESCRIPTION3 " ni narimasu"
 
+//テキスト
+#macro FIRE_DAMAGE_TEXT "Power"
+#macro RANGE_TEXT "Range"
+#macro ATTACKSPEED_TEXT "AttackSpeed"
 
 //色
 #macro COLOR_TEXT_GRAY c_dkgray
@@ -119,3 +127,4 @@
 #macro FONT_DAMAGE_BIG fo_yasa16
 #macro FONT_STAGECLEAR_TEXT fo_noto24
 #macro FONT_STAGECLEAR_TOTALSCORE fo_yasa16
+#macro FONT_ENHANCEMENT_MARKER_TEXT fo_yasa8

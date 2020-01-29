@@ -607,6 +607,14 @@
             }
         },
         {
+            "Key": "613d1d30-1d83-46c8-a145-52f19d395b17",
+            "Value": {
+                "id": "cf5f1bce-a033-496c-838f-71dc840b8cdd",
+                "resourcePath": "fonts\\fo_yasa6\\fo_yasa6.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "62223957-dc2a-4ff1-abfb-f99780f6fcd9",
             "Value": {
                 "id": "e362f555-5ca8-4ed3-8bee-aba063e13657",
@@ -1099,6 +1107,14 @@
             "Value": {
                 "id": "119fb606-11fc-41cf-95eb-026595e62f6e",
                 "resourcePath": "scripts\\music_database\\music_database.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "aed99a03-6377-4698-a539-1f8b0f837400",
+            "Value": {
+                "id": "5ef1d80f-6a9e-41d6-b227-2a60155cfbfa",
+                "resourcePath": "scripts\\draw_enhancement_token\\draw_enhancement_token.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1747,6 +1763,7 @@
         "91a5af9c-28ee-4abc-a16a-4440f636114a",
         "d433973d-6a46-420f-88e7-4f7952f8e229",
         "8570019a-bec8-4e7e-9f46-a5f44aff4305",
+        "aed99a03-6377-4698-a539-1f8b0f837400",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
         "e93f5835-3f72-4ee9-8d5e-d35c6c709570",
