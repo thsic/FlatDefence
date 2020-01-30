@@ -36,8 +36,8 @@ if(keyboard_check_pressed(DOUBLE_SPEED_BUTTON)){
 	timemachine_button_state[0] = 2//コントロールキーが離されると強制的に等速に
 	timemachine_change_state(0);
 }*/
-if(keyboard_check_pressed(PAUSE_BUTTON)){
-	for(var i=0; i<3; i++){//スペース押されるとポーズかポーズ解除
+if(keyboard_check_pressed(PAUSE_BUTTON) or mouse_check_button_pressed(mb_middle)){
+	for(var i=0; i<3; i++){//スペース押されるとポーズかポーズ解除 中クリックでもポーズ
 		if(timemachine_button_state[i] = 2){
 			var pressed_button = i;
 		}
@@ -95,11 +95,13 @@ if(window_x < mouse_x and mouse_x < window_x+width and window_y < mouse_y and mo
 else{
 	if(mouse_check_button_pressed(mb_left) and global.double_speed){
 		//タイムマシンの外で押された+倍速状態だった
-		for(var i=0; i<3; i++){//全部リセットしてボタン0を押す
-			timemachine_button_state[i] = 0;
+		if(!keyboard_check(DOUBLE_SPEED_BUTTON)){//倍速キーが押されていると外クリックしても倍速のまま
+			for(var i=0; i<3; i++){//全部リセットしてボタン0を押す
+				timemachine_button_state[i] = 0;
+			}
+			timemachine_button_state[0] = 2;
+			timemachine_change_state(0);
 		}
-		timemachine_button_state[0] = 2;
-		timemachine_change_state(0);
 	}
 }
 

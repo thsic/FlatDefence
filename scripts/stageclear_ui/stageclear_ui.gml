@@ -12,7 +12,7 @@ stageclear_frame++;
 
 
 //画面を暗くする
-var display_clear_black_flame = 15
+var display_clear_black_flame = 20
 if(stageclear_frame > display_clear_black_flame){
 	var clear_alpha = 0.8;
 }
@@ -49,14 +49,18 @@ break
 case 155:
 	stageclear_draw_score(view_wport[0]/2+132, text_y+16+80, total_score, COLOR_TEXT_LTGRAY, fa_right);
 break
-
+case 190:
+	draw_most_damaging_defender(view_wport[0]/2-156, text_y+150)
+break
 }
+
+
 
 //ボタンの描画
 var button_opacity = false
-if(stageclear_frame > 180){
+if(stageclear_frame > 210){
 	if(button_alpha < 1){
-		button_alpha += 0.02;
+		button_alpha += 0.015;
 	}
 	else{
 		button_opacity = true

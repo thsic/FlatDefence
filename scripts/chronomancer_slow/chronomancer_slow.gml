@@ -18,6 +18,14 @@ if(chronomancer_timing <= 0){
 				}
 				target_id.hp -= damage
 
+				if(target_id.hp <= 0){//ダメージ記録
+					record_damage(id, damage+target_id.hp);//敵を倒した場合
+					sdm(damage+target_id.hp)
+				}
+				else{
+					record_damage(id, damage);
+				}
+				
 				if(target_id.hp <= 0){//敵が死んだ
 					target_id.destroy_enemy = true;
 					global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを落とす

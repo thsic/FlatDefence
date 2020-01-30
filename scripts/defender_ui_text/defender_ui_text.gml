@@ -13,11 +13,31 @@ draw_text(x_offset+4, y_offset+38, "Damage");
 draw_text(x_offset+4, y_offset+38+16*2+4, "AttackSpeed");
 draw_text(x_offset+4, y_offset+38+16*4+8, "Range");
 draw_text(x_offset+150, y_offset+20, "Effect");
+
 draw_set_color(COLOR_TEXT_WHITE);
 draw_text(x_offset+42, y_offset+6, global.defender_data[defender_id_conversion(finded_defender_id.object_index), data.name]);
 draw_text(x_offset+4, y_offset+38+16*1, finded_defender_id.fire_damage);
 draw_text(x_offset+4, y_offset+38+16*3+4, finded_defender_id.attack_per_second);
 draw_text(x_offset+4, y_offset+38+16*5+8, finded_defender_id.range);
+
+
+
+//マーカーバフトークン描画
+var marker_id = finded_defender_id.marker_id;
+var marker_size = 8
+if(marker_id.enhancement){
+	draw_set_alpha(0.5);
+	if(marker_id.enhancement_attack){
+		draw_enhancement_token(x_offset+146, y_offset+4, 0, marker_id.enhancement_attack, COLOR_TEXT_RED, marker_size, 8);
+	}
+	if(marker_id.enhancement_range){
+		draw_enhancement_token(x_offset+146, y_offset+4, 1, marker_id.enhancement_range, make_color_rgb(65, 50, 90), marker_size, 8);
+	}
+	if(marker_id.enhancement_attackspeed){
+		draw_enhancement_token(x_offset+146, y_offset+4, 2, marker_id.enhancement_attackspeed, make_color_rgb(0, 100, 100), marker_size, 8);
+	}
+}
+draw_set_alpha(1);
 
 //defenderについているeffect一覧 いっぱいループがあるから大変だった
 var effect_order = 0;//effectのidが入る

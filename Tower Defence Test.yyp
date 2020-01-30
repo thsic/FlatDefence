@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "15496790-6e60-405b-8ca0-733db9188f89",
+            "Value": {
+                "id": "b00f7267-f357-400f-8dde-30ebd1c95f21",
+                "resourcePath": "scripts\\record_damage\\record_damage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "17f689e6-cb80-41c5-b6bb-6283d28b5d5d",
             "Value": {
                 "id": "f275e9e2-e3eb-42dd-9c2b-57283cb49f3c",
@@ -1071,6 +1079,14 @@
             }
         },
         {
+            "Key": "a6104b6e-d4f5-4080-8aac-136a735ed4ef",
+            "Value": {
+                "id": "fdc2148f-b6b0-409e-8652-f35874d3e552",
+                "resourcePath": "scripts\\draw_most_damaging_defender\\draw_most_damaging_defender.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a6c84869-b4a0-4c6a-a528-47a472e81580",
             "Value": {
                 "id": "a24c8414-b803-47b5-91ff-db2fd1b4fb01",
@@ -1727,6 +1743,7 @@
         "34a56ad3-6f18-4dd5-ad23-f6b98c51086d",
         "798cb6a2-c25e-42f8-94d1-08e4410e6a05",
         "2a918512-b0b6-4727-bfde-9dc0efeab091",
+        "15496790-6e60-405b-8ca0-733db9188f89",
         "35d18f60-f39c-4452-97a6-bacae5443c44",
         "95f7a7f1-72cb-4bca-925b-16be5f632e9a",
         "7a3d34b5-2680-4f98-84b7-b7f35fce9a4a",
@@ -1777,6 +1794,7 @@
         "95243186-e385-40f0-986a-a3303c05e470",
         "43984f56-c314-4fd3-a560-62dab1ed3539",
         "4f6d8d61-09fa-4f6c-9817-0921d9ec987e",
+        "a6104b6e-d4f5-4080-8aac-136a735ed4ef",
         "a6c84869-b4a0-4c6a-a528-47a472e81580",
         "d1bf863f-2964-46ee-b3ce-315838f9e1fd",
         "d553e7fe-4479-4dc9-8158-13b6d2a1a6ba",

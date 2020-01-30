@@ -262,6 +262,47 @@ case 9://アップグレード時の四角を少し遅れて表示するだけ�
 		effect_delay--;
 	}
 	
+break
+case 10://クリア画面の一番ダメージをだしたやつ描画
 	
+	var opacity = false
+	if(time > 0){
+		time--;
+	}
+	else{
+		opacity = true
+	}
+	
+	var alpha = 1-(time/time_default)
+	draw_set_alpha(alpha/3);
+	draw_set_color(c_dkgray);
+	draw_rectangle(x, y, x+(view_wport[0]/2-x)*2, y+88, false)
+	draw_set_alpha(alpha);
+	draw_sprite_ext(no1_defender_id.sprite_index, 0, x+32, y+32*1.6, 1.6, 1.6, 0, c_white, alpha);
+	draw_set_halign(fa_middle);
+	draw_set_color(COLOR_TEXT_WHITE);
+	draw_text(view_wport[0]/2, y+4, MOST_DAMAGING_DEFENDER_TEXT);
+	
+	draw_set_halign(fa_left);
+	draw_set_color(COLOR_TEXT_LTGRAY);
+	draw_text(x+64, y+24, global.defender_data[no1_defender_id.defender_number, data.name]);
+	draw_text(x+182, y+24, "Damage");
+	draw_set_color(COLOR_TEXT_WHITE);
+	draw_text(x+246, y+24, no1_defender_id.total_damage);
+	
+	for(var i=0; i<no1_defender_id.itemslot_amount; i++){
+		var item_id = no1_defender_id.itemslot[i]
+		if(item_id != -1){
+			draw_set_alpha(alpha)
+			draw_sprite(global.itemdata[item_id, itemdata.sprite], 0, x+64+16+i*36, y+44+16);
+		}
+		else{
+			draw_set_alpha(alpha/3)
+			draw_sprite(s_itemSlot, 0, x+64+16+i*36, y+44+16);
+		}
+	}
+	draw_set_alpha(1);
+	draw_set_color(COLOR_DEFAULT);
+
 break
 }

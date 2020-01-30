@@ -74,10 +74,12 @@
 #macro MARKER_ENHANCEMENT_DESCRIPTION2 " x"
 #macro MARKER_ENHANCEMENT_DESCRIPTION3 " ni narimasu"
 
+
 //テキスト
 #macro FIRE_DAMAGE_TEXT "Power"
 #macro RANGE_TEXT "Range"
 #macro ATTACKSPEED_TEXT "AttackSpeed"
+#macro MOST_DAMAGING_DEFENDER_TEXT "mottomo dame-zi wo ataeta defender"
 
 //色
 #macro COLOR_TEXT_GRAY c_dkgray

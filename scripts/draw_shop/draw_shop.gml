@@ -179,7 +179,7 @@ if(grab_item_id != -1){//商品を掴んでいる
 			if(point_distance(mouse_x, mouse_y, nearest_defender.x, nearest_defender.y) < 32){
 				//一番近いdefenderがすでにクリスタルを持っていたら説明を表示しない
 				for(var i=0; i<nearest_defender.itemslot_amount; i++){
-					if(nearest_defender.itemslot[i] = 23){
+					if(nearest_defender.itemslot[i] = 23 or nearest_defender.itemslot[i] = 24){
 						draw_description_crystal = false
 						break
 					}

@@ -164,7 +164,7 @@ if(grab_item_id != -1){
 							}
 						}
 						else if(grab_item_id = 23){//クリスタルをすでに装備していて、さらに装備させようとしている
-							if(defender_id.itemslot[j] = 23){
+							if(defender_id.itemslot[j] = 23 or defender_id.itemslot[j] = 24){
 								break
 							}
 						}
