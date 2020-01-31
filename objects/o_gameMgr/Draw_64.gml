@@ -50,7 +50,7 @@ case gamestate.restpause:
 		global.gamestate = gamestate.wavestart;
 	}
 	
-	draw_sprite_ext(s_wavestartButton, button_subimage, 150, 6, 1, 1, 0, c_aqua, 1);
+	draw_sprite_ext(s_wavestartButton, button_subimage, 150, 6, 1, 1, 0, c_white, 1);
 	draw_set_halign(fa_middle);
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(button_x+button_width/2, button_y+2, "WaveStart");

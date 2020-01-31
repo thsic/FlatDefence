@@ -62,7 +62,7 @@ if(window_x < mouse_x and mouse_x < window_x+width and window_y < mouse_y and mo
 		
 	//ボタン
 	var button_offset_x = 20;
-	var button_offset_y = 42;
+	var button_offset_y = 30;
 	if(window_x+button_offset_x  < mouse_x and mouse_x < window_x+button_offset_x +3*68 and window_y+button_offset_y < mouse_y and mouse_y < window_y+button_offset_y+64){
 		//いずれかのボタンの上にマウスがある
 		//3つのボタンの範囲にマウスがあるのを検知して、ボタンのサイズ+間隔で割ることでどのボタンの上にあるか判定

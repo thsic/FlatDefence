@@ -2,7 +2,7 @@
 //drawイベント内に置くこと
 
 if(upgrade_ui){//なんか意味ない
-	var alpha = 0.8;
+	var alpha = 0.88;
 }
 else{
 	var alpha = 0.95;

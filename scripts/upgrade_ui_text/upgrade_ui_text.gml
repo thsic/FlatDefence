@@ -55,7 +55,7 @@ else{
 
 var upgrade_text_y = y_offset+180//このyの値を変えるといっぺんに変えれる
 draw_set_color(COLOR_TEXT_WHITE);
-draw_text(x_offset+width/2, y_offset+38, "Choose Upgrade!");
+draw_text(x_offset+width/2, y_offset+38, "Choose Upgrade Item!");
 
 
 //比較用数値
@@ -88,12 +88,9 @@ else{
 	}
 }
 
-draw_set_color(COLOR_TEXT_WHITE);//矢印
-draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+26);
-draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+86);
-draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+146);
 
 
+draw_set_color(COLOR_TEXT_WHITE);
 if(skill_id = -1){
 	draw_text(x_offset+80, upgrade_text_y+20, global.itemdata[choosing_id, itemdata.damage]);
 	draw_text(x_offset+80, upgrade_text_y+80, global.itemdata[choosing_id, itemdata.attack_speed]);
@@ -104,31 +101,40 @@ else{
 	draw_text(x_offset+80, upgrade_text_y+80, global.skilldata[skill_id, skilldata.cooldown]/FPS_DEFAULT);
 }
 
+draw_set_color(COLOR_TEXT_WHITE);
 if(possible_upgrade){
 	//アップグレードで強化されていたら色を変える
 	if(skill_id = -1){
 		//アイテム アップグレード先描画
 		//ダメージ
 		if(global.itemdata[choosing_id, itemdata.damage] < global.itemdata[choosing_after_upgrade_id, itemdata.damage]){
+			draw_sprite(s_rightArrow, 1, x_offset+width/2, upgrade_text_y+26);//強化されていたら矢印の色も変える
 			draw_set_color(COLOR_TEXT_GREEN);
 		}
 		else{
+			draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+26);
 			draw_set_color(COLOR_TEXT_WHITE);
 		}
 		draw_text(x_offset+400, upgrade_text_y+20, global.itemdata[choosing_after_upgrade_id, itemdata.damage]);
+		draw_set_color(COLOR_TEXT_WHITE);
 		//攻撃速度
 		if(global.itemdata[choosing_id, itemdata.attack_speed] < global.itemdata[choosing_after_upgrade_id, itemdata.attack_speed]){
+			draw_sprite(s_rightArrow, 1, x_offset+width/2, upgrade_text_y+86);
 			draw_set_color(COLOR_TEXT_GREEN);
 		}
 		else{
+			draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+86);
 			draw_set_color(COLOR_TEXT_WHITE);
 		}
 		draw_text(x_offset+400, upgrade_text_y+80, global.itemdata[choosing_after_upgrade_id, itemdata.attack_speed]);
+		draw_set_color(COLOR_TEXT_WHITE);
 		//射程
 		if(global.itemdata[choosing_id, itemdata.range] < global.itemdata[choosing_after_upgrade_id, itemdata.range]){
+			draw_sprite(s_rightArrow, 1, x_offset+width/2, upgrade_text_y+146);
 			draw_set_color(COLOR_TEXT_GREEN);
 		}
 		else{
+			draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+146);
 			draw_set_color(COLOR_TEXT_WHITE);
 		}
 		draw_text(x_offset+400, upgrade_text_y+140, global.itemdata[choosing_after_upgrade_id, itemdata.range]);

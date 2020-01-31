@@ -4,7 +4,7 @@ var window_height = window_get_height();
 var x_offset = window_get_width()-SHOP_WINDOW_WIDTH
 usefulwindow(s_window, 1, window_get_width()-SHOP_WINDOW_WIDTH, 0, SHOP_WINDOW_WIDTH, window_height, 1,1);
 
-draw_set_color(c_yellow);
+draw_set_color(COLOR_TEXT_YELLOW);
 draw_text(x_offset+16,24,global.gold);//お金描画
 draw_text(x_offset+68,24,"Gold")
 draw_set_font(FONT_SHOP);
@@ -115,7 +115,7 @@ if(grab_defender_id != -1){//商品を掴んでいる
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_alpha(1);
 	
-	//バフ付きマーカーにカーソルをあわせた場合説明表示
+	//持ってる時バフ付きマスにカーソルをあわせた場合説明表示
 	var draw_enhancement_description = true
 		var nearest_marker = instance_nearest(mouse_x-16,mouse_y-16,o_defenderMarker);
 		if(nearest_marker != noone){
@@ -124,42 +124,44 @@ if(grab_defender_id != -1){//商品を掴んでいる
 				if(nearest_marker.on_defender){
 					draw_enhancement_description = false;
 				}
-			}
-			var enhancement_type = -1;
-			var enhancement_name = "";
-			var enhancement_value = 0;
-			if(nearest_marker.enhancement){
-				//どのバフなのか
-				if(nearest_marker.enhancement_attack){
-					enhancement_type = 0;
-					enhancement_name = FIRE_DAMAGE_TEXT;
-					enhancement_value = 1+(nearest_marker.enhancement_attack*MARKER_ENHANCEMENT_MAGNIFICATION);
-				}
-				if(nearest_marker.enhancement_range){
-					enhancement_type = 1;
-					enhancement_name = RANGE_TEXT;
-					enhancement_value = 1+(nearest_marker.enhancement_range*MARKER_ENHANCEMENT_MAGNIFICATION);
-				}
-				if(nearest_marker.enhancement_attackspeed){
-					enhancement_type = 2;
-					enhancement_name = ATTACKSPEED_TEXT;
-					enhancement_value = 1+(nearest_marker.enhancement_attackspeed*MARKER_ENHANCEMENT_MAGNIFICATION);
-				}
-				//バフのレベルはどのくらいなのか調べる
+				if(draw_enhancement_description){
+					var enhancement_type = -1;
+					var enhancement_name = "";
+					var enhancement_value = 0;
+					if(nearest_marker.enhancement){
+						//どのバフなのか
+						if(nearest_marker.enhancement_attack){
+							enhancement_type = 0;
+							enhancement_name = FIRE_DAMAGE_TEXT;
+							enhancement_value = 1+(nearest_marker.enhancement_attack*MARKER_ENHANCEMENT_MAGNIFICATION);
+						}
+						if(nearest_marker.enhancement_range){
+							enhancement_type = 1;
+							enhancement_name = RANGE_TEXT;
+							enhancement_value = 1+(nearest_marker.enhancement_range*MARKER_ENHANCEMENT_MAGNIFICATION);
+						}
+						if(nearest_marker.enhancement_attackspeed){
+							enhancement_type = 2;
+							enhancement_name = ATTACKSPEED_TEXT;
+							enhancement_value = 1+(nearest_marker.enhancement_attackspeed*MARKER_ENHANCEMENT_MAGNIFICATION);
+						}
+						//バフのレベルはどのくらいなのか調べる
 				
 				
-				//説明表示
-				var description = MARKER_ENHANCEMENT_DESCRIPTION1+enhancement_name+MARKER_ENHANCEMENT_DESCRIPTION2+string_format(enhancement_value, 1, 1)+MARKER_ENHANCEMENT_DESCRIPTION3;
-				description = string_replace(description, "@", "");
-				if(mouse_x+string_width(description)+16 < window_get_width()){
-					var window_x = mouse_x;
+						//説明表示
+						var description = MARKER_ENHANCEMENT_DESCRIPTION1+enhancement_name+MARKER_ENHANCEMENT_DESCRIPTION2+string_format(enhancement_value, 1, 1)+MARKER_ENHANCEMENT_DESCRIPTION3;
+						description = string_replace(description, "@", "");
+						if(mouse_x+string_width(description)+16 < window_get_width()){
+							var window_x = mouse_x;
+						}
+						else{
+							var window_x = window_get_width()-string_width(description)-16
+						}
+						surface_free(global.usefulwindow_surface[6]);
+						tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
+						draw_text(window_x+4, mouse_y+16, description);
+					}
 				}
-				else{
-					var window_x = window_get_width()-string_width(description)-16
-				}
-				surface_free(global.usefulwindow_surface[6]);
-				tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
-				draw_text(window_x+4, mouse_y+16, description);
 			}
 		}
 				
@@ -223,6 +225,7 @@ if(grab_item_id != -1){//商品を掴んでいる
 					}
 					surface_free(global.usefulwindow_surface[6]);
 					tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
+					draw_set_color(COLOR_TEXT_WHITE)
 					draw_text(window_x+4, mouse_y+16, description);
 				}
 			}

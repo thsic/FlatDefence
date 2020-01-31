@@ -43,7 +43,7 @@
 
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
-#macro TIMEMACHINE_HEIGHT 112
+#macro TIMEMACHINE_HEIGHT 100
 
 //ステージセレクト
 #macro STAGESELECT_BUTTON_WIDTH 300
@@ -57,7 +57,7 @@
 
 //アイテム
 #macro IMPERIALLANCE_PENETRATION_MAX 40//インペリアルランス+が貫通できる敵の数
-#macro FREEZEROD_UPGRADE_ 10//?
+#macro FREEZEROD_UPGRADE_ 10//わからん なにこれ
 #macro POISONDAGGER_MAGNIFICATION 0.3//ポイズンダガー装備中の追加ダメージ倍率
 #macro CURSEDSWORD_MAGNIFICATION 0.1//呪いの剣装備中のダメージ倍率
 
@@ -84,15 +84,16 @@
 //色
 #macro COLOR_TEXT_GRAY c_dkgray
 #macro COLOR_TEXT_DKGRAY c_dkgray
-#macro COLOR_TEXT_WHITE c_white
-#macro COLOR_TEXT_YELLOW c_yellow
-#macro COLOR_TEXT_ORANGE c_orange
+#macro COLOR_TEXT_WHITE make_color_rgb(220, 220, 220)
+#macro COLOR_TEXT_YELLOW make_color_rgb(255, 242, 128)
+#macro COLOR_TEXT_ORANGE make_color_rgb(224, 152, 70)
 #macro COLOR_TEXT_GREEN c_lime
-#macro COLOR_TEXT_RED c_red
+#macro COLOR_TEXT_RED make_color_rgb(222, 40, 40)
 #macro COLOR_TEXT_PURPLE c_fuchsia
-#macro COLOR_TEXT_BLUE c_aqua
+#macro COLOR_TEXT_BLUE make_color_rgb(69, 230, 230)
 #macro COLOR_TEXT_DARKGREEN c_teal
 #macro COLOR_TEXT_LTGRAY c_gray
+#macro COLOR_TEXT_STAGEUI make_color_rgb(76, 76, 76)
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime

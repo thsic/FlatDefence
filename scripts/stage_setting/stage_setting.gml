@@ -6,7 +6,7 @@ global.shop_item = noone;
 
 switch(global.stage){
 case -1:
-	global.life = 10//体力
+	global.life = 10;//体力
 	global.gold = 1000;//おかね
 	global.wave_total = 2;//総ウェーブ数
 	

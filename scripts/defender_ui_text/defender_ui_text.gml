@@ -17,7 +17,7 @@ draw_text(x_offset+150, y_offset+20, "Effect");
 draw_set_color(COLOR_TEXT_WHITE);
 draw_text(x_offset+42, y_offset+6, global.defender_data[defender_id_conversion(finded_defender_id.object_index), data.name]);
 draw_text(x_offset+4, y_offset+38+16*1, finded_defender_id.fire_damage);
-draw_text(x_offset+4, y_offset+38+16*3+4, finded_defender_id.attack_per_second);
+draw_text(x_offset+4, y_offset+38+16*3+4, string_format(finded_defender_id.attack_per_second, 1, 1));
 draw_text(x_offset+4, y_offset+38+16*5+8, finded_defender_id.range);
 
 

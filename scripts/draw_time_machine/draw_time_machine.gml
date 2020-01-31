@@ -6,7 +6,7 @@ var height = TIMEMACHINE_HEIGHT;
 
 tiny_window(s_window, 5, window_x , window_y, width, height, 1);
 var button_offset_x = 20;
-var button_offset_y = 42;
+var button_offset_y = 30;
 for(var i=0; i<3; i++){//ボタン描画
 	switch(i){
 	case 0:

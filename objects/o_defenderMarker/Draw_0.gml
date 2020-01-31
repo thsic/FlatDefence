@@ -37,5 +37,10 @@ if(enhancement){
 	draw_set_alpha(1);
 }
 
+
+/*if(on_defender){
+	subimage = 3;
+}*/
 draw_sprite(sprite_index, subimage, x, y);
 if(subimage >= 1){subimage = 0}
+draw_set_alpha(1);

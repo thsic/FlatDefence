@@ -45,7 +45,7 @@ case 0://defender
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(offset_x+6, offset_y+4, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.name]);
 	draw_text(offset_x+150, offset_y+24, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.damage]);
-	draw_text(offset_x+150, offset_y+48, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.attack_speed]);
+	draw_text(offset_x+150, offset_y+48, string_format(global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.attack_speed], 1, 1));
 	draw_text(offset_x+150, offset_y+72, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.range]);
 	draw_set_color(COLOR_TEXT_ORANGE);
 	//説明文
@@ -119,7 +119,7 @@ case 1://item
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(offset_x+6, offset_y+4, global.itemdata[target_id, itemdata.name]);
 	draw_text(offset_x+150, offset_y+24, global.itemdata[target_id, itemdata.damage]);
-	draw_text(offset_x+150, offset_y+48, global.itemdata[target_id, itemdata.attack_speed]);
+	draw_text(offset_x+150, offset_y+48, string_format(global.itemdata[target_id, itemdata.attack_speed], 1, 1));
 	draw_text(offset_x+150, offset_y+72, global.itemdata[target_id, itemdata.range]);
 	
 	draw_set_color(COLOR_TEXT_ORANGE);
