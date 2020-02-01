@@ -38,9 +38,9 @@ if(enhancement){
 }
 
 
-/*if(on_defender){
-	subimage = 3;
-}*/
+if(on_defender){
+	draw_set_alpha(0.5)
+}
 draw_sprite(sprite_index, subimage, x, y);
 if(subimage >= 1){subimage = 0}
 draw_set_alpha(1);

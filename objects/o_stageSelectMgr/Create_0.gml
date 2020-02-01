@@ -1,3 +1,5 @@
+load_score();
+
 global.usefulwindow_surface[0] = noone;
 global.usefulwindow_surface[1] = noone;
 selecting_button = -1;

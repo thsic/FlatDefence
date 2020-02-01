@@ -2,7 +2,7 @@
 //drawに置け
 var window_height = window_get_height();
 var x_offset = window_get_width()-SHOP_WINDOW_WIDTH
-usefulwindow(s_window, 1, window_get_width()-SHOP_WINDOW_WIDTH, 0, SHOP_WINDOW_WIDTH, window_height, 1,1);
+usefulwindow(s_windowShop, 1, window_get_width()-SHOP_WINDOW_WIDTH, 0, SHOP_WINDOW_WIDTH, window_height, 1,1);
 
 draw_set_color(COLOR_TEXT_YELLOW);
 draw_text(x_offset+16,24,global.gold);//お金描画

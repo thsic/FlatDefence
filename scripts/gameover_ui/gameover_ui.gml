@@ -42,11 +42,11 @@ var mouse_on_retry_button = false
 var mouse_on_stageselect_button = false
 if(menutext_opacity){
 	if(view_wport[0]/2-button_width/2 < mouse_x and mouse_x < view_wport[0]/2+button_width/2){
-		if(view_hport[0]/6*4-28 < mouse_y and mouse_y < view_hport[0]/6*4+24){
+		if(view_hport[0]/6*4-4 < mouse_y and mouse_y < view_hport[0]/6*4+28){
 			//retry
 			mouse_on_retry_button = true
 		}
-		else if(view_hport[0]/6*4+32-8 < mouse_y and mouse_y < view_hport[0]/6*4+32+24){
+		else if(view_hport[0]/6*4+32-4 < mouse_y and mouse_y < view_hport[0]/6*4+32+24){
 			//stageselect
 			mouse_on_stageselect_button = true
 		}

@@ -8,11 +8,11 @@ var bar_backgloundcolor = argument4;
 switch(bartype){
 case "hp":
 	var bar_percent = now / maximum
-	var bar_width = 24;
+	var bar_width = 14;
 	var bar_height = 2;
 	//hpバーの位置指定
 	var bar_x = x - bar_width / 2
-	var bar_y = y + sprite_height/2 + 4;
+	var bar_y = y + sprite_height/2 + 0;
 
 	if(sign(bar_percent) = -1){bar_percent = 0}//hpがマイナスでも表示上は0
 	draw_set_color(bar_backgloundcolor);
@@ -26,7 +26,7 @@ case "cooldown":
 	var bar_width = 24;
 	var bar_height = 2;
 	var bar_x = x - bar_width / 2
-	var bar_y = y + sprite_height/2 + 4;
+	var bar_y = y + sprite_height/2 -2;
 
 	if(sign(bar_percent) = -1){bar_percent = 0}
 	draw_set_color(bar_backgloundcolor);

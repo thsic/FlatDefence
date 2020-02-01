@@ -24,8 +24,11 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 		if(mouse_check_button_pressed(mb_left)){//クリックされたら
 			surface_free(global.usefulwindow_surface[0]);
 			surface_free(global.usefulwindow_surface[1]);
+			//------------------------
+			//     ステージ移動
+			//------------------------
 			switch(selecting_button){
-			case 0://ステージ移動
+			case 0:
 				stage_goto = r_test;
 				
 			break

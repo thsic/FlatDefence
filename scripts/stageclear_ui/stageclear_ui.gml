@@ -6,6 +6,7 @@ if(stageclear_frame = -1){
 	button_alpha = 0;
 	room_speed = FPS_DEFAULT;
 	score_calculate();
+	
 }
 
 stageclear_frame++;

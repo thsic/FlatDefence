@@ -95,7 +95,19 @@ if(window_x < mouse_x and mouse_x < window_x+width and window_y < mouse_y and mo
 else{
 	if(mouse_check_button_pressed(mb_left) and global.double_speed){
 		//タイムマシンの外で押された+倍速状態だった
-		if(!keyboard_check(DOUBLE_SPEED_BUTTON)){//倍速キーが押されていると外クリックしても倍速のまま
+		var push_button_0 = true
+		if(keyboard_check(DOUBLE_SPEED_BUTTON)){//倍速キーが押されていると外クリックしても倍速のまま
+			push_button_0 = false;
+		}
+		if(global.gamestate = gamestate.rest){
+			if(WAVESTART_BUTTON_X < mouse_x and mouse_x < WAVESTART_BUTTON_X+sprite_get_width(s_wavestartButton)){
+				if(WAVESTART_BUTTON_Y < mouse_y and mouse_y < WAVESTART_BUTTON_Y+sprite_get_height(s_wavestartButton)){
+					push_button_0 = false;//休憩中に倍速状態でウェーブスタートボタンを押されても倍速のまま
+				}
+			}
+		}
+			
+		if(push_button_0){
 			for(var i=0; i<3; i++){//全部リセットしてボタン0を押す
 				timemachine_button_state[i] = 0;
 			}

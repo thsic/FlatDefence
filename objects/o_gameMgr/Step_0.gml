@@ -98,11 +98,11 @@ case gamestate.main://ゲーム中処理
 
 	#endregion
 	#endregion
-	if(global.life <= 0){//ゲームオーバー
-		global.gamestate = gamestate.gameover;
-	}
 	if(global.enemy_wave_total_amount <= 0){//敵が全員居なくなった
 		global.gamestate = gamestate.waveclear;
+	}
+	if(global.life <= 0){//ゲームオーバー
+		global.gamestate = gamestate.gameover;
 	}
 break
 

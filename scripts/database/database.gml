@@ -13,7 +13,7 @@ global.defender_data[target, data.cost] = 100;
 global.defender_data[target, data.itemslot] = 4;
 global.defender_data[target, data.effect] = -1;
 global.defender_data[target, data.effect2] = -1;
-global.defender_data[target, data.color] = make_color_rgb(46, 49, 146);
+global.defender_data[target, data.color] = make_color_rgb(91, 93, 153);//make_color_rgb(46, 49, 146);
 
 target = 1;
 global.defender_data[target, data.object] = o_dSniper;
@@ -26,7 +26,7 @@ global.defender_data[target, data.cost] = 150;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 23;
 global.defender_data[target, data.effect2] = -1;
-global.defender_data[target, data.color] = make_color_rgb(60, 184, 120);
+global.defender_data[target, data.color] = make_color_rgb(102, 204, 151);//make_color_rgb(60, 184, 120);
 
 target = 2;
 global.defender_data[target, data.object] = o_dBomber;
@@ -39,7 +39,7 @@ global.defender_data[target, data.cost] = 250;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 0;
 global.defender_data[target, data.effect2] = 0;
-global.defender_data[target, data.color] = make_color_rgb(243, 108, 79);
+global.defender_data[target, data.color] = make_color_rgb(203, 141, 121);//make_color_rgb(243, 108, 79);
 
 target = 3;
 global.defender_data[target, data.object] = o_dFreezer;
@@ -52,7 +52,7 @@ global.defender_data[target, data.cost] = 200;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 2;
 global.defender_data[target, data.effect2] = 13;
-global.defender_data[target, data.color] = make_color_rgb(125, 167, 217);
+global.defender_data[target, data.color] = make_color_rgb(151, 202, 217);//make_color_rgb(125, 167, 217);
 
 target = 4;
 global.defender_data[target, data.object] = o_dBlaster;
@@ -65,7 +65,7 @@ global.defender_data[target, data.cost] = 200;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 21;
 global.defender_data[target, data.effect2] = -1;
-global.defender_data[target, data.color] = make_color_rgb(135, 129, 190);
+global.defender_data[target, data.color] = make_color_rgb(163, 155, 229);//make_color_rgb(135, 129, 190);
 
 target = 5;
 global.defender_data[target, data.object] = o_dThief;
@@ -78,7 +78,7 @@ global.defender_data[target, data.cost] = 120;
 global.defender_data[target, data.itemslot] = 3;
 global.defender_data[target, data.effect] = 22;
 global.defender_data[target, data.effect2] = -1;
-global.defender_data[target, data.color] = make_color_rgb(244, 154, 194);
+global.defender_data[target, data.color] = make_color_rgb(243, 170, 199);//make_color_rgb(244, 154, 194);
 
 global.defender_category_amount = target+1;//今実装されているdefenderのかず
 #region enum

@@ -253,6 +253,7 @@ case 9://アップグレード時の四角を少し遅れて表示するだけ�
 		part_type_speed(particle_id, 0.2, 0.2, 0.01, 0);
 		part_type_color1(particle_id, effect_color);
 		part_type_direction(particle_id, direction, direction, 0, 0)
+		part_type_orientation(particle_id, direction, direction, 0, 0, 0);
 		var particle_system_id = part_system_create();
 		part_particles_create(particle_system_id, x, y, particle_id, 1);
 		

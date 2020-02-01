@@ -2,6 +2,7 @@
 #macro FPS_DEFAULT 60
 #macro START_ROOM r_title
 #macro GAMENAME "FLAT DEFENCE"
+#macro STAGE_AMOUNT 5
 
 //ソート
 #macro NEARGOAL 0
@@ -44,6 +45,10 @@
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
 #macro TIMEMACHINE_HEIGHT 100
+
+//ウェーブスタートボタン
+#macro WAVESTART_BUTTON_X 150
+#macro WAVESTART_BUTTON_Y 6
 
 //ステージセレクト
 #macro STAGESELECT_BUTTON_WIDTH 300
@@ -103,19 +108,22 @@
 #macro COLOR_BULLET_FIRE c_red
 #macro COLOR_BULLET_MIX c_purple
 
-
+#macro COLOR_BAR_COOLDOWN make_color_rgb(204, 197, 112)
+#macro COLOR_BAR_COOLDOWN_UNDER c_gray
+#macro COLOR_BAR_ENEMYHP make_color_rgb(204, 163, 135)
+#macro COLOR_BAR_ENEMYHP_UNDER c_gray
 
 #macro COLOR_BACKGROUND make_color_rgb(200, 200, 170)
 
 #macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
 
 //パーティクル
-#macro COLOR_LIFEBLOOD c_red
-#macro COLOR_ITEM_EFFECT c_yellow
+#macro COLOR_LIFEBLOOD make_color_rgb(240, 30, 55)
+#macro COLOR_ITEM_EFFECT make_color_rgb(255, 244, 71)
 #macro COLOR_SKILL_ACTIVE_BASE c_purple
 #macro COLOR_UPGRADE_STAR_EFFECT c_yellow
-#macro COLOR_ITEM_EQUIP_EFFECT c_yellow
-#macro COLOR_UPGRADE_EFFECT c_purple
+#macro COLOR_ITEM_EQUIP_EFFECT make_color_rgb(241, 241, 68)
+#macro COLOR_UPGRADE_EFFECT make_color_rgb(144, 70, 183)
 
 #macro COLOR_DEFAULT c_white
 
@@ -131,3 +139,5 @@
 #macro FONT_STAGECLEAR_TEXT fo_noto24
 #macro FONT_STAGECLEAR_TOTALSCORE fo_yasa16
 #macro FONT_ENHANCEMENT_MARKER_TEXT fo_yasa8
+#macro FONT_STAGESELECT_TOTALSCORE fo_notoSuperBig
+

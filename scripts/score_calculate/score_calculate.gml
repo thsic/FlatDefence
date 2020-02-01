@@ -5,4 +5,4 @@ gold_score = GOLD_SCORE * global.gold;
 
 total_score = stageclear_score + life_score + gold_score;
 
-
+save_score(global.stage, total_score);//スコアをiniファイルにセーブ

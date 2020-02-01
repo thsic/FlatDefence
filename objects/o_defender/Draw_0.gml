@@ -26,7 +26,7 @@ draw_set_color(circle_color);
 draw_circle(x, y, range, true);
 draw_set_alpha(1);
 draw_set_color(c_white);
-draw_bar("cooldown", cooldown, FPS_DEFAULT / attack_per_second, c_yellow, c_gray);
+draw_bar("cooldown", cooldown, FPS_DEFAULT / attack_per_second, COLOR_BAR_COOLDOWN, COLOR_BAR_COOLDOWN_UNDER);
 if(skill_id != -1){
 	switch(skill_state){
 	case skillstate.cooldown:

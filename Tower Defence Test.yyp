@@ -1239,6 +1239,14 @@
             }
         },
         {
+            "Key": "cad3efff-71ba-4b4f-9118-b03cd38499a3",
+            "Value": {
+                "id": "2dc30216-4c26-4781-b46e-b41d4d15e836",
+                "resourcePath": "scripts\\save_score\\save_score.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc448787-77e8-434e-accd-c1692bf54363",
             "Value": {
                 "id": "82b1b769-2167-40b1-b838-366b20fb2028",
@@ -1415,6 +1423,14 @@
             }
         },
         {
+            "Key": "e09ec818-dfa8-4daf-b4b4-1babe6a049b4",
+            "Value": {
+                "id": "a7db8d08-306a-4ef1-a67b-5da89817042b",
+                "resourcePath": "scripts\\load_score\\load_score.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e1a1618c-6f50-4262-b8d7-f668bff39934",
             "Value": {
                 "id": "9de3ebf6-5b40-4813-854e-9f8e47deae30",
@@ -1564,6 +1580,14 @@
                 "id": "330c88bd-debb-4011-aa6c-8f010377b16e",
                 "resourcePath": "scripts\\draw_time_machine\\draw_time_machine.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ee491bf6-a86d-4b69-815c-45c4edceba67",
+            "Value": {
+                "id": "3c19d2e6-abec-48fb-a91f-6a330435da3e",
+                "resourcePath": "sprites\\s_windowShop\\s_windowShop.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1769,6 +1793,8 @@
         "346a71dc-4a3f-48c3-a6dc-2812ae4f1213",
         "13a82082-40a1-4ccb-9af3-6bd3ed1ec6bd",
         "5a5ba069-d0dd-442a-9aa4-2f9684099812",
+        "cad3efff-71ba-4b4f-9118-b03cd38499a3",
+        "e09ec818-dfa8-4daf-b4b4-1babe6a049b4",
         "6da2d552-a0aa-46a4-b4d6-589cd05b7a5c",
         "99ba60ad-6408-4f30-9c43-8562ef0a06ee",
         "f9d1e47b-af53-4d8d-a791-6900c551bc80",

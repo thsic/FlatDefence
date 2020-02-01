@@ -32,8 +32,8 @@ break
 //ウェーブ強制スタートボタン
 case gamestate.rest:
 case gamestate.restpause:
-	var button_x = 150;
-	var button_y = 6;
+	var button_x = WAVESTART_BUTTON_X;
+	var button_y = WAVESTART_BUTTON_Y;
 	var button_subimage = 0;
 	var button_width = sprite_get_width(s_wavestartButton);
 	var button_height = sprite_get_height(s_wavestartButton);
