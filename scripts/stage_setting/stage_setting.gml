@@ -3,6 +3,9 @@
 global.life = noone;
 global.shop_defender = noone;
 global.shop_item = noone;
+for(var i=0; i<20; i++){
+	global.wave_drop_item[i] = -1;
+}
 
 switch(global.stage){
 case -1:
@@ -31,6 +34,8 @@ case -1:
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
 	
+	global.wave_drop_item[0] = 1;
+	global.wave_drop_item[1] = 3;
 	
 break
 case 0:

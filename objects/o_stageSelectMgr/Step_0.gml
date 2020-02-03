@@ -42,3 +42,7 @@ if(selecting_button != -1){
 	stage_select_button[selecting_button, stageselectbutton.window_x] -= 12;
 	stage_select_button[selecting_button, stageselectbutton.window_y] -= 10;
 }
+
+if(global.debugmode and keyboard_check_pressed(ord("T"))){
+	stage_goto = r_test
+}

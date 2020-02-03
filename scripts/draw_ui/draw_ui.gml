@@ -16,7 +16,7 @@ switch(global.gamestate){
 case gamestate.rest://休憩タイム
 case gamestate.restpause:
 	//draw_set_color(COLOR_TEXT_GRAY)
-	draw_text(0, 52, "NextWave "+string(floor(rest_time/FPS_DEFAULT)+1));
+	draw_text(0, 52, "NextWave "+string(ceil(rest_time/FPS_DEFAULT)));
 	
 	//残りresttimeをバーで描画
 	var rest_time_per = rest_time/REST_TIME;

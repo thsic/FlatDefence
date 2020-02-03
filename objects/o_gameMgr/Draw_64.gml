@@ -41,8 +41,14 @@ case gamestate.restpause:
 		if(button_y<mouse_y and mouse_y<button_y+button_height){
 			button_subimage = 1;
 			if(mouse_check_button_pressed(mb_left)){
+				if(global.gamestate = gamestate.restpause){
+						timemachine_button_state[0] = 2;
+						timemachine_button_state[1] = 0;
+						timemachine_button_state[2] = 0;
+				}
 				//ボタンクリックしたら強制的にウェーブスタート
 				global.gamestate = gamestate.wavestart;
+	
 			}
 		}
 	}

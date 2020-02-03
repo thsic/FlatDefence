@@ -12,3 +12,5 @@ change_room = false
 
 global.double_speed = false;
 instance_create_layer(0, 0, "UI", o_bgmMgr);
+
+global.debugmode = DEBUGMODE;

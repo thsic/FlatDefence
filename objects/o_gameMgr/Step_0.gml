@@ -15,8 +15,8 @@ case gamestate.stagestart://ステージ開始時処理
 	global.wave_now = 0;
 	global.timemachine[timemachine.window_x] = window_get_width()-SHOP_WINDOW_WIDTH-TIMEMACHINE_WIDTH-4;
 	global.timemachine[timemachine.window_y] = window_get_height()-TIMEMACHINE_HEIGHT-4;
-	timemachine_button_state[0] = 2;
-	timemachine_button_state[1] = 0;
+	timemachine_button_state[0] = 0;
+	timemachine_button_state[1] = 2;
 	timemachine_button_state[2] = 0;
 	stage_setting();
 	
@@ -29,7 +29,12 @@ case gamestate.reststart://休憩タイム開始
 	global.wave_now++;
 	instance_create_layer(0, 0, "Instances", o_enemyGenerateMgr);
 	arrow_create_cooldown = ARROW_CREATE_COOLDOWN_DEFAULT;
-	global.gamestate = gamestate.rest;
+	if(global.wave_now = 1){
+		global.gamestate = gamestate.restpause;//1ウェーブ目はポーズ状態で始める
+	}
+	else{
+		global.gamestate = gamestate.rest;
+	}
 break
 
 
@@ -125,6 +130,12 @@ case gamestate.waveclear://ウェーブクリア処理
 	else{
 		//次ウェーブへ
 		global.gamestate = gamestate.reststart;
+		if(global.wave_drop_item[global.wave_now] != -1){//ドロップアイテム
+			var _x = global.enemy_last_dead_position_x;
+			var _y = global.enemy_last_dead_position_y;
+			
+			get_drop_item(_x, _y, global.wave_drop_item[global.wave_now]);
+		}
 	}
 	
 break

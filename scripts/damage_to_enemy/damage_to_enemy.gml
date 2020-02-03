@@ -215,6 +215,9 @@ if(instance_exists(target_id)){
 	draw_damage_value(target_id.x, target_id.y, damage_result);
 	
 	if(target_id.hp <= 0){//敵が死んだ
+		global.enemy_last_dead_position_x = target_id.x;
+		global.enemy_last_dead_position_y = target_id.y;
+		
 		target_id.destroy_enemy = true;
 		global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを落とす
 	

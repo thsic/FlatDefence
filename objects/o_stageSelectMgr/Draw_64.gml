@@ -11,12 +11,7 @@ for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
 		
 	}
 }
-if(selecting_button != -1){
-	tiny_window(s_window, 1, stage_select_button[selecting_button, stageselectbutton.window_x], stage_select_button[selecting_button, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH+60, STAGESELECT_BUTTON_HEIGHT+20, 1);
-	var x_offset = stage_select_button[selecting_button, stageselectbutton.window_x];
-	var y_offset = stage_select_button[selecting_button, stageselectbutton.window_y];
-	draw_text(x_offset+10, y_offset+16, "STAGE"+string(selecting_button)+"   Score:"+string(global.stagescore[selecting_button]));
-	
+
 	//ステージ情報表示する
 	var sprite_x = 450;
 	var sprite_y = 100;
@@ -24,6 +19,12 @@ if(selecting_button != -1){
 	var height = 270;
 	width *= 1.2;
 	height *= 1.2;
+if(selecting_button != -1){
+	tiny_window(s_window, 1, stage_select_button[selecting_button, stageselectbutton.window_x], stage_select_button[selecting_button, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH+60, STAGESELECT_BUTTON_HEIGHT+20, 1);
+	var x_offset = stage_select_button[selecting_button, stageselectbutton.window_x];
+	var y_offset = stage_select_button[selecting_button, stageselectbutton.window_y];
+	draw_text(x_offset+10, y_offset+16, "STAGE"+string(selecting_button)+"   Score:"+string(global.stagescore[selecting_button]));
+
 	draw_set_color(c_gray);
 	draw_set_alpha(0.5);
 	draw_rectangle(sprite_x, sprite_y, sprite_x+width, sprite_y+height, false);
@@ -40,6 +41,7 @@ if(selecting_button != -1){
 
 }
 //スコア表示
+draw_set_halign(fa_middle);
 draw_set_font(FONT_STAGESELECT_TOTALSCORE);
 draw_set_color(COLOR_TEXT_LTGRAY);
 draw_text(sprite_x+width/2, sprite_y+height+40, "TOTALSCORE    "+string_format(global.totalscore, 1, 0));

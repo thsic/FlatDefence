@@ -273,13 +273,13 @@ case 10://クリア画面の一番ダメージをだしたやつ描画
 	else{
 		opacity = true
 	}
-	
+	var no1_defender_sprite = global.defender_data[no1_defender_id.defender_number, data.scalesprite];
 	var alpha = 1-(time/time_default)
 	draw_set_alpha(alpha/3);
 	draw_set_color(c_dkgray);
 	draw_rectangle(x, y, x+(view_wport[0]/2-x)*2, y+88, false)
 	draw_set_alpha(alpha);
-	draw_sprite_ext(no1_defender_id.sprite_index, 0, x+32, y+32*1.6, 1.6, 1.6, 0, c_white, alpha);
+	draw_sprite_ext(no1_defender_sprite, 0, x+32, y+32*1.6, 1, 1, 0, c_white, alpha);
 	draw_set_halign(fa_middle);
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(view_wport[0]/2, y+4, MOST_DAMAGING_DEFENDER_TEXT);
@@ -306,4 +306,37 @@ case 10://クリア画面の一番ダメージをだしたやつ描画
 	draw_set_color(COLOR_DEFAULT);
 
 break
+case 11://アイテムドロップ
+if(time < 0){
+	instance_destroy()
+	
+	var line_amount = 8
+	var line_addangle = 360/line_amount
+	var angle_default = 90
+	var color = COLOR_ITEM_EQUIP_EFFECT
+	
+	for(var i=0; i<line_amount; i++){
+		var angle = line_addangle*-i+angle_default
+		var line_x = lengthdir_x(36, angle)+x;
+		var line_y = lengthdir_y(36, angle)+y;
+		line_effect(line_x, line_y, 12, angle, 6, 8, color, 2, 12, 0);
+	}
+	get_item(item_number);
+}
+else{
+	time--;
+}
+
+_hspeed += _gravity;
+var sprite_id = global.itemdata[item_number, itemdata.sprite];
+
+if(sign(_hspeed) and y_default < y){
+	y = y_default;
+	_hspeed = -_hspeed/2;
+}
+draw_sprite(sprite_id, 0, x, y);
+y += _hspeed;
+sdm(string(x)+" "+string(y))
+break
+
 }
