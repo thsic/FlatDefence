@@ -1,7 +1,6 @@
 /// @description UI表示
 draw_set_font(fo_yasaNormal)
 
-
 draw_ui();
 switch(global.gamestate){
 case gamestate.wavestart:

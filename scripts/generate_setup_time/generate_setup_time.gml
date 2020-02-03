@@ -40,6 +40,54 @@ case -1:
 break
 #endregion -----------------
 
+#region stage1
+case 1:
+	switch(global.wave_now){
+	case 1://敵10体
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*60, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 2://fast*3 Small*7 Fast*3
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*30, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<7; i++){
+			set_enemy_generate_timeline(i*60+90, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*45+510, global.generate_timeline_id, 0, 1, 0);
+		}
+	break
+	case 3://Normal*3 Normal*3 Normal*3
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*60, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*60+180, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*60+420, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 4://NormalLv2*1 NormalLv1*2 NormalLv2*1 NormalLv1*3
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 0, 1, 0);
+		for(var i=0; i<2; i++){
+			set_enemy_generate_timeline(i*45+30, global.generate_timeline_id, 0, 0, 0);
+		}
+		set_enemy_generate_timeline(120+120, global.generate_timeline_id, 0, 1, 0);
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*45+240, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 5:
+	
+	break
+	case 6:
+	
+	break
+	}
+#endregion
 default:
 	sdm("error! generate_setup_time");
 break

@@ -2,6 +2,7 @@
 for(var i=0; i<=10; i++){//usefulwindowに必要
 	global.usefulwindow_surface[i] = noone;
 }
+sdm(instance_number(o_gameMgr))
 
 global.debugmode = DEBUGMODE
 global.gamestate = gamestate.stagestart;

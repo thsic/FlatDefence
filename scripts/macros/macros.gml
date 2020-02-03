@@ -17,6 +17,9 @@
 #macro ITEM 0
 #macro SPRITE 3
 
+#macro STAGE1_ROOM r_stage1
+#macro STAGE2_ROOM r_stage2
+
 //shop
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
 #macro SHOP_WINDOW_WIDTH 256 

@@ -7,11 +7,15 @@ case -1:
 	generate_setup_time()
 	generate_setup()
 	
-	
-	sdm(string(global.enemy_wave_total_amount)+"体の敵がタイムラインにセットされた")
+break
 
+case 1:
+	spowner_amount = 1;
+	generate_setup_time()
+	generate_setup()
 break
 default:
 	sdm("error!")
 break
 }
+sdm(string(global.enemy_wave_total_amount)+"体の敵がタイムラインにセットされた")

@@ -1,15 +1,15 @@
 {
-    "id": "5c73a86d-587b-4bc2-bfd6-67461233167d",
+    "id": "9b2469d2-47ec-488a-844a-aabbdeec1689",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_eNormal",
+    "name": "o_eSmallLv2",
     "eventList": [
         
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": [
         {
-            "id": "c19c78f2-0799-4dac-a071-1942ca1a2446",
+            "id": "9329fdbf-af76-482f-85aa-04ea57c49eea",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "7bcfc91c-0c32-4144-a658-33b6bfc94388",
@@ -35,6 +35,6 @@
         
     ],
     "solid": false,
-    "spriteId": "cc448787-77e8-434e-accd-c1692bf54363",
+    "spriteId": "714b0b5f-d0b0-4d30-ab7c-88a32bc46388",
     "visible": true
 }

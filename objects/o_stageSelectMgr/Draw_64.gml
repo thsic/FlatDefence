@@ -12,13 +12,13 @@ for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
 	}
 }
 
-	//ステージ情報表示する
-	var sprite_x = 450;
-	var sprite_y = 100;
-	var width = 352;
-	var height = 270;
-	width *= 1.2;
-	height *= 1.2;
+//ステージ情報表示する
+var sprite_x = 450;
+var sprite_y = 100;
+var width = 352;
+var height = 270;
+width *= 1.2;
+height *= 1.2;
 if(selecting_button != -1){
 	tiny_window(s_window, 1, stage_select_button[selecting_button, stageselectbutton.window_x], stage_select_button[selecting_button, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH+60, STAGESELECT_BUTTON_HEIGHT+20, 1);
 	var x_offset = stage_select_button[selecting_button, stageselectbutton.window_x];

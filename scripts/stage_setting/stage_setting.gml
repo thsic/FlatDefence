@@ -40,26 +40,28 @@ case -1:
 break
 case 0:
 	global.life = 10//体力
-	global.gold = 1000;//おかね
-	global.wave_total = 5;//総ウェーブ数
+	global.gold = 10;//おかね
+	global.wave_total = 1;//総ウェーブ数
 
 	global.shop_defender[0] = o_dBasic;
-	global.shop_defender[1] = o_dSniper;
-	global.shop_item[0] = 0;
-	global.shop_item[1] = 1;
-	global.shop_item[2] = 7;
+	global.shop_item[0] = 1;
 	
 break
-case 1:
+case 1://ステージ1
 	global.life = 10//体力
-	global.gold = 1000;//おかね
-	global.wave_total = 5;//総ウェーブ数
+	global.gold = 300;//おかね
+	global.wave_total = 6;//総ウェーブ数
 
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
-	global.shop_item[0] = 0;
-	global.shop_item[1] = 1;
-	global.shop_item[2] = 7;
+	global.shop_item[0] = 1;
+	global.shop_item[1] = 9;
+	global.shop_item[2] = 19;
+
+	global.wave_drop_item[2] = 1;
+	global.wave_drop_item[4] = 19;
+break
+
 
 default:
 	global.life = 1
