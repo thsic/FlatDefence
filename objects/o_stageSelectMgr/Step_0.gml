@@ -30,11 +30,10 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 			switch(selecting_button){
 			case 0:
 				stage_goto = r_test;
-			break
-			case 1:
-				stage_goto = STAGE1_ROOM;
 				
 			break
+			case 1:
+				stage_goto = r_stage1
 				
 			}
 		}

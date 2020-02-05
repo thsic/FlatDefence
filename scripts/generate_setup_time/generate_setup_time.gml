@@ -39,7 +39,6 @@ case -1:
 	
 break
 #endregion -----------------
-
 #region stage1
 case 1:
 	switch(global.wave_now){
@@ -87,6 +86,7 @@ case 1:
 	
 	break
 	}
+break
 #endregion
 default:
 	sdm("error! generate_setup_time");

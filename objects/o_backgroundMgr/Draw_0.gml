@@ -5,6 +5,7 @@ var y4 = 540-y1;
 var y5 = 540
 var x1 = 0;
 var x2 = room_width
+
 /*var color2 = make_color_rgb(32, 9, 12)
 var color1 = make_color_rgb(23, 9, 14)
 var color2 = make_color_rgb(6, 20, 38)

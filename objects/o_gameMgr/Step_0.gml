@@ -5,7 +5,10 @@ case gamestate.stagestart://ステージ開始時処理
 	case r_test:
 		global.stage = -1;
 	break
-	case STAGE1_ROOM:
+	case r_tutorial:
+		global.stage = 1;
+	break
+	case r_stage1:
 		global.stage = 1;
 	break
 	}
@@ -18,7 +21,6 @@ case gamestate.stagestart://ステージ開始時処理
 	timemachine_button_state[0] = 0;
 	timemachine_button_state[1] = 2;
 	timemachine_button_state[2] = 0;
-	
 	stage_setting();
 	
 	instance_create_layer(0, 0, "Background", o_backgroundMgr);
@@ -155,7 +157,6 @@ case gamestate.pause:
 break
 
 case gamestate.restpause:
-
 	if(arrow_create_cooldown = 0){//休憩時間中の矢印
 			create_route_arrow(o_enemyGenerateMgr.spowner_amount);//ルート表示用の矢印表示
 			arrow_create_cooldown = ARROW_CREATE_COOLDOWN_DEFAULT;

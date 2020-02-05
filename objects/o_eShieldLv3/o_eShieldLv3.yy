@@ -1,5 +1,5 @@
 {
-    "id": "1983f7de-4f72-4a2b-bc4a-fe7dfab747b4",
+    "id": "447c5373-1545-44fd-8a0e-773e087e8437",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "o_eShieldLv3",
@@ -9,7 +9,7 @@
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": [
         {
-            "id": "c0cdb1f7-4c67-4f38-b3f5-2932280d8b24",
+            "id": "171a2e31-b9b3-4b60-b951-165507b956f0",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "7bcfc91c-0c32-4144-a658-33b6bfc94388",
