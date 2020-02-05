@@ -6,7 +6,7 @@ for(var i=0; i<=10; i++){//usefulwindowに必要
 global.debugmode = DEBUGMODE
 global.gamestate = gamestate.stagestart;
 global.enemy_x = 0;
-global.score_gold_minus = 0;
+
 
 show_window = false;//defenderのステータス画面が開いているかどうか
 shop_product = noone;
@@ -29,8 +29,10 @@ randomize();
 for(var i=0; i<POSSESSION_ITEM_MAX; i++){//アイテム初期化 持てる数は12個まで
 	global.item_possession[i] = -1;
 }
-global.item_possession[0] = 1;
-global.item_possession[1] = 0;
+
+
+/*global.item_possession[0] = 1;
+global.item_possession[1] = 0;*/
 
 
 

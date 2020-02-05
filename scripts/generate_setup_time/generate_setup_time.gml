@@ -79,13 +79,27 @@ case 1:
 			set_enemy_generate_timeline(i*45+355, global.generate_timeline_id, 0, 0, 0);
 		}
 	break
-	case 5:
+	case 5://Normal Small*4 Small*6 Normal
+		set_enemy_generate_timeline(0, global.generate_timeline_id, 0, 1, 0);
 		for(var i=0; i<4; i++){
-			set_enemy_generate_timeline(i*45+80, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*30+60, global.generate_timeline_id, 0, 0, 0);
+		}
+		set_enemy_generate_timeline(360, global.generate_timeline_id, 0, 1, 0);
+		for(var i=0; i<12; i++){
+			set_enemy_generate_timeline(i*30+360+30, global.generate_timeline_id, 0, 0, 0);
 		}
 	break
-	case 6:
-	
+	case 6://NormalLv2*5 NormalLv3*3 NormalLv2&Lv3*5
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*60+60, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*60+180+360, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*60+990+30, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*60+990, global.generate_timeline_id, 0, 1, 0);
+		}
 	break
 	}
 break

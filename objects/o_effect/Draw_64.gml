@@ -336,7 +336,6 @@ if(sign(_hspeed) and y_default < y){
 }
 draw_sprite(sprite_id, 0, x, y);
 y += _hspeed;
-sdm(string(x)+" "+string(y))
 break
 
 }

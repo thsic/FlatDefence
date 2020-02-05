@@ -20,7 +20,6 @@ for(var i=0; i<defender_amount; i++){
 
 //一番すごいやつが決まったのでそれを描画
 if(most_damaging_defender_id != -1){
-	sdm(most_damaging_defender_totaldamage);
 	with(instance_create_layer(_x, _y, "UI", o_effect)){
 		type = 10;
 		no1_defender_id = most_damaging_defender_id;

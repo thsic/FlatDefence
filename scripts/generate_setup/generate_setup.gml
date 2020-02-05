@@ -36,8 +36,8 @@ case 1:
 		generate_enemy_type[1] = o_eNormalLv2;
 	break
 	case 5:
-		generate_enemy_type[0] = o_eNormalLv3;
-		generate_enemy_type[1] = o_eSmallLv2;
+		generate_enemy_type[0] = o_eSmallLv2;
+		generate_enemy_type[1] = o_eNormalLv3;
 	break
 	case 6:
 		generate_enemy_type[0] = o_eNormalLv2;

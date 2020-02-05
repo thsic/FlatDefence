@@ -20,7 +20,6 @@ if(chronomancer_timing <= 0){
 
 				if(target_id.hp <= 0){//ダメージ記録
 					record_damage(id, damage+target_id.hp);//敵を倒した場合
-					sdm(damage+target_id.hp)
 				}
 				else{
 					record_damage(id, damage);

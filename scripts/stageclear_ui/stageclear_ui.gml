@@ -6,7 +6,7 @@ if(stageclear_frame = -1){
 	button_alpha = 0;
 	room_speed = FPS_DEFAULT;
 	score_calculate();
-	
+	sdm("total enemy hp "+string(global.all_enemy_total_hp))
 }
 
 stageclear_frame++;

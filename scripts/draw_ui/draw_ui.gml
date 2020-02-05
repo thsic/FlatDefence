@@ -1,7 +1,7 @@
 //uiとかを描画
 
 draw_set_color(COLOR_TEXT_STAGEUI);
-draw_text(0, 0, "Stage"+string(global.stage)+" Wave"+string(global.wave_now));
+draw_text(0, 0, "Stage"+string(global.stage)+" Wave"+string(global.wave_now)+"/"+string(global.wave_total));
 
 //lifeの残量に応じてライフの色を変える
 var change_color = 5//hpがこの値以下だと色を変える

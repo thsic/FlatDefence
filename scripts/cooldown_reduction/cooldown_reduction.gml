@@ -8,7 +8,7 @@ var reduction_percent = 1;
 repeat(level){
 	reduction_percent *= percent;
 }
-sdm(reduction_percent)
+
 object_id.cooldown -= cooldown_time_max*(1-reduction_percent);
 if(object_id.cooldown < 0){
 	object_id.cooldown = 0;

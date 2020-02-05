@@ -201,6 +201,7 @@ if(ice_level > 0){//スローをかける
 if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
 	damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
 }
+damage_result = ceil(damage_result)//ダメージ切り上げ
 
 //最終的なダメージ
 if(instance_exists(target_id)){
@@ -212,6 +213,7 @@ if(instance_exists(target_id)){
 	else{
 		record_damage(defender_id, damage_result);
 	}
+	
 	draw_damage_value(target_id.x, target_id.y, damage_result);
 	
 	if(target_id.hp <= 0){//敵が死んだ
@@ -300,7 +302,7 @@ if(instance_exists(target_id)){
 					if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
 						damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
 					}
-				
+					damage_result = ceil(damage_result)//ダメージ切り上げ
 					//範囲内の敵にダメージを与える
 					if(target_id != enemy_id){//ただしターゲットには既にダメージを与えているのであたえない
 						enemy_id.hp -= damage_result;
