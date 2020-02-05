@@ -37,7 +37,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 				reduce_gold *= PRICE_INCREASE;
 			}
 			if(global.gold >= reduce_gold){//残金チェック
-				global.gold -= floor(reduce_gold);//お金をへらす
+				consumed_gold(floor(reduce_gold));//お金をへらす
 				
 				grab_defender_id = shop_product[grab_number, DEFENDER];
 				grab_defender_shop_id = grab_number
@@ -59,7 +59,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 				reduce_gold *= PRICE_INCREASE;
 			}
 			if(global.gold >= reduce_gold){//残金チェック
-				global.gold -= floor(reduce_gold);//お金をへらす
+				consumed_gold(floor(reduce_gold));//お金をへらす
 				
 				grab_item_id = shop_item_product[grab_product_number, ITEM];
 				grab_item_shop_id = grab_product_number;

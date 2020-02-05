@@ -6,7 +6,7 @@ for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){
 switch(global.stage){
 case -1:
 	set_spawner(0, -16, 272);
-	route_type[0] = p_stage1route0;
+	route_type[0] = p_stage2route0;
 	switch(global.wave_now){
 	case 1:
 		generate_enemy_type[0] = o_eNormalLv1;
@@ -18,7 +18,7 @@ case -1:
 	}
 break	
 case 1:
-	set_spawner(0, -16, 336);
+	set_spawner(0, -16, 368);
 	route_type[0] = p_stage1route0;
 	switch(global.wave_now){
 	case 1:
@@ -36,12 +36,12 @@ case 1:
 		generate_enemy_type[1] = o_eNormalLv2;
 	break
 	case 5:
-		generate_enemy_type[0] = o_eNormalLv2;
+		generate_enemy_type[0] = o_eNormalLv3;
 		generate_enemy_type[1] = o_eSmallLv2;
 	break
 	case 6:
-		generate_enemy_type[0] = o_eNormalLv1;
-		generate_enemy_type[1] = o_eNormalLv2;
+		generate_enemy_type[0] = o_eNormalLv2;
+		generate_enemy_type[1] = o_eNormalLv3;
 	break
 	}
 break

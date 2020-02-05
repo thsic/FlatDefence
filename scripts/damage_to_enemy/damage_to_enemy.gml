@@ -149,7 +149,7 @@ if(gold_ammo){
 	if(instance_exists(target_id)){
 		if(global.gold > 100){//お金が100g以下なら発動しない
 			var consume_gold = floor(global.gold/100);
-			global.gold -= consume_gold;//1%を消費する
+			consumed_gold(consume_gold);
 			damage += consume_gold*global.effectdata[29, effectdata.value]
 			
 		}

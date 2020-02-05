@@ -14,6 +14,7 @@ for(var i=0; i<sell_id.itemslot_amount; i++){
 }
 get_gold += global.defender_data[sell_id.defender_number, data.cost];
 
+global.score_gold_minus += get_gold;//売却ゴールドはクリア時のスコアに加算されない
 global.gold += get_gold;
 
 //弾消す

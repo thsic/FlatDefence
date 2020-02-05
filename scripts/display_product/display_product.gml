@@ -15,15 +15,15 @@ for(i=0; i<product_item_amount; i++){
 	shop_item_product[i, SALES] = 0;
 	if(i<6){
 		shop_item_product[i, SPRITE_X] = window_get_width()-224+i*38;
-		shop_item_product[i, SPRITE_Y] = 250;
+		shop_item_product[i, SPRITE_Y] = 228;
 	}
 	else if(i<12){
 		shop_item_product[i, SPRITE_X] = window_get_width()-224+(i-6)*38;
-		shop_item_product[i, SPRITE_Y] = 300;
+		shop_item_product[i, SPRITE_Y] = 278;
 	}
 	else{
 		shop_item_product[i, SPRITE_X] = window_get_width()-224+(i-12)*38;
-		shop_item_product[i, SPRITE_Y] = 350;
+		shop_item_product[i, SPRITE_Y] = 328;
 	}
 }
 

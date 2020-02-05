@@ -133,6 +133,7 @@ case gamestate.waveclear://ウェーブクリア処理
 	else{
 		//次ウェーブへ
 		global.gamestate = gamestate.reststart;
+		global.gold += global.wave_clear_gold;//ウェーブクリアゴールド追加
 		if(global.wave_drop_item[global.wave_now] != -1){//ドロップアイテム
 			var _x = global.enemy_last_dead_position_x;
 			var _y = global.enemy_last_dead_position_y;

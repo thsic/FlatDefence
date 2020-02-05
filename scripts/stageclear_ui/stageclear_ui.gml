@@ -40,7 +40,9 @@ case 90:
 	fall_text(view_wport[0]/2+116, text_y-32+24*1, text_y+24*1, 15, string(life_score), COLOR_TEXT_LTGRAY, FONT_DEFAULT, fa_right, false);
 break
 case 100:
-	fall_text(view_wport[0]/2-116, text_y-32+24*2, text_y+24*2, 15, "Gold "+string(global.gold)+" * 10", COLOR_TEXT_LTGRAY, FONT_DEFAULT, fa_left, false);
+	var clear_gold = global.gold - global.score_gold_minus;
+	if(clear_gold < 0){clear_gold = 0};
+	fall_text(view_wport[0]/2-116, text_y-32+24*2, text_y+24*2, 15, "Gold "+string(clear_gold)+" * 10", COLOR_TEXT_LTGRAY, FONT_DEFAULT, fa_left, false);
 	fall_text(view_wport[0]/2+32, text_y-32+24*2, text_y+24*2, 15, "=", COLOR_TEXT_LTGRAY, FONT_DEFAULT, fa_left, false);
 	fall_text(view_wport[0]/2+116, text_y-32+24*2, text_y+24*2, 15, string(gold_score), COLOR_TEXT_LTGRAY, FONT_DEFAULT, fa_right, false);
 break

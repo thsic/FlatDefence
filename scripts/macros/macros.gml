@@ -2,7 +2,7 @@
 #macro FPS_DEFAULT 60
 #macro START_ROOM r_title
 #macro GAMENAME "FLAT DEFENCE"
-#macro STAGE_AMOUNT 5
+#macro STAGE_AMOUNT 8
 
 //ソート
 #macro NEARGOAL 0
@@ -110,7 +110,7 @@
 
 #macro COLOR_BAR_COOLDOWN make_color_rgb(204, 197, 112)
 #macro COLOR_BAR_COOLDOWN_UNDER c_gray
-#macro COLOR_BAR_ENEMYHP make_color_rgb(204, 163, 135)
+#macro COLOR_BAR_ENEMYHP make_color_rgb(184, 73, 45)
 #macro COLOR_BAR_ENEMYHP_UNDER c_gray
 
 #macro COLOR_BACKGROUND make_color_rgb(200, 200, 170)

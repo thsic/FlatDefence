@@ -9,10 +9,10 @@ switch(bartype){
 case "hp":
 	var bar_percent = now / maximum
 	var bar_width = 14;
-	var bar_height = 2;
+	var bar_height = 1;
 	//hpバーの位置指定
 	var bar_x = x - bar_width / 2
-	var bar_y = y + sprite_height/2 + 0;
+	var bar_y = y + sprite_height/2 + 1;
 
 	if(sign(bar_percent) = -1){bar_percent = 0}//hpがマイナスでも表示上は0
 	draw_set_color(bar_backgloundcolor);

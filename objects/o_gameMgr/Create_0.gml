@@ -6,6 +6,7 @@ for(var i=0; i<=10; i++){//usefulwindowに必要
 global.debugmode = DEBUGMODE
 global.gamestate = gamestate.stagestart;
 global.enemy_x = 0;
+global.score_gold_minus = 0;
 
 show_window = false;//defenderのステータス画面が開いているかどうか
 shop_product = noone;
