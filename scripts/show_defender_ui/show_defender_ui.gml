@@ -40,7 +40,7 @@ if(!show_window){
 }
 else{
 	//windowが開かれている状態
-	usefulwindow(s_window, 0, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,alpha);
+	
 	if(upgrade_ui){
 		upgrade_ui_text(ui_window_x, ui_window_y, ui_window_width, ui_window_height);
 	}

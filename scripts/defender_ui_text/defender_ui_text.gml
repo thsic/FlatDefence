@@ -5,13 +5,27 @@ var x_offset = argument0;
 var y_offset = argument1;
 var width = argument2;
 var height = argument3;
+var alpha = 0.9
+
+//開かれている間は射程範囲表示
+draw_set_alpha(0.2);
+//draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
+draw_set_color(global.defender_data[finded_defender_id.defender_number, data.color])
+draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, false)
+draw_set_alpha(0.5);
+draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, true)
+draw_set_alpha(1);
+
+usefulwindow(s_window, 0, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,alpha);
+
 draw_sprite(finded_defender_id.sprite_index, 0, x_offset+22, y_offset+24);//defenderの画像 32x32以外だと変になるかも middlecentreなのを忘れない
 draw_set_color(COLOR_TEXT_ORANGE);
-draw_text(x_offset+42, y_offset+22, global.defender_data[defender_id_conversion(finded_defender_id.object_index), data.description])
+//defender説明表示
+//draw_text(x_offset+42, y_offset+22, global.defender_data[defender_id_conversion(finded_defender_id.object_index), data.description])
 draw_set_color(COLOR_TEXT_GRAY);
-draw_text(x_offset+4, y_offset+38, "Damage");
-draw_text(x_offset+4, y_offset+38+16*2+4, "AttackSpeed");
-draw_text(x_offset+4, y_offset+38+16*4+8, "Range");
+draw_text(x_offset+4, y_offset+38, FIRE_DAMAGE_TEXT);
+draw_text(x_offset+4, y_offset+38+16*2+4, ATTACKSPEED_TEXT);
+draw_text(x_offset+4, y_offset+38+16*4+8, RANGE_TEXT);
 draw_text(x_offset+150, y_offset+20, "Effect");
 
 draw_set_color(COLOR_TEXT_WHITE);
@@ -164,11 +178,3 @@ if(sellbutton = 1){
 }
 draw_set_halign(fa_left);
 
-//開かれている間は射程範囲表示
-draw_set_alpha(0.2);
-//draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
-draw_set_color(global.defender_data[finded_defender_id.defender_number, data.color])
-draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, false)
-draw_set_alpha(0.5);
-draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, true)
-draw_set_alpha(1);

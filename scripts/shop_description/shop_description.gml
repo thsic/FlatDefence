@@ -39,9 +39,9 @@ case 0://defender
 	}
 	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	draw_set_color(COLOR_TEXT_GRAY);
-	draw_text(offset_x+6, offset_y+24, "Damage");
-	draw_text(offset_x+6, offset_y+48, "AttackSpeed");
-	draw_text(offset_x+6, offset_y+72, "Range");
+	draw_text(offset_x+6, offset_y+24, FIRE_DAMAGE_TEXT);
+	draw_text(offset_x+6, offset_y+48, ATTACKSPEED_TEXT);
+	draw_text(offset_x+6, offset_y+72, RANGE_TEXT);
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(offset_x+6, offset_y+4, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.name]);
 	draw_text(offset_x+150, offset_y+24, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.damage]);
@@ -113,9 +113,9 @@ case 1://item
 	}
 	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	draw_set_color(COLOR_TEXT_GRAY);
-	draw_text(offset_x+6, offset_y+24, "Damage");
-	draw_text(offset_x+6, offset_y+48, "AttackSpeed");
-	draw_text(offset_x+6, offset_y+72, "Range");
+	draw_text(offset_x+6, offset_y+24, FIRE_DAMAGE_TEXT);
+	draw_text(offset_x+6, offset_y+48, ATTACKSPEED_TEXT);
+	draw_text(offset_x+6, offset_y+72, RANGE_TEXT);
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(offset_x+6, offset_y+4, global.itemdata[target_id, itemdata.name]);
 	draw_text(offset_x+150, offset_y+24, global.itemdata[target_id, itemdata.damage]);

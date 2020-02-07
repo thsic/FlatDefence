@@ -1663,6 +1663,14 @@
             }
         },
         {
+            "Key": "de191850-d403-4c69-a9f4-d07bbb531f7a",
+            "Value": {
+                "id": "015509e2-9039-4d7e-9829-1d3bb4731dbe",
+                "resourcePath": "fonts\\fo_yasaNormalBackup\\fo_yasaNormalBackup.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "de627560-4d9b-45fe-a7c5-43790e47306b",
             "Value": {
                 "id": "809d4fd9-c226-4342-8f1c-f38e464e1d6f",
