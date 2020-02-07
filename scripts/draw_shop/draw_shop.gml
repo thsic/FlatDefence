@@ -132,17 +132,17 @@ if(grab_defender_id != -1){//商品を掴んでいる
 						//どのバフなのか
 						if(nearest_marker.enhancement_attack){
 							enhancement_type = 0;
-							enhancement_name = FIRE_DAMAGE_TEXT;
+							enhancement_name = FIRE_DAMAGE_MARKER_TEXT;
 							enhancement_value = 1+(nearest_marker.enhancement_attack*MARKER_ENHANCEMENT_MAGNIFICATION);
 						}
 						if(nearest_marker.enhancement_range){
 							enhancement_type = 1;
-							enhancement_name = RANGE_TEXT;
+							enhancement_name = RANGE_MARKER_TEXT;
 							enhancement_value = 1+(nearest_marker.enhancement_range*MARKER_ENHANCEMENT_MAGNIFICATION);
 						}
 						if(nearest_marker.enhancement_attackspeed){
 							enhancement_type = 2;
-							enhancement_name = ATTACKSPEED_TEXT;
+							enhancement_name = ATTACKSPEED_MARKER_TEXT;
 							enhancement_value = 1+(nearest_marker.enhancement_attackspeed*MARKER_ENHANCEMENT_MAGNIFICATION);
 						}
 						//バフのレベルはどのくらいなのか調べる

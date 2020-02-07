@@ -92,7 +92,7 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		//描画
 		draw_set_color(global.effectdata[effect_order[i], effectdata.color]);
 		if(global.effectdata[effect_order[i], effectdata.overlap] = true){//効果の重複が可能か
-			draw_text(x_offset+150, y_offset+38+16*i, global.effectdata[effect_order[i], effectdata.name]+" LV"+string(effect_level[i]))
+			draw_text(x_offset+150, y_offset+38+16*i, global.effectdata[effect_order[i], effectdata.name]+" Lv"+string(effect_level[i]))
 		}
 		else{
 			draw_text(x_offset+150, y_offset+38+16*i, global.effectdata[effect_order[i], effectdata.name])

@@ -34,19 +34,36 @@ for(var i=0; i<item_number; i++){//アップグレード可能なアイテムか
 draw_set_halign(fa_middle)
 for(var i=0; i<item_number; i++){
 	var button_subimage = upgrade_button[i, upgradebutton.state]
-
+	draw_set_font(FONT_DEFAULT);
 	draw_sprite_ext(s_upgradeButton, button_subimage, upgrade_button[i, upgradebutton.sprite_x], upgrade_button[i, upgradebutton.sprite_y], 1, 1, 0, c_white, 0.7);
 	draw_sprite(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.sprite], 0, upgrade_button[i, upgradebutton.sprite_x]+24, upgrade_button[i, upgradebutton.sprite_y]+24);
 	draw_set_valign(fa_middle);
-	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 110){//はみ出しそうならフォントの大きさ変える
-		draw_set_font(FONT_UPGRADETEXT);
+	sdm(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]))
+	
+	//はみ出しそうならフォントの大きさ変える
+	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 110){
+		var font_size = 1;
+		
 	}
 	else{
+		var font_size = 0;
+	}
+	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 130){
+		var font_size = 2;
+	}
+	switch(font_size){
+	case 0:	
 		draw_set_font(FONT_DEFAULT);
-	}
-	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 110){
+	break
+	case 1:
+		draw_set_font(FONT_UPGRADETEXT);
+	break
+	case 2:
 		draw_set_font(FONT_UPGRADETEXT_SMALL);
+	break
 	}
+	
+	//アイテム名描画
 	draw_text(upgrade_button[i, upgradebutton.sprite_x]+96, upgrade_button[i, upgradebutton.sprite_y]+24, global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]);
 }
 draw_set_font(FONT_DEFAULT);
@@ -66,7 +83,7 @@ else{
 
 var upgrade_text_y = y_offset+180//このyの値を変えるといっぺんに変えれる
 draw_set_color(COLOR_TEXT_WHITE);
-draw_text(x_offset+width/2, y_offset+38, "Choose Upgrade Item!");
+draw_text(x_offset+width/2, y_offset+42, "Choose Upgrade Item!");
 
 
 //比較用数値
@@ -264,6 +281,7 @@ if(possible_upgrade){//upgrade先
 	
 }
 
+//アップグレード前
 var line_feed = false
 if(string_width(description1) < 216){
 	var text_x = x_offset+width/5*1
@@ -279,7 +297,19 @@ else{
 
 }
 description1 = string_replace(description1, "@", "");
-draw_text(text_x, upgrade_text_y+180, description1);
+
+var overlap = false;
+if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.overlap]){
+	overlap = true;
+	draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv1");
+}
+else{
+	draw_text(text_x, upgrade_text_y+180, string(description1));
+}
+
+
+//アップグレード後
+var overlap = false//lvupするかどうか
 if(possible_upgrade){
 	if(string_width(description1_upgrade) < 218){
 		var text_x = x_offset+width/5*4
@@ -310,12 +340,36 @@ if(possible_upgrade){
 	}
 	else if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.overlap]){//LVupするなら緑にする
 		draw_set_color(COLOR_TEXT_GREEN);
+		overlap = true
 	}
 	else{
 		draw_set_color(COLOR_TEXT_WHITE);
 	}
+	
+	//アップグレード先描画
 	if(!freeze_rod){
-		draw_text(text_x, upgrade_text_y+180, description1_upgrade);//アップグレード先描画
+		if(overlap){
+			//現在レベル取得
+			/*var effect_id = global.itemdata[choosing_id, itemdata.effect];
+			var effect_level = 0;
+			for(var i=0; i<EFFECT_SLOT_MAX; i++){
+				if(upgrade_defender_id.effect_now[i, effectnow.number] != -1){
+					if(upgrade_defender_id.effect_now[i, effectnow.number] = effect_id){
+						effect_level++;
+					}
+				}
+				else{
+					break//forから抜ける
+				}
+			}*/
+			
+			//defenderからエフェクトレベルを取得する処理を書いたけどここのテキストはアイテム単体のことなのでLv2固定だった
+			draw_text(text_x, upgrade_text_y+180, string(description1_upgrade)+" Lv2");
+		}
+		else{
+			draw_text(text_x, upgrade_text_y+180, description1_upgrade);
+		}
+		
 	}
 	else{
 		draw_set_color(COLOR_TEXT_WHITE);

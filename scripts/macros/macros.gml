@@ -86,6 +86,9 @@
 #macro FIRE_DAMAGE_TEXT "Power"
 #macro RANGE_TEXT "Range"
 #macro ATTACKSPEED_TEXT "AttackSpeed"
+#macro FIRE_DAMAGE_MARKER_TEXT "パワー"
+#macro ATTACKSPEED_MARKER_TEXT "攻撃速度"
+#macro RANGE_MARKER_TEXT "射程"
 #macro MOST_DAMAGING_DEFENDER_TEXT "最もダメージを与えたディフェンダー"
 
 //色

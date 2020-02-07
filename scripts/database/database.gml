@@ -736,7 +736,7 @@ enum enemydata{
 target = 0;
 global.effectdata[target, effectdata.number] = target;
 global.effectdata[target, effectdata.name] = "爆風攻撃";
-global.effectdata[target, effectdata.description] = "敵にダメージを与えると爆風が発生する";
+global.effectdata[target, effectdata.description] = "敵にダメージを与えると@爆風が発生する";
 global.effectdata[target, effectdata.value] = 0;
 global.effectdata[target, effectdata.overlap] = true;
 global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
@@ -756,7 +756,7 @@ global.effectdata[target, effectdata.deleteeffect] = -1;
 target = 2;
 global.effectdata[target, effectdata.number] = target;
 global.effectdata[target, effectdata.name] = "アイスマジック";
-global.effectdata[target, effectdata.description] = "敵の速度を下げる @速度低下時間は攻撃力参照";//狙った敵のみ
+global.effectdata[target, effectdata.description] = "敵の速度を下げる";//狙った敵のみ
 global.effectdata[target, effectdata.value] = 0;
 global.effectdata[target, effectdata.overlap] = true;
 global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
