@@ -42,9 +42,12 @@ else{
 	//windowが開かれている状態
 	
 	if(upgrade_ui){
+		usefulwindow(s_window, 0, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,alpha);
 		upgrade_ui_text(ui_window_x, ui_window_y, ui_window_width, ui_window_height);
+		
 	}
 	else{
+		
 		sellbutton = 0;
 		var sell = false;
 		if(ui_window_x+ui_window_width-6-sprite_get_width(s_sellButton) < mouse_x and mouse_x < ui_window_x+ui_window_width-6){

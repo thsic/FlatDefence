@@ -39,24 +39,25 @@ case 0://defender
 	}
 	tiny_window(s_window, 2, offset_x, offset_y, window_width, window_height, alpha);
 	draw_set_color(COLOR_TEXT_GRAY);
+	var defender_id = defender_id_conversion(shop_product[target_id, DEFENDER])
 	draw_text(offset_x+6, offset_y+24, FIRE_DAMAGE_TEXT);
 	draw_text(offset_x+6, offset_y+48, ATTACKSPEED_TEXT);
 	draw_text(offset_x+6, offset_y+72, RANGE_TEXT);
 	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(offset_x+6, offset_y+4, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.name]);
-	draw_text(offset_x+150, offset_y+24, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.damage]);
-	draw_text(offset_x+150, offset_y+48, string_format(global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.attack_speed], 1, 1));
-	draw_text(offset_x+150, offset_y+72, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.range]);
+	draw_text(offset_x+6, offset_y+4, global.defender_data[defender_id, data.name]);
+	draw_text(offset_x+150, offset_y+24, global.defender_data[defender_id, data.damage]);
+	draw_text(offset_x+150, offset_y+48, string_format(global.defender_data[defender_id, data.attack_speed], 1, 1));
+	draw_text(offset_x+150, offset_y+72, global.defender_data[defender_id, data.range]);
 	draw_set_color(COLOR_TEXT_ORANGE);
 	//説明文
 	draw_text(offset_x+6, offset_y+96, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.description]);
 	draw_set_color(COLOR_TEXT_YELLOW);
 	draw_set_halign(fa_right);
-	var nesessary_gold = global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.cost];
+	var nesessary_gold = global.defender_data[defender_id, data.cost];
 	for(var i=0; i<shop_product[target_id, SALES]; i++){
 		nesessary_gold *= PRICE_INCREASE;
 	}
-	draw_text(offset_x+window_width-6, offset_y+4, floor(nesessary_gold));
+	draw_text(offset_x+window_width-6, offset_y+4, string(floor(nesessary_gold))+" Gold");
 	draw_set_halign(fa_left);
 	draw_set_color(COLOR_DEFAULT);
 	
@@ -118,8 +119,11 @@ case 1://item
 	draw_text(offset_x+6, offset_y+72, RANGE_TEXT);
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(offset_x+6, offset_y+4, global.itemdata[target_id, itemdata.name]);
+	draw_set_color_value(COLOR_TEXT_GREEN, COLOR_TEXT_WHITE, global.itemdata[target_id, itemdata.damage], 0)
 	draw_text(offset_x+150, offset_y+24, global.itemdata[target_id, itemdata.damage]);
+	draw_set_color_value(COLOR_TEXT_GREEN, COLOR_TEXT_WHITE, global.itemdata[target_id, itemdata.attack_speed], 0)
 	draw_text(offset_x+150, offset_y+48, string_format(global.itemdata[target_id, itemdata.attack_speed], 1, 1));
+	draw_set_color_value(COLOR_TEXT_GREEN, COLOR_TEXT_WHITE, global.itemdata[target_id, itemdata.range], 0)
 	draw_text(offset_x+150, offset_y+72, global.itemdata[target_id, itemdata.range]);
 	
 	draw_set_color(COLOR_TEXT_ORANGE);
@@ -149,7 +153,7 @@ case 1://item
 		for(var i=0; i<shop_item_product[item_shop_id, SALES]; i++){
 			nesessary_gold *= PRICE_INCREASE;
 		}
-		draw_text(offset_x+window_width-6, offset_y+4, floor(nesessary_gold));
+		draw_text(offset_x+window_width-6, offset_y+4, string(floor(nesessary_gold))+" Gold");
 		draw_set_halign(fa_left);
 	}
 	draw_set_color(COLOR_DEFAULT);

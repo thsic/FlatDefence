@@ -319,11 +319,27 @@
             }
         },
         {
+            "Key": "242248b7-e254-419f-beb4-34c2c5d53722",
+            "Value": {
+                "id": "17d1e01f-6384-4ec3-b970-19952e42999e",
+                "resourcePath": "scripts\\draw_set_color_value\\draw_set_color_value.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "244f33f0-aa84-430e-b34d-99b1897167b8",
             "Value": {
                 "id": "29e0783c-4c5e-42c9-87c0-7f217a05671d",
                 "resourcePath": "paths\\p_stage4route0\\p_stage4route0.yy",
                 "resourceType": "GMPath"
+            }
+        },
+        {
+            "Key": "245ad08f-4c04-4240-b0db-ba8d2acc4f0e",
+            "Value": {
+                "id": "6b8fbd8c-6afc-4fec-b0c1-82fa19dfaeba",
+                "resourcePath": "fonts\\fo_yasa10Ja\\fo_yasa10Ja.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -855,6 +871,14 @@
             }
         },
         {
+            "Key": "6c87be86-4941-4427-af1a-d7669b1755e6",
+            "Value": {
+                "id": "8bd4d833-c8ef-40ba-a0ef-02b9e613e5de",
+                "resourcePath": "fonts\\fo_yasa8Ja\\fo_yasa8Ja.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "6da2d552-a0aa-46a4-b4d6-589cd05b7a5c",
             "Value": {
                 "id": "61e8cfe0-315b-4f04-8713-eda7f5ae0e72",
@@ -1364,14 +1388,6 @@
                 "id": "90adb6a3-673e-4722-8b58-a42e12d0ba11",
                 "resourcePath": "rooms\\r_boot\\r_boot.yy",
                 "resourceType": "GMRoom"
-            }
-        },
-        {
-            "Key": "b334f022-6f0d-47db-9d05-490940950871",
-            "Value": {
-                "id": "5f8eb281-4930-422e-81e2-ff70be16c928",
-                "resourcePath": "sounds\\a_organisms\\a_organisms.yy",
-                "resourceType": "GMSound"
             }
         },
         {
@@ -2056,6 +2072,7 @@
         "4aa6b239-a1c7-424b-a0d5-381424a431ed",
         "fe6a0248-3a07-4bc5-a115-145d95b61f57",
         "a083f392-8c65-4f6f-8e12-dedacd45f924",
+        "242248b7-e254-419f-beb4-34c2c5d53722",
         "17ff12a2-be7b-4407-9185-fec3170a82d4",
         "1ae08602-8fc4-48c6-934d-3140069aebfb",
         "8a40716b-89a2-4c55-9748-13a3a8a805fd",

@@ -17,21 +17,13 @@ global.musicdata[target, musicdata.earlystop] = 360;
 
 target = 2;
 global.musicdata[target, musicdata.number] = target;
-global.musicdata[target, musicdata.path] = a_organisms;
-global.musicdata[target, musicdata.musicname] = "Organisms";
-global.musicdata[target, musicdata.creatorname] = "Chad Crouch";
-global.musicdata[target, musicdata.length] = audio_sound_length(a_organisms)*FPS_DEFAULT;
-global.musicdata[target, musicdata.earlystop] = 180;
-
-target = 3;
-global.musicdata[target, musicdata.number] = target;
 global.musicdata[target, musicdata.path] = a_moonrise;
 global.musicdata[target, musicdata.musicname] = "Moonrise";
 global.musicdata[target, musicdata.creatorname] = "Chad Crouch";
 global.musicdata[target, musicdata.length] = audio_sound_length(a_moonrise)*FPS_DEFAULT;
 global.musicdata[target, musicdata.earlystop] = 180;
 
-target = 4;
+target = 3;
 global.musicdata[target, musicdata.number] = target;
 global.musicdata[target, musicdata.path] = a_theHealing;
 global.musicdata[target, musicdata.musicname] = "The Healing";

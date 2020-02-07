@@ -78,7 +78,7 @@
 #macro CRYSTAL_SHOP_DESCRIPTION "ディフェンダーごとの特殊な能力を開放"
 #macro UPGRADEORB_SHOP_DESCRIPTION "装備したアイテムをアップグレードできる"
 #macro MARKER_ENHANCEMENT_DESCRIPTION1 "ここに置くと"
-#macro MARKER_ENHANCEMENT_DESCRIPTION2 "がx"
+#macro MARKER_ENHANCEMENT_DESCRIPTION2 "が"
 #macro MARKER_ENHANCEMENT_DESCRIPTION3 "倍になります"
 
 
@@ -86,7 +86,7 @@
 #macro FIRE_DAMAGE_TEXT "Power"
 #macro RANGE_TEXT "Range"
 #macro ATTACKSPEED_TEXT "AttackSpeed"
-#macro MOST_DAMAGING_DEFENDER_TEXT "mottomo dame-zi wo ataeta defender"
+#macro MOST_DAMAGING_DEFENDER_TEXT "最もダメージを与えたディフェンダー"
 
 //色
 #macro COLOR_TEXT_GRAY c_dkgray
@@ -97,7 +97,7 @@
 #macro COLOR_TEXT_GREEN c_lime
 #macro COLOR_TEXT_RED make_color_rgb(222, 40, 40)
 #macro COLOR_TEXT_PURPLE c_fuchsia
-#macro COLOR_TEXT_BLUE make_color_rgb(69, 230, 230)
+#macro COLOR_TEXT_BLUE make_color_rgb(65, 210, 210)
 #macro COLOR_TEXT_DARKGREEN c_teal
 #macro COLOR_TEXT_LTGRAY c_gray
 #macro COLOR_TEXT_STAGEUI make_color_rgb(76, 76, 76)
@@ -142,4 +142,5 @@
 #macro FONT_STAGECLEAR_TOTALSCORE fo_yasa16
 #macro FONT_ENHANCEMENT_MARKER_TEXT fo_yasa8
 #macro FONT_STAGESELECT_TOTALSCORE fo_notoSuperBig
-
+#macro FONT_UPGRADETEXT fo_yasa10Ja
+#macro FONT_UPGRADETEXT_SMALL fo_yasa8Ja

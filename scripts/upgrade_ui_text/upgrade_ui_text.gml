@@ -37,10 +37,21 @@ for(var i=0; i<item_number; i++){
 
 	draw_sprite_ext(s_upgradeButton, button_subimage, upgrade_button[i, upgradebutton.sprite_x], upgrade_button[i, upgradebutton.sprite_y], 1, 1, 0, c_white, 0.7);
 	draw_sprite(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.sprite], 0, upgrade_button[i, upgradebutton.sprite_x]+24, upgrade_button[i, upgradebutton.sprite_y]+24);
-	draw_text(upgrade_button[i, upgradebutton.sprite_x]+96, upgrade_button[i, upgradebutton.sprite_y]+14, global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]);
+	draw_set_valign(fa_middle);
+	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 110){//はみ出しそうならフォントの大きさ変える
+		draw_set_font(FONT_UPGRADETEXT);
+	}
+	else{
+		draw_set_font(FONT_DEFAULT);
+	}
+	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 110){
+		draw_set_font(FONT_UPGRADETEXT_SMALL);
+	}
+	draw_text(upgrade_button[i, upgradebutton.sprite_x]+96, upgrade_button[i, upgradebutton.sprite_y]+24, global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]);
 }
-
+draw_set_font(FONT_DEFAULT);
 draw_set_color(COLOR_TEXT_WHITE);
+draw_set_valign(fa_left);
 if(possible_upgrade){//アップグレード決定ボタン(アップグレード不可のときはでてこない)
 	button_subimage = upgrade_button[10, upgradebutton.state];
 	draw_sprite(s_upgradeButton, button_subimage, upgrade_button[10, upgradebutton.sprite_x], upgrade_button[10, upgradebutton.sprite_y]);
@@ -93,7 +104,7 @@ else{
 draw_set_color(COLOR_TEXT_WHITE);
 if(skill_id = -1){
 	draw_text(x_offset+80, upgrade_text_y+20, global.itemdata[choosing_id, itemdata.damage]);
-	draw_text(x_offset+80, upgrade_text_y+80, global.itemdata[choosing_id, itemdata.attack_speed]);
+	draw_text(x_offset+80, upgrade_text_y+80, string_format(global.itemdata[choosing_id, itemdata.attack_speed], 1, 1));
 	draw_text(x_offset+80, upgrade_text_y+140, global.itemdata[choosing_id, itemdata.range]);
 }
 else{
@@ -126,7 +137,7 @@ if(possible_upgrade){
 			draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+86);
 			draw_set_color(COLOR_TEXT_WHITE);
 		}
-		draw_text(x_offset+400, upgrade_text_y+80, global.itemdata[choosing_after_upgrade_id, itemdata.attack_speed]);
+		draw_text(x_offset+400, upgrade_text_y+80, string_format(global.itemdata[choosing_after_upgrade_id, itemdata.attack_speed], 1, 1));
 		draw_set_color(COLOR_TEXT_WHITE);
 		//射程
 		if(global.itemdata[choosing_id, itemdata.range] < global.itemdata[choosing_after_upgrade_id, itemdata.range]){
