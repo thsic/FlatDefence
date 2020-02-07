@@ -263,7 +263,7 @@ if(instance_exists(target_id)){
 			if(instance_exists(enemy_id)){
 				if(point_distance(target_id.x, target_id.y, enemy_id.x, enemy_id.y) < EFFECT_BLAST_SIZE*blast_power){
 				
-					damage_result = basedamage/2;//爆風ダメージは半減する
+					damage_result = basedamage*BLAST_MAGNIFICATION;//爆風ダメージは減少する 現在0.25倍
 					if(freeze_all){//強化ロッドなら爆風でもスロー
 						slow_to_enemy(enemy_id, ice_level+1, defender_fire_damage);
 					}

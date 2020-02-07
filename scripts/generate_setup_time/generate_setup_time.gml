@@ -192,8 +192,8 @@ switch(global.wave_now){
 			set_enemy_generate_timeline(i*10+360, global.generate_timeline_id, 0, 2, 0);
 		}
 		for(var i=0; i<5; i++){
-			set_enemy_generate_timeline(i*20+440, global.generate_timeline_id, 0, 1, 0);
-			set_enemy_generate_timeline(i*20+440+10, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*20+440, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*20+440+120, global.generate_timeline_id, 0, 1, 0);
 		}
 	break
 	case 7://Normal*5 Normal*10 Fast*5 Shield*5 Normal*10 Fast*5 

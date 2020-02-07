@@ -33,14 +33,14 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			grab_number = defender_id_conversion(shop_product[grab_number, DEFENDER])//grab_numberの値をglobal.defender_dataで参照できる値に変換
 			
 			var reduce_gold = global.defender_data[grab_number, data.cost];
-			for(var i=0; i<shop_product[grab_number, SALES]; i++){//販売数によって減らすお金が増える
+			for(var i=0; i<shop_product[grab_product_number, SALES]; i++){//販売数によって減らすお金が増える
 				reduce_gold *= PRICE_INCREASE;
 			}
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
 				
-				grab_defender_id = shop_product[grab_number, DEFENDER];
-				grab_defender_shop_id = grab_number
+				grab_defender_id = shop_product[grab_product_number, DEFENDER];
+				grab_defender_shop_id = grab_product_number
 				window_mouse_set(shop_product[grab_product_number, SPRITE_X], shop_product[grab_product_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
 				rise_number(floor(reduce_gold), mouse_x, mouse_y, 3, 20, c_yellow, 1, true, FONT_DEFAULT);
 			}

@@ -65,6 +65,7 @@
 #macro FREEZEROD_UPGRADE_ 10//わからん なにこれ
 #macro POISONDAGGER_MAGNIFICATION 0.3//ポイズンダガー装備中の追加ダメージ倍率
 #macro CURSEDSWORD_MAGNIFICATION 0.1//呪いの剣装備中のダメージ倍率
+#macro BLAST_MAGNIFICATION 0.25//爆風ダメージ倍率
 
 //説明
 #macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
