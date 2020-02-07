@@ -11,7 +11,7 @@ draw_set_font(FONT_SHOP);
 draw_set_color(COLOR_TEXT_SHOP)
 draw_text(x_offset+14,72,"Defender");
 draw_text(x_offset+14,168,"Item");
-draw_text(x_offset+14,388,"Belongings");
+draw_text(x_offset+14,388,"Inventory");
 draw_set_font(FONT_DEFAULT);
 draw_set_color(c_white);
 for(var i=0; i<product_defender_amount; i++){//defenderを描画

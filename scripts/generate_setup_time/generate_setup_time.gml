@@ -104,6 +104,138 @@ case 1:
 	}
 break
 #endregion
+#region stage2
+case 2:
+switch(global.wave_now){
+	case 1://Small*16
+		for(var i=0; i<16; i++){
+			set_enemy_generate_timeline(i*30, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 2://Small*10 Normal*5 Small*15
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*20, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+250, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*15+450, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*15+550, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*15+650, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 3://Normal*5 Small*10 Fast*5 Small*10 Normal*5 Fast*10
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*20, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*20+140, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+380, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*30+550, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*15+870, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*10+1000, global.generate_timeline_id, 0, 2, 0);
+		}
+	break
+	case 4://Shield*2  Normal&Fast*5 Shield*3 Normal*5 Fast*5
+		for(var i=0; i<2; i++){
+			set_enemy_generate_timeline(i*45, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+120, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*30+120+15, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*60+320, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+560, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+740, global.generate_timeline_id, 0, 1, 0);
+		}
+	break
+	case 5://Shield*3 *3
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*45, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*30+230, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*30+400, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 6://Fast*3 Normal*10 Small*10 Fast*5 Small&Normal*5
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*30, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*10+120, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*10+230, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*10+360, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*20+440, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*20+440+10, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 7://Normal*5 Normal*10 Fast*5 Shield*5 Normal*10 Fast*5 
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*20+180, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+400, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+600, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<10; i++){
+			set_enemy_generate_timeline(i*15+780, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+950, global.generate_timeline_id, 0, 2, 0);
+		}
+	break
+}
+#endregion
+#region stage3
+case 3:
+	switch(global.wave_now){
+	case 1:
+	
+	break
+	}
+break
+#endregion
+#region stage4
+case 4:
+	switch(global.wave_now){
+	case 1:
+	
+	break
+	}
+break
+#endregion
 default:
 	sdm("error! generate_setup_time");
 break

@@ -11,6 +11,15 @@ case gamestate.stagestart://ステージ開始時処理
 	case r_stage1:
 		global.stage = 1;
 	break
+	case r_stage2:
+		global.stage = 2;
+	break
+	case r_stage3:
+		global.stage = 3;
+	break
+	case r_stage4:
+		global.stage = 4;
+	break
 	}
 	
 	global.double_speed = false;

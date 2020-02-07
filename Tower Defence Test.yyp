@@ -34,7 +34,7 @@
             "Key": "0370c5ea-aa60-45b1-8fdc-63163ac3c8d3",
             "Value": {
                 "id": "400d7228-72f2-4dc9-b862-551ae66c2985",
-                "resourcePath": "rooms\\r_stage2\\r_stage2.yy",
+                "resourcePath": "rooms\\r_stage3\\r_stage3.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -115,6 +115,14 @@
             "Value": {
                 "id": "a9305bbf-9d75-40d4-b586-686407c4c496",
                 "resourcePath": "rooms\\r_test\\r_test.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "109f7285-257c-4d8e-9ce7-63f806903659",
+            "Value": {
+                "id": "78ff5810-f68e-431d-8e7c-cc412d9ebf98",
+                "resourcePath": "rooms\\r_stage2\\r_stage2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -303,6 +311,14 @@
             }
         },
         {
+            "Key": "244f33f0-aa84-430e-b34d-99b1897167b8",
+            "Value": {
+                "id": "29e0783c-4c5e-42c9-87c0-7f217a05671d",
+                "resourcePath": "paths\\p_stage4route0\\p_stage4route0.yy",
+                "resourceType": "GMPath"
+            }
+        },
+        {
             "Key": "275429c8-001e-457a-9533-8100f0d80052",
             "Value": {
                 "id": "d31b6de1-9f0d-4ff6-9dba-2fa0c526f737",
@@ -402,7 +418,7 @@
             "Key": "30b7d700-1466-4e95-a676-e5ee89f3b293",
             "Value": {
                 "id": "6ed54a1b-a0c8-4363-a165-100a0a4e4a73",
-                "resourcePath": "paths\\p_stage2route0\\p_stage2route0.yy",
+                "resourcePath": "paths\\p_stage3route0\\p_stage3route0.yy",
                 "resourceType": "GMPath"
             }
         },
@@ -652,6 +668,14 @@
                 "id": "32f6abf1-3896-4094-8041-6dc56d40a71d",
                 "resourcePath": "scripts\\upgrade_effect\\upgrade_effect.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5285976b-720a-4091-bd5a-7becd4f50f48",
+            "Value": {
+                "id": "0d56fd24-c6ce-4be6-8ccd-05b0c96f2cd3",
+                "resourcePath": "paths\\p_stage2route0\\p_stage2route0.yy",
+                "resourceType": "GMPath"
             }
         },
         {
@@ -1620,6 +1644,14 @@
                 "id": "809d4fd9-c226-4342-8f1c-f38e464e1d6f",
                 "resourcePath": "sprites\\s_poisonDagger\\s_poisonDagger.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "def4e400-3086-48ed-b94a-5388acc237e6",
+            "Value": {
+                "id": "5114fbf0-2fcd-469f-9a8d-1b46956d1f1b",
+                "resourcePath": "rooms\\r_stage4\\r_stage4.yy",
+                "resourceType": "GMRoom"
             }
         },
         {

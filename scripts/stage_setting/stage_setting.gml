@@ -64,6 +64,27 @@ case 1:
 	global.wave_drop_item[2] = 1;
 	global.wave_drop_item[4] = 19;
 break
+case 2:
+	global.life = 10//体力
+	global.gold = 300;//おかね
+	global.wave_total = 7;//総ウェーブ数
+	global.wave_clear_gold = 50;//ウェーブクリア時の獲得ゴールド
+
+	global.shop_defender[0] = o_dBasic;
+	global.shop_defender[1] = o_dSniper;
+	global.shop_defender[2] = o_dBomber;
+	global.shop_defender[3] = o_dThief;
+	global.shop_item[0] = 1;
+	global.shop_item[1] = 9;
+	global.shop_item[2] = 19;
+	global.shop_item[3] = 3;
+	global.shop_item[4] = 25;
+	global.shop_item[5] = 27;
+	
+	global.wave_drop_item[2] = 17;
+	global.wave_drop_item[4] = 21;
+	global.wave_drop_item[6] = 0;
+break
 default:
 	global.life = 1
 	global.gold = 50;
