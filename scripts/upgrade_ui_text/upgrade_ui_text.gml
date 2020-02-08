@@ -7,9 +7,9 @@ var width = argument2;
 var height = argument3;
 draw_set_color(COLOR_TEXT_WHITE);
 draw_sprite(upgrade_defender_id.sprite_index, 0, x_offset+22, y_offset+24);
-draw_text(x_offset+42, y_offset+6, global.defender_data[defender_id_conversion(upgrade_defender_id), data.name]);
+draw_text(x_offset+42, y_offset+6, global.defender_data[upgrade_defender_id.defender_number, data.name]);
 draw_set_color(COLOR_TEXT_ORANGE);
-draw_text(x_offset+42, y_offset+22, global.defender_data[defender_id_conversion(upgrade_defender_id), data.description]);
+draw_text(x_offset+42, y_offset+22, global.defender_data[upgrade_defender_id.defender_number, data.description]);
 //アイテムスロット
 var item_number = 0;
 for(var i=0; i<upgrade_defender_id.itemslot_amount; i++){
@@ -38,7 +38,6 @@ for(var i=0; i<item_number; i++){
 	draw_sprite_ext(s_upgradeButton, button_subimage, upgrade_button[i, upgradebutton.sprite_x], upgrade_button[i, upgradebutton.sprite_y], 1, 1, 0, c_white, 0.7);
 	draw_sprite(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.sprite], 0, upgrade_button[i, upgradebutton.sprite_x]+24, upgrade_button[i, upgradebutton.sprite_y]+24);
 	draw_set_valign(fa_middle);
-	sdm(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]))
 	
 	//はみ出しそうならフォントの大きさ変える
 	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 110){
@@ -98,13 +97,13 @@ if(possible_upgrade){
 draw_set_halign(fa_left)
 draw_set_color(COLOR_TEXT_GRAY);
 if(skill_id = -1){
-	draw_text(x_offset+80, upgrade_text_y, "Damage");
-	draw_text(x_offset+80, upgrade_text_y+60, "AttackSpeed");
-	draw_text(x_offset+80, upgrade_text_y+120, "Range");
+	draw_text(x_offset+80, upgrade_text_y, FIRE_DAMAGE_TEXT);
+	draw_text(x_offset+80, upgrade_text_y+60, ATTACKSPEED_TEXT);
+	draw_text(x_offset+80, upgrade_text_y+120, RANGE_TEXT);
 	if(possible_upgrade){
-		draw_text(x_offset+400, upgrade_text_y, "Damage");
-		draw_text(x_offset+400, upgrade_text_y+60, "AttackSpeed");
-		draw_text(x_offset+400, upgrade_text_y+120, "Range");
+		draw_text(x_offset+400, upgrade_text_y, FIRE_DAMAGE_TEXT);
+		draw_text(x_offset+400, upgrade_text_y+60, ATTACKSPEED_TEXT);
+		draw_text(x_offset+400, upgrade_text_y+120, RANGE_TEXT);
 	}
 }
 else{
@@ -129,6 +128,7 @@ else{
 	draw_text(x_offset+80, upgrade_text_y+80, global.skilldata[skill_id, skilldata.cooldown]/FPS_DEFAULT);
 }
 
+
 draw_set_color(COLOR_TEXT_WHITE);
 if(possible_upgrade){
 	//アップグレードで強化されていたら色を変える
@@ -141,7 +141,7 @@ if(possible_upgrade){
 		}
 		else{
 			draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+26);
-			draw_set_color(COLOR_TEXT_WHITE);
+			draw_set_color(COLOR_TEXT_GRAY);
 		}
 		draw_text(x_offset+400, upgrade_text_y+20, global.itemdata[choosing_after_upgrade_id, itemdata.damage]);
 		draw_set_color(COLOR_TEXT_WHITE);
@@ -152,7 +152,7 @@ if(possible_upgrade){
 		}
 		else{
 			draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+86);
-			draw_set_color(COLOR_TEXT_WHITE);
+			draw_set_color(COLOR_TEXT_GRAY);
 		}
 		draw_text(x_offset+400, upgrade_text_y+80, string_format(global.itemdata[choosing_after_upgrade_id, itemdata.attack_speed], 1, 1));
 		draw_set_color(COLOR_TEXT_WHITE);
@@ -163,7 +163,7 @@ if(possible_upgrade){
 		}
 		else{
 			draw_sprite(s_rightArrow, 0, x_offset+width/2, upgrade_text_y+146);
-			draw_set_color(COLOR_TEXT_WHITE);
+			draw_set_color(COLOR_TEXT_GRAY);
 		}
 		draw_text(x_offset+400, upgrade_text_y+140, global.itemdata[choosing_after_upgrade_id, itemdata.range]);
 	}
@@ -198,27 +198,27 @@ if(choosing_id = 23){
 	var defender_number = upgrade_defender_id.defender_number
 	switch(defender_number){
 	case 0://basic
-		var effect_id = 15;
+		var effect_id_befor = 15;
 	break
 	case 1://sniper
-		var effect_id = 16;
+		var effect_id_befor = 16;
 	break
 	case 2://bomber
-		var effect_id = 17;
+		var effect_id_befor = 17;
 	break
 	case 3://freezer
-		var effect_id = 18;
+		var effect_id_befor = 18;
 	break
 	case 4://blaster
-		var effect_id = 19;
+		var effect_id_befor = 19;
 	break
 	case 5://thief
-		var effect_id = 20;
+		var effect_id_befor = 20;
 	break
 	}
-	description1 = global.effectdata[effect_id, effectdata.description];
-	if(global.effectdata[effect_id, effectdata.addeffect] != -1){
-		description2 = global.effectdata[global.effectdata[effect_id, effectdata.addeffect], effectdata.description];
+	description1 = global.effectdata[effect_id_befor, effectdata.description];
+	if(global.effectdata[effect_id_befor, effectdata.addeffect] != -1){
+		description2 = global.effectdata[global.effectdata[effect_id_befor, effectdata.addeffect], effectdata.description];
 	}
 	crystal_upgrade = true
 	#endregion
@@ -264,7 +264,7 @@ if(possible_upgrade){//upgrade先
 				var effect_id = 29;
 			break
 		}
-		description1_upgrade = global.effectdata[effect_id, effectdata.description];
+		description1_upgrade = string(global.effectdata[effect_id_befor, effectdata.description])+"@"+string(global.effectdata[effect_id, effectdata.description]);
 		if(global.effectdata[effect_id, effectdata.addeffect] != -1){
 			description2_upgrade = global.effectdata[global.effectdata[effect_id, effectdata.addeffect], effectdata.description];
 		}
@@ -283,45 +283,72 @@ if(possible_upgrade){//upgrade先
 
 //アップグレード前
 var line_feed = false
-if(string_width(description1) < 216){
+
+/*if(string_width(description1) < 216){
 	var text_x = x_offset+width/5*1
 }
 else if(string_width(description1) < 260){
 	var text_x = (x_offset+width/5*1)+((string_width(description1)-216)/2)//はみ出しそうならテキストの位置を調整する
 }
-else{
-	//説明がすごく長いと改行
-	var text_x = (x_offset+width/5*1)+44/2//はみ出しそうならテキストの位置を調整する
-	description1 = string_replace(description1, "@", +chr(10))
-	line_feed = true
+else{*/
 
+//説明がすごく長いと改行
+var text_x = (x_offset+width/5*1)+44/2//はみ出しそうならテキストの位置を調整する
+if(string_count("@", description1)){	
+	for(var i=0; i<string_count("@", description1); i++){
+		description1 = string_replace(description1, "@", +chr(10))
+	}
+	line_feed = true
 }
+else{
+	line_feed = false
+}
+//}
 description1 = string_replace(description1, "@", "");
 
 var overlap = false;
-if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.overlap]){
-	overlap = true;
-	draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv1");
+if(possible_upgrade){
+	if(global.itemdata[choosing_after_upgrade_id, itemdata.effect] != -1){
+		if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.overlap]){
+			overlap = true;
+		
+		}
+	}
+}
+if(overlap){
+	if(possible_upgrade){
+		draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv1");
+	}
+	else{
+		draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv2");
+	}
 }
 else{
 	draw_text(text_x, upgrade_text_y+180, string(description1));
 }
 
-
 //アップグレード後
 var overlap = false//lvupするかどうか
 if(possible_upgrade){
-	if(string_width(description1_upgrade) < 218){
+	/*if(string_width(description1_upgrade) < 218){
 		var text_x = x_offset+width/5*4
 	}
 	else if(string_width(description1_upgrade) < 268){
 		var text_x = (x_offset+width/5*4)-((string_width(description1_upgrade)-218)/2)//はみ出しそうならテキストの位置を調整する
 	}
-	else{
-		var text_x = (x_offset+width/5*4)-44/2//はみ出しそうならテキストの位置を調整する
-		description1_upgrade = string_replace(description1_upgrade, "@", +chr(10))
+	else{*/
+	var text_x = (x_offset+width/5*4)-44/2//はみ出しそうならテキストの位置を調整する
+	if(string_count("@", description1_upgrade)){
+		for(var i=0; i<5; i++){//@があるなら改行する
+			description1_upgrade = string_replace(description1_upgrade, "@", +chr(10))
+		}
 		line_feed = true
 	}
+	else{
+		line_feed = false
+	}
+	
+	//}
 	description1_upgrade = string_replace(description1_upgrade, "@", "");
 	
 	if(description1 != description1_upgrade){//文章比較
@@ -385,7 +412,7 @@ else{
 	var text_y = upgrade_text_y+196+16;
 }
 draw_set_color(COLOR_TEXT_WHITE);
-draw_text(x_offset+width/5*1, text_y, description2);
+draw_text(x_offset+width/5*1+44/2, text_y, description2);
 if(possible_upgrade){
 	if(description2 != description2_upgrade){
 		draw_set_color(COLOR_TEXT_DARKGREEN);
@@ -394,13 +421,14 @@ if(possible_upgrade){
 		draw_set_color(COLOR_TEXT_WHITE);
 	}
 	if(!freeze_rod){
-		draw_text(x_offset+width/5*4, text_y, description2_upgrade);
+		draw_text(x_offset+width/5*4-44/2, text_y, description2_upgrade);
 	}
 	else{
+		description2_upgrade = string_replace(description2_upgrade, "@", +chr(10))
 		draw_set_color(COLOR_TEXT_WHITE);
-		draw_text(x_offset+width/5*4, text_y, global.effectdata[11, effectdata.description]);
+		draw_text(x_offset+width/5*4-44/2, text_y, global.effectdata[11, effectdata.description]);
 		draw_set_color(COLOR_TEXT_GREEN);
-		draw_text(x_offset+width/5*4, text_y+16, description2_upgrade);
+		draw_text(x_offset+width/5*4-44/2, text_y+16, description2_upgrade);
 	}
 }
 

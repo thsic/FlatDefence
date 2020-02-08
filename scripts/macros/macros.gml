@@ -2,7 +2,7 @@
 #macro FPS_DEFAULT 60
 #macro START_ROOM r_title
 #macro GAMENAME "FLAT DEFENCE"
-#macro STAGE_AMOUNT 8
+#macro STAGE_AMOUNT 4
 
 //ソート
 #macro NEARGOAL 0
@@ -53,7 +53,7 @@
 //ステージセレクト
 #macro STAGESELECT_BUTTON_WIDTH 300
 #macro STAGESELECT_BUTTON_HEIGHT 48
-#macro STAGESELECT_BUTTON_AMOUNT 5
+#macro STAGESELECT_BUTTON_AMOUNT 3
 
 //スコア
 #macro STAGECLEAR_SCORE 10000//ステージクリアしたときのボーナススコア

@@ -35,8 +35,8 @@ case -1:
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
 	
-	global.wave_drop_item[0] = 1;
-	global.wave_drop_item[1] = 3;
+	global.wave_drop_item[1] = 0;
+	//global.wave_drop_item[1] = 3;
 	
 break
 case 0:
