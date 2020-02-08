@@ -34,7 +34,7 @@ case gamestate.restpause:
 			tiny_window(s_window, 4, x_offset, y_offset, 272, 40, 1);
 			draw_set_color(COLOR_TEXT_WHITE);
 			draw_sprite(object_get_sprite(global.spawn_enemy[target_objectid, spawnenemy.objectid]), 0, x_offset+4+SPRITE_SIZE, y_offset+4+SPRITE_SIZE);
-			draw_text(x_offset+38, y_offset+2, global.enemydata[target_number, enemydata.name]);
+			
 			draw_text(x_offset+62, y_offset+18,string(global.enemydata[target_number, enemydata.hp]));
 			if(frac(global.enemydata[target_number, enemydata.speed]) != 0){
 				draw_text(x_offset+238, y_offset+18,string_format(global.enemydata[target_number, enemydata.speed], 1, 1));
@@ -43,6 +43,9 @@ case gamestate.restpause:
 				draw_text(x_offset+238, y_offset+18,string(global.enemydata[target_number, enemydata.speed]));
 			}
 			draw_text(x_offset+156, y_offset+18,string(global.enemydata[target_number, enemydata.shield]));
+			
+			draw_set_color(COLOR_TEXT_LTGRAY_ONWINDOW);
+			draw_text(x_offset+38, y_offset+2, global.enemydata[target_number, enemydata.name]);
 			draw_text(x_offset+140, y_offset+2, "x");
 			draw_set_color(COLOR_TEXT_GRAY);
 			draw_text(x_offset+38, y_offset+18, "HP");

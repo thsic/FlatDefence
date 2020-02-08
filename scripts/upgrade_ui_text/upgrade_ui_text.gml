@@ -71,7 +71,7 @@ draw_set_valign(fa_left);
 if(possible_upgrade){//アップグレード決定ボタン(アップグレード不可のときはでてこない)
 	button_subimage = upgrade_button[10, upgradebutton.state];
 	draw_sprite(s_upgradeButton, button_subimage, upgrade_button[10, upgradebutton.sprite_x], upgrade_button[10, upgradebutton.sprite_y]);
-	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+12, "Upgrade");
+	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+12, "アップグレード");
 }
 else{
 	draw_set_color(COLOR_TEXT_GRAY);

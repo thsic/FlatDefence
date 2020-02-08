@@ -609,7 +609,7 @@ global.enemydata[target, enemydata.object] = o_eSmallLv1;
 global.enemydata[target, enemydata.name] = "Small Lv1";
 global.enemydata[target, enemydata.hp] = 15;
 global.enemydata[target, enemydata.shield] = 5;
-global.enemydata[target, enemydata.speed] = 1;
+global.enemydata[target, enemydata.speed] = 1.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 3;
 
@@ -618,7 +618,7 @@ global.enemydata[target, enemydata.object] = o_eSmallLv2;
 global.enemydata[target, enemydata.name] = "Small Lv2";
 global.enemydata[target, enemydata.hp] = 90;
 global.enemydata[target, enemydata.shield] = 15;
-global.enemydata[target, enemydata.speed] = 1.5;
+global.enemydata[target, enemydata.speed] = 2;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 6;
 
@@ -627,7 +627,7 @@ global.enemydata[target, enemydata.object] = o_eSmallLv3;
 global.enemydata[target, enemydata.name] = "Small Lv3";
 global.enemydata[target, enemydata.hp] = 190;
 global.enemydata[target, enemydata.shield] = 20;
-global.enemydata[target, enemydata.speed] = 1;
+global.enemydata[target, enemydata.speed] = 2.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 12;
 
@@ -673,7 +673,7 @@ target = 10;
 global.enemydata[target, enemydata.object] = o_eShieldLv2;
 global.enemydata[target, enemydata.name] = "Shield Lv2";
 global.enemydata[target, enemydata.hp] = 290;
-global.enemydata[target, enemydata.shield] = 80;
+global.enemydata[target, enemydata.shield] = 90;
 global.enemydata[target, enemydata.speed] = 0.7;
 global.enemydata[target, enemydata.description] = "katai";
 global.enemydata[target, enemydata.dropgold] = 24;
@@ -693,7 +693,7 @@ global.enemydata[target, enemydata.object] = o_eToughLv1;
 global.enemydata[target, enemydata.name] = "Tough Lv1";
 global.enemydata[target, enemydata.hp] = 220;
 global.enemydata[target, enemydata.shield] = 25;
-global.enemydata[target, enemydata.speed] = 0.3;
+global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 20;
 
@@ -702,7 +702,7 @@ global.enemydata[target, enemydata.object] = o_eToughLv2;
 global.enemydata[target, enemydata.name] = "Tough Lv2";
 global.enemydata[target, enemydata.hp] = 680;
 global.enemydata[target, enemydata.shield] = 40;
-global.enemydata[target, enemydata.speed] = 0.3;
+global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 40;
 
@@ -711,7 +711,7 @@ global.enemydata[target, enemydata.object] = o_eToughLv3;
 global.enemydata[target, enemydata.name] = "Tough Lv3";
 global.enemydata[target, enemydata.hp] = 1400;
 global.enemydata[target, enemydata.shield] = 100;
-global.enemydata[target, enemydata.speed] = 0.3;
+global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 80;
 #endregion

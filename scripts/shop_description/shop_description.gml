@@ -59,10 +59,15 @@ case 0://defender
 	draw_set_color(COLOR_TEXT_YELLOW);
 	draw_set_halign(fa_right);
 	var nesessary_gold = global.defender_data[defender_id, data.cost];
+	var nesessary_gold_default = nesessary_gold
 	for(var i=0; i<shop_product[target_id, SALES]; i++){
 		nesessary_gold *= PRICE_INCREASE;
 	}
+	var difference_gold = nesessary_gold - nesessary_gold_default;//差額求める
 	draw_text(offset_x+window_width-6, offset_y+4, string(floor(nesessary_gold))+" Gold");
+	draw_set_font(FONT_SHOP_GOLD_PLUS);
+	draw_text(offset_x+window_width-2, offset_y+20, "(+"+string(floor(difference_gold))+" Gold)");
+	draw_set_font(FONT_DEFAULT);
 	draw_set_halign(fa_left);
 	draw_set_color(COLOR_DEFAULT);
 	

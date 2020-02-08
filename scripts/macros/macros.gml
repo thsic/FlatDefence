@@ -20,7 +20,7 @@
 //shop
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
 #macro SHOP_WINDOW_WIDTH 256 
-#macro PRICE_INCREASE 1.1//1つ買うごとに値上がりする倍率
+#macro PRICE_INCREASE 1.2//1つ買うごとに値上がりする倍率
 
 //
 #macro REST_TIME 600//休憩時間の長さ
@@ -104,6 +104,7 @@
 #macro COLOR_TEXT_DARKGREEN c_teal
 #macro COLOR_TEXT_LTGRAY c_gray
 #macro COLOR_TEXT_STAGEUI make_color_rgb(76, 76, 76)
+#macro COLOR_TEXT_LTGRAY_ONWINDOW make_color_rgb(90, 90, 90)
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime
@@ -147,3 +148,4 @@
 #macro FONT_STAGESELECT_TOTALSCORE fo_notoSuperBig
 #macro FONT_UPGRADETEXT fo_yasa10Ja
 #macro FONT_UPGRADETEXT_SMALL fo_yasa8Ja
+#macro FONT_SHOP_GOLD_PLUS fo_yasa8

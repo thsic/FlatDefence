@@ -34,6 +34,9 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 			case 1:
 				stage_goto = r_stage2;
 			break
+			case 2:
+				stage_goto = r_stage3;
+			break
 			}
 		}
 	}
