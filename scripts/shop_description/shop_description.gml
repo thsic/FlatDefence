@@ -8,6 +8,9 @@ var window_width = 250;
 var window_height = 124;
 
 var offset_x = mouse_x - window_width;
+if(show_window){
+	offset_x = mouse_x
+}
 var offset_y = mouse_y;
 var alpha = 0.85
 
@@ -16,7 +19,9 @@ if(defender_ui){
 	if(offset_x+window_width > window_get_width()-SHOP_WINDOW_WIDTH){//小窓が右に行きすぎないように調整
 		offset_x = window_get_width()-SHOP_WINDOW_WIDTH-window_width
 	}
-	
+}
+if(offset_x+window_width > view_wport[0]){//小窓がはみでないように
+	offset_x = view_wport[0]-window_width;
 }
 if(offset_y+window_height > window_get_height()){//小窓が下に行きすぎないように調整
 	offset_y = window_get_height()-window_height

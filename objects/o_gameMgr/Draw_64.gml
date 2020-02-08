@@ -21,7 +21,9 @@ break
 switch(global.gamestate){
 case gamestate.main:
 case gamestate.pause:
-	show_enemy_ui();
+	if(!upgrade_ui){
+		show_enemy_ui();
+	}
 break
 case gamestate.gameover:
 	gameover_ui();

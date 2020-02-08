@@ -4,7 +4,7 @@
 //ウィンドウ表示
 //オブジェクトの座標によってウィンドウの表示箇所をかえる 仮 なんかうざそうならもうちょっと凝る
 
-if(finded_defender_id.x+ui_window_width < view_wport[0]-SHOP_WINDOW_WIDTH){
+if(finded_defender_id.x+ui_window_width < view_wport[0]-SHOP_WINDOW_WIDTH-96){
 	ui_window_x = finded_defender_id.x+SPRITE_SIZE;
 }
 else{

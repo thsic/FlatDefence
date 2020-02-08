@@ -1,4 +1,4 @@
-if(mouse_check_button(mb_left)){
+if(mouse_check_button_pressed(mb_left)){
 	if(window_follow_enemy_id != -1){
 		window_follow_enemy_id = -1;//どこかクリックされると解除
 		surface_free(global.usefulwindow_surface[3])
@@ -18,7 +18,7 @@ if(window_follow_enemy_id != -1){
 	if(instance_exists(window_follow_enemy_id)){//存在チェック
 		var x_offset = window_follow_enemy_id.x+SPRITE_SIZE;
 		var y_offset = window_follow_enemy_id.y-SPRITE_SIZE;
-		tiny_window(s_window, 3, x_offset, y_offset, 120, 68, 0.8);
+		tiny_window(s_window, 3, x_offset, y_offset, 130, 68, 0.8);
 		draw_set_color(COLOR_TEXT_WHITE);
 		draw_sprite_ext(window_follow_enemy_id.sprite_index, 0, x_offset+14, y_offset+14, 0.5, 0.5, 0, COLOR_DEFAULT, 1)
 		draw_text(x_offset+32, y_offset+2, window_follow_enemy_id.name);
