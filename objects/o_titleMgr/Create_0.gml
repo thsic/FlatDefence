@@ -1,5 +1,7 @@
 center_x = window_get_width()/2;
 center_y = window_get_height()/2;
+global.bgm_volume = 0.7;
+global.se_volume = 0.7;
 
 load_score();//スコアをロード
 

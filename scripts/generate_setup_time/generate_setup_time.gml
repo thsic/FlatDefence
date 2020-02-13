@@ -12,6 +12,7 @@ for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){
 
 //敵出現時間指定 ルームとかウェーブごとにいちいち設定しよう！
 //最低でも4f開けないとバグる
+
 switch(global.stage){
 #region stage-1 (teststage)
 case -1:
@@ -216,7 +217,8 @@ switch(global.wave_now){
 			set_enemy_generate_timeline(i*30+950, global.generate_timeline_id, 0, 2, 0);
 		}
 	break
-}
+	}
+break
 #endregion
 #region stage3
 case 3:
@@ -230,7 +232,7 @@ case 3:
 			set_enemy_generate_timeline(i*40+200, global.generate_timeline_id, 0, 1, 0);
 		}
 		for(var i=0; i<3; i++){
-			set_enemy_generate_timeline(i*60+700, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*60+700, global.generate_timeline_id, 0, 2, 0);
 		}
 		for(var i=0; i<10; i++){
 			set_enemy_generate_timeline(i*30+900, global.generate_timeline_id, 0, 1, 0);

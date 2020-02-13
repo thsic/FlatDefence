@@ -16,6 +16,7 @@ createイベントで先に "global.usefulwindow_surface[0] = noone" と書い�
 5 タイムマシン
 6 defender ui の小窓
 7 defender ui のアイテム
+8 メニュー画面
 */
 
 

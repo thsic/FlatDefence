@@ -152,6 +152,7 @@ case 1://item
 		draw_set_color(COLOR_TEXT_YELLOW);
 		draw_set_halign(fa_right);
 		var nesessary_gold = global.itemdata[target_id, itemdata.cost];
+		var nesessary_gold_default = nesessary_gold
 		
 		for(var i=0; i<global.item_category_amount; i++){//みつける
 			if(shop_item_product[i, ITEM] = global.itemdata[target_id, itemdata.number]){
@@ -163,8 +164,12 @@ case 1://item
 		for(var i=0; i<shop_item_product[item_shop_id, SALES]; i++){
 			nesessary_gold *= PRICE_INCREASE;
 		}
+		var difference_gold = nesessary_gold - nesessary_gold_default;//差額求める
 		draw_text(offset_x+window_width-6, offset_y+4, string(floor(nesessary_gold))+" Gold");
+		draw_set_font(FONT_SHOP_GOLD_PLUS);
+		draw_text(offset_x+window_width-2, offset_y+20, "(+"+string(floor(difference_gold))+" Gold)");
 		draw_set_halign(fa_left);
+		draw_set_font(FONT_DEFAULT);
 	}
 	draw_set_color(COLOR_DEFAULT);
 break

@@ -35,6 +35,7 @@ case gamestate.stagestart://ステージ開始時処理
 	stage_setting();
 	
 	instance_create_layer(0, 0, "Background", o_backgroundMgr);
+	instance_create_layer(0, 0, "UI", o_menuMgr);
 	global.gamestate = gamestate.reststart;
 break
 

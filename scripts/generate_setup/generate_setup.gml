@@ -22,7 +22,7 @@ case -1:
 break	
 case 1:
 	set_spawner(0, -16, 368);
-	route_type[0] = p_stage3route0;
+	route_type[0] = p_stage1route0;
 	switch(global.wave_now){
 	case 1:
 		generate_enemy_type[0] = o_eSmallLv1;

@@ -1,8 +1,9 @@
 draw_set_alpha(1);
+//マウスカーソルを合わせるとちょっと薄く
 if(o_gameMgr.grab_defender_id = -1 and o_gameMgr.grab_item_id = -1){
 	if(x-16 < mouse_x and mouse_x < x+16){
 		if(y-16 < mouse_y and mouse_y < y+16){
-			draw_set_alpha(0.6);
+			draw_set_alpha(0.8);
 		}
 	}
 }
