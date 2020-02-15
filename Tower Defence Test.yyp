@@ -743,6 +743,14 @@
             }
         },
         {
+            "Key": "53b98a1d-a6e9-4a31-807e-1f2870e2802f",
+            "Value": {
+                "id": "64ca1442-e39c-4852-a0f2-29dccc4bdd1b",
+                "resourcePath": "sprites\\s_optionWindowButton\\s_optionWindowButton.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5564806c-ca89-4429-bcf1-6b48f2b00fb5",
             "Value": {
                 "id": "8ec211e5-fdd5-4597-885d-b877639a476b",
@@ -836,6 +844,14 @@
                 "id": "7150a643-0b66-46a6-ace9-0b1c676da4e1",
                 "resourcePath": "datafiles_yy\\menubutton.aseprite.yy",
                 "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "654ae4da-b2db-4762-bc48-1b37babad024",
+            "Value": {
+                "id": "8dc48d7c-81a6-48ef-8691-a9b6584a09d9",
+                "resourcePath": "scripts\\option_window\\option_window.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1443,6 +1459,14 @@
             "Value": {
                 "id": "ad248e9c-d5df-41f8-b80d-3704cd0eddf9",
                 "resourcePath": "scripts\\useful_button\\useful_button.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b202edc7-9807-4ad5-bdc4-ce6bb0e7728e",
+            "Value": {
+                "id": "fdec75ae-42b7-4ead-b8f6-90d162bef05f",
+                "resourcePath": "scripts\\enemy_param_meas_rank\\enemy_param_meas_rank.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2153,6 +2177,7 @@
         "829fe9b0-7d39-4455-b973-ed8fd70c9249",
         "96b93399-b4f0-4cc3-a553-0b75f03576a3",
         "796f10df-d809-419b-b6b5-fb1acec5b32d",
+        "b202edc7-9807-4ad5-bdc4-ce6bb0e7728e",
         "ce44b901-10a1-4f92-b272-d92c933ed5e1",
         "acdebee6-7fcb-4bc0-9ba9-ef7f1d0fcea4",
         "17f689e6-cb80-41c5-b6bb-6283d28b5d5d",
@@ -2180,6 +2205,7 @@
         "aed99a03-6377-4698-a539-1f8b0f837400",
         "4071a3d0-a963-4870-a05a-710a220692aa",
         "37f173be-7f68-4a53-a356-c3c28bd7a344",
+        "654ae4da-b2db-4762-bc48-1b37babad024",
         "b18e85ec-529f-4cdf-87ba-ae94c2393f6d",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",

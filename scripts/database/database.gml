@@ -725,7 +725,10 @@ enum enemydata{
 	shield,
 	speed,
 	description,
-	dropgold
+	dropgold,
+	hprank,
+	shieldrank,
+	speedrank,
 }
 #endregion
 #endregion

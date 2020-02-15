@@ -17,6 +17,7 @@ if(mouse_check_button_pressed(mb_left)){
 		//ウィンドウ外をクリックした
 		menu_open = false;
 		grab_knob = false;
+		surface_free(global.usefulwindow_surface[8])
 	}
 }
 
@@ -24,9 +25,9 @@ if(mouse_check_button_pressed(mb_left)){
 var offset_x = menu_window_x+10
 var offset_y = menu_window_y+6;
 draw_set_font(fo_yasa10)
-var restart_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y, "Restart", COLOR_TEXT_GRAY);
-var stageselect_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y+32, "StageSelect", COLOR_TEXT_GRAY);
-var option_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y+64, "Option", COLOR_TEXT_GRAY);
+var restart_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y, "Restart", COLOR_TEXT_GRAY, noone, false);
+var stageselect_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y+32, "StageSelect", COLOR_TEXT_GRAY, noone, false);
+var option_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y+64, "Option", COLOR_TEXT_GRAY, noone, false);
 draw_set_font(FONT_DEFAULT);
 
 if(o_gameMgr.change_screen = -1){
@@ -41,7 +42,7 @@ if(o_gameMgr.change_screen = -1){
 	}
 	if(option_button){
 		//オプションを開く
-	
+		option_open = true;
+		surface_free(global.usefulwindow_surface[8])
 	}
 }
-volume_option_gui(0, offset_x, offset_y-20)

@@ -21,3 +21,4 @@ with(instance_create_layer(number_x, number_y, "UI", o_effect)){
 	fade_alpha = gradually_transparent
 	text_font = font;
 }
+

@@ -4,6 +4,11 @@ if(global.gamestate != gamestate.gameover and global.gamestate != gamestate.stag
 		menu_open_button();
 	}
 	else{
-		menu_window()
+		if(!option_open){
+			menu_window()
+		}
+		else{
+			option_window()
+		}
 	}
 }
