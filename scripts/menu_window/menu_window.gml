@@ -24,7 +24,7 @@ if(mouse_check_button_pressed(mb_left)){
 
 var offset_x = menu_window_x+10
 var offset_y = menu_window_y+6;
-draw_set_font(fo_yasa10)
+draw_set_font(FONT_MENUBUTTON);
 var restart_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y, "Restart", COLOR_TEXT_GRAY, noone, false);
 var stageselect_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y+32, "StageSelect", COLOR_TEXT_GRAY, noone, false);
 var option_button = useful_button(s_menuWindowButton, 0, 1, -1, offset_x, offset_y+64, "Option", COLOR_TEXT_GRAY, noone, false);

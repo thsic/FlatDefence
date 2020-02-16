@@ -67,6 +67,9 @@
 #macro CURSEDSWORD_MAGNIFICATION 0.1//呪いの剣装備中のダメージ倍率
 #macro BLAST_MAGNIFICATION 0.25//爆風ダメージ倍率
 
+//
+#macro ENEMY_RANK_AMOUNT 10//ランクの個数
+
 //説明
 #macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
 #macro ENEMY_SHIELD_DESCRIPTION "敵のシールドです。ダメージを数値分だけ軽減します。 1回攻撃を受ける毎に1減少します。"
@@ -100,7 +103,7 @@
 #macro COLOR_TEXT_GREEN c_lime
 #macro COLOR_TEXT_RED make_color_rgb(222, 40, 40)
 #macro COLOR_TEXT_PURPLE c_fuchsia
-#macro COLOR_TEXT_BLUE make_color_rgb(65, 210, 210)
+#macro COLOR_TEXT_BLUE make_color_rgb(85, 230, 230)
 #macro COLOR_TEXT_DARKGREEN c_teal
 #macro COLOR_TEXT_LTGRAY c_gray
 #macro COLOR_TEXT_STAGEUI make_color_rgb(76, 76, 76)
@@ -122,6 +125,9 @@
 #macro COLOR_BACKGROUND make_color_rgb(200, 200, 170)
 
 #macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
+
+#macro COLOR_ENEMY_PARAMTEXT_WEAK make_color_rgb(200, 200, 160)
+#macro COLOR_ENEMY_PARAMTEXT_STRONG make_color_rgb(255, 160, 140)
 
 //パーティクル
 #macro COLOR_LIFEBLOOD make_color_rgb(240, 30, 55)
@@ -149,3 +155,5 @@
 #macro FONT_UPGRADETEXT fo_yasa10Ja
 #macro FONT_UPGRADETEXT_SMALL fo_yasa8Ja
 #macro FONT_SHOP_GOLD_PLUS fo_yasa8
+#macro FONT_MENUBUTTON fo_yasa10Ja
+#macro FONT_ENEMY_UI_PARAM fo_yasa10

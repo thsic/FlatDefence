@@ -53,7 +53,7 @@ draw_set_halign(fa_middle);
 draw_set_valign(fa_middle);
 draw_text_color(button_x+button_width/2, button_y+button_height/2, text, text_color, text_color, text_color, text_color, text_alpha);
 draw_set_halign(fa_left);
-draw_set_valign(fa_left);
+draw_set_valign(fa_top);
 
 
 return clicked

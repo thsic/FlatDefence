@@ -1735,6 +1735,14 @@
             }
         },
         {
+            "Key": "dade1354-9bc7-4084-ba12-53c9674f13f3",
+            "Value": {
+                "id": "74f9b3cd-c030-4323-97ee-438e2a4da44b",
+                "resourcePath": "sprites\\s_enemyParamWindow\\s_enemyParamWindow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "db053715-5400-4a20-9fac-57db46cfcab3",
             "Value": {
                 "id": "57814414-9aa7-48d6-ac0a-748374507c5d",

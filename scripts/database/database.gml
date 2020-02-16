@@ -585,6 +585,7 @@ global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
 global.enemydata[target, enemydata.dropgold] = 6;
+enemy_param_meas_rank(target);
 
 target = 1;
 global.enemydata[target, enemydata.object] = o_eNormalLv2;
@@ -594,6 +595,7 @@ global.enemydata[target, enemydata.shield] = 40;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
 global.enemydata[target, enemydata.dropgold] = 9;
+enemy_param_meas_rank(target);
 
 target = 2;
 global.enemydata[target, enemydata.object] = o_eNormalLv3;
@@ -603,6 +605,7 @@ global.enemydata[target, enemydata.shield] = 60;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
 global.enemydata[target, enemydata.dropgold] = 18;
+enemy_param_meas_rank(target);
 
 target = 3;
 global.enemydata[target, enemydata.object] = o_eSmallLv1;
@@ -612,6 +615,7 @@ global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 1.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 3;
+enemy_param_meas_rank(target);
 
 target = 4;
 global.enemydata[target, enemydata.object] = o_eSmallLv2;
@@ -621,6 +625,7 @@ global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 2;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 6;
+enemy_param_meas_rank(target);
 
 target = 5;
 global.enemydata[target, enemydata.object] = o_eSmallLv3;
@@ -630,6 +635,7 @@ global.enemydata[target, enemydata.shield] = 20;
 global.enemydata[target, enemydata.speed] = 2.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 12;
+enemy_param_meas_rank(target);
 
 #endregion
 #region 6~11
@@ -641,6 +647,7 @@ global.enemydata[target, enemydata.shield] = 0;
 global.enemydata[target, enemydata.speed] = 3;
 global.enemydata[target, enemydata.description] = "hayai";
 global.enemydata[target, enemydata.dropgold] = 4;
+enemy_param_meas_rank(target);
 
 target = 7;
 global.enemydata[target, enemydata.object] = o_eFastLv2;
@@ -650,6 +657,7 @@ global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 4;
 global.enemydata[target, enemydata.description] = "hayai";
 global.enemydata[target, enemydata.dropgold] = 8;
+enemy_param_meas_rank(target);
 
 target = 8;
 global.enemydata[target, enemydata.object] = o_eFastLv3;
@@ -659,6 +667,7 @@ global.enemydata[target, enemydata.shield] = 50;
 global.enemydata[target, enemydata.speed] = 4.5;
 global.enemydata[target, enemydata.description] = "hayai";
 global.enemydata[target, enemydata.dropgold] = 16;
+enemy_param_meas_rank(target);
 
 target = 9;
 global.enemydata[target, enemydata.object] = o_eShieldLv1;
@@ -668,6 +677,7 @@ global.enemydata[target, enemydata.shield] = 60;
 global.enemydata[target, enemydata.speed] = 0.8;
 global.enemydata[target, enemydata.description] = "katai";
 global.enemydata[target, enemydata.dropgold] = 12;
+enemy_param_meas_rank(target);
 
 target = 10;
 global.enemydata[target, enemydata.object] = o_eShieldLv2;
@@ -677,6 +687,7 @@ global.enemydata[target, enemydata.shield] = 90;
 global.enemydata[target, enemydata.speed] = 0.7;
 global.enemydata[target, enemydata.description] = "katai";
 global.enemydata[target, enemydata.dropgold] = 24;
+enemy_param_meas_rank(target);
 
 target = 11;
 global.enemydata[target, enemydata.object] = o_eShieldLv3;
@@ -686,6 +697,8 @@ global.enemydata[target, enemydata.shield] = 260;
 global.enemydata[target, enemydata.speed] = 0.6;
 global.enemydata[target, enemydata.description] = "katai";
 global.enemydata[target, enemydata.dropgold] = 48;
+enemy_param_meas_rank(target);
+
 #endregion
 #region 12~17
 target = 12;
@@ -696,6 +709,7 @@ global.enemydata[target, enemydata.shield] = 25;
 global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 20;
+enemy_param_meas_rank(target);
 
 target = 13;
 global.enemydata[target, enemydata.object] = o_eToughLv2;
@@ -705,6 +719,7 @@ global.enemydata[target, enemydata.shield] = 40;
 global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 40;
+enemy_param_meas_rank(target);
 
 target = 14;
 global.enemydata[target, enemydata.object] = o_eToughLv3;
@@ -714,6 +729,8 @@ global.enemydata[target, enemydata.shield] = 100;
 global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 80;
+enemy_param_meas_rank(target);
+
 #endregion
 
 global.enemy_category_amount = target+1;
@@ -729,6 +746,9 @@ enum enemydata{
 	hprank,
 	shieldrank,
 	speedrank,
+	hptextcolor,
+	shieldtextcolor,
+	speedtextcolor,
 }
 #endregion
 #endregion

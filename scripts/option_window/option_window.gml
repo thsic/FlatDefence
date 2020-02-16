@@ -33,10 +33,10 @@ draw_text(offset_x, offset_y+44+26*1, "射程常時表示");
 draw_text(offset_x, offset_y+44+26*2, "クールダウン表示");
 draw_text(offset_x, offset_y+44+26*3, "敵HP表示");
 draw_text(offset_x, offset_y+44+26*4, "敵ステータス表示");
-volume_option_gui(0, offset_x+60, offset_y-4)
-volume_option_gui(1, offset_x+60, offset_y+16)
+volume_option_gui(0, offset_x+60, offset_y-4);
+volume_option_gui(1, offset_x+60, offset_y+16);
 
-draw_set_font(fo_yasa10);
+draw_set_font(FONT_MENUBUTTON);
 draw_set_color(COLOR_DEFAULT)
 //戻るボタン
 var back_to_menu_button = useful_button(s_optionWindowButton, 0, 1, -1, offset_x, offset_y+menu_window_height-32, "Back", COLOR_TEXT_GRAY, noone, false);
@@ -53,8 +53,8 @@ var draw_cooldown_button_off = useful_button(s_optionWindowButton, 0, 1, 2, offs
 var draw_enemyhp_button_on = useful_button(s_optionWindowButton, 0, 1, 2, offset_x+130, offset_y+40+26*3, "ON", COLOR_TEXT_GRAY, global.draw_enemyhp, true);
 var draw_enemyhp_button_off = useful_button(s_optionWindowButton, 0, 1, 2, offset_x+182, offset_y+40+26*3, "OFF", COLOR_TEXT_GRAY, global.draw_enemyhp, false);
 //敵ステ
-var enemy_param_detail_button = useful_button(s_optionWindowButton, 0, 1, 2, offset_x+130, offset_y+40+26*3, "簡易", COLOR_TEXT_GRAY, global.draw_enemy_param_simple, true);
-var enemy_param_simple_button = useful_button(s_optionWindowButton, 0, 1, 2, offset_x+130, offset_y+40+26*3, "数値", COLOR_TEXT_GRAY, global.draw_enemy_param_simple, true);
+var enemy_param_simple_button = useful_button(s_optionWindowButton, 0, 1, 2, offset_x+130, offset_y+40+26*4, "簡易", COLOR_TEXT_GRAY, global.draw_enemy_param_simple, true);
+var enemy_param_detail_button = useful_button(s_optionWindowButton, 0, 1, 2, offset_x+182, offset_y+40+26*4, "数値", COLOR_TEXT_GRAY, global.draw_enemy_param_simple, false);
 draw_set_font(FONT_DEFAULT);
 
 if(back_to_menu_button){

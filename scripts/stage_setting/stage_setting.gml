@@ -88,7 +88,7 @@ case 2:
 	global.wave_drop_item[6] = 0;
 break
 case 3:
-	global.life = 10
+	global.life = 1000;
 	global.gold = 500;
 	global.wave_total = 6;
 	global.wave_clear_gold = 150;
