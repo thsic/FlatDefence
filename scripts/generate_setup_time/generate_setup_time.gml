@@ -222,7 +222,7 @@ break
 #endregion
 #region stage3
 case 3:
-	switch(global.wave_now){
+	/*switch(global.wave_now){
 	case 1://Shield*1 Normal*5 Small*10 Shield*3 Normal*10 
 		set_enemy_generate_timeline(0, global.generate_timeline_id, 0, 2, 0);
 		for(var i=0; i<5; i++){
@@ -336,7 +336,7 @@ case 3:
 			set_enemy_generate_timeline(i*30+2100+15, global.generate_timeline_id, 0, 0, 0);
 		}
 	break
-	}
+	}*/
 break
 #endregion
 #region stage4

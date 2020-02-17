@@ -12,6 +12,7 @@ draw_text(0, 20, "Life");
 draw_text(50, 20, string(global.life));
 
 draw_set_color(COLOR_TEXT_LTGRAY)
+draw_set_font(FONT_DEFAULT);
 switch(global.gamestate){
 case gamestate.rest://休憩タイム
 case gamestate.restpause:
@@ -20,7 +21,7 @@ case gamestate.restpause:
 	
 	//残りresttimeをバーで描画
 	var rest_time_per = rest_time/REST_TIME;
-	var rest_time_bar_maxwidth = 260;
+	var rest_time_bar_maxwidth = 272;
 	draw_set_color(c_gray);
 	draw_rectangle(2, 68, 2+rest_time_bar_maxwidth*rest_time_per, 68+1, false);
 	
@@ -47,7 +48,7 @@ case gamestate.restpause:
 			else{
 				//draw_set_color(global.enemydata[target_number, enemydata.hptextcolor]);
 				draw_text(x_offset+62, y_offset+18,string(global.enemydata[target_number, enemydata.hp]));
-			//	draw_set_color(global.enemydata[target_number, enemydata.speedtextcolor]);
+				//draw_set_color(global.enemydata[target_number, enemydata.speedtextcolor]);
 				if(frac(global.enemydata[target_number, enemydata.speed]) != 0){//小数点以下があるかどうかで表示方法が変わる
 					draw_text(x_offset+238, y_offset+18,string_format(global.enemydata[target_number, enemydata.speed], 1, 1));
 				}
@@ -58,17 +59,24 @@ case gamestate.restpause:
 				draw_text(x_offset+156, y_offset+18,string(global.enemydata[target_number, enemydata.shield]));
 			}
 			//----------------
-			draw_set_color(COLOR_TEXT_LTGRAY_ONWINDOW);
-			draw_text(x_offset+38, y_offset+2, global.enemydata[target_number, enemydata.name]);
-			draw_text(x_offset+140, y_offset+2, "x");
-			draw_set_color(COLOR_TEXT_GRAY);
 			draw_set_font(FONT_ENEMY_UI_PARAM);
+			if(global.draw_enemy_param_simple){
+				draw_set_color(COLOR_TEXT_WHITE);
+			}
+			else{
+				draw_set_color(COLOR_TEXT_LTGRAY_ONWINDOW);
+			}
+			draw_set_color(COLOR_TEXT_WHITE_NEARGRAY);
+			draw_text(x_offset+38, y_offset+5, global.enemydata[target_number, enemydata.name]);
+			draw_text(x_offset+124, y_offset+5, "x");
+			draw_set_color(COLOR_TEXT_GRAY);
+			
 			draw_text(x_offset+40, y_offset+21, "HP");
 			draw_text(x_offset+112, y_offset+21, "Shield");
 			draw_text(x_offset+196, y_offset+21, "Speed");
 			draw_set_color(COLOR_TEXT_BLUE);
 			draw_set_font(FONT_DEFAULT);
-			draw_text(x_offset+156, y_offset+2,string(global.spawn_enemy[target_objectid, spawnenemy.amount]));
+			draw_text(x_offset+132, y_offset+2,string(global.spawn_enemy[target_objectid, spawnenemy.amount]));
 			draw_set_color(COLOR_DEFAULT);
 		}
 	}

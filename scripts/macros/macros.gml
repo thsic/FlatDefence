@@ -70,6 +70,9 @@
 //
 #macro ENEMY_RANK_AMOUNT 10//ランクの個数
 
+#macro BGM_VOLUME_DEFAULT 0.7
+#macro SE_VOLUME_DEFAULT 0.7
+
 //説明
 #macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
 #macro ENEMY_SHIELD_DESCRIPTION "敵のシールドです。ダメージを数値分だけ軽減します。 1回攻撃を受ける毎に1減少します。"
@@ -107,7 +110,8 @@
 #macro COLOR_TEXT_DARKGREEN c_teal
 #macro COLOR_TEXT_LTGRAY c_gray
 #macro COLOR_TEXT_STAGEUI make_color_rgb(76, 76, 76)
-#macro COLOR_TEXT_LTGRAY_ONWINDOW make_color_rgb(90, 90, 90)
+#macro COLOR_TEXT_LTGRAY_ONWINDOW make_color_rgb(110, 110, 110)
+#macro COLOR_TEXT_WHITE_NEARGRAY make_color_rgb(200, 200, 200)
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime
@@ -128,6 +132,7 @@
 
 #macro COLOR_ENEMY_PARAMTEXT_WEAK make_color_rgb(200, 200, 160)
 #macro COLOR_ENEMY_PARAMTEXT_STRONG make_color_rgb(255, 160, 140)
+#macro COLOR_WINDOW_BORDER make_color_rgb(200, 200, 180)
 
 //パーティクル
 #macro COLOR_LIFEBLOOD make_color_rgb(240, 30, 55)
@@ -140,7 +145,7 @@
 #macro COLOR_DEFAULT c_white
 
 //フォント
-#macro FONT_DEFAULT fo_yasaNormal
+#macro FONT_DEFAULT fo_kosugiMaru12
 #macro FONT_SUPERBIG fo_notoSuperBig
 #macro FONT_TITLE fo_ostrichSans48
 #macro FONT_SHOP fo_noto24
@@ -149,11 +154,12 @@
 #macro FONT_DAMAGE_NORMAL fo_yasaNormal
 #macro FONT_DAMAGE_BIG fo_yasa16
 #macro FONT_STAGECLEAR_TEXT fo_noto24
-#macro FONT_STAGECLEAR_TOTALSCORE fo_yasa16
-#macro FONT_ENHANCEMENT_MARKER_TEXT fo_yasa8
+#macro FONT_STAGECLEAR_TOTALSCORE fo_kosugiMaru16
+#macro FONT_ENHANCEMENT_MARKER_TEXT fo_kosugiMaru8
 #macro FONT_STAGESELECT_TOTALSCORE fo_notoSuperBig
 #macro FONT_UPGRADETEXT fo_yasa10Ja
 #macro FONT_UPGRADETEXT_SMALL fo_yasa8Ja
-#macro FONT_SHOP_GOLD_PLUS fo_yasa8
-#macro FONT_MENUBUTTON fo_yasa10Ja
+#macro FONT_SHOP_GOLD_PLUS fo_kosugiMaru8
+#macro FONT_MENUBUTTON fo_kosugiMaru10Ja
 #macro FONT_ENEMY_UI_PARAM fo_yasa10
+#macro FONT_ITEMNAME fo_yasaNormal

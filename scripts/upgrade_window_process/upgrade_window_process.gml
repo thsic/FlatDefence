@@ -144,7 +144,7 @@ for(var i=0; i<item_number; i++){
 			if(upgrade_button[i, upgradebutton.state] != 2){//すでに押されてるボタンではないなら
 				upgrade_button[i, upgradebutton.state] = 1;//カーソルが上にある
 			}
-			if(mouse_check_button_pressed(mb_left)){
+			if(mouse_check_button_pressed(mb_left) or item_number <= 4){//アイテムが5か6ならクリックしないとアイテム選択ができない 利便性上昇
 				for(var j=0; j<item_number; j++){
 					upgrade_button[j, upgradebutton.state] = 0;//一旦全てのボタンを通常に戻してから↓
 				}
@@ -174,8 +174,8 @@ if(mouse_check_button_pressed(mb_left)){
 			}
 			global.gold += floor(return_gold);//返金する
 			
-			
 			purchased_upgrade_orb = false;
+			sdm("UpgradeOrbを返金")
 		}
 		else{//所持品へ戻す
 			get_item(0);

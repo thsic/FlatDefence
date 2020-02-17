@@ -49,7 +49,9 @@ case 0://defender
 	draw_text(offset_x+6, offset_y+48, ATTACKSPEED_TEXT);
 	draw_text(offset_x+6, offset_y+72, RANGE_TEXT);
 	draw_set_color(COLOR_TEXT_WHITE);
+	draw_set_font(FONT_ITEMNAME);//名前だけフォントを変える
 	draw_text(offset_x+6, offset_y+4, global.defender_data[defender_id, data.name]);
+	draw_set_font(FONT_DEFAULT);
 	draw_text(offset_x+150, offset_y+24, global.defender_data[defender_id, data.damage]);
 	draw_text(offset_x+150, offset_y+48, string_format(global.defender_data[defender_id, data.attack_speed], 1, 1));
 	draw_text(offset_x+150, offset_y+72, global.defender_data[defender_id, data.range]);
@@ -128,7 +130,9 @@ case 1://item
 	draw_text(offset_x+6, offset_y+48, ATTACKSPEED_TEXT);
 	draw_text(offset_x+6, offset_y+72, RANGE_TEXT);
 	draw_set_color(COLOR_TEXT_WHITE);
+	draw_set_font(FONT_ITEMNAME);
 	draw_text(offset_x+6, offset_y+4, global.itemdata[target_id, itemdata.name]);
+	draw_set_font(FONT_DEFAULT);
 	draw_set_color_value(COLOR_TEXT_GREEN, COLOR_TEXT_WHITE, global.itemdata[target_id, itemdata.damage], 0)
 	draw_text(offset_x+150, offset_y+24, global.itemdata[target_id, itemdata.damage]);
 	draw_set_color_value(COLOR_TEXT_GREEN, COLOR_TEXT_WHITE, global.itemdata[target_id, itemdata.attack_speed], 0)

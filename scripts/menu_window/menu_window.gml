@@ -5,7 +5,9 @@ var menu_window_y = view_hport[0]-16-menu_window_height;
 
 tiny_window(s_window, 8, menu_window_x, menu_window_y, menu_window_width, menu_window_height, 1);
 
-
+draw_set_color(COLOR_WINDOW_BORDER);
+draw_rectangle(menu_window_x+1, menu_window_y+1, menu_window_x+menu_window_width-2, menu_window_y+menu_window_height-2, true);
+draw_set_color(COLOR_DEFAULT);
 if(mouse_check_button_pressed(mb_left)){
 	var menu_window_click = false
 	if(menu_window_x < mouse_x and mouse_x < menu_window_x+menu_window_width){

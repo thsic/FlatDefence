@@ -5,9 +5,16 @@ var x_offset = argument0;
 var y_offset = argument1;
 var width = argument2;
 var height = argument3;
+//ウィンドウの枠
+draw_set_alpha(0.7);
+draw_set_color(COLOR_WINDOW_BORDER);
+draw_rectangle(x_offset+1, y_offset+1, x_offset+width-2, y_offset+height-2, true)
+draw_set_alpha(1);
 draw_set_color(COLOR_TEXT_WHITE);
 draw_sprite(upgrade_defender_id.sprite_index, 0, x_offset+22, y_offset+24);
+draw_set_font(FONT_ITEMNAME);
 draw_text(x_offset+42, y_offset+6, global.defender_data[upgrade_defender_id.defender_number, data.name]);
+draw_set_font(FONT_DEFAULT);
 draw_set_color(COLOR_TEXT_ORANGE);
 draw_text(x_offset+42, y_offset+22, global.defender_data[upgrade_defender_id.defender_number, data.description]);
 //アイテムスロット
@@ -38,7 +45,7 @@ for(var i=0; i<item_number; i++){
 	draw_sprite_ext(s_upgradeButton, button_subimage, upgrade_button[i, upgradebutton.sprite_x], upgrade_button[i, upgradebutton.sprite_y], 1, 1, 0, c_white, 0.7);
 	draw_sprite(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.sprite], 0, upgrade_button[i, upgradebutton.sprite_x]+24, upgrade_button[i, upgradebutton.sprite_y]+24);
 	draw_set_valign(fa_middle);
-	
+	draw_set_color(COLOR_TEXT_WHITE);
 	//はみ出しそうならフォントの大きさ変える
 	if(string_width(global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]) > 110){
 		var font_size = 1;
@@ -52,7 +59,7 @@ for(var i=0; i<item_number; i++){
 	}
 	switch(font_size){
 	case 0:	
-		draw_set_font(FONT_DEFAULT);
+		draw_set_font(FONT_ITEMNAME);
 	break
 	case 1:
 		draw_set_font(FONT_UPGRADETEXT);
@@ -63,7 +70,7 @@ for(var i=0; i<item_number; i++){
 	}
 	
 	//アイテム名描画
-	draw_text(upgrade_button[i, upgradebutton.sprite_x]+96, upgrade_button[i, upgradebutton.sprite_y]+24, global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]);
+	draw_text(upgrade_button[i, upgradebutton.sprite_x]+98, upgrade_button[i, upgradebutton.sprite_y]+24, global.itemdata[upgrade_defender_id.itemslot[i], itemdata.name]);
 }
 draw_set_font(FONT_DEFAULT);
 draw_set_color(COLOR_TEXT_WHITE);
@@ -71,18 +78,18 @@ draw_set_valign(fa_top);
 if(possible_upgrade){//アップグレード決定ボタン(アップグレード不可のときはでてこない)
 	button_subimage = upgrade_button[10, upgradebutton.state];
 	draw_sprite(s_upgradeButton, button_subimage, upgrade_button[10, upgradebutton.sprite_x], upgrade_button[10, upgradebutton.sprite_y]);
-	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+12, "アップグレード");
+	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+16, "アップグレード");
 }
 else{
 	draw_set_color(COLOR_TEXT_GRAY);
 	button_subimage = 2;
 	draw_sprite(s_upgradeButton, button_subimage, upgrade_button[10, upgradebutton.sprite_x], upgrade_button[10, upgradebutton.sprite_y]);
-	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+12, "Upgraded");
+	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+16, "Upgraded");
 }
 
 var upgrade_text_y = y_offset+180//このyの値を変えるといっぺんに変えれる
 draw_set_color(COLOR_TEXT_WHITE);
-draw_text(x_offset+width/2, y_offset+42, "Choose Upgrade Item!");
+draw_text(x_offset+width/2, y_offset+42, "Choose Item!");
 
 
 //比較用数値

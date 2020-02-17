@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "01583829-9144-4af4-9398-bf7081c08899",
+            "Value": {
+                "id": "845cf54a-3248-4db6-a239-66f036f18d55",
+                "resourcePath": "fonts\\fo_kosugiMaru10Ja\\fo_kosugiMaru10Ja.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "0370c5ea-aa60-45b1-8fdc-63163ac3c8d3",
             "Value": {
                 "id": "400d7228-72f2-4dc9-b862-551ae66c2985",
@@ -1231,6 +1239,14 @@
             }
         },
         {
+            "Key": "8c7457fa-f563-4893-bbd9-61ee7b1ee644",
+            "Value": {
+                "id": "9b703c19-58bb-4ea0-8c69-8564cb8cb0f4",
+                "resourcePath": "fonts\\fo_kosugiMaru16\\fo_kosugiMaru16.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "8d77f676-b0de-4d60-9acd-d9bfa70916cf",
             "Value": {
                 "id": "7e86e676-de63-4cec-8da4-d19827959ed4",
@@ -1327,6 +1343,14 @@
             }
         },
         {
+            "Key": "98b6f903-d837-4c58-9db4-cc677195af3f",
+            "Value": {
+                "id": "a869ec39-dfc7-414a-a43f-9c76a22a2030",
+                "resourcePath": "fonts\\fo_kosugiMaru12\\fo_kosugiMaru12.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "99ba60ad-6408-4f30-9c43-8562ef0a06ee",
             "Value": {
                 "id": "49ec6e62-9f6f-4165-bc14-dfdfba1c0737",
@@ -1356,6 +1380,14 @@
                 "id": "dffe56e5-45c6-4d66-9111-f431aa97de5a",
                 "resourcePath": "timelines\\tl_enemyGenelateStage1\\tl_enemyGenelateStage1.yy",
                 "resourceType": "GMTimeline"
+            }
+        },
+        {
+            "Key": "9ee2b1e7-cde0-47a9-bce0-aa62ad602d4b",
+            "Value": {
+                "id": "2b549970-f4af-487f-ad24-8ea96414e5dd",
+                "resourcePath": "fonts\\fo_kosugiMaru8Ja\\fo_kosugiMaru8Ja.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1564,6 +1596,14 @@
                 "id": "334f64ad-dacf-485f-8e96-6778356c2076",
                 "resourcePath": "objects\\o_eToughLv3\\o_eToughLv3.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c7fe6b76-a838-4967-8afd-5b02a0b5992e",
+            "Value": {
+                "id": "ddcccfa0-2069-4637-959c-b049da028f1f",
+                "resourcePath": "fonts\\fo_kosugiMaru8\\fo_kosugiMaru8.yy",
+                "resourceType": "GMFont"
             }
         },
         {

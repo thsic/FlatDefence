@@ -14,11 +14,11 @@ rank_color[1] = make_color_rgb(140, 220, 140);
 rank_color[2] = make_color_rgb(140, 220, 140);
 rank_color[3] = make_color_rgb(160, 230, 155);
 rank_color[4] = make_color_rgb(160, 230, 155);
-rank_color[5] = make_color_rgb(120, 215, 170);
-rank_color[6] = make_color_rgb(120, 215, 170);
-rank_color[7] = make_color_rgb(130, 195, 250);
-rank_color[8] = make_color_rgb(130, 195, 250);
-rank_color[9] = make_color_rgb(235, 160, 250);
+rank_color[5] = make_color_rgb(150, 225, 190);
+rank_color[6] = make_color_rgb(150, 225, 190);
+rank_color[7] = make_color_rgb(160, 235, 250);
+rank_color[8] = make_color_rgb(160, 235, 250);
+rank_color[9] = make_color_rgb(250, 180, 255);
 //ランク名前入れ
 rank_name[0] = "D";
 rank_name[1] = "C";
@@ -44,10 +44,10 @@ hp_rank[9] = 3500;
 shield_rank[0] = 0;
 shield_rank[1] = 10;
 shield_rank[2] = 25;
-shield_rank[3] = 50;
+shield_rank[3] = 45;
 shield_rank[4] = 75;
-shield_rank[5] = 110;
-shield_rank[6] = 160;
+shield_rank[5] = 95;
+shield_rank[6] = 150;
 shield_rank[7] = 230;
 shield_rank[8] = 510;
 shield_rank[9] = 1000;
@@ -63,24 +63,24 @@ speed_rank[8] = 4;
 speed_rank[9] = 5;
 #endregion
 
-for(var i=0; i<rank_amount; i++){
-	if(global.enemydata[enemy_id, enemydata.hp] <= hp_rank[i]){
-		global.enemydata[enemy_id, enemydata.hprank] = rank_name[i]
-		global.enemydata[enemy_id, enemydata.hptextcolor] = rank_color[i];
+for(var i=1; i<rank_amount; i++){
+	if(global.enemydata[enemy_id, enemydata.hp] < hp_rank[i]){
+		global.enemydata[enemy_id, enemydata.hprank] = rank_name[i-1]
+		global.enemydata[enemy_id, enemydata.hptextcolor] = rank_color[i-1];
 		break
 	}
 }
-for(var i=0; i<rank_amount; i++){
-	if(global.enemydata[enemy_id, enemydata.shield] <= shield_rank[i]){
-		global.enemydata[enemy_id, enemydata.shieldrank] = rank_name[i];
-		global.enemydata[enemy_id, enemydata.shieldtextcolor] = rank_color[i]
+for(var i=1; i<rank_amount; i++){
+	if(global.enemydata[enemy_id, enemydata.shield] < shield_rank[i]){
+		global.enemydata[enemy_id, enemydata.shieldrank] = rank_name[i-1];
+		global.enemydata[enemy_id, enemydata.shieldtextcolor] = rank_color[i-1]
 		break
 	}
 }
-for(var i=0; i<rank_amount; i++){
-	if(global.enemydata[enemy_id, enemydata.speed] <= speed_rank[i]){
-		global.enemydata[enemy_id, enemydata.speedrank] = rank_name[i];
-		global.enemydata[enemy_id, enemydata.speedtextcolor] = rank_color[i]
+for(var i=1; i<rank_amount; i++){
+	if(global.enemydata[enemy_id, enemydata.speed] < speed_rank[i]){
+		global.enemydata[enemy_id, enemydata.speedrank] = rank_name[i-1];
+		global.enemydata[enemy_id, enemydata.speedtextcolor] = rank_color[i-1]
 		break
 	}
 }
