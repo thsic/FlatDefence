@@ -26,10 +26,12 @@ draw_set_color(COLOR_TEXT_GRAY);
 draw_text(x_offset+4, y_offset+38, FIRE_DAMAGE_TEXT);
 draw_text(x_offset+4, y_offset+38+16*2+4, ATTACKSPEED_TEXT);
 draw_text(x_offset+4, y_offset+38+16*4+8, RANGE_TEXT);
-draw_text(x_offset+150, y_offset+20, "Effect");
+draw_text(x_offset+140, y_offset+20, "Effect");
 
 draw_set_color(COLOR_TEXT_WHITE);
+draw_set_font(FONT_ITEMNAME);
 draw_text(x_offset+42, y_offset+6, global.defender_data[defender_id_conversion(finded_defender_id.object_index), data.name]);
+draw_set_font(FONT_DEFAULT);
 draw_text(x_offset+4, y_offset+38+16*1, finded_defender_id.fire_damage);
 draw_text(x_offset+4, y_offset+38+16*3+4, string_format(finded_defender_id.attack_per_second, 1, 1));
 draw_text(x_offset+4, y_offset+38+16*5+8, finded_defender_id.range);
@@ -42,13 +44,13 @@ var marker_size = 8
 if(marker_id.enhancement){
 	draw_set_alpha(0.5);
 	if(marker_id.enhancement_attack){
-		draw_enhancement_token(x_offset+146, y_offset+4, 0, marker_id.enhancement_attack, COLOR_TEXT_RED, marker_size, 8);
+		draw_enhancement_token(x_offset+136, y_offset+2, 0, marker_id.enhancement_attack, COLOR_MARKER_POWER, marker_size, 8);
 	}
 	if(marker_id.enhancement_range){
-		draw_enhancement_token(x_offset+146, y_offset+4, 1, marker_id.enhancement_range, make_color_rgb(65, 50, 90), marker_size, 8);
+		draw_enhancement_token(x_offset+136, y_offset+2, 1, marker_id.enhancement_range, COLOR_MARKER_RANGE, marker_size, 8);
 	}
 	if(marker_id.enhancement_attackspeed){
-		draw_enhancement_token(x_offset+146, y_offset+4, 2, marker_id.enhancement_attackspeed, make_color_rgb(0, 100, 100), marker_size, 8);
+		draw_enhancement_token(x_offset+136, y_offset+2, 2, marker_id.enhancement_attackspeed, COLOR_MARKER_ATTACKSPEED, marker_size, 8);
 	}
 }
 draw_set_alpha(1);
@@ -92,10 +94,10 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		//描画
 		draw_set_color(global.effectdata[effect_order[i], effectdata.color]);
 		if(global.effectdata[effect_order[i], effectdata.overlap] = true){//効果の重複が可能か
-			draw_text(x_offset+150, y_offset+38+16*i, global.effectdata[effect_order[i], effectdata.name]+" Lv"+string(effect_level[i]))
+			draw_text(x_offset+140, y_offset+38+16*i, global.effectdata[effect_order[i], effectdata.name]+" Lv"+string(effect_level[i]))
 		}
 		else{
-			draw_text(x_offset+150, y_offset+38+16*i, global.effectdata[effect_order[i], effectdata.name])
+			draw_text(x_offset+140, y_offset+38+16*i, global.effectdata[effect_order[i], effectdata.name])
 		}
 		
 	}
@@ -105,18 +107,29 @@ surface_free(global.usefulwindow_surface[6]);
 //エフェクトにマウスカーソルを合わせると説明が表示される
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(effect_order[i]) != -1{
-		if(x_offset+150 < mouse_x and mouse_x < x_offset+width){
+		if(x_offset+140 < mouse_x and mouse_x < x_offset+width){
 			if(y_offset+38+16*i < mouse_y and mouse_y < y_offset+38+16+i*16){
 				var description = global.effectdata[effect_order[i], effectdata.description]
-				description = string_replace(description, "@", "");
+				description = string_replace(description, "@", "");//@マークの所で改行指定させてるけどここの文では改行はいらないので消す
+				description = string_replace(description, "\v", string(global.effectdata[effect_order[i], effectdata.value]*effect_level[i]));//LV*valueの値が挿入
+				description = string_replace(description, "\l", string(effect_level[i]));//レベル
+				
+				var percent = 1;
+				for(var k=0; k<effect_level[i]; k++){
+					percent *= 1-global.effectdata[effect_order[i], effectdata.value];
+				}
+				percent = (1-percent)*100
+				description = string_replace(description, "\%", string(floor(percent)));
+				
+				
 				if(mouse_x+string_width(description)+16 < window_get_width()){
 					var window_x = mouse_x;
 				}
 				else{
 					var window_x = window_get_width()-string_width(description)-16
 				}
-				tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
-				draw_text(window_x+4, mouse_y+16, description);
+				tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+10, 28, 1);
+				draw_text(window_x+4, mouse_y+18, description);
 				break
 			}
 		}

@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "11a82e58-fb49-44fe-ae35-77dd8d13b0dd",
+            "Value": {
+                "id": "e17fd0c1-0777-43b5-9d1f-96006a990c9c",
+                "resourcePath": "sprites\\s_powerAxeUpgrade\\s_powerAxeUpgrade.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1225a50d-63f3-45ae-bbc3-cd40278c38d8",
             "Value": {
                 "id": "0df49da3-0ee0-4b8e-9fe9-13aa8bb86017",
@@ -172,6 +180,14 @@
                 "id": "b00f7267-f357-400f-8dde-30ebd1c95f21",
                 "resourcePath": "scripts\\record_damage\\record_damage.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "1739bf89-a2c7-4244-abc6-c4a1eb353678",
+            "Value": {
+                "id": "ba6b5029-7911-420c-9979-44cc77357c6a",
+                "resourcePath": "sprites\\s_poisonDaggerUpgrade\\s_poisonDaggerUpgrade.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -348,6 +364,14 @@
                 "id": "6b8fbd8c-6afc-4fec-b0c1-82fa19dfaeba",
                 "resourcePath": "fonts\\fo_yasa10Ja\\fo_yasa10Ja.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "2691e6ca-a4b1-46ed-901f-65b87a62f85c",
+            "Value": {
+                "id": "17e5329f-cd14-4c67-9b21-934d8210ce91",
+                "resourcePath": "sprites\\s_CrystalUpgrade\\s_CrystalUpgrade.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -807,6 +831,22 @@
             }
         },
         {
+            "Key": "5eb89463-6b6e-4b3c-b749-b507ccaf49e9",
+            "Value": {
+                "id": "56c9c0a3-89e9-438c-b396-95477306fefe",
+                "resourcePath": "sprites\\s_titansClubUpgrade\\s_titansClubUpgrade.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6064c4ce-1c29-4432-aea5-c8805a1844f7",
+            "Value": {
+                "id": "14931103-b075-4020-b77c-b5935a06b871",
+                "resourcePath": "sprites\\s_reapersSickleUpgrade\\s_reapersSickleUpgrade.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "60c309aa-ca06-4c96-92a1-771fe15e10e2",
             "Value": {
                 "id": "1a98cdcc-670b-4878-b08c-19f45fb654b8",
@@ -956,6 +996,14 @@
                 "id": "61e8cfe0-315b-4f04-8713-eda7f5ae0e72",
                 "resourcePath": "scripts\\draw_ui\\draw_ui.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6e36dc62-cc15-4f38-8cd9-39c115645922",
+            "Value": {
+                "id": "5a2d9a01-0cfb-47fa-958a-1910f6597e4f",
+                "resourcePath": "sprites\\s_cursedSwordUpgrade\\s_cursedSwordUpgrade.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1143,6 +1191,14 @@
             }
         },
         {
+            "Key": "7ee56200-432d-4d2c-902a-d5084402f21a",
+            "Value": {
+                "id": "f3c17395-8c33-48f9-84d7-8278e939a741",
+                "resourcePath": "sprites\\s_basicswordUpgrade\\s_basicswordUpgrade.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7f79fd40-ebb8-4548-af12-5b2f2c87417c",
             "Value": {
                 "id": "69b53a88-72ea-489d-930b-4c187ffad7c1",
@@ -1255,6 +1311,14 @@
             }
         },
         {
+            "Key": "8dc89903-b431-4b07-99ed-6363e9cd214d",
+            "Value": {
+                "id": "80988241-5638-48f4-809a-186808f431a1",
+                "resourcePath": "scripts\\save_option\\save_option.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8e11e394-a7b6-49e0-9625-c41b9e2bfa7b",
             "Value": {
                 "id": "32bdf2e1-375a-4426-b273-24db624b3c71",
@@ -1291,6 +1355,14 @@
             "Value": {
                 "id": "b699b938-d3a2-4758-a608-1588851fa388",
                 "resourcePath": "sprites\\s_musicCreator\\s_musicCreator.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9333aadf-47d2-498d-be04-88b88f4fd940",
+            "Value": {
+                "id": "f6bb893f-4e71-4eec-824e-ebe25f619698",
+                "resourcePath": "sprites\\s_laserBeamUpgrade\\s_laserBeamUpgrade.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1359,6 +1431,14 @@
             }
         },
         {
+            "Key": "99eaf15f-3389-4938-a5a8-c4e4ec6f0093",
+            "Value": {
+                "id": "9644aef3-fbb3-4fe0-bba1-ec8ee0c20638",
+                "resourcePath": "scripts\\load_option\\load_option.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9b62250e-b3db-43ad-b05d-6eba1cf85e4e",
             "Value": {
                 "id": "8d9f4d91-a47b-466b-a10a-60235476f043",
@@ -1372,6 +1452,14 @@
                 "id": "cb7dc326-9353-4d7e-a12e-aa66cb12587e",
                 "resourcePath": "rooms\\r_tutorial\\r_tutorial.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "9daf942c-8739-43bf-bf59-0f1d92422a01",
+            "Value": {
+                "id": "df85fbab-165f-4a01-be24-901e82e389e3",
+                "resourcePath": "sprites\\s_imperialLanceUpgrade\\s_imperialLanceUpgrade.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1407,6 +1495,14 @@
             }
         },
         {
+            "Key": "a4af991a-f550-419b-bb93-c5ef3e4645d9",
+            "Value": {
+                "id": "bba275a2-1518-44ce-8e64-3fe4c62d7354",
+                "resourcePath": "views\\a4af991a-f550-419b-bb93-c5ef3e4645d9.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a4b3d327-79cb-4d0c-aa0d-b281064f7ee2",
             "Value": {
                 "id": "fa4eabf6-19d1-442b-951e-7f5a80b6350f",
@@ -1420,6 +1516,14 @@
                 "id": "6e076ab9-f7ca-4ffd-b5ed-ad9c7fe3297f",
                 "resourcePath": "fonts\\fo_ostrichSans48\\fo_ostrichSans48.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "a58d663b-da7c-45b0-9172-8dd9b9ddb215",
+            "Value": {
+                "id": "0bdcf7f4-d3c2-4f9c-a6e0-499462f0d780",
+                "resourcePath": "sprites\\s_demonsFireUpgrade\\s_demonsFireUpgrade.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1583,6 +1687,14 @@
             }
         },
         {
+            "Key": "c39d358b-27a4-4e76-adbd-6414f9941d01",
+            "Value": {
+                "id": "52752b94-d1f6-4238-b08e-ae09a8dae268",
+                "resourcePath": "sprites\\s_bombArrowUpgrade\\s_bombArrowUpgrade.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c4c03aa2-499f-4503-bb30-6d22524abdf9",
             "Value": {
                 "id": "e97bfc4c-7cec-44de-949b-54c8c7d0a37e",
@@ -1711,6 +1823,14 @@
             }
         },
         {
+            "Key": "d29ba549-2d8d-479d-a84b-c8b22307af72",
+            "Value": {
+                "id": "59d2ccba-5868-448d-b37c-b0f17828677f",
+                "resourcePath": "sprites\\s_spikeKnuckleUpgrade\\s_spikeKnuckleUpgrade.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d2ddf024-5f87-459d-bf9f-27a260db2072",
             "Value": {
                 "id": "4f0db14a-5a81-4d8e-8e1b-680becab0f42",
@@ -1748,6 +1868,14 @@
                 "id": "028165f9-8fbf-4d34-ab98-54500d3e2106",
                 "resourcePath": "scripts\\upgrade_window_process\\upgrade_window_process.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d6921e00-dd41-4b01-b1af-c47306cf34ce",
+            "Value": {
+                "id": "b02032b6-43af-4d3a-916f-b44c6487eed0",
+                "resourcePath": "sprites\\s_freezeRodUpgrade\\s_freezeRodUpgrade.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2239,6 +2367,8 @@
         "5a5ba069-d0dd-442a-9aa4-2f9684099812",
         "cad3efff-71ba-4b4f-9118-b03cd38499a3",
         "e09ec818-dfa8-4daf-b4b4-1babe6a049b4",
+        "8dc89903-b431-4b07-99ed-6363e9cd214d",
+        "99eaf15f-3389-4938-a5a8-c4e4ec6f0093",
         "6da2d552-a0aa-46a4-b4d6-589cd05b7a5c",
         "99ba60ad-6408-4f30-9c43-8562ef0a06ee",
         "f9d1e47b-af53-4d8d-a791-6900c551bc80",

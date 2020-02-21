@@ -84,7 +84,7 @@ else{
 	draw_set_color(COLOR_TEXT_GRAY);
 	button_subimage = 2;
 	draw_sprite(s_upgradeButton, button_subimage, upgrade_button[10, upgradebutton.sprite_x], upgrade_button[10, upgradebutton.sprite_y]);
-	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+16, "Upgraded");
+	draw_text(upgrade_button[10, upgradebutton.sprite_x]+80, upgrade_button[10, upgradebutton.sprite_y]+16, "アップグレード済み");
 }
 
 var upgrade_text_y = y_offset+180//このyの値を変えるといっぺんに変えれる
@@ -311,7 +311,27 @@ else{
 	line_feed = false
 }
 //}
-description1 = string_replace(description1, "@", "");
+if(possible_upgrade){
+	description1 = string_replace(description1, "@", "");
+	var effect_id = global.itemdata[choosing_id, itemdata.effect];
+	if(effect_id != -1){
+		description1 = string_replace(description1, "\v", string(global.effectdata[effect_id, effectdata.value]));
+		description1 = string_replace(description1, "\%", string(global.effectdata[effect_id, effectdata.value]*100));
+		description1 = string_replace(description1, "\l", "1");
+	}
+}
+else{
+	//文章をいい感じに
+	description1 = string_replace(description1, "@", "");
+	var effect_id = global.itemdata[choosing_id, itemdata.effect];
+	if(effect_id != -1){
+		description1 = string_replace(description1, "\v", string(global.effectdata[effect_id, effectdata.value]*2));
+		var percent = 1-global.effectdata[effect_id, effectdata.value];
+		percent = 1-percent*percent//lv2なので2回
+		description1 = string_replace(description1, "\%", string(percent*100));
+		description1 = string_replace(description1, "\l", "2");
+	}
+}
 
 var overlap = false;
 if(possible_upgrade){
@@ -324,15 +344,14 @@ if(possible_upgrade){
 }
 if(overlap){
 	if(possible_upgrade){
-		draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv1");
+		//Lv表示はしなくていいことになった
+		//draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv1");
 	}
 	else{
-		draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv2");
+		//draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv2");
 	}
 }
-else{
-	draw_text(text_x, upgrade_text_y+180, string(description1));
-}
+draw_text(text_x, upgrade_text_y+180, string(description1));
 
 //アップグレード後
 var overlap = false//lvupするかどうか
@@ -356,8 +375,17 @@ if(possible_upgrade){
 	}
 	
 	//}
+	//文章をいい感じに
 	description1_upgrade = string_replace(description1_upgrade, "@", "");
-	
+	var effect_upgrade_id = global.itemdata[choosing_after_upgrade_id, itemdata.effect];
+	if(effect_upgrade_id != -1){
+		description1_upgrade = string_replace(description1_upgrade, "\v", string(global.effectdata[effect_upgrade_id, effectdata.value]*2));
+		var percent = 1-global.effectdata[effect_upgrade_id, effectdata.value];
+		percent = 1-percent*percent//lv2なので2回
+		description1_upgrade = string_replace(description1_upgrade, "\%", string(percent*100));
+		description1_upgrade = string_replace(description1_upgrade, "\l", "2");
+	}
+
 	if(description1 != description1_upgrade){//文章比較
 		if(!crystal_upgrade){
 			if(global.effectdata[global.itemdata[choosing_after_upgrade_id, itemdata.effect], effectdata.number] != 9){//効果違ったら緑で
@@ -382,7 +410,7 @@ if(possible_upgrade){
 	
 	//アップグレード先描画
 	if(!freeze_rod){
-		if(overlap){
+		/*if(overlap){
 			//現在レベル取得
 			/*var effect_id = global.itemdata[choosing_id, itemdata.effect];
 			var effect_level = 0;
@@ -398,11 +426,10 @@ if(possible_upgrade){
 			}*/
 			
 			//defenderからエフェクトレベルを取得する処理を書いたけどここのテキストはアイテム単体のことなのでLv2固定だった
-			draw_text(text_x, upgrade_text_y+180, string(description1_upgrade)+" Lv2");
-		}
-		else{
-			draw_text(text_x, upgrade_text_y+180, description1_upgrade);
-		}
+			//draw_text(text_x, upgrade_text_y+180, string(description1_upgrade)+" Lv2");
+		//}
+		draw_text(text_x, upgrade_text_y+180, description1_upgrade);
+		
 		
 	}
 	else{

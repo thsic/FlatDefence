@@ -24,7 +24,7 @@ for(var i=0; i<enhancement_level; i++){
 		draw_rectangle(token_x, token_y, token_x+token_size-1, token_y+token_size-1, false);
 	break
 	case 1:
-		draw_circle(token_x+token_size/2, token_y+token_size/2, token_size/2, false);
+		draw_circle(token_x+token_size/2-1, token_y+token_size/2, token_size/2, false);
 	break
 	case 2:
 		draw_triangle(token_x, token_y+token_size, token_x+token_size/2, token_y, token_x+token_size, token_y+token_size, false)

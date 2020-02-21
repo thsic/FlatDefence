@@ -17,11 +17,11 @@ switch(global.gamestate){
 case gamestate.rest://休憩タイム
 case gamestate.restpause:
 	//draw_set_color(COLOR_TEXT_GRAY)
-	draw_text(0, 52, "NextWave "+string(ceil(rest_time/FPS_DEFAULT)));
+	draw_text(2, 52, "NextWave "+string(ceil(rest_time/FPS_DEFAULT)));
 	
 	//残りresttimeをバーで描画
 	var rest_time_per = rest_time/REST_TIME;
-	var rest_time_bar_maxwidth = 272;
+	var rest_time_bar_maxwidth = 270;
 	draw_set_color(c_gray);
 	draw_rectangle(2, 68, 2+rest_time_bar_maxwidth*rest_time_per, 68+1, false);
 	

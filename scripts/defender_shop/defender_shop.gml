@@ -55,6 +55,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			grab_number = shop_item_product[grab_number, ITEM]
 			
 			var reduce_gold = global.itemdata[grab_number, itemdata.cost];
+			sdm(shop_item_product[grab_product_number, SALES])
 			for(var i=0; i<shop_item_product[grab_product_number, SALES]; i++){//販売数によって減らすお金が増える
 				reduce_gold *= PRICE_INCREASE;
 			}

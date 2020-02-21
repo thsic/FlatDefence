@@ -158,8 +158,8 @@ if(grab_defender_id != -1){//商品を掴んでいる
 							var window_x = window_get_width()-string_width(description)-16
 						}
 						surface_free(global.usefulwindow_surface[6]);
-						tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
-						draw_text(window_x+4, mouse_y+16, description);
+						tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+10, 28, 1);
+						draw_text(window_x+4, mouse_y+18, description);
 					}
 				}
 			}
@@ -224,7 +224,7 @@ if(grab_item_id != -1){//商品を掴んでいる
 						var window_x = window_get_width()-string_width(description)-16
 					}
 					surface_free(global.usefulwindow_surface[6]);
-					tiny_window(s_window, 6, window_x, mouse_y+12, string_width(description)+16, 28, 1);
+					tiny_window(s_window, 6, window_x, mouse_y+10, string_width(description)+10, 28, 1);
 					draw_set_color(COLOR_TEXT_WHITE)
 					draw_text(window_x+4, mouse_y+16, description);
 				}

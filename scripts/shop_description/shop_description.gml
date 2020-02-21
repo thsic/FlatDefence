@@ -5,7 +5,7 @@ var possession = argument2;
 var defender_ui = argument3;
 
 var window_width = 250;
-var window_height = 124;
+var window_height = 118;
 
 var offset_x = mouse_x - window_width;
 if(show_window){
@@ -116,7 +116,7 @@ case 1://item
 					window_width = string_width(description2)+12;
 				}
 				if(effect2 != -1){//説明文が2行なのでその分
-					window_height += 16
+					window_height += 18
 				}
 			}
 		}
@@ -144,12 +144,17 @@ case 1://item
 	if(effect1 != -1 or crystal or upgradeorb){//説明文が存在する もしくはクリスタルかオーブ
 		draw_set_color(description1_color);
 		description1 = string_replace(description1, "@", "");
+		if(!crystal and !upgradeorb){
+			description1 = string_replace(description1, "\v", string(global.effectdata[effect1, effectdata.value]));
+			description1 = string_replace(description1, "\%", string(global.effectdata[effect1, effectdata.value]*100));
+			description1 = string_replace(description1, "\l", "1");
+		}
 		draw_text(offset_x+6, offset_y+96, description1);
 	}
 	if(effect2 != -1){
 		draw_set_color(description2_color);
 		description2 = string_replace(description2, "@", "");
-		draw_text(offset_x+6, offset_y+112, description2);
+		draw_text(offset_x+6, offset_y+114, description2);
 	}
 
 	if(!possession){//所持品ならコストを表示しない

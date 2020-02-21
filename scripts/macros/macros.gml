@@ -70,8 +70,16 @@
 //
 #macro ENEMY_RANK_AMOUNT 10//ランクの個数
 
+#macro CIRCLE_PRECISION 32//円の精度
+
+//option
 #macro BGM_VOLUME_DEFAULT 0.7
 #macro SE_VOLUME_DEFAULT 0.7
+#macro DRAW_DAMAGE_DEFAULT true
+#macro DRAW_RANGE_ALWAYS_DEFAULT true
+#macro DRAW_COOLDOWN_DEFAULT true
+#macro DRAW_ENEMYHP_DEFAULT true
+#macro DRAW_ENEMY_PARAM_SIMPLE_DEFAULT true
 
 //説明
 #macro ENEMY_HP_DESCRIPTION "敵の体力です。HPが0になった敵は消滅し、ゴールドを落とします。"
@@ -102,7 +110,7 @@
 #macro COLOR_TEXT_DKGRAY c_dkgray
 #macro COLOR_TEXT_WHITE make_color_rgb(220, 220, 220)
 #macro COLOR_TEXT_YELLOW make_color_rgb(255, 242, 128)
-#macro COLOR_TEXT_ORANGE make_color_rgb(224, 152, 70)
+#macro COLOR_TEXT_ORANGE make_color_rgb(244, 172, 100)
 #macro COLOR_TEXT_GREEN c_lime
 #macro COLOR_TEXT_RED make_color_rgb(222, 40, 40)
 #macro COLOR_TEXT_PURPLE c_fuchsia
@@ -133,6 +141,12 @@
 #macro COLOR_ENEMY_PARAMTEXT_WEAK make_color_rgb(200, 200, 160)
 #macro COLOR_ENEMY_PARAMTEXT_STRONG make_color_rgb(255, 160, 140)
 #macro COLOR_WINDOW_BORDER make_color_rgb(200, 200, 180)
+
+#macro COLOR_MARKER_POWER make_color_rgb(220, 30, 0)
+#macro COLOR_MARKER_ATTACKSPEED make_color_rgb(70, 30, 190)
+#macro COLOR_MARKER_RANGE make_color_rgb(0, 120, 60)
+#macro COLOR_MARKER_GRAY c_gray
+
 
 //パーティクル
 #macro COLOR_LIFEBLOOD make_color_rgb(240, 30, 55)

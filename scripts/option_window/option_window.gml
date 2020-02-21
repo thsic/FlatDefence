@@ -22,6 +22,7 @@ if(mouse_check_button_pressed(mb_left)){
 		grab_knob = false;
 		option_open = false;
 		surface_free(global.usefulwindow_surface[8])
+		save_option();
 	}
 }
 
@@ -97,9 +98,10 @@ var enemy_param_simple_button = useful_button(s_optionWindowButton, 0, 1, 2, off
 var enemy_param_detail_button = useful_button(s_optionWindowButton, 0, 1, 2, offset_x+196, offset_y+48+26*4, "数値", COLOR_TEXT_GRAY, global.draw_enemy_param_simple, false);
 draw_set_font(FONT_DEFAULT);
 
-if(back_to_menu_button){
+if(back_to_menu_button){//backボタン
 	option_open = false;
 	surface_free(global.usefulwindow_surface[8])
+	save_option();
 }
 
 

@@ -168,14 +168,14 @@ if(mouse_check_button_pressed(mb_left)){
 				}
 			}
 			var return_gold = global.itemdata[0, itemdata.cost];
-			shop_item_product[grab_item_shop_id, SALES] -= 1;//アップグレードオーブ使わなかったので販売数減らす
+			shop_item_product[upgradeorb_shop_product_number, SALES] -= 1;//アップグレードオーブ使わなかったので販売数減らす
 			for(var j=0; j<shop_item_product[upgradeorb_shop_product_number, SALES]; j++){
 				return_gold *= PRICE_INCREASE;
 			}
 			global.gold += floor(return_gold);//返金する
 			
 			purchased_upgrade_orb = false;
-			sdm("UpgradeOrbを返金")
+			sdm("UpgradeOrbを返金");
 		}
 		else{//所持品へ戻す
 			get_item(0);

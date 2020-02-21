@@ -286,7 +286,9 @@ case 10://クリア画面の一番ダメージをだしたやつ描画
 	
 	draw_set_halign(fa_left);
 	draw_set_color(COLOR_TEXT_LTGRAY);
+	draw_set_font(FONT_ITEMNAME);
 	draw_text(x+64, y+24, global.defender_data[no1_defender_id.defender_number, data.name]);
+	draw_set_font(FONT_DEFAULT);
 	draw_text(x+182, y+24, "ダメージ");
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_text(x+246, y+24, no1_defender_id.total_damage);
