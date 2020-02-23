@@ -585,6 +585,7 @@ global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
 global.enemydata[target, enemydata.dropgold] = 6;
+global.enemydata[target, enemydata.color] = make_color_rgb(229, 146, 68);
 enemy_param_meas_rank(target);
 
 target = 1;
@@ -595,6 +596,7 @@ global.enemydata[target, enemydata.shield] = 40;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
 global.enemydata[target, enemydata.dropgold] = 9;
+global.enemydata[target, enemydata.color] = make_color_rgb(229, 146, 68);
 enemy_param_meas_rank(target);
 
 target = 2;
@@ -605,6 +607,7 @@ global.enemydata[target, enemydata.shield] = 60;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "hutuu";
 global.enemydata[target, enemydata.dropgold] = 18;
+global.enemydata[target, enemydata.color] = make_color_rgb(229, 146, 68);
 enemy_param_meas_rank(target);
 
 target = 3;
@@ -615,6 +618,7 @@ global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 1.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 3;
+global.enemydata[target, enemydata.color] = make_color_rgb(156, 204, 122);
 enemy_param_meas_rank(target);
 
 target = 4;
@@ -625,6 +629,7 @@ global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 2;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 6;
+global.enemydata[target, enemydata.color] = make_color_rgb(156, 204, 122);
 enemy_param_meas_rank(target);
 
 target = 5;
@@ -635,6 +640,7 @@ global.enemydata[target, enemydata.shield] = 20;
 global.enemydata[target, enemydata.speed] = 2.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 12;
+global.enemydata[target, enemydata.color] = make_color_rgb(156, 204, 122);
 enemy_param_meas_rank(target);
 
 #endregion
@@ -647,6 +653,7 @@ global.enemydata[target, enemydata.shield] = 0;
 global.enemydata[target, enemydata.speed] = 3;
 global.enemydata[target, enemydata.description] = "hayai";
 global.enemydata[target, enemydata.dropgold] = 4;
+global.enemydata[target, enemydata.color] = make_color_rgb(81, 191, 204);
 enemy_param_meas_rank(target);
 
 target = 7;
@@ -657,6 +664,7 @@ global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 4;
 global.enemydata[target, enemydata.description] = "hayai";
 global.enemydata[target, enemydata.dropgold] = 8;
+global.enemydata[target, enemydata.color] = make_color_rgb(81, 191, 204);
 enemy_param_meas_rank(target);
 
 target = 8;
@@ -667,6 +675,7 @@ global.enemydata[target, enemydata.shield] = 50;
 global.enemydata[target, enemydata.speed] = 4.5;
 global.enemydata[target, enemydata.description] = "hayai";
 global.enemydata[target, enemydata.dropgold] = 16;
+global.enemydata[target, enemydata.color] = make_color_rgb(81, 191, 204);
 enemy_param_meas_rank(target);
 
 target = 9;
@@ -677,6 +686,7 @@ global.enemydata[target, enemydata.shield] = 60;
 global.enemydata[target, enemydata.speed] = 0.8;
 global.enemydata[target, enemydata.description] = "katai";
 global.enemydata[target, enemydata.dropgold] = 12;
+global.enemydata[target, enemydata.color] = make_color_rgb(53, 95, 178);
 enemy_param_meas_rank(target);
 
 target = 10;
@@ -687,6 +697,7 @@ global.enemydata[target, enemydata.shield] = 90;
 global.enemydata[target, enemydata.speed] = 0.7;
 global.enemydata[target, enemydata.description] = "katai";
 global.enemydata[target, enemydata.dropgold] = 24;
+global.enemydata[target, enemydata.color] = make_color_rgb(53, 95, 178);
 enemy_param_meas_rank(target);
 
 target = 11;
@@ -697,6 +708,7 @@ global.enemydata[target, enemydata.shield] = 260;
 global.enemydata[target, enemydata.speed] = 0.6;
 global.enemydata[target, enemydata.description] = "katai";
 global.enemydata[target, enemydata.dropgold] = 48;
+global.enemydata[target, enemydata.color] = make_color_rgb(53, 95, 178);
 enemy_param_meas_rank(target);
 
 #endregion
@@ -709,6 +721,7 @@ global.enemydata[target, enemydata.shield] = 25;
 global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 20;
+global.enemydata[target, enemydata.color] = make_color_rgb(152, 107, 153);
 enemy_param_meas_rank(target);
 
 target = 13;
@@ -719,6 +732,7 @@ global.enemydata[target, enemydata.shield] = 40;
 global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 40;
+global.enemydata[target, enemydata.color] = make_color_rgb(152, 107, 153);
 enemy_param_meas_rank(target);
 
 target = 14;
@@ -729,6 +743,7 @@ global.enemydata[target, enemydata.shield] = 100;
 global.enemydata[target, enemydata.speed] = 0.5;
 global.enemydata[target, enemydata.description] = "tahu";
 global.enemydata[target, enemydata.dropgold] = 80;
+global.enemydata[target, enemydata.color] = make_color_rgb(152, 107, 153);
 enemy_param_meas_rank(target);
 
 #endregion
@@ -749,6 +764,7 @@ enum enemydata{
 	hptextcolor,
 	shieldtextcolor,
 	speedtextcolor,
+	color,
 }
 #endregion
 #endregion

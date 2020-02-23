@@ -41,5 +41,7 @@ if(destroy_enemy = true){//死亡時処理
 			global.spawn_enemy[i, spawnenemy.amount]--;
 		}
 	}
+	var break_color = global.enemydata[enemy_number, enemydata.color];
+	enemy_break_effect(x, y, 6, break_color, 20, 7, 3.5, -1);
 	instance_destroy();
 }

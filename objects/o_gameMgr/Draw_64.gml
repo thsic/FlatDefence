@@ -43,9 +43,11 @@ case gamestate.restpause:
 		if(button_y<mouse_y and mouse_y<button_y+button_height){
 			button_subimage = 1;
 			if(mouse_check_button_pressed(mb_left)){
-				timemachine_button_state[0] = 2;
-				timemachine_button_state[1] = 0;
-				timemachine_button_state[2] = 0;
+				if(!global.double_speed){//倍速状態じゃないなら通常スピードへ強制敵に
+					timemachine_button_state[0] = 2;
+					timemachine_button_state[1] = 0;
+					timemachine_button_state[2] = 0;
+				}
 				//ボタンクリックしたら強制的にウェーブスタート
 				global.gamestate = gamestate.wavestart;
 	
@@ -53,9 +55,11 @@ case gamestate.restpause:
 		}
 	}
 	if(keyboard_check_pressed(vk_shift)){//シフト押しても強制スタート
-		timemachine_button_state[0] = 2;
-		timemachine_button_state[1] = 0;
-		timemachine_button_state[2] = 0;
+		if(!global.double_speed){
+			timemachine_button_state[0] = 2;
+			timemachine_button_state[1] = 0;
+			timemachine_button_state[2] = 0;
+		}
 		global.gamestate = gamestate.wavestart;
 	}
 	

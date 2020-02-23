@@ -205,7 +205,10 @@ damage_result = ceil(damage_result)//ダメージ切り上げ
 
 //最終的なダメージ
 if(instance_exists(target_id)){
+	
 	target_id.hp -= damage_result;
+	var break_effect_color = global.enemydata[target_id.enemy_number, enemydata.color];
+	enemy_break_effect(target_id.x, target_id.y, 3, break_effect_color, 10, 4, 3.5, -1);
 	//ダメージ記録
 	if(target_id.hp <= 0){
 		record_damage(defender_id, damage_result+target_id.hp);//敵を倒した場合

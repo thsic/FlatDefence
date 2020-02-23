@@ -340,4 +340,29 @@ draw_sprite(sprite_id, 0, x, y);
 y += _hspeed;
 break
 
+case 12://敵撃破時のエフェクト
+
+	var elapsed_time = time_default - time;
+	var radius = (1-ease_in_quint(elapsed_time, 0, 1, time_default))*size;
+
+	if(time > 0){
+		time--;
+	}
+	else{
+		instance_destroy();
+	}
+	if(global.gamestate != gamestate.stageclear){//ステージクリア画面の暗い部分より上になぜか表示されるため
+		draw_set_color(effect_color);
+		draw_circle(x, y, radius, false);
+		draw_set_color(COLOR_DEFAULT);
+	}
+	
+	if(speed > 0){
+		speed -= attenuration;
+	}
+	else{
+		speed = 0;
+	}
+	break
+
 }

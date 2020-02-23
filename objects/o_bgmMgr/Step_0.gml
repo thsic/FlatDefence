@@ -58,8 +58,7 @@ if(instance_exists(o_gameMgr)){
 			if(music_fade_in_frame = -1){
 				var music_number = global.nowmusic_number
 				audio_resume_sound(music_number);
-				audio_sound_gain(music_number, global.musicdata[music_number, musicdata.volume], 1500);
-				sdm(global.musicdata[music_number, musicdata.volume])
+				audio_sound_gain(music_number, global.musicdata[music_number, musicdata.volume]*global.bgm_volume, 1500);
 				music_fade_in_frame = 90
 			}
 			else{
@@ -83,8 +82,9 @@ if(instance_exists(o_gameMgr)){
 if(fade_mode and room = r_stageSelect){
 	if(music_pause){
 		if(music_fade_in_frame = -1){
-			audio_resume_sound(global.nowmusic_number);
-			audio_sound_gain(global.nowmusic_number, 1, 1500);
+			var music_number = global.nowmusic_number
+			audio_resume_sound(music_number);
+			audio_sound_gain(music_number, global.musicdata[music_number, musicdata.volume]*global.bgm_volume, 1500);
 			music_fade_in_frame = 90
 		}
 		else{

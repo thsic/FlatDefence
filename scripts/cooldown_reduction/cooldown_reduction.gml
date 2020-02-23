@@ -10,6 +10,6 @@ repeat(level){
 }
 
 object_id.cooldown -= cooldown_time_max*(1-reduction_percent);
-if(object_id.cooldown < 0){
-	object_id.cooldown = 0;
+if(object_id.cooldown <= 0){
+	object_id.cooldown = 1;//0だとたまにcd解消が発生しなくなる
 }
