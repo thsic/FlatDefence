@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "1816aa8a-c432-4992-aa1d-2cdea1b948f4",
+            "Value": {
+                "id": "24e5eb70-256e-42ef-8895-9198d5feb40a",
+                "resourcePath": "sounds\\a_hitBullet\\a_hitBullet.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "193a6e7a-6bd7-4b57-9398-48bf1bc76f0e",
             "Value": {
                 "id": "b7f681af-7cc4-459a-8ebd-437886883ad0",
@@ -1055,6 +1063,14 @@
             }
         },
         {
+            "Key": "7639e06a-b740-490e-8a50-d62981280243",
+            "Value": {
+                "id": "be3aaa40-f4a9-47f0-86fe-a62187488e0e",
+                "resourcePath": "sounds\\a_breakEnemy\\a_breakEnemy.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "7755223e-8a55-4e92-a413-ad564637bcec",
             "Value": {
                 "id": "a003464b-312e-4893-875c-6cccab6a559e",
@@ -1799,6 +1815,14 @@
             }
         },
         {
+            "Key": "ccc5b70d-2e08-45fd-a706-0eadbf20462d",
+            "Value": {
+                "id": "92e693d6-579e-406d-9dcb-dae0533d7e6d",
+                "resourcePath": "scripts\\play_se\\play_se.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cd9c0961-d2ba-4de4-a3aa-4c5b4250e955",
             "Value": {
                 "id": "ad783bc9-1202-4da9-aa03-4b1f93b42c45",
@@ -2071,11 +2095,27 @@
             }
         },
         {
+            "Key": "e56e1878-740c-413c-a54b-7fd718c3088a",
+            "Value": {
+                "id": "2b079039-bc05-403f-875f-79993d3aec73",
+                "resourcePath": "sounds\\pu_n\\pu_n.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "e586ccdb-a735-48c4-ad94-781f69dd2aaf",
             "Value": {
                 "id": "b62b76df-f155-4fe9-ae42-4fbda08b075d",
                 "resourcePath": "fonts\\fo_noto24\\fo_noto24.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "e60cd63e-1ea7-4938-a7c1-4631a08e3ec1",
+            "Value": {
+                "id": "d3eabb95-973c-4acd-8a1e-fc6d8a76af4e",
+                "resourcePath": "sounds\\a_button1\\a_button1.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -2452,6 +2492,7 @@
         "e2b537bd-eff8-4f42-a6f6-13f9eb2cbcdb",
         "66a344f9-b416-43da-a192-f31742ee99e5",
         "88f70884-75e2-4d61-8c10-5101491038cb",
+        "ccc5b70d-2e08-45fd-a706-0eadbf20462d",
         "c288a743-4f1d-41d7-b452-9cc7219bc001"
     ],
     "tutorial": ""

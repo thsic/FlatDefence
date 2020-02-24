@@ -177,3 +177,9 @@
 #macro FONT_MENUBUTTON fo_kosugiMaru10Ja
 #macro FONT_ENEMY_UI_PARAM fo_yasa10
 #macro FONT_ITEMNAME fo_yasaNormal
+
+//SE
+#macro SE_ENEMY_HIT_BULLET a_hitBullet 
+#macro SE_ENEMY_DESTROY a_breakEnemy
+#macro SE_STAGESELECT_BUTTON_ON_MOUSE a_button1
+
