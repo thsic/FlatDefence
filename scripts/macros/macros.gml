@@ -182,4 +182,7 @@
 #macro SE_ENEMY_HIT_BULLET a_hitBullet 
 #macro SE_ENEMY_DESTROY a_breakEnemy
 #macro SE_STAGESELECT_BUTTON_ON_MOUSE a_button1
-
+#macro SE_STAGESELECT_CLICK a_pun
+#macro SE_DROP_DEFENDER a_muo
+#macro SE_SHOP_BOUGHT a_coin
+#macro SE_ITEM_EQUIP a_pin

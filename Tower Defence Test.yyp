@@ -623,6 +623,14 @@
             }
         },
         {
+            "Key": "400ff688-d4b5-4dac-9759-6d1bc5ecf9ae",
+            "Value": {
+                "id": "82f1da48-0267-4bf4-8145-be841347e17b",
+                "resourcePath": "sounds\\a_muo\\a_muo.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "404309a2-3f52-4ecf-959e-9ba0713bb6e2",
             "Value": {
                 "id": "fcee8a52-3426-4921-a996-bd6e26baa3c9",
@@ -1759,6 +1767,14 @@
             }
         },
         {
+            "Key": "c9683b87-a2cd-432a-9d3c-20887fea1edf",
+            "Value": {
+                "id": "9640f517-bdb5-4669-b6c1-6ce5a9d495b6",
+                "resourcePath": "sounds\\a_pin\\a_pin.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "c9a2c4da-cbfd-43a7-94f3-7db95e24a0bb",
             "Value": {
                 "id": "94749c6b-5759-42c8-b71f-540a35a33104",
@@ -1852,6 +1868,14 @@
                 "id": "596aa8f7-418e-4ab3-b39b-80303e68f875",
                 "resourcePath": "scripts\\show_defender_ui\\show_defender_ui.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d030a44f-b01e-4496-912a-c1160c137077",
+            "Value": {
+                "id": "1ff6025a-785b-4668-b0d3-046e88c125fa",
+                "resourcePath": "sounds\\a_coin\\a_coin.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -2098,7 +2122,7 @@
             "Key": "e56e1878-740c-413c-a54b-7fd718c3088a",
             "Value": {
                 "id": "2b079039-bc05-403f-875f-79993d3aec73",
-                "resourcePath": "sounds\\pu_n\\pu_n.yy",
+                "resourcePath": "sounds\\a_pun\\a_pun.yy",
                 "resourceType": "GMSound"
             }
         },

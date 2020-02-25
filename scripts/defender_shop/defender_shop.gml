@@ -39,6 +39,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
 				
+				play_se(SE_SHOP_BOUGHT, 60, 0.3, false);
 				grab_defender_id = shop_product[grab_product_number, DEFENDER];
 				grab_defender_shop_id = grab_product_number
 				window_mouse_set(shop_product[grab_product_number, SPRITE_X], shop_product[grab_product_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
@@ -62,6 +63,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
 				
+				play_se(SE_SHOP_BOUGHT, 60, 0.3, false);
 				grab_item_id = shop_item_product[grab_product_number, ITEM];
 				grab_item_shop_id = grab_product_number;
 				grab_item_possession_id = -1;
@@ -109,6 +111,7 @@ if(grab_defender_id != -1){
 		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){
 			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
 				sdm(string(object_get_name(grab_defender_id))+ "を設置")
+				play_se(SE_DROP_DEFENDER, 55, 0.4, true);
 				var create_defender = instance_create_layer(nearest_marker.x+SPRITE_SIZE, nearest_marker.y+SPRITE_SIZE, "Defenders", grab_defender_id);
 				if(global.gamestate = gamestate.rest or global.gamestate = gamestate.restpause){
 					create_defender.cooldown = 0;//休憩中なら設置したdefenderのクールダウンを即解消

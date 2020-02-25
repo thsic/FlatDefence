@@ -19,7 +19,7 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 		var touch_button = floor((mouse_y-stage_select_button[0, stageselectbutton.window_y]+window_gap/2)/56);
 		if(selecting_button != touch_button){
 			//違うボタンになったらse再生
-			play_se(SE_STAGESELECT_BUTTON_ON_MOUSE, 30, 0.3);
+			play_se(SE_STAGESELECT_BUTTON_ON_MOUSE, 30, 0.2, false);
 		}
 		selecting_button = touch_button;
 		stage_select_button[touch_button, stageselectbutton.state] = 1;
@@ -31,6 +31,7 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 			//------------------------
 			//     ステージ移動
 			//------------------------
+			play_se(SE_STAGESELECT_CLICK, 60, 0.4, true);
 			switch(selecting_button){
 			case 0:
 				stage_goto = r_stage1;

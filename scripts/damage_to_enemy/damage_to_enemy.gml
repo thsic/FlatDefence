@@ -205,7 +205,7 @@ damage_result = ceil(damage_result)//ダメージ切り上げ
 
 //最終的なダメージ
 if(instance_exists(target_id)){
-	play_se(SE_ENEMY_HIT_BULLET, 30, 0.2);
+	play_se(SE_ENEMY_HIT_BULLET, 30, 0.2, true);
 	target_id.hp -= damage_result;
 	var break_effect_color = global.enemydata[target_id.enemy_number, enemydata.color];
 	enemy_break_effect(target_id.x, target_id.y, 3, break_effect_color, 10, 4, 3.5, -1);

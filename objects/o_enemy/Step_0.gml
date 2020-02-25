@@ -43,6 +43,6 @@ if(destroy_enemy = true){//死亡時処理
 	}
 	var break_color = global.enemydata[enemy_number, enemydata.color];
 	enemy_break_effect(x, y, 6, break_color, 20, 7, 3.5, -1);
-	play_se(SE_ENEMY_DESTROY, 40, 0.15);
+	play_se(SE_ENEMY_DESTROY, 40, 0.15, true);
 	instance_destroy();
 }
