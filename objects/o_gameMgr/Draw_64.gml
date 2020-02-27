@@ -48,6 +48,8 @@ case gamestate.restpause:
 					timemachine_button_state[1] = 0;
 					timemachine_button_state[2] = 0;
 				}
+				play_se(SE_WAVESTART_BUTTON, 30, 0.3, false);
+				audio_sound_pitch(SE_WAVESTART_BUTTON, 1.3);
 				//ボタンクリックしたら強制的にウェーブスタート
 				global.gamestate = gamestate.wavestart;
 	
@@ -60,6 +62,8 @@ case gamestate.restpause:
 			timemachine_button_state[1] = 0;
 			timemachine_button_state[2] = 0;
 		}
+		play_se(SE_WAVESTART_BUTTON, 30, 0.3, false);
+		audio_sound_pitch(SE_WAVESTART_BUTTON, 1.3);
 		global.gamestate = gamestate.wavestart;
 	}
 	

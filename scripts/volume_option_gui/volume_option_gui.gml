@@ -51,7 +51,15 @@ if(grab_knob){
 		audio_sound_gain(global.nowmusic_number, nowmusic_volume*global.bgm_volume, 0);//音量変更
 	}
 	if(sound_type = 1){
+		if(se_test_cooldown = 0){
+			play_se(SE_MENU_BUTTON, 40, 0.35, false);
+			se_test_cooldown = 20;
+		}
+		else{
+			se_test_cooldown--;
+		}
 		global.se_volume = volume
+		
 	}
 	
 	

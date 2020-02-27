@@ -21,7 +21,7 @@ if(mouse_check_button_pressed(mb_left)){
 		menu_open = false;
 		grab_knob = false;
 		option_open = false;
-		surface_free(global.usefulwindow_surface[8])
+		surface_free(global.usefulwindow_surface[8]);
 		save_option();
 	}
 }
@@ -78,7 +78,7 @@ volume_option_gui(0, offset_x+80, offset_y);
 volume_option_gui(1, offset_x+80, offset_y+24);
 
 draw_set_font(FONT_MENUBUTTON);
-draw_set_color(COLOR_DEFAULT)
+draw_set_color(COLOR_DEFAULT);
 //戻るボタン
 var back_to_menu_button = useful_button(s_optionWindowButton, 0, 1, -1, offset_x, offset_y+menu_window_height-32, "Back", COLOR_TEXT_GRAY, noone, false);
 //ダメージ
@@ -100,7 +100,8 @@ draw_set_font(FONT_DEFAULT);
 
 if(back_to_menu_button){//backボタン
 	option_open = false;
-	surface_free(global.usefulwindow_surface[8])
+	surface_free(global.usefulwindow_surface[8]);
+	play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	save_option();
 }
 
@@ -110,55 +111,65 @@ if(back_to_menu_button){//backボタン
 if(global.draw_damage){
 	if(draw_damage_button_off){
 		global.draw_damage = false;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 else{
 	if(draw_damage_button_on){
 		global.draw_damage = true;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 //射程表示
 if(global.draw_range_always){
 	if(draw_range_button_off){
 		global.draw_range_always = false;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 else{
 	if(draw_range_button_on){
 		global.draw_range_always = true;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 //クールダウン
 if(global.draw_cooldown){
 	if(draw_cooldown_button_off){
 		global.draw_cooldown = false;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 else{
 	if(draw_cooldown_button_on){
 		global.draw_cooldown = true;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 //敵hp
 if(global.draw_enemyhp){
 	if(draw_enemyhp_button_off){
 		global.draw_enemyhp = false;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 else{
 	if(draw_enemyhp_button_on){
 		global.draw_enemyhp = true;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 //敵ぱらめーた
 if(global.draw_enemy_param_simple){
 	if(enemy_param_detail_button){
 		global.draw_enemy_param_simple = false;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 else{
 	if(enemy_param_simple_button){
 		global.draw_enemy_param_simple = true;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 }
 

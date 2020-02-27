@@ -618,7 +618,7 @@ global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 1.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 3;
-global.enemydata[target, enemydata.color] = make_color_rgb(156, 204, 122);
+global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
 enemy_param_meas_rank(target);
 
 target = 4;
@@ -629,7 +629,7 @@ global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 2;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 6;
-global.enemydata[target, enemydata.color] = make_color_rgb(156, 204, 122);
+global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
 enemy_param_meas_rank(target);
 
 target = 5;
@@ -640,7 +640,7 @@ global.enemydata[target, enemydata.shield] = 20;
 global.enemydata[target, enemydata.speed] = 2.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 12;
-global.enemydata[target, enemydata.color] = make_color_rgb(156, 204, 122);
+global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
 enemy_param_meas_rank(target);
 
 #endregion

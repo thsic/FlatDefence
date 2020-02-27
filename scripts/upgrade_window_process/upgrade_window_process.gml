@@ -145,11 +145,18 @@ for(var i=0; i<item_number; i++){
 				upgrade_button[i, upgradebutton.state] = 1;//カーソルが上にある
 			}
 			if(mouse_check_button_pressed(mb_left) or item_number <= 4){//アイテムが5か6ならクリックしないとアイテム選択ができない 利便性上昇
+				
 				for(var j=0; j<item_number; j++){
+					if(upgrade_button[j, upgradebutton.state] = 2){
+						var click_button_prev = j;
+					}
 					upgrade_button[j, upgradebutton.state] = 0;//一旦全てのボタンを通常に戻してから↓
 				}
 				upgrade_button[i, upgradebutton.state] = 2;//クリックされたボタンを押す
 				choosing_upgrade_item_id = upgrade_defender_id.itemslot[i]//現在選択されているitemのid
+				if(click_button_prev != i){//前フレームと違うボタンが押されていたら音鳴らす
+					play_se(SE_UPGRADE_ITEM_SELECT_BUTTON, 40, 0.35, false);
+				}
 			}
 		}
 	}
@@ -174,6 +181,7 @@ if(mouse_check_button_pressed(mb_left)){
 			}
 			global.gold += floor(return_gold);//返金する
 			
+			play_se(SE_UPGRADE_WINDOW_CANCEL, 40, 0.15, false);
 			purchased_upgrade_orb = false;
 			sdm("UpgradeOrbを返金");
 		}
@@ -264,6 +272,8 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 					upgrade_defender_id.skill_cooldown = after_skill_cooldown*skill_cooldown_percent//アップグレード後のスキルでその%だけクールダウンを消化
 				}
 				closewindow = true;
+				
+				
 			}
 		}
 	}
@@ -272,10 +282,12 @@ if(upgrade_button[10, upgradebutton.state] = 2){
 if(closewindow){//ウィンドウ消す
 	upgrade_ui = false;
 	show_window = false;
+	
 	if(surface_exists(global.usefulwindow_surface[0])){
 		surface_set_target(global.usefulwindow_surface[0]);
 		draw_clear_alpha(c_black, 0);
 		surface_reset_target();
 		surface_free(global.usefulwindow_surface[0]);
 	}
+	
 }

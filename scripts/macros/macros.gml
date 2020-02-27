@@ -73,8 +73,8 @@
 #macro CIRCLE_PRECISION 32//円の精度
 
 //option
-#macro BGM_VOLUME_DEFAULT 0.7
-#macro SE_VOLUME_DEFAULT 0.7
+#macro BGM_VOLUME_DEFAULT 0.25
+#macro SE_VOLUME_DEFAULT 0.25
 #macro DRAW_DAMAGE_DEFAULT true
 #macro DRAW_RANGE_ALWAYS_DEFAULT true
 #macro DRAW_COOLDOWN_DEFAULT true
@@ -183,6 +183,17 @@
 #macro SE_ENEMY_DESTROY a_breakEnemy
 #macro SE_STAGESELECT_BUTTON_ON_MOUSE a_button1
 #macro SE_STAGESELECT_CLICK a_pun
-#macro SE_DROP_DEFENDER a_muo
-#macro SE_SHOP_BOUGHT a_coin
-#macro SE_ITEM_EQUIP a_pin
+#macro SE_DROP_DEFENDER a_switch
+#macro SE_SHOP_BOUGHT a_cashRegisterDrawer
+#macro SE_ITEM_EQUIP a_kachi
+#macro SE_SHOP_BOUGHT_CANCEL a_cancel
+#macro SE_UPGRADE_ITEM_SELECT_BUTTON a_button1
+#macro SE_UPGRADE_WINDOW_CANCEL a_cancel
+#macro SE_SELL_DEFENDER a_cashRegisterDrawer
+#macro SE_TITLE_BUTTON a_bookFlip
+#macro SE_MENU_BUTTON a_button1
+#macro SE_MENU_OPEN_BUTTON a_kachi
+#macro SE_TIMEMACHINE_BUTTON a_button1
+#macro SE_WAVESTART_BUTTON a_button1
+#macro SE_DAMAGE_TO_LIFE a_muo
+#macro SE_UPGRADE a_upgrade

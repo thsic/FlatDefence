@@ -17,6 +17,9 @@ get_gold += global.defender_data[sell_id.defender_number, data.cost];
 global.score_gold_minus += get_gold;//売却ゴールドはクリア時のスコアに加算されない
 global.gold += get_gold;
 
+play_se(SE_SELL_DEFENDER, 60, 0.3, false);
+audio_sound_pitch(SE_SELL_DEFENDER, 1.2);
+
 //弾消す
 for(var i=0; i<instance_number(o_defender_bullet); i++){
 	if(instance_find(o_defender_bullet, i).defender_id = finded_defender_id){

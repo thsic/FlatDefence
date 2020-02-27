@@ -29,9 +29,11 @@ else{//ポーズ中とか
 	}
 }
 
+var reaching_goal = false
 if(path_position = 1){//最後まで到達した
 	damage_to_player_life();
 	destroy_enemy = true;
+	reaching_goal = true
 }
 
 if(destroy_enemy = true){//死亡時処理
@@ -42,7 +44,9 @@ if(destroy_enemy = true){//死亡時処理
 		}
 	}
 	var break_color = global.enemydata[enemy_number, enemydata.color];
-	enemy_break_effect(x, y, 6, break_color, 20, 7, 3.5, -1);
-	play_se(SE_ENEMY_DESTROY, 40, 0.15, true);
+	if(!reaching_goal){
+		enemy_break_effect(x, y, 6, break_color, 20, 7, 3.5, -1);
+		play_se(SE_ENEMY_DESTROY, 40, 0.18, true);
+	}
 	instance_destroy();
 }

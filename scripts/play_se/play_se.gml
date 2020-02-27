@@ -10,5 +10,6 @@ if(audio_is_playing(index) and volume_decay){//すでに同じseが再生中な�
 
 audio_play_sound(index, priority, false);
 audio_sound_gain(index, global.se_volume*level, 0);
+audio_sound_pitch(index, 1);
 
 

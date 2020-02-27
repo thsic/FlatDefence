@@ -36,15 +36,18 @@ if(o_gameMgr.change_screen = -1){
 	if(restart_button){
 		//リスタート処理
 		o_gameMgr.change_screen = room;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 
 	}
 	if(stageselect_button){
 		//ステージセレクトへ
 		o_gameMgr.change_screen = r_stageSelect;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 	}
 	if(option_button){
 		//オプションを開く
 		option_open = true;
+		play_se(SE_MENU_BUTTON, 40, 0.4, false);
 		surface_free(global.usefulwindow_surface[8])
 	}
 }

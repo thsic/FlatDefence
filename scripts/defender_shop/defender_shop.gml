@@ -39,7 +39,8 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
 				
-				play_se(SE_SHOP_BOUGHT, 60, 0.3, false);
+				play_se(SE_SHOP_BOUGHT, 60, 0.25, false);
+				audio_sound_pitch(SE_SHOP_BOUGHT, 0.8);
 				grab_defender_id = shop_product[grab_product_number, DEFENDER];
 				grab_defender_shop_id = grab_product_number
 				window_mouse_set(shop_product[grab_product_number, SPRITE_X], shop_product[grab_product_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
@@ -56,14 +57,14 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			grab_number = shop_item_product[grab_number, ITEM]
 			
 			var reduce_gold = global.itemdata[grab_number, itemdata.cost];
-			sdm(shop_item_product[grab_product_number, SALES])
 			for(var i=0; i<shop_item_product[grab_product_number, SALES]; i++){//販売数によって減らすお金が増える
 				reduce_gold *= PRICE_INCREASE;
 			}
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
 				
-				play_se(SE_SHOP_BOUGHT, 60, 0.3, false);
+				play_se(SE_SHOP_BOUGHT, 60, 0.25, false);
+				audio_sound_pitch(SE_SHOP_BOUGHT, 1);
 				grab_item_id = shop_item_product[grab_product_number, ITEM];
 				grab_item_shop_id = grab_product_number;
 				grab_item_possession_id = -1;
@@ -112,6 +113,7 @@ if(grab_defender_id != -1){
 			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
 				sdm(string(object_get_name(grab_defender_id))+ "を設置")
 				play_se(SE_DROP_DEFENDER, 55, 0.4, true);
+				audio_sound_pitch(SE_DROP_DEFENDER, 1);
 				var create_defender = instance_create_layer(nearest_marker.x+SPRITE_SIZE, nearest_marker.y+SPRITE_SIZE, "Defenders", grab_defender_id);
 				if(global.gamestate = gamestate.rest or global.gamestate = gamestate.restpause){
 					create_defender.cooldown = 0;//休憩中なら設置したdefenderのクールダウンを即解消
@@ -135,6 +137,7 @@ if(grab_defender_id != -1){
 				global.gold += floor(return_gold);
 				}//返金
 				grab_defender_id = -1;
+				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
 			}
 		}
 		else{
@@ -145,6 +148,7 @@ if(grab_defender_id != -1){
 			}
 			global.gold += floor(return_gold);
 			grab_defender_id = -1;
+			play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
 		}
 	}
 }
@@ -204,6 +208,7 @@ if(grab_item_id != -1){
 						return_gold *= PRICE_INCREASE;
 					}
 					global.gold += floor(return_gold)
+					play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
 					
 				}
 			}
@@ -219,6 +224,7 @@ if(grab_item_id != -1){
 					return_gold *= PRICE_INCREASE;
 				}
 				global.gold += floor(return_gold);
+				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
 			}
 			else{
 				global.item_possession[grab_item_possession_id] = grab_item_id

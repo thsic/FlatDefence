@@ -29,7 +29,10 @@ draw_set_halign(fa_left);
 draw_set_color(COLOR_DEFAULT);
 
 if(mouse_check_button(mb_left)){
-	change_room = true
+	if(!change_room){
+		change_room = true
+		play_se(SE_TITLE_BUTTON, 30, 0.3, false);
+	}
 }
 if(change_room){
 	change_room_1(r_stageSelect, 30, COLOR_BACKGROUND);

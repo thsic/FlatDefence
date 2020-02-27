@@ -3,6 +3,7 @@
 var item_id = argument0;
 var defender_id = argument1;
 var result = false
+var equipped_item_count = 0;
 for(var i=0; i<defender_id.itemslot_amount; i++){
 	if(global.itemdata[item_id, itemdata.upgraded] = -1){//アップグレードオーブ使用
 		var draw_equid_effect = false
@@ -13,7 +14,7 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 		break
 	}
 	else if(defender_id.itemslot[i] = -1){//装備できるか確認
-		var equipped_item_count = i-1
+		equipped_item_count = i-1
 		var draw_equid_effect = true
 		if(global.itemdata[item_id, itemdata.skill] != -1){//アイテムがスキル装備なら
 			if(defender_id.skill_id = -1){//defenderがスキルを装備していないなら
@@ -60,7 +61,8 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 }
 if(result){
 	sdm(string(global.itemdata[item_id, itemdata.name]) + "を装備")
-	play_se(SE_ITEM_EQUIP, 55, 0.3, false);
+	play_se(SE_ITEM_EQUIP, 55, 0.35, false);
+	audio_sound_pitch(SE_ITEM_EQUIP, 0.8+equipped_item_count*0.05);
 	if(draw_equid_effect){
 		item_equip_effect(mean(mouse_x, defender_id.x), mean(mouse_y, defender_id.y), item_id, equipped_item_count, COLOR_ITEM_EQUIP_EFFECT);//装備エフェクト
 	}
