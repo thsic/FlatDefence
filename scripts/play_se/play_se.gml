@@ -4,6 +4,7 @@ var priority = argument1;
 var level = argument2;
 var volume_decay = argument3;
 
+level *= 1.5;//調整用
 if(audio_is_playing(index) and volume_decay){//すでに同じseが再生中なら音量をすごく小さくする
 	level *= 0.3;
 }

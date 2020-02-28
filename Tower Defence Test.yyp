@@ -759,6 +759,14 @@
             }
         },
         {
+            "Key": "4b9629e1-6e1e-4c9c-a8ce-5d7a187ca9a4",
+            "Value": {
+                "id": "44a07e49-20e1-4de6-b66e-5adf34a62b15",
+                "resourcePath": "views\\4b9629e1-6e1e-4c9c-a8ce-5d7a187ca9a4.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "4c410b3c-6277-4b04-9803-a15defbcd63c",
             "Value": {
                 "id": "557502e1-c0ad-482a-8c71-df4a2003bc4e",
@@ -1423,6 +1431,14 @@
             }
         },
         {
+            "Key": "962499ba-6c04-4719-a2aa-5d1c89211df0",
+            "Value": {
+                "id": "2a98e273-127e-4013-88e6-eafefba8af83",
+                "resourcePath": "views\\962499ba-6c04-4719-a2aa-5d1c89211df0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "96b93399-b4f0-4cc3-a553-0b75f03576a3",
             "Value": {
                 "id": "d9145198-a5df-4dee-b3f3-60d2ba9f0862",
@@ -1684,6 +1700,14 @@
                 "id": "381d5257-2406-4a9b-8276-f0083409ca32",
                 "resourcePath": "objects\\o_dBasic\\o_dBasic.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b96e4f5d-d680-461a-8ea7-9211a5b70559",
+            "Value": {
+                "id": "7e7695b5-413d-4747-a1c2-0f4a65f6289f",
+                "resourcePath": "sounds\\a_kyubanPon\\a_kyubanPon.yy",
+                "resourceType": "GMSound"
             }
         },
         {

@@ -1,5 +1,5 @@
 var window_x = 64;
-var window_y = 32;
+var window_y = 0;
 var window_gap = 8;
 
 
@@ -10,7 +10,7 @@ for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
 	stage_select_button[i, stageselectbutton.state] = 0;
 }
 if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
-	if(stage_select_button[0, stageselectbutton.window_y] < mouse_y and mouse_y < stage_select_button[STAGESELECT_BUTTON_AMOUNT-1, stageselectbutton.window_y]+STAGESELECT_BUTTON_HEIGHT){
+	if(stage_select_button[0, stageselectbutton.window_y] < mouse_y and mouse_y < stage_select_button[release_stage, stageselectbutton.window_y]+STAGESELECT_BUTTON_HEIGHT){
 		//いずれかのボタンに触れている
 		for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){//一旦ステートリセット
 			stage_select_button[i, stageselectbutton.state] = 0;
@@ -28,6 +28,7 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 		if(mouse_check_button_pressed(mb_left)){//クリックされたら
 			surface_free(global.usefulwindow_surface[0]);
 			surface_free(global.usefulwindow_surface[1]);
+			surface_free(global.usefulwindow_surface[2]);
 			//------------------------
 			//     ステージ移動
 			//------------------------
@@ -41,6 +42,9 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 			break
 			case 2:
 				stage_goto = r_stage3;
+			break
+			case 3:
+				stage_goto = r_stage4;
 			break
 			}
 		}

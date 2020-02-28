@@ -30,6 +30,7 @@ if(!show_window){
 							ui_window_width = 300;//要調整
 							ui_window_height = 200;
 							show_defender_ui_window();
+							play_se(SE_SHOW_DEFENDER_PARAMWINDOW, 40, 0.3, false);
 							break//forからぬける
 						}
 					}

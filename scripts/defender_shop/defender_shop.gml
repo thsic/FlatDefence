@@ -39,7 +39,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
 				
-				play_se(SE_SHOP_BOUGHT, 60, 0.25, false);
+				play_se(SE_SHOP_BOUGHT, 60, 0.22, false);
 				audio_sound_pitch(SE_SHOP_BOUGHT, 0.8);
 				grab_defender_id = shop_product[grab_product_number, DEFENDER];
 				grab_defender_shop_id = grab_product_number
@@ -63,7 +63,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
 				
-				play_se(SE_SHOP_BOUGHT, 60, 0.25, false);
+				play_se(SE_SHOP_BOUGHT, 60, 0.22, false);
 				audio_sound_pitch(SE_SHOP_BOUGHT, 1);
 				grab_item_id = shop_item_product[grab_product_number, ITEM];
 				grab_item_shop_id = grab_product_number;
@@ -83,6 +83,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			global.item_possession[grab_number] = -1;//所持アイテムを掴んだので一覧から消す
 			item_possession_data[grab_number, ITEM] = -1;//同じく
 			grab_item_possession_id = grab_number;//所持アイテムのマス目？番号
+			play_se(SE_INVENTORY_GRAB, 40, 0.25, false);
 		}
 	}
 }
@@ -112,7 +113,7 @@ if(grab_defender_id != -1){
 		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){
 			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
 				sdm(string(object_get_name(grab_defender_id))+ "を設置")
-				play_se(SE_DROP_DEFENDER, 55, 0.4, true);
+				play_se(SE_DROP_DEFENDER, 55, 0.3, true);
 				audio_sound_pitch(SE_DROP_DEFENDER, 1);
 				var create_defender = instance_create_layer(nearest_marker.x+SPRITE_SIZE, nearest_marker.y+SPRITE_SIZE, "Defenders", grab_defender_id);
 				if(global.gamestate = gamestate.rest or global.gamestate = gamestate.restpause){
@@ -213,7 +214,10 @@ if(grab_item_id != -1){
 				}
 			}
 			else{
-				if(!purchase_item){global.item_possession[grab_item_possession_id] = grab_item_id}
+				if(!purchase_item){
+					global.item_possession[grab_item_possession_id] = grab_item_id;
+					play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
+				}
 			}
 			grab_item_id = -1;
 		}
@@ -227,7 +231,8 @@ if(grab_item_id != -1){
 				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
 			}
 			else{
-				global.item_possession[grab_item_possession_id] = grab_item_id
+				global.item_possession[grab_item_possession_id] = grab_item_id;
+				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
 			}
 			grab_item_id = -1;
 		}

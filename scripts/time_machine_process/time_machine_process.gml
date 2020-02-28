@@ -18,6 +18,8 @@ if(keyboard_check_pressed(DOUBLE_SPEED_BUTTON)){
 		}
 		timemachine_button_state[0] = 2//等速に
 		timemachine_change_state(0);
+		play_se(SE_TIMEMACHINE_BUTTON, 30, 0.15, false);
+		audio_sound_pitch(SE_TIMEMACHINE_BUTTON, 1.2);
 	}
 	else{
 		for(var i=0; i<3; i++){
@@ -25,6 +27,8 @@ if(keyboard_check_pressed(DOUBLE_SPEED_BUTTON)){
 		}
 		timemachine_button_state[2] = 2//コントロールキーが押されると倍速に
 		timemachine_change_state(2);
+		play_se(SE_TIMEMACHINE_BUTTON, 30, 0.15, false);
+		audio_sound_pitch(SE_TIMEMACHINE_BUTTON, 1.2);
 	}
 	
 
@@ -54,6 +58,8 @@ if(keyboard_check_pressed(PAUSE_BUTTON) or mouse_check_button_pressed(mb_middle)
 		var button = 0
 	}
 	timemachine_change_state(button);
+	play_se(SE_TIMEMACHINE_BUTTON, 30, 0.15, false);
+	audio_sound_pitch(SE_TIMEMACHINE_BUTTON, 1.2);
 }
 #endregion
 
@@ -76,6 +82,8 @@ if(window_x < mouse_x and mouse_x < window_x+width and window_y < mouse_y and mo
 			}
 			timemachine_button_state[mouse_on_button] = 2;
 			timemachine_change_state(mouse_on_button);//ステート変更
+			play_se(SE_TIMEMACHINE_BUTTON, 30, 0.15, false);
+			audio_sound_pitch(SE_TIMEMACHINE_BUTTON, 1.2);
 		}
 	}
 	else{

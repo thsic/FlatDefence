@@ -3,11 +3,22 @@ draw_rectangle(0, 0, room_width, room_height, false);
 
 for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
 	if(stage_select_button[i, stageselectbutton.state] = 0){
-		tiny_window(s_window, 0, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 0.7);
 		var x_offset = stage_select_button[i, stageselectbutton.window_x];
 		var y_offset = stage_select_button[i, stageselectbutton.window_y];
+		if(release_stage < i){//未開放
+			tiny_window(s_enemyParamWindow, 2, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 1);
+			draw_set_alpha(0.8);
+			draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   TotalScore "+string(stage_release_score[i])+" 以上");
+			draw_set_alpha(1);
+		}
+		else{//解放済み
+			tiny_window(s_window, 0, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 0.7);
+			draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   Score:"+string(global.stagescore[i+1]));
+		}
+		
+		
 		//draw_set_font()
-		draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   Score:"+string(global.stagescore[i+1]));
+		//draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   Score:"+string(global.stagescore[i+1]));
 		
 	}
 }
@@ -45,7 +56,7 @@ if(selecting_button != -1){
 draw_set_halign(fa_middle);
 draw_set_font(FONT_STAGESELECT_TOTALSCORE);
 draw_set_color(COLOR_TEXT_LTGRAY);
-draw_text(sprite_x+width/2, sprite_y+height+40, "TOTALSCORE    "+string_format(global.totalscore, 1, 0));
+draw_text(sprite_x+width/2+16, sprite_y+height+40, "TOTALSCORE   "+string_format(global.totalscore, 1, 0));
 
 draw_set_halign(fa_left);
 draw_set_font(FONT_DEFAULT)

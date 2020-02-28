@@ -42,5 +42,4 @@ if(global.double_speed){//倍速処理
 else{
 	room_speed = FPS_DEFAULT;
 }
-play_se(SE_TIMEMACHINE_BUTTON, 30, 0.3, false);
-audio_sound_pitch(SE_TIMEMACHINE_BUTTON, 1.2);
+
