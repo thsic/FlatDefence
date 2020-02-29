@@ -20,7 +20,7 @@ for(var i=0; i<defender_id.itemslot_amount; i++){
 }
 
 play_se(SE_UPGRADE, 70, 0.25, false);
-audio_sound_pitch(SE_UPGRADE, 0.9+upgraded_item*0.05);
+audio_sound_pitch(SE_UPGRADE, 0.7+upgraded_item*0.05);
 
 blast_circle(effect_x, effect_y, 0, 0, 56, color, 26, 12, 1, upgraded_item+3);
 

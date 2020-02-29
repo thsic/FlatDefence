@@ -479,6 +479,14 @@
             }
         },
         {
+            "Key": "2e757313-6249-44bb-a650-4a7c926af17f",
+            "Value": {
+                "id": "302e6fb8-0fb6-4a05-ac8a-b2a0e777896d",
+                "resourcePath": "sounds\\a_lemonLime\\a_lemonLime.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "2eca34ff-0f90-451b-ac8c-a0b48af35698",
             "Value": {
                 "id": "fdd11fb7-2124-433c-b436-5d8ea476151a",
@@ -1164,6 +1172,14 @@
                 "id": "66a58bfe-1d8f-419f-9724-3fb2c055de9b",
                 "resourcePath": "sprites\\s_sellButton\\s_sellButton.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7ada6e6b-c777-42fd-9dba-bdd49b70cb91",
+            "Value": {
+                "id": "658695c7-c377-4458-a088-184ef8fa7b67",
+                "resourcePath": "sounds\\a_iAlwaysBeAlienatedByOthers\\a_iAlwaysBeAlienatedByOthers.yy",
+                "resourceType": "GMSound"
             }
         },
         {
