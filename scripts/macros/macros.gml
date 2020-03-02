@@ -202,7 +202,7 @@
 #macro SE_SELL_DEFENDER a_cashRegisterDrawer
 #macro SE_TITLE_BUTTON a_bookFlip
 #macro SE_MENU_BUTTON a_button1
-#macro SE_MENU_OPEN_BUTTON a_kachi
+#macro SE_MENU_OPEN_BUTTON a_button1
 #macro SE_TIMEMACHINE_BUTTON a_button1
 #macro SE_WAVESTART_BUTTON a_button1
 #macro SE_DAMAGE_TO_LIFE a_muo

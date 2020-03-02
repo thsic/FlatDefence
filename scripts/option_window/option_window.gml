@@ -38,8 +38,9 @@ if(offset_x < mouse_x and mouse_x < offset_x+80){
 		}
 		if(mouse_check_button_pressed(mb_left)){
 			global.bgm_volume = BGM_VOLUME_DEFAULT;
-			var nowmusic_volume = global.musicdata[global.nowmusic_number, musicdata.volume]
-			audio_sound_gain(global.nowmusic_number, nowmusic_volume*global.bgm_volume, 0);//音量変更
+			var nowmusic_volume = global.musicdata[global.nowmusic_number, musicdata.volume];
+			var nowmusic_number = global.musicdata[global.nowmusic_number, musicdata.path];
+			audio_sound_gain(nowmusic_number, nowmusic_volume*global.bgm_volume, 0);//音量変更
 		}
 	}
 }

@@ -34,8 +34,9 @@ if(instance_exists(o_gameMgr)){
 		if(music_fade_out_frame = -1){
 			fade_mode = true//フェードモード
 			music_fade_out_frame = 60
-			audio_sound_gain(global.nowmusic_number, 0, 1000);
-			nowmusic_volume = audio_sound_get_gain(global.nowmusic_number)
+			var nowmusic_path = global.musicdata[global.nowmusic_number, musicdata.path];
+			audio_sound_gain(nowmusic_path, 0, 1000);
+			nowmusic_volume = audio_sound_get_gain(nowmusic_path)
 		}
 		else{
 			if(music_fade_out_frame > 0){
@@ -56,9 +57,11 @@ if(instance_exists(o_gameMgr)){
 	case gamestate.restpause:
 		if(music_pause){
 			if(music_fade_in_frame = -1){
-				var music_number = global.nowmusic_number
-				audio_resume_sound(music_number);
-				audio_sound_gain(music_number, global.musicdata[music_number, musicdata.volume]*global.bgm_volume, 1500);
+				var nowmusic_path = global.musicdata[global.nowmusic_number, musicdata.path];
+				var nowmusic_number = global.nowmusic_number;
+				audio_resume_sound(nowmusic_path);
+				
+				audio_sound_gain(nowmusic_path, global.musicdata[nowmusic_number, musicdata.volume]*global.bgm_volume, 1500);
 				music_fade_in_frame = 90
 			}
 			else{
@@ -82,9 +85,10 @@ if(instance_exists(o_gameMgr)){
 if(fade_mode and room = r_stageSelect){
 	if(music_pause){
 		if(music_fade_in_frame = -1){
-			var music_number = global.nowmusic_number
-			audio_resume_sound(music_number);
-			audio_sound_gain(music_number, global.musicdata[music_number, musicdata.volume]*global.bgm_volume, 1500);
+			var nowmusic_path = global.musicdata[global.nowmusic_number, musicdata.path];
+			var nowmusic_number = global.nowmusic_number;
+			audio_resume_sound(nowmusic_path);
+			audio_sound_gain(nowmusic_path, global.musicdata[nowmusic_number, musicdata.volume]*global.bgm_volume, 1500);
 			music_fade_in_frame = 90
 		}
 		else{

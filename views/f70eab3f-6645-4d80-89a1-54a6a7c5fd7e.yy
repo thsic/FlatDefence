@@ -8,7 +8,8 @@
         "e2b537bd-eff8-4f42-a6f6-13f9eb2cbcdb",
         "66a344f9-b416-43da-a192-f31742ee99e5",
         "88f70884-75e2-4d61-8c10-5101491038cb",
-        "ccc5b70d-2e08-45fd-a706-0eadbf20462d"
+        "ccc5b70d-2e08-45fd-a706-0eadbf20462d",
+        "f6a44cf4-4b47-4bea-bfd8-7ae8180371b0"
     ],
     "filterType": "GMScript",
     "folderName": "sound",

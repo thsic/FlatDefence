@@ -1,5 +1,5 @@
 {
-    "id": "2e757313-6249-44bb-a650-4a7c926af17f",
+    "id": "b56d0d8a-5201-458b-a2d1-2cbb6697a796",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "a_lemonLime",
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 0.2
+    "volume": 0.15
 }

@@ -12,6 +12,7 @@ if(menu_open_button_x < mouse_x and mouse_x < menu_open_button_x+open_button_wid
 		if(mouse_check_button_pressed(mb_left)){
 			menu_open = true
 			play_se(SE_MENU_OPEN_BUTTON, 55, 0.2, false);
+			audio_sound_pitch(SE_MENU_OPEN_BUTTON, 0.7);
 		}
 	}
 }

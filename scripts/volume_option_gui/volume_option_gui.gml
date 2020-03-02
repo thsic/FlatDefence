@@ -48,8 +48,8 @@ if(grab_knob){
 	if(sound_type = 0){
 		global.bgm_volume = volume
 		var nowmusic_volume = global.musicdata[global.nowmusic_number, musicdata.volume];
-		audio_sound_gain(global.nowmusic_number, nowmusic_volume*global.bgm_volume, 0);//音量変更
-		sdm(audio_sound_get_gain(global.nowmusic_number))
+		var nowmusic_number = global.musicdata[global.nowmusic_number, musicdata.path];
+		audio_sound_gain(nowmusic_number, nowmusic_volume*global.bgm_volume, 0);//音量変更
 	}
 	if(sound_type = 1){
 		if(se_test_cooldown = 0){

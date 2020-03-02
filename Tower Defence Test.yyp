@@ -479,14 +479,6 @@
             }
         },
         {
-            "Key": "2e757313-6249-44bb-a650-4a7c926af17f",
-            "Value": {
-                "id": "302e6fb8-0fb6-4a05-ac8a-b2a0e777896d",
-                "resourcePath": "sounds\\a_lemonLime\\a_lemonLime.yy",
-                "resourceType": "GMSound"
-            }
-        },
-        {
             "Key": "2eca34ff-0f90-451b-ac8c-a0b48af35698",
             "Value": {
                 "id": "fdd11fb7-2124-433c-b436-5d8ea476151a",
@@ -900,6 +892,14 @@
                 "id": "cf5f1bce-a033-496c-838f-71dc840b8cdd",
                 "resourcePath": "fonts\\fo_yasa6\\fo_yasa6.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "6217361c-e85d-4b6b-b45b-b69bb4db40c1",
+            "Value": {
+                "id": "8b28b5f0-2cd3-441e-ab9f-a04cbbda1c2b",
+                "resourcePath": "sounds\\a_lifeIllusion\\a_lifeIllusion.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1703,6 +1703,14 @@
             }
         },
         {
+            "Key": "b56d0d8a-5201-458b-a2d1-2cbb6697a796",
+            "Value": {
+                "id": "00a3c180-b8cd-4a79-8802-582ec9317496",
+                "resourcePath": "sounds\\a_lemonLime\\a_lemonLime.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "b5a78d98-e277-4c21-babf-3858d7f17941",
             "Value": {
                 "id": "f83c2e81-aa31-4c3e-b0e0-25e2b4017774",
@@ -2415,6 +2423,14 @@
             }
         },
         {
+            "Key": "f6a44cf4-4b47-4bea-bfd8-7ae8180371b0",
+            "Value": {
+                "id": "c2f49537-c43e-4dae-87d1-913c78880310",
+                "resourcePath": "scripts\\draw_text_scroll\\draw_text_scroll.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f70eab3f-6645-4d80-89a1-54a6a7c5fd7e",
             "Value": {
                 "id": "6156895c-0542-4d1e-85b8-aa3121d0adde",
@@ -2605,6 +2621,7 @@
         "66a344f9-b416-43da-a192-f31742ee99e5",
         "88f70884-75e2-4d61-8c10-5101491038cb",
         "ccc5b70d-2e08-45fd-a706-0eadbf20462d",
+        "f6a44cf4-4b47-4bea-bfd8-7ae8180371b0",
         "c288a743-4f1d-41d7-b452-9cc7219bc001"
     ],
     "tutorial": ""

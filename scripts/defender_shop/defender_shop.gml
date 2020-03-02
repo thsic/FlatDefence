@@ -83,7 +83,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			global.item_possession[grab_number] = -1;//所持アイテムを掴んだので一覧から消す
 			item_possession_data[grab_number, ITEM] = -1;//同じく
 			grab_item_possession_id = grab_number;//所持アイテムのマス目？番号
-			play_se(SE_INVENTORY_GRAB, 40, 0.25, false);
+			play_se(SE_INVENTORY_GRAB, 40, 0.2, false);
 		}
 	}
 }
@@ -138,7 +138,7 @@ if(grab_defender_id != -1){
 				global.gold += floor(return_gold);
 				}//返金
 				grab_defender_id = -1;
-				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
+				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.17, false);
 			}
 		}
 		else{
@@ -149,7 +149,7 @@ if(grab_defender_id != -1){
 			}
 			global.gold += floor(return_gold);
 			grab_defender_id = -1;
-			play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
+			play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.17, false);
 		}
 	}
 }
@@ -209,14 +209,14 @@ if(grab_item_id != -1){
 						return_gold *= PRICE_INCREASE;
 					}
 					global.gold += floor(return_gold)
-					play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
+					play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.17, false);
 					
 				}
 			}
 			else{
 				if(!purchase_item){
 					global.item_possession[grab_item_possession_id] = grab_item_id;
-					play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
+					play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.17, false);
 				}
 			}
 			grab_item_id = -1;

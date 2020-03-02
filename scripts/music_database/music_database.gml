@@ -20,7 +20,7 @@ global.musicdata[target, musicdata.volume] = audio_sound_get_gain(a_moonrise);
 target = 2;
 global.musicdata[target, musicdata.number] = target;
 global.musicdata[target, musicdata.path] = a_lemonLime;
-global.musicdata[target, musicdata.musicname] = "Lemon Lime";
+global.musicdata[target, musicdata.musicname] = "LemonLime";
 global.musicdata[target, musicdata.creatorname] = "Brevyn";
 global.musicdata[target, musicdata.length] = audio_sound_length(a_lemonLime)*FPS_DEFAULT;
 global.musicdata[target, musicdata.earlystop] = 180;
@@ -44,14 +44,14 @@ global.musicdata[target, musicdata.length] = audio_sound_length(a_iAlwaysBeAlien
 global.musicdata[target, musicdata.earlystop] = 0;
 global.musicdata[target, musicdata.volume] = audio_sound_get_gain(a_iAlwaysBeAlienatedByOthers);
 
-/*target = 5;
+target = 5;
 global.musicdata[target, musicdata.number] = target;
-global.musicdata[target, musicdata.path] = a_lemonLime;
-global.musicdata[target, musicdata.musicname] = "Lemon Lime";
-global.musicdata[target, musicdata.creatorname] = "Brevyn";
-global.musicdata[target, musicdata.length] = audio_sound_length(a_lemonLime)*FPS_DEFAULT;
+global.musicdata[target, musicdata.path] = a_lifeIllusion;
+global.musicdata[target, musicdata.musicname] = "Life Illusion";
+global.musicdata[target, musicdata.creatorname] = "Ketsa";
+global.musicdata[target, musicdata.length] = audio_sound_length(a_lifeIllusion)*FPS_DEFAULT;
 global.musicdata[target, musicdata.earlystop] = 60;
-global.musicdata[target, musicdata.volume] = audio_sound_get_gain(a_lemonLime);*/
+global.musicdata[target, musicdata.volume] = audio_sound_get_gain(a_lifeIllusion);
 
 global.music_total_amount = target+1;
 #region
