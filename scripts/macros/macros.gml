@@ -90,7 +90,7 @@
 #macro PARAMBAR_ATTACKSPEED_DEFENDER 2
 #macro PARAMBAR_RANGE_DEFENDER 200
 #macro PARAMBAR_POWER_ITEM 40
-#macro PARAMBAR_ATTACKSPEED_ITEM 0.55
+#macro PARAMBAR_ATTACKSPEED_ITEM 0.45
 #macro PARAMBAR_RANGE_ITEM 30
 
 //
@@ -146,6 +146,7 @@
 #macro COLOR_TEXT_STAGEUI make_color_rgb(76, 76, 76)
 #macro COLOR_TEXT_LTGRAY_ONWINDOW make_color_rgb(110, 110, 110)
 #macro COLOR_TEXT_WHITE_NEARGRAY make_color_rgb(200, 200, 200)
+#macro COLOR_TEXT_NEWRECORD make_color_rgb(170, 170, 170)
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime
@@ -174,7 +175,8 @@
 #macro COLOR_MARKER_GRAY c_gray
 
 #macro COLOR_PARAMBAR_DEFENDER make_color_rgb(140,140,100)
-#macro COLOR_PARAMBAR_ITEM make_color_rgb(140,140,100)
+#macro COLOR_PARAMBAR_ITEM make_color_rgb(150,150,110)
+#macro COLOR_PARAMBAR_ENEMY make_color_rgb(135,135,95)
 
 //パーティクル
 #macro COLOR_LIFEBLOOD make_color_rgb(240, 30, 55)

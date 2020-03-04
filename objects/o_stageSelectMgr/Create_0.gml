@@ -15,8 +15,7 @@ stage_goto = -1;
 
 stage_release_score = [STAGE1_RELEASE_SCORE, STAGE2_RELEASE_SCORE, STAGE3_RELEASE_SCORE, STAGE4_RELEASE_SCORE, STAGE5_RELEASE_SCORE, STAGE6_RELEASE_SCORE, STAGE7_RELEASE_SCORE, STAGE8_RELEASE_SCORE];
 for(var i=0; i<STAGE_AMOUNT; i++){
-	if(stage_release_score[i] < global.totalscore){
+	if(stage_release_score[i] <= global.totalscore){
 		release_stage = i;
 	}
 }
-sdm(release_stage)

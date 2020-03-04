@@ -5,7 +5,7 @@ if(stageclear_frame = -1){
 	stageclear_frame = 0;
 	button_alpha = 0;
 	room_speed = FPS_DEFAULT;
-	score_calculate();
+	score_new_record = score_calculate();
 	sdm("total enemy hp "+string(global.all_enemy_total_hp))
 }
 
@@ -50,7 +50,7 @@ case 130:
 	fall_text(view_wport[0]/2-132, text_y-32+80, text_y+16+80, 30, "TOTALSCORE ", COLOR_TEXT_LTGRAY, FONT_STAGECLEAR_TOTALSCORE, fa_left, false);
 break
 case 155:
-	stageclear_draw_score(view_wport[0]/2+132, text_y+16+80, total_score, COLOR_TEXT_LTGRAY, fa_right);
+	stageclear_draw_score(view_wport[0]/2+132, text_y+16+80, total_score, COLOR_TEXT_LTGRAY, fa_right, score_new_record, COLOR_TEXT_NEWRECORD);
 break
 case 190:
 	draw_most_damaging_defender(view_wport[0]/2-156, text_y+150)

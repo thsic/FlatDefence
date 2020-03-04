@@ -375,6 +375,14 @@
             }
         },
         {
+            "Key": "24978383-bca5-432e-805d-00f7f23229a4",
+            "Value": {
+                "id": "4e983b4e-c044-4ee3-92cc-e029cd85750e",
+                "resourcePath": "scripts\\ease_in_out_quad\\ease_in_out_quad.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2691e6ca-a4b1-46ed-901f-65b87a62f85c",
             "Value": {
                 "id": "17e5329f-cd14-4c67-9b21-934d8210ce91",
@@ -2695,7 +2703,8 @@
         "88f70884-75e2-4d61-8c10-5101491038cb",
         "ccc5b70d-2e08-45fd-a706-0eadbf20462d",
         "f6a44cf4-4b47-4bea-bfd8-7ae8180371b0",
-        "c288a743-4f1d-41d7-b452-9cc7219bc001"
+        "c288a743-4f1d-41d7-b452-9cc7219bc001",
+        "24978383-bca5-432e-805d-00f7f23229a4"
     ],
     "tutorial": ""
 }

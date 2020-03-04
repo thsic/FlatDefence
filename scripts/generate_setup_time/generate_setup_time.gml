@@ -20,7 +20,7 @@ case -1:
 	case 1:
 		for(var i=1; i<=3; i++){
 			for(var l=1; l<=12; l++){
-				set_enemy_generate_timeline(i*300+l*15, global.generate_timeline_id, 0, 0, 0);
+				//set_enemy_generate_timeline(i*300+l*15, global.generate_timeline_id, 0, 0, 0);
 			}
 		}
 	break
@@ -42,7 +42,7 @@ break
 #endregion -----------------
 #region stage1
 case 1:
-	switch(global.wave_now){
+	/*switch(global.wave_now){
 	case 1://敵10体
 		for(var i=0; i<10; i++){
 			set_enemy_generate_timeline(i*60, global.generate_timeline_id, 0, 0, 0);
@@ -102,12 +102,12 @@ case 1:
 			set_enemy_generate_timeline(i*60+990, global.generate_timeline_id, 0, 1, 0);
 		}
 	break
-	}
+	}*/
 break
 #endregion
 #region stage2
 case 2:
-switch(global.wave_now){
+/*switch(global.wave_now){
 	case 1://Small*16
 		for(var i=0; i<16; i++){
 			set_enemy_generate_timeline(i*30, global.generate_timeline_id, 0, 0, 0);
@@ -218,7 +218,7 @@ switch(global.wave_now){
 		}
 	break
 	}
-break
+break*/
 #endregion
 #region stage3
 case 3:

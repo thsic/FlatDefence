@@ -7,4 +7,5 @@ if(gold_score < 0){//ゴールドスコアがマイナスになる場合があ�
 }
 total_score = stageclear_score + life_score + gold_score;
 
-save_score(global.stage, total_score);//スコアをiniファイルにセーブ
+var new_record = save_score(global.stage, total_score);//スコアをiniファイルにセーブ 返り値はスコア更新したかどうか
+return new_record

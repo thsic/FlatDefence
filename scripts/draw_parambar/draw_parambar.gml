@@ -24,8 +24,14 @@ for(var i=0; i<floor(bar_percent)+1; i++){
 	else{
 		bar_length = (bar_percent-i)*bar_maxlength;
 	}
-	draw_set_color(make_color_hsv(hue-i*35, saturation+i*10, value+i*10));
-	sdm(string(hue)+string(saturation)+string(value))
+	if(hue-i*35 < 0){
+		hue = 360+(hue-i*35);
+	}
+	else{
+		hue = hue-i*35;
+	}
+	draw_set_color(make_color_hsv(hue, saturation+i*10, value+i*15));
 	draw_line(bar_x, bar_y, bar_x+bar_length, bar_y);
 }
 draw_set_alpha(1);
+draw_set_color(COLOR_DEFAULT);

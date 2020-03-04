@@ -211,7 +211,23 @@ case 7:
 	else{
 		draw_score = score_total;
 	}
-	draw_set_color(text_color);
+	if(new_record){//スコア更新の場合は色をふんわり変える
+		var color_change_time = 120
+		var color_merge_value = time mod color_change_time
+		var hoge = time mod (color_change_time*2)
+		if(hoge < color_change_time){
+			color_merge_value = ease_in_out_quad(color_merge_value, 0, 1, color_change_time);//easing関数でいいかんじにふんわり
+			draw_set_color(merge_color(text_color, new_record_color, color_merge_value));
+		}
+		else{
+			color_merge_value = ease_in_out_quad(color_merge_value, 0, 1, color_change_time);
+			draw_set_color(merge_color(new_record_color, text_color, color_merge_value));
+		}
+		
+	}
+	else{
+		draw_set_color(text_color);
+	}
 	draw_set_halign(text_halign);
 	draw_set_font(FONT_STAGECLEAR_TOTALSCORE);
 	draw_text(x, y, draw_score);
@@ -291,7 +307,7 @@ case 10://クリア画面の一番ダメージをだしたやつ描画
 	draw_set_font(FONT_DEFAULT);
 	draw_text(x+182, y+24, "ダメージ");
 	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(x+246, y+24, no1_defender_id.total_damage);
+	draw_text(x+252, y+24, string_format(no1_defender_id.total_damage, 0, 0));
 	
 	for(var i=0; i<no1_defender_id.itemslot_amount; i++){
 		var item_id = no1_defender_id.itemslot[i]
