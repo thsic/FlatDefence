@@ -44,7 +44,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 				grab_defender_id = shop_product[grab_product_number, DEFENDER];
 				grab_defender_shop_id = grab_product_number
 				window_mouse_set(shop_product[grab_product_number, SPRITE_X], shop_product[grab_product_number, SPRITE_Y]);//マウス座標を強制的にアイテムの中心へ
-				rise_number(floor(reduce_gold), mouse_x, mouse_y, 3, 20, c_yellow, 1, true, FONT_DEFAULT);
+				rise_number(floor(reduce_gold), mouse_x, mouse_y, 2, 30, c_yellow, 1, true, FONT_DEFAULT);
 			}
 			else{
 				//買えなかった場合 音とかならすといいと思う
@@ -69,7 +69,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 				grab_item_shop_id = grab_product_number;
 				grab_item_possession_id = -1;
 				window_mouse_set(shop_item_product[grab_product_number, SPRITE_X], shop_item_product[grab_product_number, SPRITE_Y]);
-				rise_number(floor(reduce_gold), mouse_x, mouse_y, 3, 20, c_yellow, 1, true, FONT_DEFAULT);
+				rise_number(floor(reduce_gold), mouse_x, mouse_y, 2, 30, c_yellow, 1, true, FONT_DEFAULT);
 			}
 			else{
 				//買えなかった場合 音とかならすといいと思う

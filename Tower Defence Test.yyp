@@ -471,6 +471,14 @@
             }
         },
         {
+            "Key": "2d4d41bd-5a05-41f9-af48-2f884d4083ab",
+            "Value": {
+                "id": "6d0c7cbc-5988-4eab-a334-ee493ddd6654",
+                "resourcePath": "sprites\\s_regenEnemy\\s_regenEnemy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2e6b0ffd-43cc-4f25-bf07-a2773646dc4a",
             "Value": {
                 "id": "5f0f5e73-4ae0-4e9c-849e-feb670866639",
@@ -831,6 +839,14 @@
             }
         },
         {
+            "Key": "58caf258-2a97-492a-a1a5-841d414fa67f",
+            "Value": {
+                "id": "1792c46b-07f1-452f-8f8a-caf861b487dc",
+                "resourcePath": "objects\\o_eRegenLv2\\o_eRegenLv2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5a0308bf-59db-4ecc-8f31-7bea843d0e9d",
             "Value": {
                 "id": "272d259f-f099-4960-86bd-07ac31ab022c",
@@ -859,6 +875,14 @@
             "Value": {
                 "id": "e56f845d-22d5-4a1b-904f-60ab2fc48fad",
                 "resourcePath": "objects\\o_eNormalLv1\\o_eNormalLv1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5c73ad86-4bcf-4274-b834-f56cd01a094a",
+            "Value": {
+                "id": "16b2eef3-3c42-445d-9036-2f6a70412d3b",
+                "resourcePath": "objects\\o_eBerserkerLv2\\o_eBerserkerLv2.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1047,6 +1071,14 @@
             }
         },
         {
+            "Key": "6e4b1767-bb54-4cc2-a5ae-f5e4edbdda7e",
+            "Value": {
+                "id": "dc7f36c0-038e-41bb-a122-864cc54c2e3e",
+                "resourcePath": "objects\\o_eBerserkerLv3\\o_eBerserkerLv3.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6fda7d4a-1b22-4018-8c39-edb802d7a6c5",
             "Value": {
                 "id": "4f934476-b425-41ec-b063-0ef52c7d4f3b",
@@ -1119,6 +1151,14 @@
             }
         },
         {
+            "Key": "792764a5-1070-48c1-a920-fd061637f82a",
+            "Value": {
+                "id": "369cd7d7-b2a9-42df-9e04-479103457911",
+                "resourcePath": "sprites\\s_berserkerEnemy\\s_berserkerEnemy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "79513d1f-0e57-4010-8c7c-018c125f99be",
             "Value": {
                 "id": "75ccf259-d23a-45ac-a8ab-7a63faa8e5aa",
@@ -1164,6 +1204,14 @@
                 "id": "456ed045-4c7e-4bf9-8b7a-516dabfb31b5",
                 "resourcePath": "scripts\\display_product\\display_product.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7a4f65ca-647f-4fcc-9722-f0e52614fd59",
+            "Value": {
+                "id": "fe93f0f6-6f18-4aa9-b94c-5cdab0a24d42",
+                "resourcePath": "objects\\o_eRegenLv1\\o_eRegenLv1.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1719,6 +1767,14 @@
             }
         },
         {
+            "Key": "b82e1500-928e-46bc-a197-4b996727fb17",
+            "Value": {
+                "id": "ced32b69-672b-4c5e-9224-aa098704127f",
+                "resourcePath": "objects\\o_eRegenLv3\\o_eRegenLv3.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b8b5e0b0-7b0e-42d1-bb18-eadc386ac2c3",
             "Value": {
                 "id": "381d5257-2406-4a9b-8276-f0083409ca32",
@@ -1956,6 +2012,14 @@
                 "id": "1ff6025a-785b-4668-b0d3-046e88c125fa",
                 "resourcePath": "sounds\\a_coin\\a_coin.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "d0587eed-7e5a-4ef6-a164-e61b758ebe3f",
+            "Value": {
+                "id": "57f06355-b613-40da-8058-9d4d4f169172",
+                "resourcePath": "objects\\o_eBerserkerLv1\\o_eBerserkerLv1.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2343,6 +2407,14 @@
             }
         },
         {
+            "Key": "f0da36aa-05d1-42be-9f42-438f70330e7e",
+            "Value": {
+                "id": "845c3cce-eaea-437e-89a7-16ae7394b725",
+                "resourcePath": "scripts\\draw_parambar\\draw_parambar.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f0fa6bf8-3e9d-41f3-8055-c3f6f467f237",
             "Value": {
                 "id": "6e0db241-6802-4330-a092-f9d0257de5fa",
@@ -2537,6 +2609,7 @@
         "fe6a0248-3a07-4bc5-a115-145d95b61f57",
         "a083f392-8c65-4f6f-8e12-dedacd45f924",
         "242248b7-e254-419f-beb4-34c2c5d53722",
+        "f0da36aa-05d1-42be-9f42-438f70330e7e",
         "17ff12a2-be7b-4407-9185-fec3170a82d4",
         "1ae08602-8fc4-48c6-934d-3140069aebfb",
         "8a40716b-89a2-4c55-9748-13a3a8a805fd",

@@ -449,7 +449,7 @@ draw_set_color(COLOR_TEXT_WHITE);
 draw_text(x_offset+width/5*1+44/2, text_y, description2);
 if(possible_upgrade){
 	if(description2 != description2_upgrade){
-		draw_set_color(COLOR_TEXT_DARKGREEN);
+		draw_set_color(COLOR_TEXT_RED);
 	}
 	else{
 		draw_set_color(COLOR_TEXT_WHITE);

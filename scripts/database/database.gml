@@ -121,7 +121,7 @@ global.itemdata[target, itemdata.skill] = -1;
 global.itemdata[target, itemdata.description] = "item wo upgrade dekiru";
 global.itemdata[target, itemdata.description2] = ""
 
-#region 1~6
+#region 1~6 Basicsword  /Poweraxe / powerup
 target = 1;//basicsword
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
@@ -209,7 +209,7 @@ global.itemdata[target, itemdata.skill] = 1;
 global.itemdata[target, itemdata.description] = "kougeki 2bai";
 global.itemdata[target, itemdata.description2] = ""
 #endregion
-#region 7~12
+#region 7~12 demonsfire / Reaper'sSickle / cursedsword
 target = 7;//demonsfire
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
@@ -297,7 +297,7 @@ global.itemdata[target, itemdata.skill] = -1;
 global.itemdata[target, itemdata.description] = "";
 global.itemdata[target, itemdata.description2] = "Skill igaide tekini damage wo ataerarenai";
 #endregion
-#region 13~18
+#region 13~18 Imperial Lance / freezerod / bombarrow
 target = 13;//Imperial Lance
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
@@ -377,7 +377,7 @@ global.itemdata[target, itemdata.cost] = 200;
 global.itemdata[target, itemdata.effect] = 0;
 global.itemdata[target, itemdata.skill] = -1;
 #endregion
-#region 19~24
+#region 19~24 LaserBeam / spikeknuckle / Crystal
 target = 19;//LaserBeam
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
@@ -453,7 +453,7 @@ global.itemdata[target, itemdata.cost] = 300;
 global.itemdata[target, itemdata.effect] = -1;
 global.itemdata[target, itemdata.skill] = -1;
 #endregion
-#region 24~30
+#region 24~30 poisonDagger / TitansClab
 target = 25;//poisonDagger
 global.itemdata[target, itemdata.number] = target;
 global.itemdata[target, itemdata.upgraded] = 0;
@@ -618,7 +618,7 @@ global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 1.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 3;
-global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+global.enemydata[target, enemydata.color] = make_color_rgb(215, 247, 73);
 enemy_param_meas_rank(target);
 
 target = 4;
@@ -629,7 +629,7 @@ global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 2;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 6;
-global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+global.enemydata[target, enemydata.color] = make_color_rgb(215, 247, 73);
 enemy_param_meas_rank(target);
 
 target = 5;
@@ -640,7 +640,7 @@ global.enemydata[target, enemydata.shield] = 20;
 global.enemydata[target, enemydata.speed] = 2.5;
 global.enemydata[target, enemydata.description] = "tiisai";
 global.enemydata[target, enemydata.dropgold] = 12;
-global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+global.enemydata[target, enemydata.color] = make_color_rgb(215, 247, 73);
 enemy_param_meas_rank(target);
 
 #endregion
@@ -746,6 +746,72 @@ global.enemydata[target, enemydata.dropgold] = 80;
 global.enemydata[target, enemydata.color] = make_color_rgb(152, 107, 153);
 enemy_param_meas_rank(target);
 
+target = 15;
+global.enemydata[target, enemydata.object] = o_eBerserkerLv1;
+global.enemydata[target, enemydata.name] = "Berserker Lv1";
+global.enemydata[target, enemydata.hp] = 150;
+global.enemydata[target, enemydata.shield] = 60;
+global.enemydata[target, enemydata.speed] = 1;
+global.enemydata[target, enemydata.description] = "ba-sa-ka-";
+global.enemydata[target, enemydata.dropgold] = 50;
+global.enemydata[target, enemydata.color] = make_color_rgb(204, 61, 65);
+enemy_param_meas_rank(target);
+
+target = 16;
+global.enemydata[target, enemydata.object] = o_eBerserkerLv2;
+global.enemydata[target, enemydata.name] = "Berserker Lv2";
+global.enemydata[target, enemydata.hp] = 370;
+global.enemydata[target, enemydata.shield] = 90;
+global.enemydata[target, enemydata.speed] = 1;
+global.enemydata[target, enemydata.description] = "ba-sa-ka-";
+global.enemydata[target, enemydata.dropgold] = 100;
+global.enemydata[target, enemydata.color] = make_color_rgb(204, 61, 65);
+enemy_param_meas_rank(target);
+
+target = 17;
+global.enemydata[target, enemydata.object] = o_eBerserkerLv3;
+global.enemydata[target, enemydata.name] = "Berserker Lv3";
+global.enemydata[target, enemydata.hp] = 800;
+global.enemydata[target, enemydata.shield] = 150;
+global.enemydata[target, enemydata.speed] = 1;
+global.enemydata[target, enemydata.description] = "ba-sa-ka-";
+global.enemydata[target, enemydata.dropgold] = 200;
+global.enemydata[target, enemydata.color] = make_color_rgb(204, 61, 65);
+enemy_param_meas_rank(target);
+#endregion
+#region 18~23
+target = 18;
+global.enemydata[target, enemydata.object] = o_eRegenLv1;
+global.enemydata[target, enemydata.name] = "Regen Lv1";
+global.enemydata[target, enemydata.hp] = 120;
+global.enemydata[target, enemydata.shield] = 40;
+global.enemydata[target, enemydata.speed] = 0.8;
+global.enemydata[target, enemydata.description] = "kaihuku";
+global.enemydata[target, enemydata.dropgold] = 16;
+global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+enemy_param_meas_rank(target);
+
+target = 19;
+global.enemydata[target, enemydata.object] = o_eRegenLv2;
+global.enemydata[target, enemydata.name] = "Regen Lv2";
+global.enemydata[target, enemydata.hp] = 210;
+global.enemydata[target, enemydata.shield] = 70;
+global.enemydata[target, enemydata.speed] = 0.7;
+global.enemydata[target, enemydata.description] = "kaihuku";
+global.enemydata[target, enemydata.dropgold] = 32;
+global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+enemy_param_meas_rank(target);
+
+target = 20;
+global.enemydata[target, enemydata.object] = o_eRegenLv3;
+global.enemydata[target, enemydata.name] = "Regen Lv3";
+global.enemydata[target, enemydata.hp] = 380;
+global.enemydata[target, enemydata.shield] = 110;
+global.enemydata[target, enemydata.speed] = 0.6;
+global.enemydata[target, enemydata.description] = "kaihuku";
+global.enemydata[target, enemydata.dropgold] = 64;
+global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+enemy_param_meas_rank(target);
 #endregion
 
 global.enemy_category_amount = target+1;

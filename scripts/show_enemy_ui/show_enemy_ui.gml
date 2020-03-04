@@ -23,7 +23,7 @@ if(window_follow_enemy_id != -1){
 		draw_sprite_ext(window_follow_enemy_id.sprite_index, 0, x_offset+14, y_offset+14, 0.5, 0.5, 0, COLOR_DEFAULT, 1)
 		draw_text(x_offset+32, y_offset+2, window_follow_enemy_id.name);
 		if(window_follow_enemy_id.hp >= 0){
-			draw_text(x_offset+80, y_offset+28, window_follow_enemy_id.hp);
+			draw_text(x_offset+80, y_offset+28, string_format(window_follow_enemy_id.hp, 0, 0));
 		}
 		else{
 			draw_text(x_offset+80, y_offset+28, 0);

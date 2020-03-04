@@ -55,6 +55,11 @@ case 0://defender
 	draw_text(offset_x+150, offset_y+24, global.defender_data[defender_id, data.damage]);
 	draw_text(offset_x+150, offset_y+48, string_format(global.defender_data[defender_id, data.attack_speed], 1, 1));
 	draw_text(offset_x+150, offset_y+72, global.defender_data[defender_id, data.range]);
+	//パラメータバー
+	draw_parambar(global.defender_data[defender_id, data.damage], PARAMBAR_POWER_DEFENDER, offset_x+4, offset_y+40, 180, COLOR_PARAMBAR_DEFENDER, 1);
+	draw_parambar(global.defender_data[defender_id, data.attack_speed], PARAMBAR_ATTACKSPEED_DEFENDER, offset_x+4, offset_y+64, 180, COLOR_PARAMBAR_DEFENDER, 1);
+	draw_parambar(global.defender_data[defender_id, data.range], PARAMBAR_RANGE_DEFENDER, offset_x+4, offset_y+88, 180, COLOR_PARAMBAR_DEFENDER, 1);
+	
 	draw_set_color(COLOR_TEXT_ORANGE);
 	//説明文
 	draw_text(offset_x+6, offset_y+96, global.defender_data[defender_id_conversion(shop_product[target_id, DEFENDER]), data.description]);
@@ -139,6 +144,10 @@ case 1://item
 	draw_text(offset_x+150, offset_y+48, string_format(global.itemdata[target_id, itemdata.attack_speed], 1, 1));
 	draw_set_color_value(COLOR_TEXT_GREEN, COLOR_TEXT_WHITE, global.itemdata[target_id, itemdata.range], 0)
 	draw_text(offset_x+150, offset_y+72, global.itemdata[target_id, itemdata.range]);
+	//パラメータバー
+	draw_parambar(global.itemdata[target_id, itemdata.damage], PARAMBAR_POWER_ITEM, offset_x+4, offset_y+40, 180, COLOR_PARAMBAR_ITEM, 1);
+	draw_parambar(global.itemdata[target_id, itemdata.attack_speed], PARAMBAR_ATTACKSPEED_ITEM, offset_x+4, offset_y+64,180, COLOR_PARAMBAR_ITEM, 1);
+	draw_parambar(global.itemdata[target_id, itemdata.range], PARAMBAR_RANGE_ITEM, offset_x+4, offset_y+88, 180, COLOR_PARAMBAR_ITEM, 1);
 	
 	draw_set_color(COLOR_TEXT_ORANGE);
 	if(effect1 != -1 or crystal or upgradeorb){//説明文が存在する もしくはクリスタルかオーブ

@@ -48,9 +48,17 @@
 #macro SHIELD_BREAK_STRENGTH 1//シールド削り値
 #macro FREEZE_SLOW_PERCENT 0.7//フリーズLV1にかかったときのスピード倍率 通常はLV2
 #macro FREEZE_INTERVAL 60//フリーザークリスタルの時の範囲スローの発生頻度
-#macro BLASTER_SHOT_COOLDOWN 10//ブラスターの連射中のクールダウン
+#macro BLASTER_SHOT_COOLDOWN 15//ブラスターの連射中のクールダウン
 #macro BLASTER_SHOT_COOLDOWN_UPGRADE 2
 #macro MARKER_ENHANCEMENT_MAGNIFICATION 0.1 //マーカーのトークン1つにつき上昇するステータス倍率
+
+//enemy
+#macro BERSERKER_LV1_RAGE_SPEED 2
+#macro BERSERKER_LV2_RAGE_SPEED 2.5
+#macro BERSERKER_LV3_RAGE_SPEED 3
+#macro REGEN_LV1_HEAL 0.5
+#macro REGEN_LV2_HEAL 1
+#macro REGEN_LV3_HEAL 3
 
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
@@ -76,6 +84,14 @@
 #macro POISONDAGGER_MAGNIFICATION 0.3//ポイズンダガー装備中の追加ダメージ倍率
 #macro CURSEDSWORD_MAGNIFICATION 0.1//呪いの剣装備中のダメージ倍率
 #macro BLAST_MAGNIFICATION 0.25//爆風ダメージ倍率
+
+//パラメータ表示バー
+#macro PARAMBAR_POWER_DEFENDER 100
+#macro PARAMBAR_ATTACKSPEED_DEFENDER 2
+#macro PARAMBAR_RANGE_DEFENDER 200
+#macro PARAMBAR_POWER_ITEM 40
+#macro PARAMBAR_ATTACKSPEED_ITEM 0.55
+#macro PARAMBAR_RANGE_ITEM 30
 
 //
 #macro ENEMY_RANK_AMOUNT 10//ランクの個数
@@ -157,6 +173,8 @@
 #macro COLOR_MARKER_RANGE make_color_rgb(0, 120, 60)
 #macro COLOR_MARKER_GRAY c_gray
 
+#macro COLOR_PARAMBAR_DEFENDER make_color_rgb(140,140,100)
+#macro COLOR_PARAMBAR_ITEM make_color_rgb(140,140,100)
 
 //パーティクル
 #macro COLOR_LIFEBLOOD make_color_rgb(240, 30, 55)

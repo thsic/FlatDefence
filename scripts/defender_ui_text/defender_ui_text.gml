@@ -36,7 +36,10 @@ draw_text(x_offset+4, y_offset+38+16*1, finded_defender_id.fire_damage);
 draw_text(x_offset+4, y_offset+38+16*3+4, string_format(finded_defender_id.attack_per_second, 1, 1));
 draw_text(x_offset+4, y_offset+38+16*5+8, finded_defender_id.range);
 
-
+//パラメータバー
+draw_parambar(finded_defender_id.fire_damage, PARAMBAR_POWER_DEFENDER, x_offset+4, y_offset+70, 100, COLOR_PARAMBAR_DEFENDER, 1);
+draw_parambar(finded_defender_id.attack_per_second, PARAMBAR_ATTACKSPEED_DEFENDER, x_offset+4, y_offset+106, 100, COLOR_PARAMBAR_DEFENDER, 1);
+draw_parambar(finded_defender_id.range, PARAMBAR_RANGE_DEFENDER, x_offset+4, y_offset+142, 100, COLOR_PARAMBAR_DEFENDER, 1);
 
 //マーカーバフトークン描画
 var marker_id = finded_defender_id.marker_id;

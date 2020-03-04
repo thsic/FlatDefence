@@ -1,76 +1,77 @@
 switch(global.gamestate){
 case gamestate.main:
-	var effect_freeze = 0;
-	var effect_fire = 0
-	var penetration = 0;
-	var penetration_plus = 0;
-	for(var i=0; i<EFFECT_SLOT_MAX; i++){
-		if(defender_id.effect_now[i, effectnow.number] != -1){
-			//何かしらのエフェクトがある
-			switch(defender_id.effect_now[i, effectnow.number]){
-			case 1:
-				effect_fire++;
-			break
-			case 2:
-				effect_freeze++;
-			break
-			case 6:
-				penetration++;
-			break
-			case 7:
-				penetration_plus++;
-			break
+	if(instance_exists(defender_id)){
+		var effect_freeze = 0;
+		var effect_fire = 0
+		var penetration = 0;
+		var penetration_plus = 0;
+		for(var i=0; i<EFFECT_SLOT_MAX; i++){
+			if(defender_id.effect_now[i, effectnow.number] != -1){
+				//何かしらのエフェクトがある
+				switch(defender_id.effect_now[i, effectnow.number]){
+				case 1:
+					effect_fire++;
+				break
+				case 2:
+					effect_freeze++;
+				break
+				case 6:
+					penetration++;
+				break
+				case 7:
+					penetration_plus++;
+				break
+				}
+			}
+			else{
+				break
+			}
+		}
+	
+	
+		speed = bullet_speed
+		if(speed_temp != -1){
+			speed = speed_temp;
+			speed_temp = -1;
+		}
+	
+		if(!penetration and !penetration_plus){
+			//数fごとに角度を変える
+			--direction_change_cooldown;
+			if(direction_change_cooldown >= 0){
+				if(instance_exists(bullet_target)){//存在チェック
+					direction = point_direction(x, y, bullet_target.x, bullet_target.y);
+					direction_change_cooldown = direction_change_cooldown_default;
+				}
+				else{
+					destroy_countdown = destroy_countdown_default;//ターゲットが存在しないので消滅
+				}
 			}
 		}
 		else{
-			break
-		}
-	}
-	
-	
-	speed = bullet_speed
-	if(speed_temp != -1){
-		speed = speed_temp;
-		speed_temp = -1;
-	}
-	
-	if(!penetration and !penetration_plus){
-		//数fごとに角度を変える
-		--direction_change_cooldown;
-		if(direction_change_cooldown >= 0){
-			if(instance_exists(bullet_target)){//存在チェック
-				direction = point_direction(x, y, bullet_target.x, bullet_target.y);
-				direction_change_cooldown = direction_change_cooldown_default;
-			}
-			else{
-				destroy_countdown = destroy_countdown_default;//ターゲットが存在しないので消滅
+			//貫通攻撃は射程外になると消える
+			if(point_distance(x, y, defender_id.x, defender_id.y)+speed > defender_id.range){
+				instance_destroy();
+				//誰にもダメージを与えられないまま射程外になったときはターゲットにダメージを与える
+				if(penetration_enemy_id[0] = -1){
+					damage_to_enemy(damage, bullet_target, defender_id);
+				}
 			}
 		}
-	}
-	else{
-		//貫通攻撃は射程外になると消える
-		if(point_distance(x, y, defender_id.x, defender_id.y)+speed > defender_id.range){
-			instance_destroy();
-			//誰にもダメージを与えられないまま射程外になったときはターゲットにダメージを与える
-			if(penetration_enemy_id[0] = -1){
-				damage_to_enemy(damage, bullet_target, defender_id);
-			}
-		}
-	}
 	
-	//色設定
-	var bullet_fire_color = COLOR_BULLET_DEFAULT;
-	if(effect_freeze){
-		bullet_fire_color = COLOR_BULLET_FREEZE;
+		//色設定
+		var bullet_fire_color = COLOR_BULLET_DEFAULT;
+		if(effect_freeze){
+			bullet_fire_color = COLOR_BULLET_FREEZE;
+		}
+		if(effect_fire){
+			bullet_fire_color = COLOR_BULLET_FIRE;
+		}
+		if(effect_freeze and effect_fire){
+			bullet_fire_color = COLOR_BULLET_MIX;
+		}
+		bullet_fire(x, y, xprev, yprev, direction, dirprev, bullet_fire_color, 0.3, 5, 2);
 	}
-	if(effect_fire){
-		bullet_fire_color = COLOR_BULLET_FIRE;
-	}
-	if(effect_freeze and effect_fire){
-		bullet_fire_color = COLOR_BULLET_MIX;
-	}
-	bullet_fire(x, y, xprev, yprev, direction, dirprev, bullet_fire_color, 0.3, 5, 2);
-
 	
 
 #region 衝突判定
@@ -151,9 +152,6 @@ else if(destroy_countdown = 0){
 	
 }
 
-
-
 xprev = x
 yprev = y
 dirprev = direction
-

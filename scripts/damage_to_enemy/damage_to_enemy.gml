@@ -5,6 +5,7 @@ var target_id = argument1;
 var defender_id = argument2;
 var damage = basedamage;//元々のダメージ 爆風やインペリアルランスのダメージに使う
 var defender_fire_damage = defender_id.fire_damage//defenderの攻撃力 スローとかに
+var damage_result = 0;
 
 var fire_level = 0;
 var ice_level = 0;
