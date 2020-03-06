@@ -20,7 +20,7 @@ case -1:
 	case 1:
 		for(var i=1; i<=3; i++){
 			for(var l=1; l<=12; l++){
-				//set_enemy_generate_timeline(i*300+l*15, global.generate_timeline_id, 0, 0, 0);
+				set_enemy_generate_timeline(i*300+l*15, global.generate_timeline_id, 0, 0, 0);
 			}
 		}
 	break

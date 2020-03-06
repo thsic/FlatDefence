@@ -28,6 +28,8 @@ var odd_add_damage = 0;
 var hpmax_add_damage = 0;
 var hpmax_add_damage_plus = 0;
 
+var demons_fire_count = 0;//悪魔の炎発動回数 最後に貫通ダメージとして加算する
+
 //最初にエフェクトを確認しておく
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(defender_id.effect_now[i, effectnow.number] != -1){
@@ -123,9 +125,10 @@ if(one_shot_one_kill_plus){
 if(odd_add_damage and target_id = bullet_target){
 	if(instance_exists(target_id)){
 		repeat(odd_add_damage){
-			if(target_id.hp mod 2 = 1){
+			if(target_id.hp mod 2 = 1){//奇数判定
 				damage += defender_fire_damage * POISONDAGGER_MAGNIFICATION
 			}
+			demons_fire_count++;
 		}
 	}
 }
@@ -141,6 +144,7 @@ if(hpmax_add_damage or hpmax_add_damage_plus){
 			else if(hpmax_add_damage_plus){
 				damage += defender_fire_damage * global.effectdata[32, effectdata.value];
 			}
+			demons_fire_count++;
 		}
 	}
 }
@@ -152,8 +156,8 @@ if(gold_ammo){
 			var consume_gold = floor(global.gold/100);
 			consumed_gold(consume_gold);
 			damage += consume_gold*global.effectdata[29, effectdata.value]
-			
 		}
+		demons_fire_count++;//100g以下でも悪魔の炎の効果は発動する
 	}
 }
 
@@ -200,7 +204,8 @@ if(ice_level > 0){//スローをかける
 	}
 }
 if(demons_fire_level > 0){//悪魔の炎を持っているなら最終ダメージを上げる
-	damage_result += demons_fire_level*global.effectdata[3, effectdata.value];
+	demons_fire_count++;
+	damage_result += demons_fire_level*global.effectdata[3, effectdata.value]*demons_fire_count;
 }
 damage_result = ceil(damage_result)//ダメージ切り上げ
 

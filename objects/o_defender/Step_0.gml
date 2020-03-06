@@ -36,6 +36,7 @@ var attack_speed_halve = 0;
 var true_basic = 0;
 var range_halve = 0;
 var attack_halve = 0;
+var freeze_all = 0;
 var attack_halve_disempower = 0;
 var itemslot_plus = 0;
 var range_x2 = 0;
@@ -44,7 +45,8 @@ var strong_blaster = 0;
 var triple_shot = 0;
 var basicist = 0;
 var freeze_dot_damage = 0;
-var septuple_shot = 0
+var septuple_shot = 0;
+
 
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(effect_now[i, effectnow.number] != -1){
@@ -62,10 +64,13 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		case 10:
 			range_halve++;
 		break
-		case 11:
-			attack_halve++
+		case 11://攻撃減少
+			attack_halve++;
 		break
-		case 13://攻撃半減無効
+		case 12://氷神の加護
+			freeze_all++;
+		break
+		case 13://攻撃減少無効
 			attack_halve_disempower++;
 		break
 		case 15://アイテム枠+2
@@ -118,7 +123,7 @@ if(attack_halve_disempower){
 	}
 }
 if(attack_halve){
-	fire_damage *= 0.5;
+	fire_damage *= 0.66;//3分の2
 }
 if(range_x2){
 	for(var i=0; i<range_x2; i++){
@@ -324,10 +329,10 @@ if(global.gamestate = gamestate.main){
 	#region chronomancer
 	if(chronomancer){
 		if(freeze_dot_damage){
-			chronomancer_slow(true, demons_fire_level);
+			chronomancer_slow(true, demons_fire_level, freeze_all);
 		}
 		else{
-			chronomancer_slow(false, 0);
+			chronomancer_slow(false, 0, freeze_all);
 		}
 		
 	}

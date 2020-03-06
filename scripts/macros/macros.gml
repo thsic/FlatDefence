@@ -115,7 +115,7 @@
 #macro DEFENDER_ATTACK_SPEED_DESCRIPTION "現在の1秒間に攻撃できる回数です。高いほど攻撃回数が増えます。"
 #macro DEFENDER_RANGE_DESCRIPTION "現在の射程です。高いほど遠くの敵に攻撃できます。"
 
-#macro CRYSTAL_SHOP_DESCRIPTION "ディフェンダーごとの特殊な能力を開放"
+#macro CRYSTAL_SHOP_DESCRIPTION "ディフェンダーごとの特殊な能力を開放する"
 #macro UPGRADEORB_SHOP_DESCRIPTION "装備したアイテムをアップグレードできる"
 #macro MARKER_ENHANCEMENT_DESCRIPTION1 "ここに置くと"
 #macro MARKER_ENHANCEMENT_DESCRIPTION2 "が"

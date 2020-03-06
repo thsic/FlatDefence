@@ -1,7 +1,8 @@
-///@param dotdamage,demonsfireLV
+///@param dotdamage,demonsfireLV,freeze_all
 
 var dot_damage = argument0;
 var demonsfire_level = argument1;
+var freeze_all = argument2;
 
 if(chronomancer_timing <= 0){
 	for(var i=0; i<global.enemy_amount; i++){
@@ -9,7 +10,12 @@ if(chronomancer_timing <= 0){
 		var target_x = global.enemy_id[i].x;
 		var target_y = global.enemy_id[i].y;
 		if(point_distance(x, y, target_x, target_y) <= range){
-			slow_to_enemy(target_id, 1, FREEZE_INTERVAL/2+1);
+			if(freeze_all){//ブリザードがあるならスローの効果を上げる 隠れ効果
+				slow_to_enemy(target_id, 2, FREEZE_INTERVAL/2+1);
+			}
+			else{
+				slow_to_enemy(target_id, 1, FREEZE_INTERVAL/2+1);
+			}
 			
 			if(dot_damage){//ダメージを与える
 				var damage = fire_damage*global.effectdata[27, effectdata.value];
