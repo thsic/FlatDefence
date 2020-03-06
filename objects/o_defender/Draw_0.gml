@@ -17,23 +17,39 @@ if(target_id != false){
 }
 //射程円描画
 if(global.draw_range_always){
+	//円の透明度
 	if(state = state.idle){//撃てる状態だとちょっと濃くなる
-		draw_set_alpha(0.15);
-
+		draw_set_alpha(0.2);
 	}
 	else{
-		draw_set_alpha(0.1);
+		draw_set_alpha(0.13);
 		//draw_set_color(COLOR_CIRCLE_RANGE_COOLDOWN);
 	}
-
+	if(chronomancer_timing > FREEZE_INTERVAL-40){//クロノマンサーのスロータイミングは射程円が少し濃くなる
+		if(freeze_dot_damage_active){//dotダメージが発生するなら円がもっと濃くなる
+			var alpha_max = 0.25;
+		}
+		else{
+			var alpha_max = 0.1;
+		}
+		var alpha = (1-(FREEZE_INTERVAL-chronomancer_timing)/40)*alpha_max;
+		if(state = state.idle){
+			alpha += 0.2;
+		}
+		else{
+			alpha += 0.13;
+		}
+		draw_set_alpha(alpha);
+	}
+	
 	//円の色決める
-	var circle_color_default = global.defender_data[defender_number, data.color]
+	var circle_color_default = global.defender_data[defender_number, data.color];
 	var circle_hue = color_get_hue(circle_color_default);
 	var circle_saturation = color_get_saturation(circle_color_default)+60;
 	var circle_value = color_get_value(circle_color_default)-60;
 	var circle_color = make_color_hsv(circle_hue, circle_saturation, circle_value);
 	draw_set_color(circle_color);
-
+	
 	draw_circle(x, y, range, true);
 }
 

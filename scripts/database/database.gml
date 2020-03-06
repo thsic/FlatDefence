@@ -618,7 +618,7 @@ global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 1.5;
 global.enemydata[target, enemydata.description] = "やや脆くやや素早い";
 global.enemydata[target, enemydata.dropgold] = 3;
-global.enemydata[target, enemydata.color] = make_color_rgb(215, 247, 73);
+global.enemydata[target, enemydata.color] = make_color_rgb(215, 173, 73);
 enemy_param_meas_rank(target);
 
 target = 4;
@@ -629,7 +629,7 @@ global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 2;
 global.enemydata[target, enemydata.description] = "やや脆くやや素早い";
 global.enemydata[target, enemydata.dropgold] = 6;
-global.enemydata[target, enemydata.color] = make_color_rgb(215, 247, 73);
+global.enemydata[target, enemydata.color] = make_color_rgb(215, 173, 73);
 enemy_param_meas_rank(target);
 
 target = 5;
@@ -640,7 +640,7 @@ global.enemydata[target, enemydata.shield] = 20;
 global.enemydata[target, enemydata.speed] = 2.5;
 global.enemydata[target, enemydata.description] = "やや脆く素早い";
 global.enemydata[target, enemydata.dropgold] = 12;
-global.enemydata[target, enemydata.color] = make_color_rgb(215, 247, 73);
+global.enemydata[target, enemydata.color] = make_color_rgb(215, 173, 73);
 enemy_param_meas_rank(target);
 
 #endregion
@@ -871,7 +871,7 @@ global.effectdata[target, effectdata.deleteeffect] = -1;
 target = 3;
 global.effectdata[target, effectdata.number] = target;
 global.effectdata[target, effectdata.name] = "悪魔の悪戯";
-global.effectdata[target, effectdata.description] = "あらゆるダメージを与えた際\vの貫通ダメージ@を与える";
+global.effectdata[target, effectdata.description] = "あらゆるダメージを与えた際@\vの貫通ダメージを与える";
 global.effectdata[target, effectdata.value] = 5;
 global.effectdata[target, effectdata.overlap] = true;
 global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;

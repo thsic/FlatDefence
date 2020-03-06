@@ -327,14 +327,15 @@ if(global.gamestate = gamestate.main){
 	#endregion
 
 	#region chronomancer
+	freeze_dot_damage_active = false;
 	if(chronomancer){
 		if(freeze_dot_damage){
 			chronomancer_slow(true, demons_fire_level, freeze_all);
+			freeze_dot_damage_active = true
 		}
 		else{
 			chronomancer_slow(false, 0, freeze_all);
 		}
-		
 	}
 	#endregion
 

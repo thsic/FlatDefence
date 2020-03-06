@@ -42,7 +42,7 @@ break
 #endregion -----------------
 #region stage1
 case 1:
-	/*switch(global.wave_now){
+	switch(global.wave_now){
 	case 1://敵10体
 		for(var i=0; i<10; i++){
 			set_enemy_generate_timeline(i*60, global.generate_timeline_id, 0, 0, 0);
@@ -102,7 +102,7 @@ case 1:
 			set_enemy_generate_timeline(i*60+990, global.generate_timeline_id, 0, 1, 0);
 		}
 	break
-	}*/
+	}
 break
 #endregion
 #region stage2
