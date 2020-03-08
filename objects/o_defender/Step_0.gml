@@ -35,7 +35,7 @@ var demons_fire_level = 0;
 var attack_speed_halve = 0;
 var true_basic = 0;
 var range_halve = 0;
-var attack_halve = 0;
+var attack_decrement = 0;
 var freeze_all = 0;
 var attack_halve_disempower = 0;
 var itemslot_plus = 0;
@@ -46,7 +46,7 @@ var triple_shot = 0;
 var basicist = 0;
 var freeze_dot_damage = 0;
 var septuple_shot = 0;
-
+var attack_halve = 0;
 
 for(var i=0; i<EFFECT_SLOT_MAX; i++){
 	if(effect_now[i, effectnow.number] != -1){
@@ -65,7 +65,7 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 			range_halve++;
 		break
 		case 11://攻撃減少
-			attack_halve++;
+			attack_decrement++;
 		break
 		case 12://氷神の加護
 			freeze_all++;
@@ -97,6 +97,9 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		case 28://7連攻撃
 			septuple_shot++;
 		break
+		case 33://パワー半減
+			attack_halve++;
+		break
 		}
 	}
 	else{
@@ -122,9 +125,13 @@ if(attack_halve_disempower){
 		}
 	}
 }
-if(attack_halve){
+if(attack_halve){//パワー半減があるならパワー減少は無効
+	fire_damage *= 0.5;//半減
+}
+else if(attack_decrement){
 	fire_damage *= 0.66;//3分の2
 }
+
 if(range_x2){
 	for(var i=0; i<range_x2; i++){
 		range *= 2;

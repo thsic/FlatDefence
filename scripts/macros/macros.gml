@@ -59,6 +59,7 @@
 #macro REGEN_LV1_HEAL 0.5
 #macro REGEN_LV2_HEAL 1
 #macro REGEN_LV3_HEAL 3
+#macro BOSS_LIFEDAMAGE 3
 
 //timemachine
 #macro TIMEMACHINE_WIDTH 244
@@ -175,11 +176,12 @@
 #macro COLOR_MARKER_GRAY c_gray
 
 #macro COLOR_PARAMBAR_DEFENDER make_color_rgb(140,140,100)
-#macro COLOR_PARAMBAR_ITEM make_color_rgb(150,150,110)
+#macro COLOR_PARAMBAR_ITEM make_color_rgb(145,145,105)
 #macro COLOR_PARAMBAR_ENEMY make_color_rgb(135,135,95)
 
 //パーティクル
 #macro COLOR_LIFEBLOOD make_color_rgb(240, 30, 55)
+#macro COLOR_LIFEBLOOD_BOSS make_color_rgb(255, 50, 70)
 #macro COLOR_ITEM_EFFECT make_color_rgb(255, 244, 71)
 #macro COLOR_SKILL_ACTIVE_BASE c_purple
 #macro COLOR_UPGRADE_STAR_EFFECT c_yellow

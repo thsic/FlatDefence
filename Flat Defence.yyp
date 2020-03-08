@@ -1535,6 +1535,14 @@
             }
         },
         {
+            "Key": "97fbf86f-efa2-40a6-8047-e713a76182ac",
+            "Value": {
+                "id": "b82cfdec-235e-4d2e-ad8b-06b3d8381e01",
+                "resourcePath": "objects\\o_eBossLv2\\o_eBossLv2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "98049439-d7ef-4de2-962f-7bf4c2feb1b2",
             "Value": {
                 "id": "9b73d37b-fbc2-489f-9c3c-9b2ead2b1f47",
@@ -1759,6 +1767,14 @@
             }
         },
         {
+            "Key": "b2e8c396-c8c0-49cd-93d8-82f405fa83a8",
+            "Value": {
+                "id": "74761851-30f6-46e1-b681-6350eaff324d",
+                "resourcePath": "objects\\o_eBossLv3\\o_eBossLv3.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b56d0d8a-5201-458b-a2d1-2cbb6697a796",
             "Value": {
                 "id": "00a3c180-b8cd-4a79-8802-582ec9317496",
@@ -1772,6 +1788,14 @@
                 "id": "f83c2e81-aa31-4c3e-b0e0-25e2b4017774",
                 "resourcePath": "scripts\\cooldown_reduction\\cooldown_reduction.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b829231f-768e-4afc-90a2-41a082a8855a",
+            "Value": {
+                "id": "1d0b9e84-83ed-4758-94b3-a92a9688e28c",
+                "resourcePath": "objects\\o_eBossLv1\\o_eBossLv1.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2447,6 +2471,14 @@
             }
         },
         {
+            "Key": "f3fd0228-279f-485e-a19c-2ea07bc88a43",
+            "Value": {
+                "id": "e0ca61d9-7032-41fa-b774-9eb0fd5d7c7f",
+                "resourcePath": "scripts\\make_enemy_color\\make_enemy_color.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "76bc76bd-e002-4407-a479-cd8c9df7922f",
@@ -2627,6 +2659,7 @@
         "96b93399-b4f0-4cc3-a553-0b75f03576a3",
         "796f10df-d809-419b-b6b5-fb1acec5b32d",
         "b202edc7-9807-4ad5-bdc4-ce6bb0e7728e",
+        "f3fd0228-279f-485e-a19c-2ea07bc88a43",
         "ce44b901-10a1-4f92-b272-d92c933ed5e1",
         "acdebee6-7fcb-4bc0-9ba9-ef7f1d0fcea4",
         "17f689e6-cb80-41c5-b6bb-6283d28b5d5d",

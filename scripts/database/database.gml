@@ -583,9 +583,9 @@ global.enemydata[target, enemydata.name] = "Normal Lv1";
 global.enemydata[target, enemydata.hp] = 30;
 global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 1;
-global.enemydata[target, enemydata.description] = "普通のHPとシールドと速度を持つ";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 6;
-global.enemydata[target, enemydata.color] = make_color_rgb(229, 146, 68);
+global.enemydata[target, enemydata.color] = make_enemy_color(229, 146, 68, o_eNormalLv1, 15);
 enemy_param_meas_rank(target);
 
 target = 1;
@@ -594,9 +594,9 @@ global.enemydata[target, enemydata.name] = "Normal Lv2";
 global.enemydata[target, enemydata.hp] = 110;
 global.enemydata[target, enemydata.shield] = 40;
 global.enemydata[target, enemydata.speed] = 1;
-global.enemydata[target, enemydata.description] = "普通のHPとシールドと速度を持つ";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 9;
-global.enemydata[target, enemydata.color] = make_color_rgb(229, 146, 68);
+global.enemydata[target, enemydata.color] = make_enemy_color(229, 146, 68, o_eNormalLv2, 15);
 enemy_param_meas_rank(target);
 
 target = 2;
@@ -605,9 +605,9 @@ global.enemydata[target, enemydata.name] = "Normal Lv3";
 global.enemydata[target, enemydata.hp] = 200;
 global.enemydata[target, enemydata.shield] = 60;
 global.enemydata[target, enemydata.speed] = 1;
-global.enemydata[target, enemydata.description] = "そこそこのHPとシールドと速度を持つ";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 18;
-global.enemydata[target, enemydata.color] = make_color_rgb(229, 146, 68);
+global.enemydata[target, enemydata.color] = make_enemy_color(229, 146, 68, o_eNormalLv3, 15);
 enemy_param_meas_rank(target);
 
 target = 3;
@@ -616,9 +616,9 @@ global.enemydata[target, enemydata.name] = "Small Lv1";
 global.enemydata[target, enemydata.hp] = 15;
 global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 1.5;
-global.enemydata[target, enemydata.description] = "やや脆くやや素早い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 3;
-global.enemydata[target, enemydata.color] = make_color_rgb(215, 173, 73);
+global.enemydata[target, enemydata.color] = make_enemy_color(215, 173, 73, o_eSmallLv1, 15);
 enemy_param_meas_rank(target);
 
 target = 4;
@@ -627,9 +627,9 @@ global.enemydata[target, enemydata.name] = "Small Lv2";
 global.enemydata[target, enemydata.hp] = 90;
 global.enemydata[target, enemydata.shield] = 15;
 global.enemydata[target, enemydata.speed] = 2;
-global.enemydata[target, enemydata.description] = "やや脆くやや素早い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 6;
-global.enemydata[target, enemydata.color] = make_color_rgb(215, 173, 73);
+global.enemydata[target, enemydata.color] = make_enemy_color(215, 173, 73, o_eSmallLv2, 15);
 enemy_param_meas_rank(target);
 
 target = 5;
@@ -638,9 +638,9 @@ global.enemydata[target, enemydata.name] = "Small Lv3";
 global.enemydata[target, enemydata.hp] = 190;
 global.enemydata[target, enemydata.shield] = 20;
 global.enemydata[target, enemydata.speed] = 2.5;
-global.enemydata[target, enemydata.description] = "やや脆く素早い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 12;
-global.enemydata[target, enemydata.color] = make_color_rgb(215, 173, 73);
+global.enemydata[target, enemydata.color] = make_enemy_color(215, 173, 73, o_eSmallLv3, 15);
 enemy_param_meas_rank(target);
 
 #endregion
@@ -651,9 +651,9 @@ global.enemydata[target, enemydata.name] = "Fast Lv1";
 global.enemydata[target, enemydata.hp] = 5;
 global.enemydata[target, enemydata.shield] = 0;
 global.enemydata[target, enemydata.speed] = 3;
-global.enemydata[target, enemydata.description] = "とても脆く素早い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 4;
-global.enemydata[target, enemydata.color] = make_color_rgb(81, 191, 204);
+global.enemydata[target, enemydata.color] = make_enemy_color(81, 191, 204, o_eFastLv1, 15);
 enemy_param_meas_rank(target);
 
 target = 7;
@@ -662,9 +662,9 @@ global.enemydata[target, enemydata.name] = "Fast Lv2";
 global.enemydata[target, enemydata.hp] = 60;
 global.enemydata[target, enemydata.shield] = 5;
 global.enemydata[target, enemydata.speed] = 4;
-global.enemydata[target, enemydata.description] = "とても脆く素早い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 8;
-global.enemydata[target, enemydata.color] = make_color_rgb(81, 191, 204);
+global.enemydata[target, enemydata.color] = make_enemy_color(81, 191, 204, o_eFastLv2, 15);
 enemy_param_meas_rank(target);
 
 target = 8;
@@ -673,9 +673,9 @@ global.enemydata[target, enemydata.name] = "Fast Lv3";
 global.enemydata[target, enemydata.hp] = 210;
 global.enemydata[target, enemydata.shield] = 50;
 global.enemydata[target, enemydata.speed] = 4.5;
-global.enemydata[target, enemydata.description] = "すごく素早い上にそこそこ硬い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 16;
-global.enemydata[target, enemydata.color] = make_color_rgb(81, 191, 204);
+global.enemydata[target, enemydata.color] = make_enemy_color(81, 191, 204, o_eFastLv3, 15);
 enemy_param_meas_rank(target);
 
 target = 9;
@@ -684,9 +684,9 @@ global.enemydata[target, enemydata.name] = "Shield Lv1";
 global.enemydata[target, enemydata.hp] = 60;
 global.enemydata[target, enemydata.shield] = 60;
 global.enemydata[target, enemydata.speed] = 0.8;
-global.enemydata[target, enemydata.description] = "シールドが多い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 12;
-global.enemydata[target, enemydata.color] = make_color_rgb(53, 95, 178);
+global.enemydata[target, enemydata.color] = make_enemy_color(53, 95, 178, o_eShieldLv1, 15);
 enemy_param_meas_rank(target);
 
 target = 10;
@@ -695,9 +695,9 @@ global.enemydata[target, enemydata.name] = "Shield Lv2";
 global.enemydata[target, enemydata.hp] = 290;
 global.enemydata[target, enemydata.shield] = 90;
 global.enemydata[target, enemydata.speed] = 0.7;
-global.enemydata[target, enemydata.description] = "シールドが多い。";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 24;
-global.enemydata[target, enemydata.color] = make_color_rgb(53, 95, 178);
+global.enemydata[target, enemydata.color] = make_enemy_color(53, 95, 178, o_eShieldLv2, 15);
 enemy_param_meas_rank(target);
 
 target = 11;
@@ -706,9 +706,9 @@ global.enemydata[target, enemydata.name] = "Shield Lv3";
 global.enemydata[target, enemydata.hp] = 750;
 global.enemydata[target, enemydata.shield] = 260;
 global.enemydata[target, enemydata.speed] = 0.6;
-global.enemydata[target, enemydata.description] = "シールドとHPが多い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 48;
-global.enemydata[target, enemydata.color] = make_color_rgb(53, 95, 178);
+global.enemydata[target, enemydata.color] = make_enemy_color(53, 95, 178, o_eShieldLv3, 15);
 enemy_param_meas_rank(target);
 
 #endregion
@@ -719,9 +719,9 @@ global.enemydata[target, enemydata.name] = "Tough Lv1";
 global.enemydata[target, enemydata.hp] = 220;
 global.enemydata[target, enemydata.shield] = 25;
 global.enemydata[target, enemydata.speed] = 0.5;
-global.enemydata[target, enemydata.description] = "HPが多く鈍い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 20;
-global.enemydata[target, enemydata.color] = make_color_rgb(152, 107, 153);
+global.enemydata[target, enemydata.color] = make_enemy_color(152, 107, 153, o_eToughLv1, 15);
 enemy_param_meas_rank(target);
 
 target = 13;
@@ -730,9 +730,9 @@ global.enemydata[target, enemydata.name] = "Tough Lv2";
 global.enemydata[target, enemydata.hp] = 680;
 global.enemydata[target, enemydata.shield] = 40;
 global.enemydata[target, enemydata.speed] = 0.5;
-global.enemydata[target, enemydata.description] = "HPが多く鈍い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 40;
-global.enemydata[target, enemydata.color] = make_color_rgb(152, 107, 153);
+global.enemydata[target, enemydata.color] = make_enemy_color(152, 107, 153, o_eToughLv2, 15);
 enemy_param_meas_rank(target);
 
 target = 14;
@@ -741,9 +741,9 @@ global.enemydata[target, enemydata.name] = "Tough Lv3";
 global.enemydata[target, enemydata.hp] = 1400;
 global.enemydata[target, enemydata.shield] = 100;
 global.enemydata[target, enemydata.speed] = 0.5;
-global.enemydata[target, enemydata.description] = "HPがすごく多く鈍い";
+global.enemydata[target, enemydata.description] = "";
 global.enemydata[target, enemydata.dropgold] = 80;
-global.enemydata[target, enemydata.color] = make_color_rgb(152, 107, 153);
+global.enemydata[target, enemydata.color] = make_enemy_color(152, 107, 153, o_eToughLv3, 15);
 enemy_param_meas_rank(target);
 
 target = 15;
@@ -754,7 +754,7 @@ global.enemydata[target, enemydata.shield] = 60;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "HPが減ると速度上昇する";
 global.enemydata[target, enemydata.dropgold] = 50;
-global.enemydata[target, enemydata.color] = make_color_rgb(204, 61, 65);
+global.enemydata[target, enemydata.color] = make_enemy_color(204, 61, 65, o_eBerserkerLv1, 15);
 enemy_param_meas_rank(target);
 
 target = 16;
@@ -765,7 +765,7 @@ global.enemydata[target, enemydata.shield] = 90;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "HPが減ると速度上昇する";
 global.enemydata[target, enemydata.dropgold] = 100;
-global.enemydata[target, enemydata.color] = make_color_rgb(204, 61, 65);
+global.enemydata[target, enemydata.color] = make_enemy_color(204, 61, 65, o_eBerserkerLv2, 15);
 enemy_param_meas_rank(target);
 
 target = 17;
@@ -776,7 +776,7 @@ global.enemydata[target, enemydata.shield] = 150;
 global.enemydata[target, enemydata.speed] = 1;
 global.enemydata[target, enemydata.description] = "HPが減ると速度上昇する";
 global.enemydata[target, enemydata.dropgold] = 200;
-global.enemydata[target, enemydata.color] = make_color_rgb(204, 61, 65);
+global.enemydata[target, enemydata.color] = make_enemy_color(204, 61, 65, o_eBerserkerLv3, 15);
 enemy_param_meas_rank(target);
 #endregion
 #region 18~23
@@ -788,7 +788,7 @@ global.enemydata[target, enemydata.shield] = 40;
 global.enemydata[target, enemydata.speed] = 0.8;
 global.enemydata[target, enemydata.description] = "常に自己再生している";
 global.enemydata[target, enemydata.dropgold] = 16;
-global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+global.enemydata[target, enemydata.color] = make_enemy_color(129, 200, 86, o_eRegenLv1, 15);
 enemy_param_meas_rank(target);
 
 target = 19;
@@ -799,7 +799,7 @@ global.enemydata[target, enemydata.shield] = 70;
 global.enemydata[target, enemydata.speed] = 0.7;
 global.enemydata[target, enemydata.description] = "常に自己再生している";
 global.enemydata[target, enemydata.dropgold] = 32;
-global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+global.enemydata[target, enemydata.color] = make_enemy_color(129, 200, 86, o_eRegenLv2, 15);
 enemy_param_meas_rank(target);
 
 target = 20;
@@ -810,7 +810,40 @@ global.enemydata[target, enemydata.shield] = 110;
 global.enemydata[target, enemydata.speed] = 0.6;
 global.enemydata[target, enemydata.description] = "常に自己再生している";
 global.enemydata[target, enemydata.dropgold] = 64;
-global.enemydata[target, enemydata.color] = make_color_rgb(129, 200, 86);
+global.enemydata[target, enemydata.color] = make_enemy_color(129, 200, 86, o_eRegenLv3, 15);
+enemy_param_meas_rank(target);
+
+target = 21;
+global.enemydata[target, enemydata.object] = o_eBossLv1;
+global.enemydata[target, enemydata.name] = "BOSS";
+global.enemydata[target, enemydata.hp] = 1600;
+global.enemydata[target, enemydata.shield] = 350;
+global.enemydata[target, enemydata.speed] = 0.5;
+global.enemydata[target, enemydata.description] = "ライフを3減らす";
+global.enemydata[target, enemydata.dropgold] = 220;
+global.enemydata[target, enemydata.color] = make_color_rgb(180, 105, 45);
+enemy_param_meas_rank(target);
+
+target = 22;
+global.enemydata[target, enemydata.object] = o_eBossLv2;
+global.enemydata[target, enemydata.name] = "BOSS";
+global.enemydata[target, enemydata.hp] = 2400;
+global.enemydata[target, enemydata.shield] = 1100;
+global.enemydata[target, enemydata.speed] = 0.3;
+global.enemydata[target, enemydata.description] = "ライフを3減らす";
+global.enemydata[target, enemydata.dropgold] = 300;
+global.enemydata[target, enemydata.color] = make_color_rgb(25, 70, 145);
+enemy_param_meas_rank(target);
+
+target = 23;
+global.enemydata[target, enemydata.object] = o_eBossLv3;
+global.enemydata[target, enemydata.name] = "BOSS";
+global.enemydata[target, enemydata.hp] = 4000;
+global.enemydata[target, enemydata.shield] = 450;
+global.enemydata[target, enemydata.speed] = 0.2;
+global.enemydata[target, enemydata.description] = "ライフを3減らす";
+global.enemydata[target, enemydata.dropgold] = 400;
+global.enemydata[target, enemydata.color] = make_color_rgb(120, 75, 120);
 enemy_param_meas_rank(target);
 #endregion
 
@@ -1131,7 +1164,7 @@ global.effectdata[target, effectdata.description] = "攻撃が七連射になる
 global.effectdata[target, effectdata.value] = 7;
 global.effectdata[target, effectdata.overlap] = false;
 global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
-global.effectdata[target, effectdata.addeffect] = 11;
+global.effectdata[target, effectdata.addeffect] = 33;
 global.effectdata[target, effectdata.deleteeffect] = -1;
 
 target = 29;
@@ -1173,7 +1206,15 @@ global.effectdata[target, effectdata.overlap] = false;
 global.effectdata[target, effectdata.color] = COLOR_TEXT_BLUE;
 global.effectdata[target, effectdata.addeffect] = -1;
 global.effectdata[target, effectdata.deleteeffect] = 31;
-
+target = 33;
+global.effectdata[target, effectdata.number] = target;
+global.effectdata[target, effectdata.name] = "パワー半減";
+global.effectdata[target, effectdata.description] = "パワーが半減する";
+global.effectdata[target, effectdata.value] = 0;
+global.effectdata[target, effectdata.overlap] = false;
+global.effectdata[target, effectdata.color] = COLOR_TEXT_RED;
+global.effectdata[target, effectdata.addeffect] = -1;
+global.effectdata[target, effectdata.deleteeffect] = -1;
 #endregion
 global.effect_category_amount = target+1;
 #region enum
@@ -1190,5 +1231,4 @@ enum effectdata{
 
 #endregion
 #endregion
-
 

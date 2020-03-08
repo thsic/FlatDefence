@@ -24,13 +24,17 @@ for(var i=0; i<floor(bar_percent)+1; i++){
 	else{
 		bar_length = (bar_percent-i)*bar_maxlength;
 	}
-	if(hue-i*35 < 0){
-		hue = 360+(hue-i*35);
+	
+	hue = hue+i*35;
+	repeat(10){//hueが255を超えると色が赤にしかならなくなるので修正
+		if(hue > 255){
+			hue -= 255;
+		}
+		else{
+			break
+		}
 	}
-	else{
-		hue = hue-i*35;
-	}
-	draw_set_color(make_color_hsv(hue, saturation+i*10, value+i*15));
+	draw_set_color(make_color_hsv(hue, saturation+i*9, value+i*12));
 	draw_line(bar_x, bar_y, bar_x+bar_length, bar_y);
 }
 draw_set_alpha(1);

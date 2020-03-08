@@ -7,7 +7,7 @@ var hp_rank = 0;
 var shield_rank = 0;
 var speed_rank = 0;
 var rank_amount = ENEMY_RANK_AMOUNT;//10
-
+rank_amount = 11
 #region rankdata
 rank_color[0] = make_color_rgb(130, 200, 130);
 rank_color[1] = make_color_rgb(140, 220, 140);
@@ -41,6 +41,7 @@ hp_rank[6] = 800;
 hp_rank[7] = 1200;
 hp_rank[8] = 2000;
 hp_rank[9] = 3500;
+hp_rank[10] = 100000;
 shield_rank[0] = 0;
 shield_rank[1] = 10;
 shield_rank[2] = 25;
@@ -51,6 +52,7 @@ shield_rank[6] = 150;
 shield_rank[7] = 230;
 shield_rank[8] = 510;
 shield_rank[9] = 1000;
+shield_rank[10] = 100000;
 speed_rank[0] = 0;
 speed_rank[1] = 0.3;
 speed_rank[2] = 0.5;
@@ -61,6 +63,7 @@ speed_rank[6] = 2.5;
 speed_rank[7] = 3.5;
 speed_rank[8] = 4;
 speed_rank[9] = 5;
+speed_rank[10] = 100000;
 #endregion
 
 for(var i=1; i<rank_amount; i++){
