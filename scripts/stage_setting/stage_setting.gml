@@ -128,7 +128,7 @@ case 4:
 	global.shop_defender[5] = o_dBlaster;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
-	global.shop_item[2] = 9;
+	global.shop_item[2] = 19;
 	global.shop_item[3] = 3;
 	global.shop_item[4] = 25;
 	global.shop_item[5] = 27;
@@ -139,6 +139,28 @@ case 4:
 	global.wave_drop_item[1] = 17;
 	global.wave_drop_item[2] = 0;
 	global.wave_drop_item[3] = 23;
+break
+case 5:
+	global.life = 20;
+	global.gold = 250;
+	global.wave_total = 7;
+	global.wave_clear_gold = 50;
+	
+	global.shop_defender[0] = o_dBasic;
+	global.shop_defender[1] = o_dSniper;
+	global.shop_defender[2] = o_dBomber;
+	global.shop_defender[3] = o_dThief;
+	global.shop_defender[4] = o_dFreezer;
+	global.shop_defender[5] = o_dBlaster;
+	global.shop_item[0] = 0;
+	global.shop_item[1] = 1;
+	global.shop_item[2] = 19;
+	global.shop_item[3] = 3;
+	global.shop_item[4] = 25;
+	global.shop_item[5] = 27;
+	global.shop_item[6] = 21;
+	global.shop_item[7] = 17;
+	global.shop_item[8] = 23;
 break
 default:
 	global.life = 1

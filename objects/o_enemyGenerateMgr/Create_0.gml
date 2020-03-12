@@ -1,18 +1,23 @@
 generate_enemy_type_now = 0;
 spawner_type_now = 0;
 route_type_now = 0;
+spawner_x = 0;
+spawner_y = 0;
 switch(global.stage){
 case -1:
 	spowner_amount = 1;
 break
 case 1:
-	spowner_amount = 1;
-break
 case 2:
+case 3:
+case 4:
 	spowner_amount = 1;
 break
-case 3:
-	spowner_amount = 1;
+case 5:
+case 6:
+case 7:
+case 8:
+	spowner_amount = 2;
 break
 default:
 	sdm("error! o_enemyGenerateMgr")

@@ -82,7 +82,6 @@ case gamestate.restpause:
 			if(string_width(global.enemydata[target_number, enemydata.name]) > 124-38){//名前が長いなら敵数表示をずらす
 				amount_text_x = x_offset+string_width(global.enemydata[target_number, enemydata.name])+44;
 			}
-			sdm(string_width(global.enemydata[target_number, enemydata.name]))
 			draw_text(x_offset+38, y_offset+5, global.enemydata[target_number, enemydata.name]);
 			draw_text(x_offset+amount_text_x, y_offset+5, "x");
 			draw_set_color(COLOR_TEXT_GRAY);

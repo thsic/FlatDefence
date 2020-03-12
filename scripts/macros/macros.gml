@@ -130,7 +130,7 @@
 #macro FIRE_DAMAGE_MARKER_TEXT "パワー"
 #macro ATTACKSPEED_MARKER_TEXT "攻撃速度"
 #macro RANGE_MARKER_TEXT "射程"
-#macro MOST_DAMAGING_DEFENDER_TEXT "最もダメージを与えたディフェンダー"
+#macro MOST_DAMAGING_DEFENDER_TEXT "最もダメージを与えたディフェンダー"//最もダメージを与えたディフェンダー
 
 //色
 #macro COLOR_TEXT_GRAY c_dkgray

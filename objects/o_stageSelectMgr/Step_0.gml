@@ -25,7 +25,7 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 		stage_select_button[touch_button, stageselectbutton.state] = 1;
 
 		
-		if(mouse_check_button_pressed(mb_left)){//クリックされたら
+		if(mouse_check_button_pressed(mb_left) and stage_goto = -1){//クリックされたら
 			surface_free(global.usefulwindow_surface[0]);
 			surface_free(global.usefulwindow_surface[1]);
 			surface_free(global.usefulwindow_surface[2]);
@@ -45,6 +45,18 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 			break
 			case 3:
 				stage_goto = r_stage4;
+			break
+			case 4:
+				stage_goto = r_stage5;
+			break
+			case 5:
+				stage_goto = r_stage6;
+			break
+			case 6:
+				stage_goto = r_stage7;
+			break
+			case 7:
+				stage_goto = r_stage8;
 			break
 			}
 		}

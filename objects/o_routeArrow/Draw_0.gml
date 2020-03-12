@@ -16,3 +16,4 @@ if(afterimage_cooldown = 0){
 else{
 	afterimage_cooldown--
 }
+
