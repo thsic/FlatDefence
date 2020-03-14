@@ -449,8 +449,110 @@ break
 #region stage5
 case 5:
 	switch(global.wave_now){
-	case 1:
-	
+	case 1://berserker small*3 small*3 normal berserker 
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 0, 2, 0);
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*30+120, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*30+130, global.generate_timeline_id, 0, 1, 0);
+		}
+		set_enemy_generate_timeline(300, global.generate_timeline_id, 1, 1, 1);
+		set_enemy_generate_timeline(420, global.generate_timeline_id, 0, 2, 0);
+	break
+	case 2://normal small*3 fast*5 small*3*2 normal fast*3
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 1, 1, 1);
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*30+60, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*30+360, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*30+480, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*30+580, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*40+180, global.generate_timeline_id, 0, 2, 0);
+		}
+		set_enemy_generate_timeline(570, global.generate_timeline_id, 1, 1, 1);
+	break
+	case 3://small1*5 small2*3 shield small2*3 small1*5*2 shield small1*5
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*15+30, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*15+370, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*15+490, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*15+630, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*30+130, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*30+250, global.generate_timeline_id, 0, 1, 0);
+		}
+		set_enemy_generate_timeline(240, global.generate_timeline_id, 1, 2, 1);
+		set_enemy_generate_timeline(620, global.generate_timeline_id, 1, 2, 1);
+	break
+	case 4://shield small*5*3 shield small*5*2 shield small*3*3
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*40+20, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+300, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+580, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+650, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+930, global.generate_timeline_id, 0, 0, 0);
+		}
+		set_enemy_generate_timeline(50, global.generate_timeline_id, 1, 1, 1);
+		set_enemy_generate_timeline(590, global.generate_timeline_id, 1, 1, 1);
+		set_enemy_generate_timeline(910, global.generate_timeline_id, 1, 1, 1);
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*20+1200, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*20+1380, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*20+1470, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 5://small2 small2*5 berserker (shield small2*3) berserker*3 (shield small2*3) small2*7
+		set_enemy_generate_timeline(10, global.generate_timeline_id, 1, 0, 1);//した
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*20+30, global.generate_timeline_id, 0, 0, 0);
+		}
+		set_enemy_generate_timeline(190, global.generate_timeline_id, 0, 1, 0);
+		set_enemy_generate_timeline(200, global.generate_timeline_id, 1, 2, 1);
+		for(var i=0; i<3; i++){//下
+			set_enemy_generate_timeline(i*30+230, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*30+630, global.generate_timeline_id, 1, 0, 1);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*90+300, global.generate_timeline_id, 0, 1, 0);
+		}
+		set_enemy_generate_timeline(600, global.generate_timeline_id, 1, 2, 1);
+		for(var i=0; i<7; i++){
+			set_enemy_generate_timeline(i*20+730, global.generate_timeline_id, 0, 0, 0);
+		}
+	break
+	case 6://fast*20 (shield) small*5 berserker small*5*3 (shield small*3) small*5 berserker*3 small*5*2 (shield small*3) small*5*3 berserker*3 (shield)
+		for(var i=0; i<50; i++){
+			set_enemy_generate_timeline(i*30+5, global.generate_timeline_id, 0, 1, 0);//1
+		}
+		for(var i=0; i<5; i++){//small
+			set_enemy_generate_timeline(i*20+50, global.generate_timeline_id, 0, 0, 0);//3
+			for(var j=0; j<3; j++){
+				set_enemy_generate_timeline(i*20+210+j*160, global.generate_timeline_id, 0, 0, 0);//5
+				set_enemy_generate_timeline(i*20+1300+j*160, global.generate_timeline_id, 0, 0, 0);//13
+			}
+			set_enemy_generate_timeline(i*20+660, global.generate_timeline_id, 0, 0, 0);//8
+			set_enemy_generate_timeline(i*20+1010, global.generate_timeline_id, 0, 0, 0);//10
+			set_enemy_generate_timeline(i*20+1180, global.generate_timeline_id, 0, 0, 0);//10
+		}
+		
+		//berserker
+		set_enemy_generate_timeline(180, global.generate_timeline_id, 0, 2, 0);//4
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*70+800, global.generate_timeline_id, 0, 2, 0);//9
+			set_enemy_generate_timeline(i*60+1730, global.generate_timeline_id, 0, 2, 0);//14
+		}
+		
+		//sita
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 1, 3, 1);//2
+		set_enemy_generate_timeline(640, global.generate_timeline_id, 1, 3, 1);//6
+		set_enemy_generate_timeline(1160, global.generate_timeline_id, 1, 3, 1);//11
+		set_enemy_generate_timeline(1670, global.generate_timeline_id, 1, 3, 1);//15
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*40+730, global.generate_timeline_id, 1, 0, 1);//7
+			set_enemy_generate_timeline(i*40+1250, global.generate_timeline_id, 1, 0, 1);//12
+		}
+		
 	break
 	}
 break

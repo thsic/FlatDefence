@@ -187,6 +187,7 @@
 #macro COLOR_UPGRADE_STAR_EFFECT c_yellow
 #macro COLOR_ITEM_EQUIP_EFFECT make_color_rgb(241, 241, 68)
 #macro COLOR_UPGRADE_EFFECT make_color_rgb(144, 70, 183)
+#macro COLOR_BLAST_EFFECT make_color_rgb(200, 50, 50)
 
 #macro COLOR_DEFAULT c_white
 

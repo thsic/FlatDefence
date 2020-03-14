@@ -142,8 +142,8 @@ case 4:
 break
 case 5:
 	global.life = 20;
-	global.gold = 250;
-	global.wave_total = 7;
+	global.gold = 400;
+	global.wave_total = 6;
 	global.wave_clear_gold = 50;
 	
 	global.shop_defender[0] = o_dBasic;

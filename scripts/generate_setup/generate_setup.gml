@@ -157,7 +157,29 @@ case 5:
 		generate_enemy_type[2] = o_eBerserkerLv1;
 	break
 	case 2:
-		
+		generate_enemy_type[0] = o_eSmallLv1;
+		generate_enemy_type[1] = o_eNormalLv2;
+		generate_enemy_type[2] = o_eFastLv1;
+	break
+	case 3:
+		generate_enemy_type[0] = o_eSmallLv1;
+		generate_enemy_type[1] = o_eSmallLv2;
+		generate_enemy_type[2] = o_eShieldLv1;
+	break
+	case 4:
+		generate_enemy_type[0] = o_eSmallLv2;
+		generate_enemy_type[1] = o_eShieldLv2;
+	break
+	case 5:
+		generate_enemy_type[0] = o_eSmallLv2;
+		generate_enemy_type[1] = o_eBerserkerLv2;
+		generate_enemy_type[2] = o_eShieldLv3;
+	break
+	case 6:
+		generate_enemy_type[0] = o_eSmallLv2;
+		generate_enemy_type[1] = o_eFastLv1;
+		generate_enemy_type[2] = o_eBerserkerLv2;
+		generate_enemy_type[3] = o_eShieldLv3;
 	break
 	}
 
