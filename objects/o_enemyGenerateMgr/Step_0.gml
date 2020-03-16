@@ -4,4 +4,3 @@ if(global.gamestate = gamestate.main){
 else{
 	timeline_running = false;
 }
-sdm(global.wave_now)

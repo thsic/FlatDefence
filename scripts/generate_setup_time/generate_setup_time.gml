@@ -560,8 +560,101 @@ break
 #region stage6
 case 6:
 	switch(global.wave_now){
-	case 1:
-	
+	case 1://(regen*3) small*5*2 (regen*3) small*5
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*80+30, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*80+350, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*20+200, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*20+460, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*20+720, global.generate_timeline_id, 1, 0, 1);
+		}
+	break
+	case 2://tough (regen) tough tough (regen*3) (regen*3)
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 1, 0, 1);
+		set_enemy_generate_timeline(60, global.generate_timeline_id, 0, 1, 0);
+		set_enemy_generate_timeline(180, global.generate_timeline_id, 1, 0, 1);
+		set_enemy_generate_timeline(300, global.generate_timeline_id, 1, 0, 1);
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*60+250, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*60+500, global.generate_timeline_id, 0, 1, 0);
+		}
+	break
+	case 3://tough (shield) small*3 tough (shield) small*3 (shield) small*3 
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 1, 2, 1);
+		set_enemy_generate_timeline(40, global.generate_timeline_id, 0, 1, 0);
+		set_enemy_generate_timeline(260, global.generate_timeline_id, 0, 1, 0);
+		set_enemy_generate_timeline(270, global.generate_timeline_id, 1, 2, 1);
+		set_enemy_generate_timeline(380, global.generate_timeline_id, 1, 2, 1);
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*60+100, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*60+360, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*60+580, global.generate_timeline_id, 1, 0, 1);
+		}
+	break
+	case 4://berserker*4 (regen*3) berserker*6 (regen*3) berserker*4*2
+		for(var i=0; i<4; i++){
+			set_enemy_generate_timeline(i*60+30, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*60+750, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*60+1140, global.generate_timeline_id, 1, 0, 1);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*80+100, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*80+640, global.generate_timeline_id, 0, 1, 0);
+		}
+		for(var i=0; i<6; i++){
+			set_enemy_generate_timeline(i*60+270, global.generate_timeline_id, 1, 0, 1);
+		}
+	break
+	case 5://tough (normal*3*2) tough small*5 (normal*3) small*5
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 1, 2, 1);
+		set_enemy_generate_timeline(410, global.generate_timeline_id, 1, 2, 1);
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+460, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*30+700, global.generate_timeline_id, 1, 0, 1);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*40+40, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*40+240, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*30+470, global.generate_timeline_id, 0, 1, 0);
+		}
+	break
+	case 6://r3 r1*4*2 r3 r1*4 r3 r1*4 r2*3*3  
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 0, 2, 0);
+		set_enemy_generate_timeline(640, global.generate_timeline_id, 0, 2, 0);
+		set_enemy_generate_timeline(940, global.generate_timeline_id, 0, 2, 0);
+		for(var i=0; i<4; i++){
+			set_enemy_generate_timeline(i*40+60, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+300, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+700, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+1000, global.generate_timeline_id, 0, 0, 0);
+		}
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*50+1250, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*50+1450, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*50+1650, global.generate_timeline_id, 0, 1, 0);
+		}
+	break
+	case 7://boss (regen) fast*3 normal*5*2 (regen*3) fast*3 normal*5 (regen*3) normal*5 fast*3*2 (regen) fast*3
+		set_enemy_generate_timeline(30, global.generate_timeline_id, 1, 3, 1);
+		set_enemy_generate_timeline(40, global.generate_timeline_id, 0, 2, 0);
+		set_enemy_generate_timeline(1860, global.generate_timeline_id, 0, 2, 0);
+		for(var i=0; i<3; i++){
+			set_enemy_generate_timeline(i*40+60, global.generate_timeline_id, 1, 1, 1);
+			set_enemy_generate_timeline(i*40+780, global.generate_timeline_id, 1, 1, 1);
+			set_enemy_generate_timeline(i*40+1520, global.generate_timeline_id, 1, 1, 1);
+			set_enemy_generate_timeline(i*40+1720, global.generate_timeline_id, 1, 1, 1);
+			set_enemy_generate_timeline(i*40+1960, global.generate_timeline_id, 1, 1, 1);
+			set_enemy_generate_timeline(i*60+570, global.generate_timeline_id, 0, 2, 0);
+			set_enemy_generate_timeline(i*60+1100, global.generate_timeline_id, 0, 2, 0);
+		}
+		for(var i=0; i<5; i++){
+			set_enemy_generate_timeline(i*30+200, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*30+410, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*30+930, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*30+1310, global.generate_timeline_id, 1, 0, 1);
+		}
 	break
 	}
 break
@@ -570,7 +663,7 @@ break
 case 7:
 	switch(global.wave_now){
 	case 1:
-	
+		
 	break
 	}
 break

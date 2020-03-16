@@ -186,7 +186,7 @@ case 5:
 break
 case 6:
 	set_spawner(0, -16, 368);
-	set_spawner(1, 592, -16);
+	set_spawner(1, 624, -16);
 	route_type[0] = p_stage6route0;
 	route_type[1] = p_stage6route1;
 	
@@ -195,11 +195,40 @@ case 6:
 		generate_enemy_type[0] = o_eSmallLv1;
 		generate_enemy_type[1] = o_eRegenLv1;
 	break
+	case 2:
+		generate_enemy_type[0] = o_eRegenLv1;
+		generate_enemy_type[1] = o_eToughLv1;
+	break
+	case 3:
+		generate_enemy_type[0] = o_eSmallLv2;
+		generate_enemy_type[1] = o_eShieldLv2;
+		generate_enemy_type[2] = o_eToughLv1;
+	break
+	case 4:
+		generate_enemy_type[0] = o_eBerserkerLv1;
+		generate_enemy_type[1] = o_eRegenLv2;
+	break
+	case 5:
+		generate_enemy_type[0] = o_eSmallLv2;
+		generate_enemy_type[1] = o_eNormalLv3;
+		generate_enemy_type[2] = o_eToughLv2;
+	break
+	case 6:
+		generate_enemy_type[0] = o_eRegenLv1;
+		generate_enemy_type[1] = o_eRegenLv2;
+		generate_enemy_type[2] = o_eRegenLv3;
+	break
+	case 7:
+		generate_enemy_type[0] = o_eNormalLv2;
+		generate_enemy_type[1] = o_eFastLv3;
+		generate_enemy_type[2] = o_eRegenLv3;
+		generate_enemy_type[3] = o_eBossLv2;
+	break
 	}
 break
 case 7:
-	set_spawner(0, -16, 464);
-	set_spawner(1, 528, -16);
+	set_spawner(0, -16, 432);
+	set_spawner(1, 368, -16);
 	route_type[0] = p_stage7route0;
 	route_type[1] = p_stage7route1;
 	
@@ -211,7 +240,17 @@ case 7:
 	}
 break
 case 8:
-
+	set_spawner(0, -16, 464);
+	set_spawner(1, 368, -16);
+	route_type[0] = p_stage8route0;
+	route_type[1] = p_stage8route1;
+	
+	switch(global.wave_now){
+	case 1:
+		generate_enemy_type[0] = o_eSmallLv1;
+		generate_enemy_type[1] = o_eRegenLv1;
+	break
+	}
 break
 default:
 	sdm("error! generate_setup")

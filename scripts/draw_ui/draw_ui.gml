@@ -21,7 +21,7 @@ case gamestate.restpause:
 	
 	//残りresttimeをバーで描画
 	var rest_time_per = rest_time/REST_TIME;
-	var rest_time_bar_maxwidth = 252;
+	var rest_time_bar_maxwidth = 253;
 	draw_set_color(c_gray);
 	draw_rectangle(2, 68, 2+rest_time_bar_maxwidth*rest_time_per, 68+1, false);
 	
@@ -60,12 +60,7 @@ case gamestate.restpause:
 				//draw_set_color(global.enemydata[target_number, enemydata.hptextcolor]);
 				draw_text(x_offset+60, y_offset+18,string(global.enemydata[target_number, enemydata.hp]));
 				//draw_set_color(global.enemydata[target_number, enemydata.speedtextcolor]);
-				if(frac(global.enemydata[target_number, enemydata.speed]) != 0){//小数点以下があるかどうかで表示方法が変わる
-					draw_text(x_offset+222, y_offset+18,string_format(global.enemydata[target_number, enemydata.speed], 1, 1));
-				}
-				else{
-					draw_text(x_offset+222, y_offset+18,string(global.enemydata[target_number, enemydata.speed]));
-				}
+				draw_text(x_offset+226, y_offset+18,global.enemydata[target_number, enemydata.speed]*10);//speedは*10して表示する
 				//draw_set_color(global.enemydata[target_number, enemydata.shieldtextcolor]);
 				draw_text(x_offset+146, y_offset+18,string(global.enemydata[target_number, enemydata.shield]));
 			}
@@ -86,9 +81,10 @@ case gamestate.restpause:
 			draw_text(x_offset+amount_text_x, y_offset+5, "x");
 			draw_set_color(COLOR_TEXT_GRAY);
 			draw_text(x_offset+40, y_offset+21, "HP");
-			draw_text(x_offset+106, y_offset+21, "Shield");
-			draw_text(x_offset+184, y_offset+21, "Speed");
-			draw_set_color(COLOR_TEXT_BLUE);
+			draw_text(x_offset+104, y_offset+21, "Shield");
+			draw_text(x_offset+186, y_offset+21, "Speed");
+			//draw_set_color(COLOR_TEXT_BLUE);
+			draw_set_color(COLOR_TEXT_WHITE_NEARGRAY);
 			draw_set_font(FONT_DEFAULT);
 			draw_text(x_offset+amount_text_x+10, y_offset+2,string(global.spawn_enemy[target_objectid, spawnenemy.amount]));
 			draw_set_color(COLOR_DEFAULT);
