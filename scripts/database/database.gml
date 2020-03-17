@@ -503,6 +503,19 @@ global.itemdata[target, itemdata.range] = 30;
 global.itemdata[target, itemdata.cost] = 180;
 global.itemdata[target, itemdata.effect] = 32;
 global.itemdata[target, itemdata.skill] = -1;
+target = 29;
+global.itemdata[target, itemdata.number] = target;
+global.itemdata[target, itemdata.upgraded] = 1;
+global.itemdata[target, itemdata.upgradeid] = target+1;
+global.itemdata[target, itemdata.sprite] = s_greenHeart;
+global.itemdata[target, itemdata.name] = "緑色のハート";
+global.itemdata[target, itemdata.damage] = 0;
+global.itemdata[target, itemdata.attack_speed] = 0;
+global.itemdata[target, itemdata.range] = 0;
+global.itemdata[target, itemdata.cost] = 150;
+global.itemdata[target, itemdata.effect] = -1;
+global.itemdata[target, itemdata.skill] = -1;
+
 #endregion
 
 global.item_category_amount = target+1;//今実装されているitemのかず

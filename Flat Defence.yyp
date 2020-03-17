@@ -455,6 +455,14 @@
             }
         },
         {
+            "Key": "2b21a9e3-2de6-4cf5-a918-6b8187be2b5c",
+            "Value": {
+                "id": "805bfeb8-8752-44af-a2ef-d30aeeadc5a9",
+                "resourcePath": "sprites\\s_greenHeart\\s_greenHeart.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2c7f37dc-66a1-4df9-a545-8f761c170a22",
             "Value": {
                 "id": "dafbde71-cb47-4330-855b-0501f676ce00",
