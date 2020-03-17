@@ -282,7 +282,7 @@ case 8:
 	break
 	case 2:
 		generate_enemy_type[0] = o_eNormalLv1;
-		generate_enemy_type[1] = o_eToughLv1;
+		generate_enemy_type[1] = o_eToughLv2;
 	break
 	case 3:
 		generate_enemy_type[0] = o_eFastLv2;
@@ -303,8 +303,8 @@ case 8:
 		generate_enemy_type[2] = o_eRegenLv3;
 	break
 	case 7:
-		generate_enemy_type[0] = o_eNormalLv2;
-		generate_enemy_type[1] = o_eSmallLv2;
+		generate_enemy_type[0] = o_eSmallLv2;
+		generate_enemy_type[1] = o_eNormalLv2;
 		generate_enemy_type[2] = o_eFastLv2;
 	break
 	case 8:
