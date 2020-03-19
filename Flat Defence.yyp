@@ -991,6 +991,14 @@
             }
         },
         {
+            "Key": "614c2e0b-b56f-4ffd-91ef-88194cad0d43",
+            "Value": {
+                "id": "233c5b7e-d04a-4f06-a25d-114e29697f03",
+                "resourcePath": "objects\\obj_console\\obj_console.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6217361c-e85d-4b6b-b45b-b69bb4db40c1",
             "Value": {
                 "id": "8b28b5f0-2cd3-441e-ab9f-a04cbbda1c2b",
@@ -1396,6 +1404,14 @@
                 "id": "c584230f-a6d1-439c-b1cb-ee3b913f933c",
                 "resourcePath": "objects\\o_eNormalLv2\\o_eNormalLv2.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "8121dab1-1a14-458c-b76b-e9fb4572ad81",
+            "Value": {
+                "id": "fbe5b367-7c1a-4453-bde1-886ce36a6adc",
+                "resourcePath": "views\\8121dab1-1a14-458c-b76b-e9fb4572ad81.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1852,6 +1868,14 @@
                 "id": "74761851-30f6-46e1-b681-6350eaff324d",
                 "resourcePath": "objects\\o_eBossLv3\\o_eBossLv3.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b457de92-7943-4bea-bd87-0f7cda8505fb",
+            "Value": {
+                "id": "479a7b01-9d34-4018-84e4-35b488d1fe01",
+                "resourcePath": "fonts\\font_console\\font_console.yy",
+                "resourceType": "GMFont"
             }
         },
         {
