@@ -19,11 +19,11 @@ for(i=0; i<product_item_amount; i++){
 	}
 	else if(i<12){
 		shop_item_product[i, SPRITE_X] = window_get_width()-224+(i-6)*38;
-		shop_item_product[i, SPRITE_Y] = 278;
+		shop_item_product[i, SPRITE_Y] = 286;
 	}
 	else{
 		shop_item_product[i, SPRITE_X] = window_get_width()-224+(i-12)*38;
-		shop_item_product[i, SPRITE_Y] = 328;
+		shop_item_product[i, SPRITE_Y] = 344;
 	}
 }
 

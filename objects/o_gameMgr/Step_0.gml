@@ -161,6 +161,8 @@ case gamestate.waveclear://ウェーブクリア処理
 		//次ウェーブへ
 		global.gamestate = gamestate.reststart;
 		global.gold += global.wave_clear_gold;//ウェーブクリアゴールド追加
+		var gold_get_x = window_get_width()-SHOP_WINDOW_WIDTH+32
+		rise_number("+ "+string(global.wave_clear_gold), gold_get_x, 6, 0, 180, COLOR_TEXT_YELLOW, 1, true, FONT_DEFAULT);
 		if(global.wave_drop_item[global.wave_now] != -1){//ドロップアイテム
 			var _x = global.enemy_last_dead_position_x;
 			var _y = global.enemy_last_dead_position_y;

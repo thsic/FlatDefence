@@ -83,7 +83,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			global.item_possession[grab_number] = -1;//所持アイテムを掴んだので一覧から消す
 			item_possession_data[grab_number, ITEM] = -1;//同じく
 			grab_item_possession_id = grab_number;//所持アイテムのマス目？番号
-			play_se(SE_INVENTORY_GRAB, 40, 0.2, false);
+			play_se(SE_INVENTORY_GRAB, 40, 0.16, false);
 		}
 	}
 }
@@ -105,13 +105,13 @@ if(grab_defender_id != -1){
 		}
 	}
 	
-	if(nearest_distance <= 32){
+	if(nearest_distance <= 24){
 		nearest_marker.subimage = 1;//一番近いマーカーの色を変える
 	}
 	drop_result = false;
 	if(!mouse_check_button(mb_left)){//離した
 		if(mouse_x < window_get_width()-SHOP_WINDOW_WIDTH){
-			if(nearest_distance <= 32){//一番近いマーカーが一定距離以内だったら設置
+			if(nearest_distance <= 24){//一番近いマーカーが一定距離以内だったら設置
 				sdm(string(object_get_name(grab_defender_id))+ "を設置")
 				play_se(SE_DROP_DEFENDER, 55, 0.3, true);
 				audio_sound_pitch(SE_DROP_DEFENDER, 1);

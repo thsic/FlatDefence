@@ -17,6 +17,7 @@ createイベントで先に "global.usefulwindow_surface[0] = noone" と書い�
 6 defender ui の小窓
 7 defender ui のアイテム
 8 メニュー画面
+9 アイテム装備させるときの小窓
 */
 
 

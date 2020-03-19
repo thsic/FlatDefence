@@ -13,6 +13,7 @@
 #macro SPRITE_X 1
 #macro SPRITE_Y 2
 #macro SALES 4
+#macro COST 5
 
 #macro ITEM 0
 #macro SPRITE 3
@@ -210,6 +211,8 @@
 #macro FONT_MENUBUTTON fo_kosugiMaru10Ja
 #macro FONT_ENEMY_UI_PARAM fo_yasa10
 #macro FONT_ITEMNAME fo_yasaNormal
+#macro FONT_SHOP_COST fo_kosugiMaru10Ja
+#macro FONT_ITEMEQUIP_WINDOW_TEXT fo_kosugiMaru10Ja
 
 //SE
 #macro SE_ENEMY_HIT_BULLET a_hitBullet 
