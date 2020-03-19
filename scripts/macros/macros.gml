@@ -123,6 +123,13 @@
 #macro MARKER_ENHANCEMENT_DESCRIPTION2 "が"
 #macro MARKER_ENHANCEMENT_DESCRIPTION3 "倍になります"
 
+#macro CRYSTAL_BASIC_DESCRIPTION "アイテムスロットが2つ"+chr(10)+"増える"
+#macro CRYSTAL_SNIPER_DESCRIPTION "射程が2倍になる"
+#macro CRYSTAL_BOMBER_DESCRIPTION "爆風の中心はダメージが"+chr(10)+"1.5倍@になる"
+#macro CRYSTAL_FREEZER_DESCRIPTION "射程内の敵すべてにスローを"+chr(10)+"与える"
+#macro CRYSTAL_BLASTER_DESCRIPTION "弾速と連射速度が上昇する"
+#macro CRYSTAL_THIEF_DESCRIPTION "敵を倒した時の獲得Gが"+chr(10)+"1.5倍になる"
+#macro ORB_DESCRIPTION "装備アイテムを"+chr(10)+"アップグレードできる"
 
 //テキスト
 #macro FIRE_DAMAGE_TEXT "Power"

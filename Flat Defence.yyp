@@ -1015,6 +1015,14 @@
             }
         },
         {
+            "Key": "63287b7e-c0a1-465c-8c72-49b96e0b3179",
+            "Value": {
+                "id": "73c6acd4-e0f7-4051-bdb0-1f64dfbc8f31",
+                "resourcePath": "scripts\\useful_window_free\\useful_window_free.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "63c71ac2-d042-47f8-a16d-fb0781e3acbe",
             "Value": {
                 "id": "75c5c432-972e-4445-9afa-349571677507",
@@ -2828,6 +2836,7 @@
         "37f173be-7f68-4a53-a356-c3c28bd7a344",
         "654ae4da-b2db-4762-bc48-1b37babad024",
         "b18e85ec-529f-4cdf-87ba-ae94c2393f6d",
+        "63287b7e-c0a1-465c-8c72-49b96e0b3179",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
         "e93f5835-3f72-4ee9-8d5e-d35c6c709570",

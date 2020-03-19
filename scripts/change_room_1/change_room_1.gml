@@ -9,6 +9,7 @@ if(change_room_frame_1 = -1){
 else{
 	change_room_frame_1--;
 	if(change_room_frame_1 <= 0){
+		//useful_window_free();//surfaceけす いや消す必要ないかも
 		room_change(gotoroom);
 	}
 }

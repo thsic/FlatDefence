@@ -236,14 +236,25 @@ if(grab_item_id != -1){//商品を掴んでいる
 	for(var i=0; i<instance_number(o_defender); i++){//すべてのdefenderの中からアイテム装備できるやつ探す
 		var nearest_defender_temp = instance_find(o_defender, i);
 		var nearest_defender_temp_distance = point_distance(nearest_defender_temp.x, nearest_defender_temp.y, mouse_x, mouse_y);
-		
-		/*for(var j=0; j<nearest_defender_temp.itemslot_amount; j++){//アイテムスロットに空きがあるか確認
-			if(nearest_defender_temp.itemslot[j] = -1){
-				
+		var possible_equip = false;
+		for(var j=0; j<nearest_defender_temp.itemslot_amount; j++){//アイテムスロットに空きがあるか確認
+			if(nearest_defender_temp.itemslot[j] = -1 or grab_item_id = 0){//オーブは空きがなくてもいい
+				possible_equip = true;
 			}
-		}*/
+			//クリスタル装備してるやつにクリスタル装備させようとすることはできない
+			if(grab_item_id = 23 and nearest_defender_temp.itemslot[j] = 23){
+				possible_equip = false;
+				break
+			}
+			if(grab_item_id = 0 and nearest_defender_temp.itemslot[0] = -1){
+				//オーブを持っていて1番目のスロットが空の場合はオーブを装備できない
+				possible_equip = false;
+				break
+			}
+		}
 		
-		if(nearest_defender_distance > nearest_defender_temp_distance){
+		//条件にあった一番近いdefenderきめる
+		if(nearest_defender_distance > nearest_defender_temp_distance and possible_equip){
 			nearest_defender = nearest_defender_temp;
 			nearest_defender_distance = nearest_defender_temp_distance;
 		}
@@ -254,7 +265,7 @@ if(grab_item_id != -1){//商品を掴んでいる
 		if(point_distance(mouse_x, mouse_y, nearest_defender.x, nearest_defender.y) < 32){
 			draw_item_equip_window(nearest_defender, grab_item_id);//ウィンドウ描画
 		
-			//クリスタルの場合のみアイテムを装備した時の効果を表示
+			/*//クリスタルの場合のみアイテムを装備した時の効果を表示
 			if(grab_item_id = 23){
 			var draw_description_crystal = true;
 				if(nearest_defender != noone){
@@ -310,7 +321,7 @@ if(grab_item_id != -1){//商品を掴んでいる
 			}
 		}
 		else{
-			surface_free(global.usefulwindow_surface[9]);//アイテム装備ウィンドウサーフェスfree
+			//*/
 		}
 	}
 }

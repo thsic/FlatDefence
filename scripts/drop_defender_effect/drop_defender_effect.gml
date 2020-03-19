@@ -53,12 +53,12 @@ for(var i=0; i<line_amount; i++){
 		if(decision){break}//四角から出ているのでbreak
 	}
 	//色をランダムで変える
-	var hue = color_get_hue(color)+irandom_range(-7, 7);
+	/*var hue = color_get_hue(color)+irandom_range(-7, 7);
 	var saturation = color_get_saturation(color)+irandom_range(-20, 20);
 	var value = color_get_value(color)+irandom_range(-20, 20);
 	if(hue > 255){hue -= 255}
-	var line_color = make_color_hsv(hue, saturation, value);
-	
+	var line_color = make_color_hsv(hue, saturation, value);*/
+	var line_color = color;
 	var time = random_range(7, 14)
 	line_effect(line_x, line_y, 12, line_angle[i], time, time, line_color, 2, 0, 0)
 }

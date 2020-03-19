@@ -65,6 +65,7 @@ if(!surface_exists(global.usefulwindow_surface[window_number]))//surfaceが作�
 }
 else//既に作られているなら
 {
+	//surface_resize(global.usefulwindow_surface[window_number], window_width, window_height);
 	draw_surface(global.usefulwindow_surface[window_number],window_x,window_y)
 	//draw_surface_ext(o_gameMgr.usefulwindow_surface,window_x,window_y,sprite_scale,sprite_scale,0,c_white,sprite_alpha)//ウィンドウを描画
 }
