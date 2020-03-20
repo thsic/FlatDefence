@@ -11,6 +11,20 @@ moment += 5 //バグ防止のため5f遅らせる
 global.enemy_wave_total_amount++;
 global.spawn_enemy[enemy_number, spawnenemy.amount]++;
 
+if(global.stage >= 5){
+	switch(spawner_number){
+	case 0:
+		generate_enemy_spawner0[enemy_number] += 1;
+	break
+	case 1:
+		generate_enemy_spawner1[enemy_number] += 1;
+	break
+	default:
+		sdm("error! set_enemy_generate_timeline");
+	break
+	}
+}
+
 switch(enemy_number){
 case 0:
 	timeline_moment_add_script(timeline_ind, moment-3, timeline_set_enemytype_0);

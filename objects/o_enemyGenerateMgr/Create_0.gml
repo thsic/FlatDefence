@@ -3,6 +3,10 @@ spawner_type_now = 0;
 route_type_now = 0;
 spawner_x = 0;
 spawner_y = 0;
+for(var i=0; i<5; i++){
+	generate_enemy_spawner0[i] = 0;
+	generate_enemy_spawner1[i] = 0;
+}
 switch(global.stage){
 case -1:
 	spowner_amount = 1;

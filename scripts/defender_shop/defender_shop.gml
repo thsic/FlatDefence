@@ -56,9 +56,9 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			grab_number -= 10000;//アイテムは10000~なのでその分を下げる
 			surface_free(global.usefulwindow_surface[9]);//アイテム装備ウィンドウサーフェスfree
 			var grab_product_number = grab_number; //ここからgrab_numberはItemidになる
-			grab_number = shop_item_product[grab_number, ITEM]
+			grab_number = shop_item_product[grab_number, ITEM];
 			
-			var reduce_gold = global.itemdata[grab_number, itemdata.cost];
+			var reduce_gold = shop_item_product[grab_product_number, COST];
 			for(var i=0; i<shop_item_product[grab_product_number, SALES]; i++){//販売数によって減らすお金が増える
 				reduce_gold *= PRICE_INCREASE;
 			}
@@ -214,7 +214,7 @@ if(grab_item_id != -1){
 				if(!purchase_item){
 					//返金
 					shop_item_product[grab_item_shop_id, SALES] -= 1;//販売数戻す
-					var return_gold = global.itemdata[grab_item_id, itemdata.cost];
+					var return_gold = shop_item_product[grab_item_shop_id, COST];
 					for(var j=0; j<shop_item_product[grab_item_shop_id, SALES]; j++){
 						return_gold *= PRICE_INCREASE;
 					}
@@ -234,7 +234,7 @@ if(grab_item_id != -1){
 		else{
 			if(grab_item_possession_id = -1){//返金
 				shop_item_product[grab_item_shop_id, SALES] -= 1;//販売数戻す
-				var return_gold = global.itemdata[grab_item_id, itemdata.cost];
+				var return_gold = shop_item_product[grab_item_shop_id, COST];
 				for(var j=0; j<shop_item_product[grab_item_shop_id, SALES]; j++){
 					return_gold *= PRICE_INCREASE;
 				}

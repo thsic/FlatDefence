@@ -8,6 +8,7 @@ for(var i=0; i<20; i++){
 }
 
 switch(global.stage){
+#region teststage
 case -1:
 	global.life = 10;//体力
 	global.gold = 1000;//おかね
@@ -50,6 +51,8 @@ case 0:
 
 	
 break
+#endregion
+#region stage1
 case 1:
 	global.life = 10//体力
 	global.gold = 300;//おかね
@@ -64,7 +67,12 @@ case 1:
 	
 	global.wave_drop_item[2] = 1;
 	global.wave_drop_item[4] = 19;
+	
+	set_shop_item_gold_fill();
+	set_shop_item_gold(0, "*", 2);
 break
+#endregion
+#region stage2
 case 2:
 	global.life = 10//体力
 	global.gold = 300;//おかね
@@ -87,7 +95,10 @@ case 2:
 	global.wave_drop_item[3] = 13;
 	global.wave_drop_item[4] = 21;
 	global.wave_drop_item[6] = 0;
+	set_shop_item_gold_fill();
 break
+#endregion
+#region stage3
 case 3:
 	global.life = 10;
 	global.gold = 500;
@@ -114,7 +125,12 @@ case 3:
 	global.wave_drop_item[3] = 23;
 	global.wave_drop_item[4] = 0;
 	global.wave_drop_item[5] = 0;
+	
+	set_shop_item_gold_fill();
+	
 break
+#endregion
+#region stage4
 case 4:
 	global.life = 10;
 	global.gold = 750;
@@ -140,7 +156,11 @@ case 4:
 	global.wave_drop_item[1] = 17;
 	global.wave_drop_item[2] = 0;
 	global.wave_drop_item[3] = 23;
+	
+	set_shop_item_gold_fill();
 break
+#endregion
+#region stage5
 case 5:
 	global.life = 20;
 	global.gold = 400;
@@ -162,7 +182,11 @@ case 5:
 	global.shop_item[6] = 21;
 	global.shop_item[7] = 17;
 	global.shop_item[8] = 23;
+	
+	set_shop_item_gold_fill();
 break
+#endregion
+#region stage6
 case 6:
 	global.life = 10;
 	global.gold = 600;
@@ -189,7 +213,11 @@ case 6:
 	global.shop_item[11] = 21;
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
+	
+	set_shop_item_gold_fill();
 break
+#endregion
+#region stage7
 case 7:
 	global.life = 10;
 	global.gold = 600;
@@ -216,7 +244,11 @@ case 7:
 	global.shop_item[11] = 21;
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
+	
+	set_shop_item_gold_fill();
 break
+#endregion
+#region stage8
 case 8:
 	global.life = 5;
 	global.gold = 600;
@@ -243,7 +275,11 @@ case 8:
 	global.shop_item[11] = 21;
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
+	
+	set_shop_item_gold_fill();
 break
+#endregion
+#region default
 default:
 	global.life = 1
 	global.gold = 50;
@@ -252,6 +288,7 @@ default:
 	global.shop_item[0] = 1;
 	sdm("error! stage_setting")
 break
+#endregion
 }
 
 global.shop_defender_amount = array_length_1d(global.shop_defender);

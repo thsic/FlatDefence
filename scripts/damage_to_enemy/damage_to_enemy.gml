@@ -125,7 +125,7 @@ if(one_shot_one_kill_plus){
 if(odd_add_damage and target_id = bullet_target){
 	if(instance_exists(target_id)){
 		repeat(odd_add_damage){
-			if(target_id.hp mod 2 = 1){//奇数判定
+			if(floor(target_id.hp) mod 2 = 1){//奇数判定
 				damage += defender_fire_damage * POISONDAGGER_MAGNIFICATION
 			}
 			demons_fire_count++;

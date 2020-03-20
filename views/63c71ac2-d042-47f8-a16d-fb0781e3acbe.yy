@@ -14,7 +14,9 @@
         "a083f392-8c65-4f6f-8e12-dedacd45f924",
         "242248b7-e254-419f-beb4-34c2c5d53722",
         "f0da36aa-05d1-42be-9f42-438f70330e7e",
-        "4c7ecd8f-e762-4a2b-b16f-480521501121"
+        "4c7ecd8f-e762-4a2b-b16f-480521501121",
+        "81deeb2f-42de-4828-830b-f438bd822cf3",
+        "03665efe-b6ba-49c3-b957-e79a0aacfbab"
     ],
     "filterType": "GMScript",
     "folderName": "shop",

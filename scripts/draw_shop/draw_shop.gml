@@ -43,7 +43,7 @@ for(var i=0; i<product_defender_amount; i++){//defenderを描画
 }
 
 for(i=0; i<product_item_amount; i++){//itemを描画
-	var necessary_gold = global.itemdata[shop_item_product[i, ITEM], itemdata.cost];
+	var necessary_gold = shop_item_product[i, COST];
 	for(var j=0; j<shop_item_product[i, SALES]; j++){
 		necessary_gold *= PRICE_INCREASE;
 	}

@@ -169,9 +169,7 @@ case 1://item
 	if(!possession){//所持品ならコストを表示しない
 		draw_set_color(COLOR_TEXT_YELLOW);
 		draw_set_halign(fa_right);
-		var nesessary_gold = global.itemdata[target_id, itemdata.cost];
-		var nesessary_gold_default = nesessary_gold
-		
+
 		for(var i=0; i<global.item_category_amount; i++){//みつける
 			if(shop_item_product[i, ITEM] = global.itemdata[target_id, itemdata.number]){
 				var item_shop_id = i
@@ -179,6 +177,8 @@ case 1://item
 			}
 		}
 		
+		var nesessary_gold = shop_item_product[item_shop_id, COST];
+		var nesessary_gold_default = nesessary_gold
 		for(var i=0; i<shop_item_product[item_shop_id, SALES]; i++){
 			nesessary_gold *= PRICE_INCREASE;
 		}

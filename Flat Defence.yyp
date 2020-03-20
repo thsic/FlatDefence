@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "03665efe-b6ba-49c3-b957-e79a0aacfbab",
+            "Value": {
+                "id": "4386ee3c-bd9b-41e7-9803-60670a98655e",
+                "resourcePath": "scripts\\set_shop_item_gold_fill\\set_shop_item_gold_fill.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0370c5ea-aa60-45b1-8fdc-63163ac3c8d3",
             "Value": {
                 "id": "400d7228-72f2-4dc9-b862-551ae66c2985",
@@ -1423,6 +1431,14 @@
             }
         },
         {
+            "Key": "81deeb2f-42de-4828-830b-f438bd822cf3",
+            "Value": {
+                "id": "a6b2a9fe-74e5-4d9a-9bda-3743e7b673f1",
+                "resourcePath": "scripts\\set_shop_item_gold\\set_shop_item_gold.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "829fe9b0-7d39-4455-b973-ed8fd70c9249",
             "Value": {
                 "id": "1e538271-8f72-4cdc-8183-533343daa499",
@@ -2263,6 +2279,14 @@
             }
         },
         {
+            "Key": "d9703f95-539a-4e74-b358-b76f0e7865e9",
+            "Value": {
+                "id": "0a8d2449-4fa4-4a57-953c-c2c4bc534e84",
+                "resourcePath": "scripts\\draw_generate_enemy_amount\\draw_generate_enemy_amount.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d98fca2d-2330-4327-bba6-63ae48976b88",
             "Value": {
                 "id": "9ab291bc-8cfa-4b09-9ed6-bd2df1be2492",
@@ -2795,6 +2819,8 @@
         "242248b7-e254-419f-beb4-34c2c5d53722",
         "f0da36aa-05d1-42be-9f42-438f70330e7e",
         "4c7ecd8f-e762-4a2b-b16f-480521501121",
+        "81deeb2f-42de-4828-830b-f438bd822cf3",
+        "03665efe-b6ba-49c3-b957-e79a0aacfbab",
         "17ff12a2-be7b-4407-9185-fec3170a82d4",
         "1ae08602-8fc4-48c6-934d-3140069aebfb",
         "8a40716b-89a2-4c55-9748-13a3a8a805fd",
@@ -2837,6 +2863,7 @@
         "654ae4da-b2db-4762-bc48-1b37babad024",
         "b18e85ec-529f-4cdf-87ba-ae94c2393f6d",
         "63287b7e-c0a1-465c-8c72-49b96e0b3179",
+        "d9703f95-539a-4e74-b358-b76f0e7865e9",
         "68d59cac-b70f-4729-8275-c1b365d48cdb",
         "fb81b5a3-b000-4395-b94e-38437500d178",
         "e93f5835-3f72-4ee9-8d5e-d35c6c709570",
