@@ -83,6 +83,10 @@ if(path_position = 1){//最後まで到達した
 
 if(destroy_enemy = true){//死亡時処理
 	global.enemy_wave_total_amount--;
+	if(global.enemy_last_dead_position_x = 0){
+		global.enemy_last_dead_position_x = x;
+		global.enemy_last_dead_position_y = y-32//誰も倒せてない場合の例外処理
+	}
 	for(var i=0; i<SPAWN_ENEMY_TYPE_AMOUNT; i++){
 		if(global.spawn_enemy[i, spawnenemy.objectid] = object_index){
 			global.spawn_enemy[i, spawnenemy.amount]--;
@@ -94,4 +98,8 @@ if(destroy_enemy = true){//死亡時処理
 		play_se(SE_ENEMY_DESTROY, 40, 0.18, true);
 	}
 	instance_destroy();
+}
+
+if(path_id = -1){
+	path_id = path_index;
 }

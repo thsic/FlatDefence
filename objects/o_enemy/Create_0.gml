@@ -15,3 +15,6 @@ destroy_enemy = false;
 speed_temp = -1;
 freeze_time = -1;//凍る時間
 freeze_lv = 0;
+spawn_position_x = x;//life減少時エフェクト表示につかう
+spawn_position_y = y;
+path_id = -1;

@@ -30,12 +30,13 @@ if(global.stage >= 5){
 	}
 	for(var i=0; i<array_length_1d(spawner_generate_data); i++){
 		if(spawner_generate_data[i] != 0){
-			offset_y2 -= 22;
+			offset_y2 -= 22;//左側は表示数が増えると上に伸びる
 		}
 	}
 
 
 	draw_set_alpha(1);
+	draw_set_font(fo_kosugiMaru10Ja);
 	for(var i=0; i<array_length_1d(spawner_generate_data); i++){
 		if(spawner_generate_data[i] != 0){//生成数がのこり0の敵は表示されない
 			var enemy_number = global.spawn_enemy[i, spawnenemy.number];
@@ -62,7 +63,7 @@ if(global.stage >= 5){
 
 	//上側
 	var offset_x = spawner_x_top+16;
-	var offset_y = spawner_y_top+24;
+	var offset_y = spawner_y_top+30;
 	var offset_y2 = offset_y;//offset_y2は行の中心
 	if(top_spawner_number = 0){
 		var spawner_generate_data = generate_enemy_spawner0;
@@ -98,5 +99,6 @@ if(global.stage >= 5){
 
 	draw_set_valign(fa_top);
 	draw_set_alpha(1);
+	draw_set_font(FONT_DEFAULT);
 }
 

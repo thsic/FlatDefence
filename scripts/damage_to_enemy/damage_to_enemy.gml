@@ -211,7 +211,27 @@ damage_result = ceil(damage_result)//ダメージ切り上げ
 
 //最終的なダメージ
 if(instance_exists(target_id)){
-	play_se(SE_ENEMY_HIT_BULLET, 30, 0.2, true);
+	if(target_id.hp > damage_result){//この攻撃で倒せるならSEを鳴らさない
+		//ダメージ量によってピッチと音量が変わる
+		var hitbullet_pitch = 1;
+		var hitbullet_volume = 0.2;
+	
+		if(damage_result < 20){
+			hitbullet_pitch = 0.6;
+			hitbullet_volume = 0.2;
+		}
+		else if(damage_result > 100){
+			hitbullet_pitch = 1.3;
+			hitbullet_volume = 0.3;
+		}
+		if(damage_result > 250){
+			hitbullet_pitch = 1.7;
+			hitbullet_volume = 0.4;
+		}
+		play_se(SE_ENEMY_HIT_BULLET, 30, hitbullet_volume, true);
+		audio_sound_pitch(SE_ENEMY_HIT_BULLET, hitbullet_pitch);
+	}
+	
 	target_id.hp -= damage_result;
 	var break_effect_color = global.enemydata[target_id.enemy_number, enemydata.color];
 	enemy_break_effect(target_id.x, target_id.y, 3, break_effect_color, 10, 4, 3.5, -1);

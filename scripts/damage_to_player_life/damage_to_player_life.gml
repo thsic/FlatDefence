@@ -1,7 +1,11 @@
 //突破された
 
-var goal_x = path_get_x(o_enemyGenerateMgr.route_type_now, 1)+o_enemyGenerateMgr.spawner_x[0]
-var goal_y = path_get_y(o_enemyGenerateMgr.route_type_now, 1)+o_enemyGenerateMgr.spawner_y[0]
+/*var goal_x = path_get_x(o_enemyGenerateMgr.route_type_now, 1)+o_enemyGenerateMgr.spawner_x[0]
+var goal_y = path_get_y(o_enemyGenerateMgr.route_type_now, 1)+o_enemyGenerateMgr.spawner_y[0]*/
+
+var goal_x = path_get_x(path_id, 1)+spawn_position_x;
+var goal_y = path_get_y(path_id, 1)+spawn_position_y;
+
 
 if(enemy_number = 21 or enemy_number = 22 or enemy_number = 23){//ボス
 	global.life -= BOSS_LIFEDAMAGE;

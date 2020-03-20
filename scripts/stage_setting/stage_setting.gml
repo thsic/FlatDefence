@@ -39,7 +39,10 @@ case -1:
 	
 	global.wave_drop_item[1] = 0;
 	//global.wave_drop_item[1] = 3;
-	
+	set_shop_item_gold_fill();
+	for(var i=0; i<15; i++){
+		set_shop_item_gold(i, "=", 10);
+	}
 break
 case 0:
 	global.life = 10//体力
@@ -48,7 +51,7 @@ case 0:
 
 	global.shop_defender[0] = o_dBasic;
 	global.shop_item[0] = 0;
-
+	set_shop_item_gold_fill();
 	
 break
 #endregion
@@ -286,7 +289,9 @@ default:
 	global.wave_total = 1;
 	global.shop_defender[0] = o_dBasic;
 	global.shop_item[0] = 1;
+	set_shop_item_gold_fill();
 	sdm("error! stage_setting")
+	
 break
 #endregion
 }

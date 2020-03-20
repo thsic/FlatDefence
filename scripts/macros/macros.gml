@@ -131,6 +131,15 @@
 #macro CRYSTAL_THIEF_DESCRIPTION "敵を倒した時の獲得Gが"+chr(10)+"1.5倍になる"
 #macro ORB_DESCRIPTION "装備アイテムを"+chr(10)+"アップグレードできる"
 
+#macro STAGE1_DESCRIPTION "アイテムの価格が安い"
+#macro STAGE2_DESCRIPTION "敵の数が多い"
+#macro STAGE3_DESCRIPTION "ウェーブクリア時のゴールドが多い"
+#macro STAGE4_DESCRIPTION "ウェーブ数が少ない"
+#macro STAGE5_DESCRIPTION "ライフが多い"+chr(10)+"ウェーブクリア時のゴールドが少ない"
+#macro STAGE6_DESCRIPTION "HPが多めの敵が多い"
+#macro STAGE7_DESCRIPTION "敵の数が多い"
+#macro STAGE8_DESCRIPTION "ウェーブ数が多い"+chr(10)+"ライフが少ない"
+
 //テキスト
 #macro FIRE_DAMAGE_TEXT "Power"
 #macro RANGE_TEXT "Range"
@@ -139,6 +148,7 @@
 #macro ATTACKSPEED_MARKER_TEXT "攻撃速度"
 #macro RANGE_MARKER_TEXT "射程"
 #macro MOST_DAMAGING_DEFENDER_TEXT "最もダメージを与えたディフェンダー"//最もダメージを与えたディフェンダー
+
 
 //色
 #macro COLOR_TEXT_GRAY c_dkgray
@@ -156,6 +166,9 @@
 #macro COLOR_TEXT_LTGRAY_ONWINDOW make_color_rgb(110, 110, 110)
 #macro COLOR_TEXT_WHITE_NEARGRAY make_color_rgb(200, 200, 200)
 #macro COLOR_TEXT_NEWRECORD make_color_rgb(170, 170, 170)
+#macro COLOR_TEXT_DEEPBLUE make_color_rgb(55, 160, 170)
+#macro COLOR_TEXT_BROWN make_color_rgb(140, 140, 115)
+#macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime
@@ -171,8 +184,12 @@
 #macro COLOR_BAR_ENEMYHP_UNDER c_gray
 
 #macro COLOR_BACKGROUND make_color_rgb(200, 200, 170)
+#macro COLOR_STAGESELECT_DEFENDER_MARKER make_color_rgb(100, 120, 155)//(107, 126, 153)
+#macro COLOR_STAGESELECT_ROUTE make_color_rgb(188, 188, 158)//(183, 183, 152)
+#macro COLOR_STAGESELECT_STAGEVIEW_BACKGROUND make_color_rgb(203, 203, 173)//(200, 200, 170)
+#macro COLOR_STAGESELECT_STAGEVIEW_FRAME make_color_rgb(135, 135, 120)
 
-#macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
+
 
 #macro COLOR_ENEMY_PARAMTEXT_WEAK make_color_rgb(200, 200, 160)
 #macro COLOR_ENEMY_PARAMTEXT_STRONG make_color_rgb(255, 160, 140)
@@ -212,6 +229,7 @@
 #macro FONT_STAGECLEAR_TOTALSCORE fo_kosugiMaru16
 #macro FONT_ENHANCEMENT_MARKER_TEXT fo_kosugiMaru8
 #macro FONT_STAGESELECT_TOTALSCORE fo_notoSuperBig
+#macro FONT_STAGESELECT_TOTALSCORE_TEXT fo_noto28
 #macro FONT_UPGRADETEXT fo_yasa10Ja
 #macro FONT_UPGRADETEXT_SMALL fo_yasa8Ja
 #macro FONT_SHOP_GOLD_PLUS fo_kosugiMaru8

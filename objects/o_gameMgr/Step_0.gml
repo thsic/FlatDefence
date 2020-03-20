@@ -41,8 +41,8 @@ case gamestate.stagestart://ステージ開始時処理
 	global.timemachine[timemachine.window_y] = window_get_height()-TIMEMACHINE_HEIGHT-4;
 	global.score_gold_minus = 0;
 	global.all_enemy_total_hp = 0;
-	global.enemy_last_dead_position_x = view_wport[0]/2//敵死亡地点のデフォルトは画面中央
-	global.enemy_last_dead_position_y = view_hport[0]/2
+	global.enemy_last_dead_position_x = 0//敵死亡地点のデフォルトは画面中央
+	global.enemy_last_dead_position_y = 0
 	timemachine_button_state[0] = 0;
 	timemachine_button_state[1] = 2;
 	timemachine_button_state[2] = 0;
