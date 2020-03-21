@@ -8,8 +8,8 @@ var window_width = 250;
 var window_height = 118;
 
 var offset_x = mouse_x - window_width;
-if(show_window){
-	offset_x = mouse_x
+if(show_window){//defenderウィンドウが出てる時は小窓を右側に表示
+	offset_x = mouse_x;
 }
 var offset_y = mouse_y;
 var alpha = 0.85
@@ -154,9 +154,18 @@ case 1://item
 		draw_set_color(description1_color);
 		description1 = string_replace(description1, "@", "");
 		if(!crystal and !upgradeorb){
-			description1 = string_replace(description1, "\v", string(global.effectdata[effect1, effectdata.value]));
-			description1 = string_replace(description1, "\%", string(global.effectdata[effect1, effectdata.value]*100));
-			description1 = string_replace(description1, "\l", "1");
+			if(!global.itemdata[target_id, itemdata.upgraded]){//普通 アップグレード前
+				description1 = string_replace(description1, "\v", string(global.effectdata[effect1, effectdata.value]));
+				description1 = string_replace(description1, "\%", string(global.effectdata[effect1, effectdata.value]*100));
+				description1 = string_replace(description1, "\l", "1");
+			}
+			else{//アップグレード後 defenderwindow内のアイテム
+				description1 = string_replace(description1, "\v", string(global.effectdata[effect1, effectdata.value]*2));
+				description1 = string_replace(description1, "\%", string(((1-global.effectdata[effect1, effectdata.value])*global.effectdata[effect1, effectdata.value]+global.effectdata[effect1, effectdata.value])*100));
+				description1 = string_replace(description1, "\l", "2");
+			}
+			
+			
 		}
 		draw_text(offset_x+6, offset_y+96, description1);
 	}
@@ -241,3 +250,6 @@ default:
 	sdm("error! shop_description")
 break
 }
+
+
+

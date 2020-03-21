@@ -19,6 +19,15 @@ stageclear_frame = -1;
 change_room_frame_1 = -1;
 change_room_frame_2 = -1;
 change_screen = -1;//これから行くルームが入る
+draw_description_window = false;//shopの小窓が描画されているかどうか
+ui_window_x = 0;
+ui_window_y = 0;
+ui_window_width = 0;
+ui_window_height = 0;
+sellbutton = 0;
+
+
+
 
 database();//globalにいろいろデータをいれる
 

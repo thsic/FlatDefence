@@ -84,7 +84,7 @@
 #macro IMPERIALLANCE_PENETRATION_MAX 40//インペリアルランス+が貫通できる敵の数
 #macro FREEZEROD_UPGRADE_ 10//わからん なにこれ
 #macro POISONDAGGER_MAGNIFICATION 0.3//ポイズンダガー装備中の追加ダメージ倍率
-#macro CURSEDSWORD_MAGNIFICATION 0.1//呪いの剣装備中のダメージ倍率
+#macro CURSEDSWORD_MAGNIFICATION 0.2//呪いの剣装備中のダメージ倍率
 #macro BLAST_MAGNIFICATION 0.25//爆風ダメージ倍率
 
 //パラメータ表示バー
@@ -125,8 +125,8 @@
 
 #macro CRYSTAL_BASIC_DESCRIPTION "アイテムスロットが2つ"+chr(10)+"増える"
 #macro CRYSTAL_SNIPER_DESCRIPTION "射程が2倍になる"
-#macro CRYSTAL_BOMBER_DESCRIPTION "爆風の中心はダメージが"+chr(10)+"1.5倍@になる"
-#macro CRYSTAL_FREEZER_DESCRIPTION "射程内の敵すべてにスローを"+chr(10)+"与える"
+#macro CRYSTAL_BOMBER_DESCRIPTION "爆風の中心はダメージが"+chr(10)+"1.5倍になる"
+#macro CRYSTAL_FREEZER_DESCRIPTION "射程内の敵すべてにスロー"+chr(10)+"を与える"
 #macro CRYSTAL_BLASTER_DESCRIPTION "弾速と連射速度が上昇する"
 #macro CRYSTAL_THIEF_DESCRIPTION "敵を倒した時の獲得Gが"+chr(10)+"1.5倍になる"
 #macro ORB_DESCRIPTION "装備アイテムを"+chr(10)+"アップグレードできる"
@@ -157,7 +157,7 @@
 #macro COLOR_TEXT_YELLOW make_color_rgb(255, 242, 128)
 #macro COLOR_TEXT_ORANGE make_color_rgb(244, 172, 100)
 #macro COLOR_TEXT_GREEN c_lime
-#macro COLOR_TEXT_RED make_color_rgb(222, 40, 40)
+#macro COLOR_TEXT_RED make_color_rgb(222, 50, 50)
 #macro COLOR_TEXT_PURPLE c_fuchsia
 #macro COLOR_TEXT_BLUE make_color_rgb(85, 230, 230)
 #macro COLOR_TEXT_DARKGREEN c_teal
@@ -166,9 +166,11 @@
 #macro COLOR_TEXT_LTGRAY_ONWINDOW make_color_rgb(110, 110, 110)
 #macro COLOR_TEXT_WHITE_NEARGRAY make_color_rgb(200, 200, 200)
 #macro COLOR_TEXT_NEWRECORD make_color_rgb(170, 170, 170)
-#macro COLOR_TEXT_DEEPBLUE make_color_rgb(55, 160, 170)
+#macro COLOR_TEXT_DEEPBLUE make_color_rgb(40, 140, 150)
 #macro COLOR_TEXT_BROWN make_color_rgb(140, 140, 115)
 #macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
+#macro COLOR_TEXT_SELLBUTTON make_color_rgb(100, 100, 100)
+#macro COLOR_TEXT_PINK make_color_rgb(250, 180, 180)
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime

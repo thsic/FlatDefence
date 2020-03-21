@@ -11,7 +11,7 @@ for(var i=0; i<3; i++){
 }
 
 #region キーボードショートカットでのステート変更処理
-if(keyboard_check_pressed(DOUBLE_SPEED_BUTTON)){
+if(keyboard_check_pressed(DOUBLE_SPEED_BUTTON) or mouse_check_button_pressed(mb_right)){
 	if(timemachine_button_state[2] = 2){
 		for(var i=0; i<3; i++){
 			timemachine_button_state[i] = 0;

@@ -35,16 +35,16 @@ global.musicdata[target, musicdata.length] = audio_sound_length(a_theHealing)*FP
 global.musicdata[target, musicdata.earlystop] = 600;
 global.musicdata[target, musicdata.volume] = audio_sound_get_gain(a_theHealing);
 
-target = 4;
+/*target = 4;
 global.musicdata[target, musicdata.number] = target;
 global.musicdata[target, musicdata.path] = a_iAlwaysBeAlienatedByOthers;
 global.musicdata[target, musicdata.musicname] = "i always be alienated by others";
 global.musicdata[target, musicdata.creatorname] = "ish10 yow1r0";
 global.musicdata[target, musicdata.length] = audio_sound_length(a_iAlwaysBeAlienatedByOthers)*FPS_DEFAULT;
 global.musicdata[target, musicdata.earlystop] = 0;
-global.musicdata[target, musicdata.volume] = audio_sound_get_gain(a_iAlwaysBeAlienatedByOthers);
+global.musicdata[target, musicdata.volume] = audio_sound_get_gain(a_iAlwaysBeAlienatedByOthers);*/
 
-target = 5;
+target = 4;
 global.musicdata[target, musicdata.number] = target;
 global.musicdata[target, musicdata.path] = a_lifeIllusion;
 global.musicdata[target, musicdata.musicname] = "Life Illusion";

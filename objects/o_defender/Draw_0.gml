@@ -11,7 +11,7 @@ draw_sprite(sprite_index, 0, x, y);
 draw_set_alpha(1);
 
 if(target_id != false){
-	if(instance_exists(target_id) and state = state.fire){
+	if(instance_exists(target_id)){
 		//draw_line(x, y, target_id.x, target_id.y);
 	}
 }

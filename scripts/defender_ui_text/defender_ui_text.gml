@@ -171,15 +171,69 @@ for(var i=0; i<finded_defender_id.itemslot_amount; i++){
 //defender売却ボタン
 var sellbutton_subimage = sellbutton;
 draw_sprite(s_sellButton, sellbutton_subimage, ui_window_x+ui_window_width-6-sprite_get_width(s_sellButton), ui_window_y+6); 
-draw_set_color(COLOR_TEXT_GRAY);
+draw_set_color(COLOR_TEXT_SELLBUTTON);
 draw_set_halign(fa_middle);
 draw_text(ui_window_x+ui_window_width-6-sprite_get_width(s_sellButton)/2, ui_window_y+10, "Sell");
 //小窓
-if(sellbutton = 1){
-	var get_gold = 0;
+if(sellbutton >= 1){
+	var get_gold = 0;//売値計算(売却処理ではない)
+
 	for(var i=0; i<finded_defender_id.itemslot_amount; i++){
-		if(finded_defender_id.itemslot[i] != -1){
-			 get_gold += global.itemdata[finded_defender_id.itemslot[i], itemdata.cost];
+		if(finded_defender_id.itemslot[i] != -1){//アイテムを持っているならそれの値段もプラスする
+			var item_id = finded_defender_id.itemslot[i];
+			var cellitem_shop_product_number = -1;
+			for(var j=0; j<product_item_amount; j++){
+				if(shop_item_product[j, ITEM] = item_id){
+					cellitem_shop_product_number = j;
+					break
+				}
+			}
+		
+			if(cellitem_shop_product_number = -1){
+				if(global.itemdata[item_id, itemdata.upgraded]){
+					//アップグレードアイテムはアップグレード前アイテム値段+オーブ値段
+					//まずオーブがショップに存在するか確かめる
+					var upgradeorb_shop_product_number = -1;
+					for(var j=0; j<product_item_amount; j++){
+						if(shop_item_product[j, ITEM] = 0){
+							upgradeorb_shop_product_number = j;
+							break
+						}
+					}
+					//次にアップグレード前アイテムがショップに存在するかたしかめる
+					var before_upgradeitem_shop_product_number = -1;
+					for(var j=0; j<product_item_amount; j++){
+						if(shop_item_product[j, ITEM] = item_id-1){//アップグレード前アイテム -1
+							before_upgradeitem_shop_product_number = j;
+							break
+						}
+					}
+					if(upgradeorb_shop_product_number != -1){
+						//オーブ存在する
+						get_gold += shop_item_product[upgradeorb_shop_product_number, COST];
+					}
+					else{
+						//存在しない
+						get_gold += global.itemdata[0, itemdata.cost];
+					}
+					if(before_upgradeitem_shop_product_number != -1){
+						//アップグレード前アイテム存在する
+						get_gold += shop_item_product[before_upgradeitem_shop_product_number, COST];
+					}
+					else{
+						//存在しない
+						get_gold += global.itemdata[item_id, itemdata.cost];
+					}
+				
+				}
+				else{
+					//shopに存在しないアイテムなのでデータベースから直接コストを呼び出す
+					get_gold += global.itemdata[item_id, itemdata.cost];
+				}
+			}
+			else{//shopに存在するアイテムならshopの値段で
+				get_gold += shop_item_product[cellitem_shop_product_number, COST];
+			}
 		}
 		else{
 			break
@@ -187,10 +241,19 @@ if(sellbutton = 1){
 	}
 	
 	get_gold += global.defender_data[finded_defender_id.defender_number, data.cost];
-	var sellgold_window_width = string_width("+"+string(get_gold)+"gold")+8;
-	tiny_window(s_window, 2, mouse_x+16, mouse_y, sellgold_window_width, 20, 0.8);
-	draw_set_color(COLOR_TEXT_YELLOW);
-	draw_text(mouse_x+sellgold_window_width/2+16, mouse_y+2, "+"+string(get_gold)+"gold");
+	if(sellbutton = 1){
+		var sellgold_window_width = string_width("+"+string(get_gold)+"gold")+8;
+		tiny_window(s_window, 2, mouse_x+16, mouse_y, sellgold_window_width, 20, 0.8);
+		draw_set_color(COLOR_TEXT_YELLOW);
+		draw_text(mouse_x+sellgold_window_width/2+16, mouse_y+2, "+"+string(get_gold)+"gold");
+	}
+	else if(sellbutton = 2){
+		var sellgold_window_width = string_width("本当に売却しますか？(+"+string(get_gold)+"gold)")+8;
+		tiny_window(s_window, 2, mouse_x+16, mouse_y, sellgold_window_width, 20, 1);
+		draw_set_alpha(1);
+		draw_set_color(COLOR_TEXT_PINK);
+		draw_text(mouse_x+sellgold_window_width/2+16, mouse_y+2, "本当に売却しますか？(+"+string(get_gold)+"gold)");
+	}
 }
 draw_set_halign(fa_left);
 

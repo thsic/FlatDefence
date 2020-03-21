@@ -32,9 +32,9 @@ item_equipped_particle(id, item_amount);
 
 #region effect
 var demons_fire_level = 0;
-var attack_speed_halve = 0;
+var attack_speed_decrement = 0;
 var true_basic = 0;
-var range_halve = 0;
+var range_decrement = 0;
 var attack_decrement = 0;
 var freeze_all = 0;
 var attack_halve_disempower = 0;
@@ -56,13 +56,13 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 			demons_fire_level++;
 		break
 		case 8://as半減
-			attack_speed_halve++;
+			attack_speed_decrement++;
 		break
 		case 9://全エフェクトを無効化する
 			true_basic++;
 		break
-		case 10:
-			range_halve++;
+		case 10://射程減少
+			range_decrement++;
 		break
 		case 11://攻撃減少
 			attack_decrement++;
@@ -108,11 +108,11 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 }
 
 //まずステータス減少系
-if(attack_speed_halve){
-	attack_per_second *= 0.5;
+if(attack_speed_decrement){
+	attack_per_second *= 0.66;//3分の2
 }
-if(range_halve){
-	range *= 0.5;
+if(range_decrement){
+	range *= 0.66;
 }
 if(attack_halve_disempower){
 	for(var i=0; i<EFFECT_SLOT_MAX; i++){

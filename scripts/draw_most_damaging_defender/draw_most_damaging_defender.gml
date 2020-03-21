@@ -17,6 +17,9 @@ for(var i=0; i<defender_amount; i++){
 	}
 }
 
+//すごいやつのダメージと敵HPの総量を％で
+var _damage_percent = most_damaging_defender_totaldamage/global.all_enemy_total_hp;
+
 
 //一番すごいやつが決まったのでそれを描画
 if(most_damaging_defender_id != -1){
@@ -26,6 +29,7 @@ if(most_damaging_defender_id != -1){
 		time_default = _time
 		time = _time
 		text_font = _font
+		damage_percent = _damage_percent
 	}
 
 }

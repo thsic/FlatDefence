@@ -174,7 +174,7 @@ if(mouse_check_button_pressed(mb_left)){
 					break
 				}
 			}
-			var return_gold = global.itemdata[0, itemdata.cost];
+			var return_gold = shop_item_product[upgradeorb_shop_product_number, COST];
 			shop_item_product[upgradeorb_shop_product_number, SALES] -= 1;//アップグレードオーブ使わなかったので販売数減らす
 			for(var j=0; j<shop_item_product[upgradeorb_shop_product_number, SALES]; j++){
 				return_gold *= PRICE_INCREASE;

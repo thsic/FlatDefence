@@ -119,7 +119,11 @@ case gamestate.main://ゲーム中処理
 			//global.enemy_y[i] = instance_find(o_enemy, i).y;
 			global.enemy_hp[i] = instance_find(o_enemy, i).hp;
 			global.enemy_id[i] = instance_find(o_enemy, i).id;
-			global.enemy_position[i] = instance_find(o_enemy, i).path_position
+			
+			//ポジション代入
+			var position = instance_find(o_enemy, i).path_position*path_get_length(instance_find(o_enemy, i).path_index);
+			position = path_get_length(instance_find(o_enemy, i).path_index)-position;
+			global.enemy_position[i] = -position;
 			i++;
 		}
 	}
@@ -214,11 +218,11 @@ break
 
 #region デバッグ用
 	if(global.debugmode or debug_mode){
-		if(mouse_check_button(mb_middle)){
+		if(keyboard_check(ord("G"))){
 			global.gold += 10;
 		}
 		if(keyboard_check_pressed(ord("R"))){
-			game_restart();
+			//game_restart();
 		}
 		if(keyboard_check_pressed(vk_escape)){
 			game_end()

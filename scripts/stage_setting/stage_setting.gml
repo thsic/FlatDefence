@@ -57,6 +57,10 @@ break
 #endregion
 #region stage1
 case 1:
+	//最初のステージなので簡単 
+	//アイテムの重要性をつたえる
+	//
+	
 	global.life = 10//体力
 	global.gold = 300;//おかね
 	global.wave_total = 6;//総ウェーブ数
@@ -72,15 +76,21 @@ case 1:
 	global.wave_drop_item[4] = 19;
 	
 	set_shop_item_gold_fill();
-	set_shop_item_gold(0, "*", 2);
+	set_shop_item_gold(0, "/", 2);
+	set_shop_item_gold(1, "/", 2);
+	set_shop_item_gold(2, "/", 2);
+	
 break
 #endregion
 #region stage2
 case 2:
+	//ラッシュ面
+	//
+	
 	global.life = 10//体力
 	global.gold = 300;//おかね
 	global.wave_total = 7;//総ウェーブ数
-	global.wave_clear_gold = 50;//ウェーブクリア時の獲得ゴールド
+	global.wave_clear_gold =75;//ウェーブクリア時の獲得ゴールド
 
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;

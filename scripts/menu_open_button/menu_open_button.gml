@@ -16,5 +16,10 @@ if(menu_open_button_x < mouse_x and mouse_x < menu_open_button_x+open_button_wid
 		}
 	}
 }
-
+if(keyboard_check_pressed(ord("R"))){//Rキーが押されると自動的にメニューが開いてリスタートボタンの上にマウスが移動
+	menu_open = true
+	play_se(SE_MENU_OPEN_BUTTON, 55, 0.2, false);
+	audio_sound_pitch(SE_MENU_OPEN_BUTTON, 0.7);
+	window_mouse_set(10+sprite_get_width(s_menuWindowButton)/2, view_hport[0]-16-(64+24+6*2)+sprite_get_height(s_menuWindowButton)/2+6);
+}
 draw_sprite(s_menuButton, subimage, menu_open_button_x, menu_open_button_y);

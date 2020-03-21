@@ -53,14 +53,15 @@ if(selecting_button != -1){
 	stage_setting();//ここでデータ代入
 	/*draw_text(sprite_x+width/4, sprite_y-30, "Wave"+string(global.wave_total));
 	draw_text(sprite_x+width/4*3, sprite_y-30, "Life"+string(global.life));*/
-	draw_text(sprite_x+34, sprite_y+height+18, "Wave ");
+	draw_text(sprite_x+34, sprite_y+height+14, " STAGE"+string(selecting_stage));
+	draw_text(sprite_x+34, sprite_y+height+36, "Wave ");
 	draw_set_alpha(0.9);
-	draw_text(sprite_x+34, sprite_y+height+36, "Life ");
+	draw_text(sprite_x+34, sprite_y+height+54, "Life ");
 	draw_set_color(COLOR_TEXT_LTGRAY_ONWINDOW);
 	draw_set_alpha(1);
-	draw_text(sprite_x+90, sprite_y+height+18, string(global.wave_total));
+	draw_text(sprite_x+90, sprite_y+height+36, string(global.wave_total));
 	draw_set_alpha(0.9);
-	draw_text(sprite_x+90, sprite_y+height+36, string(global.life));
+	draw_text(sprite_x+90, sprite_y+height+54, string(global.life));
 	//draw_text(sprite_x+4, sprite_y+height+70, "WaveClearBonus "+string(global.wave_clear_gold)+"Gold");
 	
 	switch(selecting_stage){

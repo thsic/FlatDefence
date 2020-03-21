@@ -305,9 +305,10 @@ case 10://クリア画面の一番ダメージをだしたやつ描画
 	draw_set_font(FONT_ITEMNAME);
 	draw_text(x+64, y+24, global.defender_data[no1_defender_id.defender_number, data.name]);
 	draw_set_font(FONT_DEFAULT);
-	draw_text(x+182, y+24, "ダメージ");
+	draw_text(x+174, y+24, "ダメージ");
+	
 	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(x+252, y+24, string_format(no1_defender_id.total_damage, 0, 0));
+	draw_text(x+244, y+24, string_format(no1_defender_id.total_damage, 0, 0));
 	
 	for(var i=0; i<no1_defender_id.itemslot_amount; i++){
 		var item_id = no1_defender_id.itemslot[i]
@@ -320,6 +321,12 @@ case 10://クリア画面の一番ダメージをだしたやつ描画
 			draw_sprite(s_itemSlot, 0, x+64+16+i*36, y+44+16);
 		}
 	}
+	draw_set_color(COLOR_TEXT_LTGRAY);
+	draw_set_font(fo_kosugiMaru10Ja);
+	draw_set_alpha(0.08);
+	draw_set_halign(fa_right);
+	draw_text(x+312, y+28, string(floor(damage_percent*100))+"%");
+	draw_set_halign(fa_left);
 	draw_set_alpha(1);
 	draw_set_color(COLOR_DEFAULT);
 

@@ -43,7 +43,7 @@ case 0://オーブ
 	draw_set_color(COLOR_TEXT_WHITE);
 	draw_set_font(FONT_DEFAULT);
 	
-	draw_text(offset_x+36, offset_y+54, ORB_DESCRIPTION);
+	draw_text(offset_x+36, offset_y+55, ORB_DESCRIPTION);
 	//所持アイテム描画
 	for(var i=0; i<defender_id.itemslot_amount; i++){
 		var item_sprite_x = offset_x+20+i*34;
@@ -92,7 +92,7 @@ case 23://クリスタル
 	break
 	}
 	
-	draw_text(offset_x+36, offset_y+50, crystal_description);
+	draw_text(offset_x+36, offset_y+51, crystal_description);
 	//所持アイテム描画
 	for(var i=0; i<defender_id.itemslot_amount; i++){
 		var item_sprite_x = offset_x+20+i*34;

@@ -5,6 +5,7 @@ var x_offset = argument0;
 var y_offset = argument1;
 var width = argument2;
 var height = argument3;
+
 //ウィンドウの枠
 draw_set_alpha(0.7);
 draw_set_color(COLOR_WINDOW_BORDER);
