@@ -31,7 +31,8 @@
 //shop
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
 #macro SHOP_WINDOW_WIDTH 256 
-#macro PRICE_INCREASE 1.2//1つ買うごとに値上がりする倍率
+#macro PRICE_INCREASE 1.5//1つ買うごとに値上がりする倍率
+#macro PRICE_INCREASE_DEFENDER 1.25//defenderの場合
 
 //
 #macro REST_TIME 600//休憩時間の長さ
@@ -49,9 +50,10 @@
 #macro SHIELD_BREAK_STRENGTH 1//シールド削り値
 #macro FREEZE_SLOW_PERCENT 0.7//フリーズLV1にかかったときのスピード倍率 通常はLV2
 #macro FREEZE_INTERVAL 60//フリーザークリスタルの時の範囲スローの発生頻度
-#macro BLASTER_SHOT_COOLDOWN 15//ブラスターの連射中のクールダウン
+#macro BLASTER_SHOT_COOLDOWN 2//ブラスターの連射中のクールダウン
 #macro BLASTER_SHOT_COOLDOWN_UPGRADE 2
 #macro MARKER_ENHANCEMENT_MAGNIFICATION 0.1 //マーカーのトークン1つにつき上昇するステータス倍率
+#macro SNIPER_MIN_RANGE 75 //スナイパーの最低射程
 
 //enemy
 #macro BERSERKER_LV1_RAGE_SPEED 2
@@ -83,7 +85,7 @@
 //アイテム
 #macro IMPERIALLANCE_PENETRATION_MAX 40//インペリアルランス+が貫通できる敵の数
 #macro FREEZEROD_UPGRADE_ 10//わからん なにこれ
-#macro POISONDAGGER_MAGNIFICATION 0.3//ポイズンダガー装備中の追加ダメージ倍率
+#macro POISONDAGGER_MAGNIFICATION 0.2//ポイズンダガー装備中の追加ダメージ倍率
 #macro CURSEDSWORD_MAGNIFICATION 0.2//呪いの剣装備中のダメージ倍率
 #macro BLAST_MAGNIFICATION 0.25//爆風ダメージ倍率
 
@@ -124,10 +126,10 @@
 #macro MARKER_ENHANCEMENT_DESCRIPTION3 "倍になります"
 
 #macro CRYSTAL_BASIC_DESCRIPTION "アイテムスロットが2つ"+chr(10)+"増える"
-#macro CRYSTAL_SNIPER_DESCRIPTION "射程が2倍になる"
+#macro CRYSTAL_SNIPER_DESCRIPTION "射程が2倍になり射程の"+chr(10)+"10分の1がパワーに加算"
 #macro CRYSTAL_BOMBER_DESCRIPTION "爆風の中心はダメージが"+chr(10)+"1.5倍になる"
 #macro CRYSTAL_FREEZER_DESCRIPTION "射程内の敵すべてにスロー"+chr(10)+"を与える"
-#macro CRYSTAL_BLASTER_DESCRIPTION "弾速と連射速度が上昇する"
+#macro CRYSTAL_BLASTER_DESCRIPTION "1秒間攻撃しないでいると"+chr(10)+"次の攻撃のダメージが2倍"
 #macro CRYSTAL_THIEF_DESCRIPTION "敵を倒した時の獲得Gが"+chr(10)+"1.5倍になる"
 #macro ORB_DESCRIPTION "装備アイテムを"+chr(10)+"アップグレードできる"
 
@@ -157,7 +159,7 @@
 #macro COLOR_TEXT_YELLOW make_color_rgb(255, 242, 128)
 #macro COLOR_TEXT_ORANGE make_color_rgb(244, 172, 100)
 #macro COLOR_TEXT_GREEN c_lime
-#macro COLOR_TEXT_RED make_color_rgb(222, 50, 50)
+#macro COLOR_TEXT_RED make_color_rgb(182, 30, 30)
 #macro COLOR_TEXT_PURPLE c_fuchsia
 #macro COLOR_TEXT_BLUE make_color_rgb(85, 230, 230)
 #macro COLOR_TEXT_DARKGREEN c_teal
@@ -182,6 +184,7 @@
 
 #macro COLOR_BAR_COOLDOWN make_color_rgb(204, 197, 112)
 #macro COLOR_BAR_COOLDOWN_UNDER c_gray
+#macro COLOR_BAR_COOLDOWN_STRONG_BLASTER_ACTIVE make_color_rgb(110, 150, 80)
 #macro COLOR_BAR_ENEMYHP make_color_rgb(230, 120, 90)
 #macro COLOR_BAR_ENEMYHP_UNDER c_gray
 

@@ -5,6 +5,7 @@ case gamestate.main:
 		var effect_fire = 0
 		var penetration = 0;
 		var penetration_plus = 0;
+		var septuple_shot = 0;
 		for(var i=0; i<EFFECT_SLOT_MAX; i++){
 			if(defender_id.effect_now[i, effectnow.number] != -1){
 				//何かしらのエフェクトがある
@@ -20,6 +21,9 @@ case gamestate.main:
 				break
 				case 7:
 					penetration_plus++;
+				break
+				case 28:
+					septuple_shot++;
 				break
 				}
 			}
@@ -54,7 +58,9 @@ case gamestate.main:
 				instance_destroy();
 				//誰にもダメージを与えられないまま射程外になったときはターゲットにダメージを与える
 				if(penetration_enemy_id[0] = -1){
-					damage_to_enemy(damage, bullet_target, defender_id);
+					if(instance_exists(bullet_target)){//存在チェック
+						damage_to_enemy(damage, bullet_target, defender_id);
+					}
 				}
 			}
 		}
@@ -70,7 +76,13 @@ case gamestate.main:
 		if(effect_freeze and effect_fire){
 			bullet_fire_color = COLOR_BULLET_MIX;
 		}
-		bullet_fire(x, y, xprev, yprev, direction, dirprev, bullet_fire_color, 0.3, 5, 2);
+		//弾道
+		if(septuple_shot){//七連攻撃
+			bullet_fire(x, y, xprev, yprev, direction, dirprev, bullet_fire_color, 0.7, 1, 2);
+		}
+		else{//普通
+			bullet_fire(x, y, xprev, yprev, direction, dirprev, bullet_fire_color, 0.3, 5, 2);
+		}
 	}
 	
 
@@ -91,7 +103,7 @@ case gamestate.main:
 		for(var i=0; i<global.enemy_amount; i++){
 			other_object = global.enemy_id[i]
 			if(instance_exists(global.enemy_id[i])){//存在チェック
-				if(collision_circle(other_object.x, other_object.y, SPRITE_SIZE, id, false, false)){
+				if(collision_circle(other_object.x, other_object.y, SPRITE_SIZE*2, id, false, false)){
 					var enemy_id_check = true//以前当たった敵と被りがないか
 					for(var j=0; j<IMPERIALLANCE_PENETRATION_MAX; j++){
 						if(penetration_enemy_id[j] = other_object){

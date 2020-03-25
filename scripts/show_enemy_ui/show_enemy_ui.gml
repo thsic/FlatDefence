@@ -5,8 +5,9 @@ if(mouse_check_button_pressed(mb_left)){
 	}
 	for(var i=0;i<global.enemy_amount; i++){
 		if(instance_exists(global.enemy_id[i])){
-			if(global.enemy_id[i].x-SPRITE_SIZE < mouse_x and mouse_x < global.enemy_id[i].x+SPRITE_SIZE){
-				if(global.enemy_id[i].y-SPRITE_SIZE < mouse_y and mouse_y < global.enemy_id[i].y+SPRITE_SIZE){
+			var clickable_square_size = SPRITE_SIZE/2
+			if(global.enemy_id[i].x-clickable_square_size < mouse_x and mouse_x < global.enemy_id[i].x+clickable_square_size){
+				if(global.enemy_id[i].y-clickable_square_size < mouse_y and mouse_y < global.enemy_id[i].y+clickable_square_size){
 					window_follow_enemy_id = global.enemy_id[i]
 				
 				}

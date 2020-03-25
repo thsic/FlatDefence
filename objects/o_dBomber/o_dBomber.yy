@@ -14,7 +14,7 @@
             "mvc": "1.0",
             "objectId": "eac5d7c3-c9d1-4115-8757-2a028c602fe9",
             "propertyId": "c5c7ace9-855c-478a-9823-6e22386ee8dc",
-            "value": "30"
+            "value": "15"
         }
     ],
     "parentObjectId": "eac5d7c3-c9d1-4115-8757-2a028c602fe9",

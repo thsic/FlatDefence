@@ -55,18 +55,22 @@ if(global.gamestate = gamestate.main){
 			switch(enemy_number){
 			case 18:
 				hp += REGEN_LV1_HEAL;
+				global.all_enemy_total_hp += REGEN_LV1_HEAL;
 			break
 			case 19:
 				hp += REGEN_LV2_HEAL;
+				global.all_enemy_total_hp += REGEN_LV2_HEAL;
 			break
 			case 20:
 				hp += REGEN_LV3_HEAL;
+				global.all_enemy_total_hp += REGEN_LV3_HEAL;
 			break
 			default:
 				sdm("Error! o_enemy");
 			break
 			}
 			if(hp > hp_max){//hpが最大値より増えたら最大値まで下げる
+				global.all_enemy_total_hp -= hp-hp_max;
 				hp = hp_max
 			}
 		}

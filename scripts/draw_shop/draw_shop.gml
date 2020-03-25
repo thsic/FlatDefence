@@ -17,7 +17,7 @@ draw_set_color(c_white);
 for(var i=0; i<product_defender_amount; i++){//defenderを描画
 	var necessary_gold = global.defender_data[defender_id_conversion(shop_product[i, DEFENDER]), data.cost]
 	for(var j=0; j<shop_product[i, SALES]; j++){
-		necessary_gold *= PRICE_INCREASE;
+		necessary_gold *= PRICE_INCREASE_DEFENDER;
 	}
 	
 	if(global.gold < necessary_gold){
@@ -198,11 +198,15 @@ if(grab_defender_id != -1){//商品を掴んでいる
 	var defender_color_value = color_get_value(circle_color_default)-50;
 	var circle_color = make_color_hsv(defender_color_hue, defender_color_saturation, defender_color_value)
 	draw_set_color(circle_color);
-	//draw_set_color(global.defender_data[grab_defender_id, data.color]);
-	draw_set_alpha(0.15);
-	draw_circle(defender_sprite_x, defender_sprite_y, global.defender_data[defender_id_conversion(grab_defender_id), data.range]*defender_range_mag, false);
-	draw_set_alpha(0.6);
-	draw_circle(defender_sprite_x, defender_sprite_y, global.defender_data[defender_id_conversion(grab_defender_id), data.range]*defender_range_mag, true);
+	if(defender_id_conversion(grab_defender_id) != 1){
+		draw_set_alpha(0.15);
+		draw_circle(defender_sprite_x, defender_sprite_y, global.defender_data[defender_id_conversion(grab_defender_id), data.range]*defender_range_mag, false);
+		draw_set_alpha(0.6);
+		draw_circle(defender_sprite_x, defender_sprite_y, global.defender_data[defender_id_conversion(grab_defender_id), data.range]*defender_range_mag, true);
+	}
+	else{
+		draw_sniper_circle(-1, defender_sprite_x, defender_sprite_y);
+	}
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_alpha(1);
 	

@@ -117,48 +117,48 @@ case 5:
 	draw_set_alpha(effect_alpha);
 	
 	//if(blast_size > 0){
-		var circle_smooth = polygon_number;//円の滑らかさ
-		var circle_addangle = 360/circle_smooth;
-		draw_primitive_begin(pr_trianglestrip);
-		for(var i=0; i<circle_smooth+1; i++){
-			//奇数の点設定 外側の円
-			var angle = circle_addangle*i+circle_random_angle;
-			var temp_x = lengthdir_x(circle_size, angle)+effect_size;
-			var temp_y = lengthdir_y(circle_size, angle)+effect_size;
-			draw_vertex(temp_x, temp_y);
-			var angle2 = angle
-			var angle2 = point_direction(blast_x, blast_y, temp_x-effect_size, temp_y-effect_size);
+	var circle_smooth = polygon_number;//円の滑らかさ
+	var circle_addangle = 360/circle_smooth;
+	draw_primitive_begin(pr_trianglestrip);
+	for(var i=0; i<circle_smooth+1; i++){
+		//奇数の点設定 外側の円
+		var angle = circle_addangle*i+circle_random_angle;
+		var temp_x = lengthdir_x(circle_size, angle)+effect_size;
+		var temp_y = lengthdir_y(circle_size, angle)+effect_size;
+		draw_vertex(temp_x, temp_y);
+		var angle2 = angle
+		var angle2 = point_direction(blast_x, blast_y, temp_x-effect_size, temp_y-effect_size);
 			
-			//偶数 内側の円
-			var temp_x2 = lengthdir_x(blast_size, angle2)+effect_size+blast_x;
-			var temp_y2 = lengthdir_y(blast_size, angle2)+effect_size+blast_y;
-			//draw_line_color(temp_x, temp_y, temp_x2, temp_y2, c_blue, c_blue) テスト用
-			//内側の円が外側の円からはみ出ようとした時にはみ出ないように
-			if(angle2 > 90 and angle2 < 270){
-				if(temp_x > temp_x2){
-					temp_x2 = temp_x;
-				}
+		//偶数 内側の円
+		var temp_x2 = lengthdir_x(blast_size, angle2)+effect_size+blast_x;
+		var temp_y2 = lengthdir_y(blast_size, angle2)+effect_size+blast_y;
+		//draw_line_color(temp_x, temp_y, temp_x2, temp_y2, c_blue, c_blue) テスト用
+		//内側の円が外側の円からはみ出ようとした時にはみ出ないように
+		if(angle2 > 90 and angle2 < 270){
+			if(temp_x > temp_x2){
+				temp_x2 = temp_x;
 			}
-			else{
-				if(temp_x < temp_x2){
-					temp_x2 = temp_x;
-				}
-			}
-			if(angle2 < 180){
-				if(temp_y > temp_y2){
-					temp_y2 = temp_y
-				}
-			}
-			else{
-				if(temp_y < temp_y2){
-					temp_y2 = temp_y
-				}
-			}
-			//描画
-			draw_vertex(temp_x2, temp_y2);
-			
 		}
-		draw_primitive_end();
+		else{
+			if(temp_x < temp_x2){
+				temp_x2 = temp_x;
+			}
+		}
+		if(angle2 < 180){
+			if(temp_y > temp_y2){
+				temp_y2 = temp_y
+			}
+		}
+		else{
+			if(temp_y < temp_y2){
+				temp_y2 = temp_y
+			}
+		}
+		//描画
+		draw_vertex(temp_x2, temp_y2);
+			
+	}
+	draw_primitive_end();
 		/*
 		draw_set_alpha(0);
 		draw_set_color(c_black);
@@ -323,7 +323,7 @@ case 10://クリア画面の一番ダメージをだしたやつ描画
 	}
 	draw_set_color(COLOR_TEXT_LTGRAY);
 	draw_set_font(fo_kosugiMaru10Ja);
-	draw_set_alpha(0.08);
+	draw_set_alpha(0.1);
 	draw_set_halign(fa_right);
 	draw_text(x+312, y+28, string(floor(damage_percent*100))+"%");
 	draw_set_halign(fa_left);

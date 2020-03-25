@@ -48,3 +48,7 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		break
 	}
 }
+if(effect_id = 19){//装備した瞬間から力溜めがはじまるように
+	object_id.strong_blaster_power = 0;
+}
+

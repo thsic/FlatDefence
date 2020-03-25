@@ -35,6 +35,8 @@ remaining_bullets = 0;//ブラスターの残りショット数
 blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;//ブラスターのショットのクールダウン
 item_equip_effect_time = 0//アイテム装備時の小さいパーティクル
 total_damage = 0;//このdefenderが出したダメージ量
+strong_blaster_power = -1//強化ボウガンのパワー溜まり値(?)
+strong_blaster_active = false;//強化ボウガンアクティブかどうか
 
 //スキル関連
 skill_cooldown = -1;//一応

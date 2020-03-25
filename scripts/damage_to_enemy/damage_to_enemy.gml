@@ -18,6 +18,7 @@ var penetration_plus = 0;
 var freeze_all = 0;
 var shield_break = 0;
 var blast_damageup = 0;
+var strong_blaster = 0;
 var gold_get_plus = 0;
 var gold_get = 0;
 var one_shot_one_kill = 0;
@@ -67,6 +68,9 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		break
 		case 17:
 			blast_damageup++;//範囲攻撃中心だけダメージup
+		break
+		case 19:
+			strong_blaster++;//1秒間攻撃していないと次の攻撃ダメージ2倍
 		break
 		case 20:
 			gold_get_plus++;//敵撃破ゴールド1.2倍
@@ -121,21 +125,29 @@ if(one_shot_one_kill_plus){
 	}
 }
 
+//ブラスタークリスタル 力溜め
+if(strong_blaster){
+	if(defender_id.strong_blaster_active){
+		damage *= global.effectdata[19, effectdata.value];
+	}
+}
+
 //敵HPが奇数なら追加ダメージ インペリアルランスの通過した敵には追加効果が発生しない
 if(odd_add_damage and target_id = bullet_target){
 	if(instance_exists(target_id)){
 		repeat(odd_add_damage){
 			if(floor(target_id.hp) mod 2 = 1){//奇数判定
 				damage += defender_fire_damage * POISONDAGGER_MAGNIFICATION
+				demons_fire_count++;
 			}
-			demons_fire_count++;
+			
 		}
 	}
 }
 
-//敵HPがMAXなら追加ダメージ インペリアルランスの通過した敵には追加効果が発生しない
+//敵HPがMAXなら追加ダメージ 昔の仕様→(インペリアルランスの通過した敵には追加効果が発生しない)
 if(hpmax_add_damage or hpmax_add_damage_plus){
-	if(instance_exists(target_id) and target_id = bullet_target){
+	if(instance_exists(target_id)){//instance_exists(target_id) and target_id = bullet_target
 		if(target_id.hp = target_id.hp_max){
 			if(hpmax_add_damage){
 				damage += defender_fire_damage * global.effectdata[31, effectdata.value];
@@ -162,20 +174,21 @@ if(gold_ammo){
 }
 
 
-if(fire_level = 0){
-	//通常
-	if(instance_exists(target_id)){
-		if(target_id.shield > 0){//シールド削り
-			if(shield_break > 0){//シールドブレイクがあるなら追加で削る
-				for(var i=0; i<shield_break; i++){
-					target_id.shield -= global.effectdata[14, effectdata.value];
-				}
-				if(target_id.shield <= SHIELD_BREAK_STRENGTH){
-					target_id.shield = SHIELD_BREAK_STRENGTH;//あとで1削られるので1だけ残す
-				}
+//if(fire_level = 0){
+//通常
+if(instance_exists(target_id)){
+	if(target_id.shield > 0){//シールド削り
+		if(shield_break > 0){//シールドブレイクがあるなら追加で削る
+			for(var i=0; i<shield_break; i++){
+				target_id.shield -= global.effectdata[14, effectdata.value];
 			}
-			target_id.shield -= SHIELD_BREAK_STRENGTH;
+			if(target_id.shield <= SHIELD_BREAK_STRENGTH){
+				target_id.shield = SHIELD_BREAK_STRENGTH;//あとで1削られるので1だけ残す
+			}
 		}
+		target_id.shield -= SHIELD_BREAK_STRENGTH;
+	}
+	if(fire_level = 0){
 		if(damage/10 > damage - target_id.shield){
 			var damage_result = ceil(damage/10);//攻撃力の1/10は最低保障ダメージ
 		}
@@ -183,11 +196,22 @@ if(fire_level = 0){
 			var damage_result = ceil(damage - target_id.shield);
 		}
 	}
+	else{//ビーム砲
+		if(basedamage*global.effectdata[1, effectdata.value] > damage - target_id.shield){
+			//ビーム砲がある場合は最低保障ダメージが半分まで上がる
+			//ただしbasedamage参照
+			var damage_result = ceil(basedamage*global.effectdata[1, effectdata.value]);
+		}
+		else{
+			var damage_result = ceil(damage - target_id.shield);
+		}
+	}
 }
+/*}
 else{
 	//炎属性
 	var damage_result = damage;
-}
+}*/
 if(ice_level > 0){//スローをかける
 	if(penetration or penetration_plus){
 		//貫通攻撃の場合

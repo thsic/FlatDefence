@@ -34,7 +34,7 @@ if(mouse_check_button_pressed(mb_left)){//マウス押された
 			
 			var reduce_gold = global.defender_data[grab_number, data.cost];
 			for(var i=0; i<shop_product[grab_product_number, SALES]; i++){//販売数によって減らすお金が増える
-				reduce_gold *= PRICE_INCREASE;
+				reduce_gold *= PRICE_INCREASE_DEFENDER;
 			}
 			if(global.gold >= reduce_gold){//残金チェック
 				consumed_gold(floor(reduce_gold));//お金をへらす
@@ -138,7 +138,7 @@ if(grab_defender_id != -1){
 					shop_product[grab_defender_shop_id, SALES] -= 1;//販売数戻す
 					var return_gold = global.defender_data[defender_id_conversion(grab_defender_id), data.cost]
 					for(var i=0; i<shop_product[grab_defender_shop_id, SALES]; i++){
-						return_gold *= PRICE_INCREASE;
+						return_gold *= PRICE_INCREASE_DEFENDER;
 					}
 					global.gold += floor(return_gold);
 				}//返金
@@ -152,7 +152,7 @@ if(grab_defender_id != -1){
 			//shop画面の所でdefenderを離すと 払ったcostが戻ってくる
 			var return_gold = global.defender_data[defender_id_conversion(grab_defender_id), data.cost]
 			for(var i=0; i<shop_product[grab_defender_shop_id, SALES]; i++){
-				return_gold *= PRICE_INCREASE;
+				return_gold *= PRICE_INCREASE_DEFENDER;
 			}
 			global.gold += floor(return_gold);
 			
@@ -218,7 +218,7 @@ if(grab_item_id != -1){
 					for(var j=0; j<shop_item_product[grab_item_shop_id, SALES]; j++){
 						return_gold *= PRICE_INCREASE;
 					}
-					global.gold += floor(return_gold)
+					global.gold += floor(return_gold);
 					play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.17, false);
 					
 				}

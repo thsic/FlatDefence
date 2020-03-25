@@ -9,13 +9,17 @@ var alpha = 0.9
 
 //開かれている間は射程範囲表示
 draw_set_alpha(0.2);
-//draw_set_color(COLOR_CIRCLE_RANGE_IDLE);
-draw_set_color(global.defender_data[finded_defender_id.defender_number, data.color])
-draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, false)
-draw_set_alpha(0.5);
-draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, true)
-draw_set_alpha(1);
 
+draw_set_color(global.defender_data[finded_defender_id.defender_number, data.color])
+if(finded_defender_id.defender_number != 1){
+	draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, false)
+	draw_set_alpha(0.5);
+	draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, true)
+}
+else{
+	draw_sniper_circle(finded_defender_id, finded_defender_id.x, finded_defender_id.y);
+}
+draw_set_alpha(1);
 usefulwindow(s_window, 0, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,alpha);
 
 draw_sprite(finded_defender_id.sprite_index, 0, x_offset+22, y_offset+24);//defenderの画像 32x32以外だと変になるかも middlecentreなのを忘れない

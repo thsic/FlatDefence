@@ -264,9 +264,9 @@ break
 #region stage8
 case 8:
 	global.life = 5;
-	global.gold = 600;
+	global.gold = 700;
 	global.wave_total = 9;
-	global.wave_clear_gold = 150;
+	global.wave_clear_gold = 200;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;

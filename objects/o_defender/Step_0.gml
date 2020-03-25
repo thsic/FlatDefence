@@ -39,7 +39,7 @@ var attack_decrement = 0;
 var freeze_all = 0;
 var attack_halve_disempower = 0;
 var itemslot_plus = 0;
-var range_x2 = 0;
+var snipe_mode = 0;
 var chronomancer = 0;
 var strong_blaster = 0;
 var triple_shot = 0;
@@ -76,13 +76,13 @@ for(var i=0; i<EFFECT_SLOT_MAX; i++){
 		case 15://アイテム枠+2
 			itemslot_plus++;
 		break
-		case 16://射程2倍
-			range_x2++;
+		case 16://射程2倍 射程の10分の1がパワーに加算される
+			snipe_mode++;
 		break
 		case 18://射程内全員スロー 処理はかなりしたのほうに
 			chronomancer++;
 		break
-		case 19://連射速度と弾速上昇
+		case 19://1秒間攻撃していないと次の攻撃ダメージ2倍
 			strong_blaster++;
 		break
 		case 21://3連続攻撃
@@ -132,10 +132,9 @@ else if(attack_decrement){
 	fire_damage *= 0.66;//3分の2
 }
 
-if(range_x2){
-	for(var i=0; i<range_x2; i++){
-		range *= 2;
-	}
+if(snipe_mode){//射程2倍と射程の10分の1がパワーに加算
+	range *= 2;
+	fire_damage += range/10;
 }
 
 
@@ -143,9 +142,7 @@ if(range_x2){
 if(itemslot_plus){
 	itemslot_amount = global.defender_data[defender_number, data.itemslot]+2;
 }
-if(strong_blaster){
-	bullet_speed = 30;
-}
+
 if(basicist){
 	for(var i=0; i<itemslot_amount; i++){
 		if(itemslot[i] = 1){//basicsword 探す
@@ -255,7 +252,6 @@ if(global.gamestate = gamestate.main){
 		}
 	}
 	#endregion
-
 	#region State
 	switch(state){
 	#region 攻撃クールダウン
@@ -268,22 +264,46 @@ if(global.gamestate = gamestate.main){
 			else{
 				state = state.idle;//居ないので待つ
 			}
+			strong_blaster_active = false;//ブラスタークリスタルの強化効果消す
 		}
 		else{
 			--cooldown;
 			if(triple_shot){
 				if(remaining_bullets > 0){
 					if(blaster_shot_cooldown <= 0){
+						//blaster2発目以降の攻撃
 						fire_to_enemy(target_id, bullet_speed, o_defender_bullet, fire_damage, id);
 						remaining_bullets--;
-						if(strong_blaster){
-							blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN_UPGRADE;
+						if(septuple_shot){
+							//七連
+							var attack_amount = global.effectdata[28, effectdata.value];
 						}
 						else{
-							blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;
+							//トリプル
+							var attack_amount = global.effectdata[21, effectdata.value];
 						}
+						
+						var bullet_cooldown_frame = FPS_DEFAULT / attack_per_second / attack_amount * 0.8;
+						blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;
+						for(var i=0; i<15; i++){
+							if(bullet_cooldown_frame> BLASTER_SHOT_COOLDOWN+i){
+								blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN+i;
+							}
+							else{
+								break
+							}
+						}
+						
+						if(strong_blaster){//強化ボウガンのパワー溜まり値リセット
+							strong_blaster_power = FPS_DEFAULT;
+						}
+						else{
+							strong_blaster_power = -1;
+						}
+						
 					}
 					else{
+						//クールダウン
 						blaster_shot_cooldown--;
 					}
 				}
@@ -311,6 +331,8 @@ if(global.gamestate = gamestate.main){
 		}
 		fire_to_enemy(target_id, bullet_speed, o_defender_bullet, fire_damage, id);
 		set_cooldown();
+		
+		//---ブラスター関連---
 		if(triple_shot){
 			if(septuple_shot){//7連攻撃
 				remaining_bullets = global.effectdata[28, effectdata.value]-1
@@ -319,11 +341,32 @@ if(global.gamestate = gamestate.main){
 				remaining_bullets = global.effectdata[21, effectdata.value]-1
 			}
 			
-			if(strong_blaster){
-				blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN_UPGRADE;
+			//2発目以降のクールダウン設定
+			if(septuple_shot){
+				//七連
+				var attack_amount = global.effectdata[28, effectdata.value];
 			}
 			else{
-				blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;
+				//トリプル
+				var attack_amount = global.effectdata[21, effectdata.value];
+			}
+						
+			var bullet_cooldown_frame = FPS_DEFAULT / attack_per_second / attack_amount * 0.8;
+			blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN;
+			for(var i=0; i<15; i++){
+				if(bullet_cooldown_frame> BLASTER_SHOT_COOLDOWN+i){
+					blaster_shot_cooldown = BLASTER_SHOT_COOLDOWN+i;
+				}
+				else{
+					break
+				}
+			}
+						
+			if(strong_blaster){//強化ボウガンのパワー溜まり値リセット
+				strong_blaster_power = FPS_DEFAULT;
+			}
+			else{
+				strong_blaster_power = -1;
 			}
 		}
 		state = state.decrement_cooldown;
@@ -345,5 +388,15 @@ if(global.gamestate = gamestate.main){
 		}
 	}
 	#endregion
-
+	#region strong blaster
+	if(strong_blaster){
+		if(strong_blaster_power > 0){
+			strong_blaster_power--
+		}
+		else{
+			strong_blaster_active = true;
+		}
+		//sdm("strongblaster"+string(strong_blaster_power))
+	}
+	#endregion
 }

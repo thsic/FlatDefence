@@ -1,4 +1,4 @@
-i = 0; //デバッグ用に敵優先順位表示
+/*i = 0; //デバッグ用に敵優先順位表示
 draw_set_color(c_white);
 draw_set_alpha(1);
 draw_set_halign(fa_left);

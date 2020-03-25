@@ -25,6 +25,8 @@ ui_window_y = 0;
 ui_window_width = 0;
 ui_window_height = 0;
 sellbutton = 0;
+grab_item_possession_id = -1;
+grab_item_id = -1; 
 
 
 

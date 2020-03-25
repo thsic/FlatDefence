@@ -25,6 +25,16 @@ if(offset_x+window_width > view_wport[0]){//小窓がはみでないように
 }
 if(offset_y+window_height > window_get_height()){//小窓が下に行きすぎないように調整
 	offset_y = window_get_height()-window_height
+	
+	//説明文が2行ならyを上げて2行目が見きれないように
+	if(target_id != 23 and target_id != 0){
+		if(global.itemdata[target_id, itemdata.effect] != -1){
+			var addeffect = global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.addeffect];
+			if(addeffect != -1){
+				offset_y -= 18;
+			}
+		}
+	}
 }
 if(offset_y < 0){
 	offset_y = 0;
@@ -68,7 +78,7 @@ case 0://defender
 	var nesessary_gold = global.defender_data[defender_id, data.cost];
 	var nesessary_gold_default = nesessary_gold
 	for(var i=0; i<shop_product[target_id, SALES]; i++){
-		nesessary_gold *= PRICE_INCREASE;
+		nesessary_gold *= PRICE_INCREASE_DEFENDER;
 	}
 	var difference_gold = nesessary_gold - nesessary_gold_default;//差額求める
 	draw_text(offset_x+window_width-6, offset_y+4, string(floor(nesessary_gold))+" Gold");
@@ -78,18 +88,25 @@ case 0://defender
 	draw_set_halign(fa_left);
 	draw_set_color(COLOR_DEFAULT);
 	
-	
 break
 case 1://item
-	var effect1 = -1
-	var effect2 = -1
-	var crystal = false
-	var upgradeorb = false
+	var effect1 = -1;
+	var effect2 = -1;
+	var crystal = false;
+	var upgradeorb = false;
+	var grab_upgradeorb = false;
 	if(target_id = 23){crystal = true}//クリスタル専用処理
 	if(target_id = 0){upgradeorb = true}//オーブ専用処理
+	if(grab_item_id = 0 or grab_item_possession_id = 0){
+		//アップグレードオーブを手に持っている状態でアイテム小窓を見たらアップグレードのステータスが表示
+		if(global.itemdata[target_id, itemdata.upgradeid] != -1){
+			grab_upgradeorb = true
+			target_id = global.itemdata[target_id, itemdata.upgradeid];
+		}
+	}
 	if(global.itemdata[target_id, itemdata.effect] != -1 or crystal){//エフェクトの説明文を入れる
 		if(!crystal and !upgradeorb){
-			var effect1 = global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.number]
+			var effect1 = global.effectdata[global.itemdata[target_id, itemdata.effect], effectdata.number];
 			var description1 = global.effectdata[effect1, effectdata.description];
 			var description1_color = global.effectdata[effect1, effectdata.color];
 		}
@@ -159,7 +176,7 @@ case 1://item
 				description1 = string_replace(description1, "\%", string(global.effectdata[effect1, effectdata.value]*100));
 				description1 = string_replace(description1, "\l", "1");
 			}
-			else{//アップグレード後 defenderwindow内のアイテム
+			else{//アップグレード後 defenderwindow内のアイテム/orb重ねた時
 				description1 = string_replace(description1, "\v", string(global.effectdata[effect1, effectdata.value]*2));
 				description1 = string_replace(description1, "\%", string(((1-global.effectdata[effect1, effectdata.value])*global.effectdata[effect1, effectdata.value]+global.effectdata[effect1, effectdata.value])*100));
 				description1 = string_replace(description1, "\l", "2");
@@ -175,7 +192,7 @@ case 1://item
 		draw_text(offset_x+6, offset_y+114, description2);
 	}
 
-	if(!possession){//所持品ならコストを表示しない
+	if(!possession and !grab_upgradeorb){//コスト表示 所持品ならコストを表示しない
 		draw_set_color(COLOR_TEXT_YELLOW);
 		draw_set_halign(fa_right);
 
@@ -187,7 +204,7 @@ case 1://item
 		}
 		
 		var nesessary_gold = shop_item_product[item_shop_id, COST];
-		var nesessary_gold_default = nesessary_gold
+		var nesessary_gold_default = nesessary_gold;
 		for(var i=0; i<shop_item_product[item_shop_id, SALES]; i++){
 			nesessary_gold *= PRICE_INCREASE;
 		}
@@ -198,8 +215,14 @@ case 1://item
 		draw_set_halign(fa_left);
 		draw_set_font(FONT_DEFAULT);
 	}
+	else{
+		if(instance_exists(o_bgmMgr) and possession){
+			o_bgmMgr.draw_nowmusic_ui = false;//所持アイテムの説明文の時はBGM表示をけす 見やすいよう
+		}
+	}
 	draw_set_color(COLOR_DEFAULT);
 break
+
 case 2://スキルアイテム
 	var skill_id = global.itemdata[target_id, itemdata.skill]
 	if(global.skilldata[skill_id, skilldata.description2] != ""){//説明2があるかどうかでwindowheightを変える

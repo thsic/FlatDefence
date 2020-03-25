@@ -57,8 +57,14 @@ draw_set_alpha(1);
 draw_set_color(c_white);
 //クールダウンゲージ描画
 if(global.draw_cooldown){
-	draw_bar("cooldown", cooldown, FPS_DEFAULT / attack_per_second, COLOR_BAR_COOLDOWN, COLOR_BAR_COOLDOWN_UNDER);
+	if(strong_blaster_active){//ブラスタークリスタルの効果発動中は色が変わる
+		draw_bar("cooldown", cooldown, FPS_DEFAULT / attack_per_second, COLOR_BAR_COOLDOWN_STRONG_BLASTER_ACTIVE, COLOR_BAR_COOLDOWN_UNDER);
+	}
+	else{//普通
+		draw_bar("cooldown", cooldown, FPS_DEFAULT / attack_per_second, COLOR_BAR_COOLDOWN, COLOR_BAR_COOLDOWN_UNDER);
+	}
 }
+
 if(skill_id != -1){
 	switch(skill_state){
 	case skillstate.cooldown:

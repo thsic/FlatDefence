@@ -79,11 +79,11 @@ var mouse_on_retry_button = false;
 var mouse_on_stageselect_button = false;
 if(button_opacity){//ボタンが不透明になったらクリックできる
 	if(view_wport[0]/2-button_width/2 < mouse_x and mouse_x < view_wport[0]/2+button_width/2){
-		if(view_hport[0]/6*5-32 < mouse_y and mouse_y < view_hport[0]/6*5-32+24){
+		if(view_hport[0]/6*5-8 < mouse_y and mouse_y < view_hport[0]/6*5+24){
 			//retry
 			mouse_on_retry_button = true
 		}
-		else if(view_hport[0]/6*5-8 < mouse_y and mouse_y < view_hport[0]/6*5+24){
+		else if(view_hport[0]/6*5-32 < mouse_y and mouse_y < view_hport[0]/6*5-32+24){
 			//stageselect
 			mouse_on_stageselect_button = true
 		}
@@ -92,26 +92,26 @@ if(button_opacity){//ボタンが不透明になったらクリックできる
 
 if(mouse_on_retry_button){//マウスがボタンの上にあるときはボタンの色をグレーに
 	draw_set_color(COLOR_TEXT_GRAY);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "Retry");
+	draw_text(view_wport[0]/2, view_hport[0]/6*5, "Retry");
 	if(mouse_check_button_pressed(mb_left)){//ボタン押されたらルーム変更
 		change_screen = room;
 	}
 }
 else{
 	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "Retry");
+	draw_text(view_wport[0]/2, view_hport[0]/6*5, "Retry");
 }
 
 if(mouse_on_stageselect_button){
 	draw_set_color(COLOR_TEXT_GRAY);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5, "StageSelect");
+	draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "StageSelect");
 	if(mouse_check_button_pressed(mb_left)){
 		change_screen = r_stageSelect;
 	}
 }
 else{
 	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5, "StageSelect");
+	draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "StageSelect");
 }
 
 draw_set_font(FONT_DEFAULT);
