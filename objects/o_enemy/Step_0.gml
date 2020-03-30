@@ -6,12 +6,34 @@ if(global.gamestate = gamestate.main){
 		_path_speed = 1;
 		speed_temp = -1;
 	}
-	
+	var freeze_slow_percent = FREEZE_SLOW_PERCENT
 	if(freeze_time != -1){
 		var freeze_power = 1
-		for(var i=0; i<freeze_lv; i++){
-			freeze_power *= FREEZE_SLOW_PERCENT;
+		switch(enemy_number){
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 14:
+		case 18:
+		case 19:
+		case 20:
+			freeze_slow_percent = (1-FREEZE_SLOW_PERCENT)*0.5+FREEZE_SLOW_PERCENT;//半減
+		break
+		case 21://boss
+		case 22:
+		case 23:
+			freeze_slow_percent = (1-FREEZE_SLOW_PERCENT)*0.33+FREEZE_SLOW_PERCENT;
+		break
 		}
+		
+		sdm(freeze_slow_percent)
+		for(var i=0; i<freeze_lv; i++){
+			freeze_power *= freeze_slow_percent;
+		}
+		
+		
 		
 		_path_speed = global.enemydata[enemy_number, enemydata.speed]*freeze_power//スロー
 		freeze_time--;

@@ -3,6 +3,7 @@
 #macro START_ROOM r_title
 #macro GAMENAME "FLAT DEFENCE"
 #macro STAGE_AMOUNT 8
+#macro GAME_VERSION 0.9
 
 //ソート
 #macro NEARGOAL 0
@@ -25,8 +26,8 @@
 #macro STAGE4_RELEASE_SCORE 70000
 #macro STAGE5_RELEASE_SCORE 120000
 #macro STAGE6_RELEASE_SCORE 180000
-#macro STAGE7_RELEASE_SCORE 230000
-#macro STAGE8_RELEASE_SCORE 300000
+#macro STAGE7_RELEASE_SCORE 250000
+#macro STAGE8_RELEASE_SCORE 350000
 
 //shop
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
@@ -87,7 +88,7 @@
 #macro FREEZEROD_UPGRADE_ 10//わからん なにこれ
 #macro POISONDAGGER_MAGNIFICATION 0.2//ポイズンダガー装備中の追加ダメージ倍率
 #macro CURSEDSWORD_MAGNIFICATION 0.2//呪いの剣装備中のダメージ倍率
-#macro BLAST_MAGNIFICATION 0.25//爆風ダメージ倍率
+#macro BLAST_MAGNIFICATION 0.2//爆風ダメージ倍率
 
 //パラメータ表示バー
 #macro PARAMBAR_POWER_DEFENDER 100
@@ -138,7 +139,7 @@
 #macro STAGE3_DESCRIPTION "ウェーブクリア時のゴールドが多い"
 #macro STAGE4_DESCRIPTION "ウェーブ数が少ない"
 #macro STAGE5_DESCRIPTION "ライフが多い"+chr(10)+"ウェーブクリア時のゴールドが少ない"
-#macro STAGE6_DESCRIPTION "HPが多めの敵が多い"
+#macro STAGE6_DESCRIPTION "HPが多めの敵が多い"+chr(10)+"ウェーブクリア時にゴールドを入手できない"
 #macro STAGE7_DESCRIPTION "敵の数が多い"
 #macro STAGE8_DESCRIPTION "ウェーブ数が多い"+chr(10)+"ライフが少ない"
 

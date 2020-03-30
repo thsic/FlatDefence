@@ -205,6 +205,9 @@ if(grab_item_id != -1){
 					if(grab_item_possession_id = -1){//ショップで購入したオーブの場合
 						purchased_upgrade_orb = true//あとで返金するために購入したオーブだということをいれておく
 					}
+					else{
+						purchased_upgrade_orb = false
+					}
 				}
 				if(grab_item_possession_id = -1){
 					//if(purchase_item){shop_item_product[grab_item_shop_id, SALES] += 1;}//販売数増やす

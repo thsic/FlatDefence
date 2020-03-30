@@ -9,7 +9,7 @@ case -1:
 	route_type[0] = p_stage3route0;
 	switch(global.wave_now){
 	case 1:
-		generate_enemy_type[0] = o_eBerserkerLv2;
+		generate_enemy_type[0] = o_eNormalLv1;
 	break
 	case 2:
 		generate_enemy_type[0] = o_eNormalLv1;
@@ -285,7 +285,7 @@ case 8:
 		generate_enemy_type[1] = o_eToughLv2;
 	break
 	case 3:
-		generate_enemy_type[0] = o_eFastLv2;
+		generate_enemy_type[0] = o_eFastLv1;
 		generate_enemy_type[1] = o_eBerserkerLv2;
 	break
 	case 4:

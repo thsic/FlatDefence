@@ -146,7 +146,7 @@ break
 #region stage4
 case 4:
 	global.life = 10;
-	global.gold = 750;
+	global.gold = 700;
 	global.wave_total = 4;
 	global.wave_clear_gold = 100;
 	
@@ -215,7 +215,7 @@ case 6:
 	global.life = 10;
 	global.gold = 600;
 	global.wave_total = 7;
-	global.wave_clear_gold = 150;
+	global.wave_clear_gold = 0;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;

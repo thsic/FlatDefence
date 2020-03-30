@@ -152,7 +152,7 @@ if(hpmax_add_damage or hpmax_add_damage_plus){
 				damage += defender_fire_damage * global.effectdata[31, effectdata.value];
 				
 			}
-			else if(hpmax_add_damage_plus){
+			if(hpmax_add_damage_plus){
 				damage += defender_fire_damage * global.effectdata[32, effectdata.value];
 			}
 			demons_fire_count++;

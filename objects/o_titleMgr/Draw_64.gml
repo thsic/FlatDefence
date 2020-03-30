@@ -37,6 +37,10 @@ if(mouse_check_button(mb_left)){
 if(change_room){
 	change_room_1(r_stageSelect, 30, COLOR_BACKGROUND);
 }
+draw_set_color(COLOR_TEXT_LTGRAY);
+draw_set_valign(fa_bottom);
+draw_text(0, room_height, "ver "+string_format(GAME_VERSION, 1, 1));
+draw_set_valign(fa_top);
 /*if(goto_stageselect != -1){
 	draw_set_alpha(1-goto_stageselect/30);
 	draw_set_color(COLOR_BACKGROUND);
