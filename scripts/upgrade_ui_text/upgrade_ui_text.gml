@@ -451,6 +451,7 @@ draw_text(x_offset+width/5*1+44/2, text_y, description2);
 if(possible_upgrade){
 	if(description2 != description2_upgrade){
 		draw_set_color(COLOR_TEXT_RED);
+		text_y += 16;
 	}
 	else{
 		draw_set_color(COLOR_TEXT_WHITE);
@@ -460,10 +461,10 @@ if(possible_upgrade){
 	}
 	else{
 		description2_upgrade = string_replace(description2_upgrade, "@", +chr(10))
-		draw_set_color(COLOR_TEXT_WHITE);
-		draw_text(x_offset+width/5*4-44/2, text_y, global.effectdata[11, effectdata.description]);
+		//draw_set_color(COLOR_TEXT_WHITE);//フリーズロッドにデメリット効果はつかなくなった
+		//draw_text(x_offset+width/5*4-44/2, text_y, global.effectdata[11, effectdata.description]);
 		draw_set_color(COLOR_TEXT_GREEN);
-		draw_text(x_offset+width/5*4-44/2, text_y+16, description2_upgrade);
+		draw_text(x_offset+width/5*4-44/2, text_y-16, description2_upgrade);
 	}
 }
 

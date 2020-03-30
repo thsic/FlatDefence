@@ -140,7 +140,6 @@ if(odd_add_damage and target_id = bullet_target){
 				damage += defender_fire_damage * POISONDAGGER_MAGNIFICATION
 				demons_fire_count++;
 			}
-			
 		}
 	}
 }
@@ -197,10 +196,10 @@ if(instance_exists(target_id)){
 		}
 	}
 	else{//ビーム砲
-		if(basedamage*global.effectdata[1, effectdata.value] > damage - target_id.shield){
+		if(defender_fire_damage*global.effectdata[1, effectdata.value] > damage - target_id.shield){
 			//ビーム砲がある場合は最低保障ダメージが半分まで上がる
-			//ただしbasedamage参照
-			var damage_result = ceil(basedamage*global.effectdata[1, effectdata.value]);
+			//ただしPower参照
+			var damage_result = ceil(defender_fire_damage*global.effectdata[1, effectdata.value]);
 		}
 		else{
 			var damage_result = ceil(damage - target_id.shield);

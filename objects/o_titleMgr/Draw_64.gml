@@ -17,7 +17,7 @@ draw_rectangle(0, 0, room_width, room_height, false);
 draw_set_halign(fa_middle);
 /*color_hsv += 0.3;
 if(color_hsv > 255){color_hsv -= 255};//一周*/
-draw_set_color(make_color_hsv(90, 77, 136));
+draw_set_color(COLOR_TEXT_TITLE);
 
 
 draw_set_font(FONT_TITLE);

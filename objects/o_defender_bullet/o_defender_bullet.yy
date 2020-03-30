@@ -5,16 +5,6 @@
     "name": "o_defender_bullet",
     "eventList": [
         {
-            "id": "787474c6-6ee5-4bef-b564-51596e1f9e57",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 7,
-            "m_owner": "97835460-5c12-4fa7-8b35-794c3563b13c"
-        },
-        {
             "id": "cf41ff9a-c7b3-4ed9-abbd-125b1dd4ca9e",
             "modelName": "GMEvent",
             "mvc": "1.0",

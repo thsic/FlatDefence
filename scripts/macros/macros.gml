@@ -32,7 +32,7 @@
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
 #macro SHOP_WINDOW_WIDTH 256 
 #macro PRICE_INCREASE 1.5//1つ買うごとに値上がりする倍率
-#macro PRICE_INCREASE_DEFENDER 1.25//defenderの場合
+#macro PRICE_INCREASE_DEFENDER 1.2//defenderの場合
 
 //
 #macro REST_TIME 600//休憩時間の長さ
@@ -74,7 +74,7 @@
 
 //ステージセレクト
 #macro STAGESELECT_BUTTON_WIDTH 300
-#macro STAGESELECT_BUTTON_HEIGHT 48
+#macro STAGESELECT_BUTTON_HEIGHT 46
 #macro STAGESELECT_BUTTON_AMOUNT 8
 
 //スコア
@@ -173,6 +173,7 @@
 #macro COLOR_TEXT_SHOP make_color_rgb(160, 160, 130)
 #macro COLOR_TEXT_SELLBUTTON make_color_rgb(100, 100, 100)
 #macro COLOR_TEXT_PINK make_color_rgb(250, 180, 180)
+#macro COLOR_TEXT_TITLE make_color_hsv(90, 77, 136)
 
 #macro COLOR_CIRCLE_RANGE_COOLDOWN c_gray
 #macro COLOR_CIRCLE_RANGE_IDLE c_lime
@@ -224,7 +225,7 @@
 //フォント
 #macro FONT_DEFAULT fo_kosugiMaru12
 #macro FONT_SUPERBIG fo_notoSuperBig
-#macro FONT_TITLE fo_ostrichSans48
+#macro FONT_TITLE fo_ostrichSans64
 #macro FONT_SHOP fo_noto24
 #macro FONT_DAMAGE_VERYSMALL fo_yasa8
 #macro FONT_DAMAGE_SMALL fo_yasa10
@@ -265,3 +266,4 @@
 #macro SE_UPGRADE a_upgrade
 #macro SE_INVENTORY_GRAB a_kyubanPon
 #macro SE_SHOW_DEFENDER_PARAMWINDOW a_button1
+#macro SE_CLEARSCREEN_BUTTON a_flash

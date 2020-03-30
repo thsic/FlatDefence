@@ -176,7 +176,7 @@ break
 #region stage5
 case 5:
 	global.life = 20;
-	global.gold = 400;
+	global.gold = 600;
 	global.wave_total = 6;
 	global.wave_clear_gold = 50;
 	
@@ -196,7 +196,18 @@ case 5:
 	global.shop_item[7] = 17;
 	global.shop_item[8] = 23;
 	
+	global.wave_drop_item[1] = 19;
+	global.wave_drop_item[2] = 23;
+	global.wave_drop_item[3] = 21;
+	global.wave_drop_item[4] = 11;
+	global.wave_drop_item[5] = 25;
+	
 	set_shop_item_gold_fill();
+	set_shop_item_gold(0, "=", 100);
+	set_shop_item_gold(1, "=", 40);
+	set_shop_item_gold(5, "=", 170);
+	set_shop_item_gold(6, "=", 110);
+	set_shop_item_gold(7, "=", 150);
 break
 #endregion
 #region stage6
@@ -226,6 +237,12 @@ case 6:
 	global.shop_item[11] = 21;
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
+	
+	global.wave_drop_item[1] = 7;
+	global.wave_drop_item[2] = 11;
+	global.wave_drop_item[3] = 23;
+	global.wave_drop_item[5] = 21;
+	global.wave_drop_item[6] = 0;
 	
 	set_shop_item_gold_fill();
 break
@@ -258,6 +275,11 @@ case 7:
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
 	
+	global.wave_drop_item[1] = 27;
+	global.wave_drop_item[2] = 9;
+	global.wave_drop_item[4] = 17;
+	global.wave_drop_item[5] = 13;
+	global.wave_drop_item[6] = 0;
 	set_shop_item_gold_fill();
 break
 #endregion
@@ -288,6 +310,15 @@ case 8:
 	global.shop_item[11] = 21;
 	global.shop_item[12] = 25;
 	global.shop_item[13] = 27;
+	
+	global.wave_drop_item[1] = 1;
+	global.wave_drop_item[2] = 23;
+	global.wave_drop_item[3] = 25;
+	global.wave_drop_item[4] = 0;
+	global.wave_drop_item[5] = 11;
+	global.wave_drop_item[6] = 17;
+	global.wave_drop_item[7] = 21;
+	global.wave_drop_item[8] = 23;
 	
 	set_shop_item_gold_fill();
 break

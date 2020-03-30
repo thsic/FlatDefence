@@ -5,6 +5,10 @@ if(stageclear_frame = -1){
 	stageclear_frame = 0;
 	button_alpha = 0;
 	room_speed = FPS_DEFAULT;
+	laststage_1stclear = false;
+	if(global.stage = 8 and global.stagescore[8] = 0){
+		laststage_1stclear = true;
+	}
 	score_new_record = score_calculate();
 	sdm("total enemy hp "+string(global.all_enemy_total_hp))
 }
@@ -74,44 +78,75 @@ draw_set_font(FONT_DEFAULT);
 draw_set_halign(fa_middle);
 draw_set_alpha(button_alpha);
 
+
+
 var button_width = 200
-var mouse_on_retry_button = false;
-var mouse_on_stageselect_button = false;
-if(button_opacity){//ボタンが不透明になったらクリックできる
-	if(view_wport[0]/2-button_width/2 < mouse_x and mouse_x < view_wport[0]/2+button_width/2){
-		if(view_hport[0]/6*5-8 < mouse_y and mouse_y < view_hport[0]/6*5+24){
-			//retry
-			mouse_on_retry_button = true
+if(!laststage_1stclear){
+	var mouse_on_retry_button = false;
+	var mouse_on_stageselect_button = false;
+	var draw_gameclear_button = false;
+	if(button_opacity){//ボタンが不透明になったらクリックできる
+		if(view_wport[0]/2-button_width/2 < mouse_x and mouse_x < view_wport[0]/2+button_width/2){
+			if(view_hport[0]/6*5-8 < mouse_y and mouse_y < view_hport[0]/6*5+24){
+				//retry
+				mouse_on_retry_button = true
+			}
+			else if(view_hport[0]/6*5-32 < mouse_y and mouse_y < view_hport[0]/6*5-32+24){
+				//stageselect
+				mouse_on_stageselect_button = true
+			}
 		}
-		else if(view_hport[0]/6*5-32 < mouse_y and mouse_y < view_hport[0]/6*5-32+24){
-			//stageselect
-			mouse_on_stageselect_button = true
+	}
+
+	if(mouse_on_retry_button){//マウスがボタンの上にあるときはボタンの色をグレーに
+		draw_set_color(COLOR_TEXT_GRAY);
+		draw_text(view_wport[0]/2, view_hport[0]/6*5, "Retry");
+		if(mouse_check_button_pressed(mb_left)){//ボタン押されたらルーム変更
+			change_screen = room;
 		}
 	}
-}
+	else{
+		draw_set_color(COLOR_TEXT_WHITE);
+		draw_text(view_wport[0]/2, view_hport[0]/6*5, "Retry");
+	}
 
-if(mouse_on_retry_button){//マウスがボタンの上にあるときはボタンの色をグレーに
-	draw_set_color(COLOR_TEXT_GRAY);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5, "Retry");
-	if(mouse_check_button_pressed(mb_left)){//ボタン押されたらルーム変更
-		change_screen = room;
+	if(mouse_on_stageselect_button){
+		draw_set_color(COLOR_TEXT_GRAY);
+		draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "StageSelect");
+		if(mouse_check_button_pressed(mb_left)){
+			change_screen = r_stageSelect;
+		}
+	}
+	else{
+		draw_set_color(COLOR_TEXT_WHITE);
+		draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "StageSelect");
 	}
 }
-else{
-	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5, "Retry");
-}
-
-if(mouse_on_stageselect_button){
-	draw_set_color(COLOR_TEXT_GRAY);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "StageSelect");
-	if(mouse_check_button_pressed(mb_left)){
-		change_screen = r_stageSelect;
+else{//stage8初回クリア限定
+	var mouse_on_clearscleen_button = false;
+	if(button_opacity){//ボタンが不透明になったらクリックできる
+		if(view_wport[0]/2-button_width/2 < mouse_x and mouse_x < view_wport[0]/2+button_width/2){
+			if(view_hport[0]/6*5-32 < mouse_y and mouse_y < view_hport[0]/6*5-32+24){
+				//stageselect
+				mouse_on_clearscleen_button = true
+			}
+		}
 	}
-}
-else{
-	draw_set_color(COLOR_TEXT_WHITE);
-	draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "StageSelect");
+	if(mouse_on_clearscleen_button){
+		draw_set_color(COLOR_TEXT_GRAY);
+		draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "Next Screen");
+		if(mouse_check_button_pressed(mb_left)){
+			change_screen = r_clearScreen;
+			if(change_room_frame_1 = -1){
+				play_se(SE_CLEARSCREEN_BUTTON, 70, 0.55, false);
+				audio_sound_pitch(SE_CLEARSCREEN_BUTTON, 1.3);
+			}
+		}
+	}
+	else{
+		draw_set_color(COLOR_TEXT_WHITE);
+		draw_text(view_wport[0]/2, view_hport[0]/6*5-32, "Next Screen");
+	}
 }
 
 draw_set_font(FONT_DEFAULT);

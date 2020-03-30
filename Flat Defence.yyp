@@ -615,6 +615,14 @@
             }
         },
         {
+            "Key": "3554a4f2-3d4a-4067-9a48-504c1c86cb0b",
+            "Value": {
+                "id": "95320d97-afb0-4f52-9e10-f10c16297aa1",
+                "resourcePath": "sounds\\a_inspiration\\a_inspiration.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "35d18f60-f39c-4452-97a6-bacae5443c44",
             "Value": {
                 "id": "6ad34440-41ba-4c35-b9df-0724c08ca2b9",
@@ -1007,6 +1015,14 @@
             }
         },
         {
+            "Key": "5ee81989-41e7-48f6-ba13-cf33342e5352",
+            "Value": {
+                "id": "95b05df2-3145-45ce-b66e-4164ab58d6a6",
+                "resourcePath": "rooms\\r_clearScreen\\r_clearScreen.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "600f2117-0778-4742-a472-81a0c4365dd2",
             "Value": {
                 "id": "86e51362-cfd3-4ebf-9946-55d7e1de1f38",
@@ -1263,6 +1279,14 @@
             }
         },
         {
+            "Key": "7709a257-240e-431e-b48c-2020c66f9ff6",
+            "Value": {
+                "id": "092061e9-b60b-4dc4-b7ee-a68ca35c50dd",
+                "resourcePath": "fonts\\fo_noto18\\fo_noto18.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "7755223e-8a55-4e92-a413-ad564637bcec",
             "Value": {
                 "id": "a003464b-312e-4893-875c-6cccab6a559e",
@@ -1487,6 +1511,14 @@
             }
         },
         {
+            "Key": "8485d041-379c-443b-a2fe-bbeadb8a5811",
+            "Value": {
+                "id": "312cc050-5429-4742-b972-4ed9c91eeb5a",
+                "resourcePath": "sounds\\a_flash\\a_flash.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "8570019a-bec8-4e7e-9f46-a5f44aff4305",
             "Value": {
                 "id": "974ea92c-a42f-4d74-aa77-d746cb81d78b",
@@ -1564,6 +1596,14 @@
                 "id": "32bdf2e1-375a-4426-b273-24db624b3c71",
                 "resourcePath": "scripts\\timeline_set_enemytype_2\\timeline_set_enemytype_2.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "906bc6e3-394d-4046-8e67-7306a9478ce1",
+            "Value": {
+                "id": "4da6218e-9087-4f87-8872-772bc3b40e0c",
+                "resourcePath": "fonts\\fo_kosugiMaru24\\fo_kosugiMaru24.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1786,7 +1826,7 @@
             "Key": "a50d761e-4229-445c-967d-5a3b7ec9b75f",
             "Value": {
                 "id": "6e076ab9-f7ca-4ffd-b5ed-ad9c7fe3297f",
-                "resourcePath": "fonts\\fo_ostrichSans48\\fo_ostrichSans48.yy",
+                "resourcePath": "fonts\\fo_ostrichSans64\\fo_ostrichSans64.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -1836,6 +1876,14 @@
                 "id": "2e3a671c-0a49-4a2b-8f4c-43e874bbfdce",
                 "resourcePath": "sounds\\a_upgrade\\a_upgrade.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "a983da3f-7319-46d8-a3eb-3ec3be002035",
+            "Value": {
+                "id": "ac902d3c-bc25-433c-b08e-722aabf16427",
+                "resourcePath": "fonts\\fo_ostrichSans48\\fo_ostrichSans48.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1988,6 +2036,14 @@
                 "id": "d0f47612-177d-48cc-8d06-de35f971ce95",
                 "resourcePath": "sounds\\a_kachi\\a_kachi.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "bad8323c-0462-4be5-96d9-015cfad3bd7a",
+            "Value": {
+                "id": "93856ff8-6712-4cf5-8dd3-c2527734fa3d",
+                "resourcePath": "objects\\o_clearScreen\\o_clearScreen.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2644,6 +2700,14 @@
                 "id": "d9df6cc7-d747-4290-85b3-b30227a1b424",
                 "resourcePath": "views\\f21a8c93-0c2d-4e6f-b9f1-4a63583f37ac.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f312a542-7311-4664-9a4b-a7b78b4d3233",
+            "Value": {
+                "id": "f8469f4b-c8eb-4dcd-b372-d154042e1e59",
+                "resourcePath": "fonts\\fo_yasa20\\fo_yasa20.yy",
+                "resourceType": "GMFont"
             }
         },
         {

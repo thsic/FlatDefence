@@ -173,13 +173,13 @@ case 5:
 	case 5:
 		generate_enemy_type[0] = o_eSmallLv2;
 		generate_enemy_type[1] = o_eBerserkerLv2;
-		generate_enemy_type[2] = o_eShieldLv3;
+		generate_enemy_type[2] = o_eShieldLv2;
 	break
 	case 6:
 		generate_enemy_type[0] = o_eSmallLv2;
 		generate_enemy_type[1] = o_eFastLv1;
 		generate_enemy_type[2] = o_eBerserkerLv2;
-		generate_enemy_type[3] = o_eShieldLv3;
+		generate_enemy_type[3] = o_eShieldLv2;
 	break
 	}
 

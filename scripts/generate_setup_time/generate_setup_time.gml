@@ -800,6 +800,7 @@ break
 #endregion
 #region stage8
 case 8:
+
 	switch(global.wave_now){
 	case 1://small*5 (normal*5) normal*3 small*5
 		for(var i=0; i<3; i++){

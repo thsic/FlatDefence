@@ -167,3 +167,8 @@ else if(destroy_countdown = 0){
 xprev = x
 yprev = y
 dirprev = direction
+
+//ルーム外に行くと消える
+if(x < -32 or y < -32 or y > room_width+32){
+	instance_destroy();
+}

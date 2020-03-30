@@ -1,25 +1,38 @@
 draw_set_color(COLOR_BACKGROUND);
 draw_rectangle(0, 0, room_width, room_height, false);
+var gameclearscreen_button = false
+var button_amount = STAGESELECT_BUTTON_AMOUNT;
+if(global.stagescore[8] != 0 and global.totalscore > STAGE8_RELEASE_SCORE){//global.stagescore[8] != 0 and global.totalscore > STAGE8_RELEASE_SCORE
+	//スコアが300000以上でステージ8にスコアが存在したらクリア画面ボタンを描画する
+	gameclearscreen_button = true;
+	button_amount += 1;
+}
 
-for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
+
+for(var i=0; i<button_amount; i++){
 	if(stage_select_button[i, stageselectbutton.state] = 0){
 		var x_offset = stage_select_button[i, stageselectbutton.window_x];
 		var y_offset = stage_select_button[i, stageselectbutton.window_y];
-		if(release_stage < i){//未開放
-			tiny_window(s_enemyParamWindow, 2, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 1);
-			draw_set_alpha(0.8);
-			draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   TotalScore "+string(stage_release_score[i])+" 以上");
-			draw_set_alpha(1);
+		if(i != 8){
+			if(release_stage < i){//未開放
+				tiny_window(s_enemyParamWindow, 2, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 1);
+				draw_set_alpha(0.8);
+				draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   TotalScore "+string(stage_release_score[i])+" 以上");
+				draw_set_alpha(1);
+			}
+			else{//解放済み
+				tiny_window(s_window, 0, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 0.7);
+				draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   Score:"+string(global.stagescore[i+1]));
+			}
 		}
-		else{//解放済み
-			tiny_window(s_window, 0, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 0.7);
-			draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   Score:"+string(global.stagescore[i+1]));
+		else{
+			if(gameclearscreen_button){
+				tiny_window(s_window, 0, stage_select_button[i, stageselectbutton.window_x], stage_select_button[i, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH, STAGESELECT_BUTTON_HEIGHT, 0.7);
+				draw_text(x_offset+10, y_offset+16, "クリア画面へ");
+			}
 		}
-		
-		
 		//draw_set_font()
 		//draw_text(x_offset+10, y_offset+16, "STAGE"+string(i+1)+"   Score:"+string(global.stagescore[i+1]));
-		
 	}
 }
 
@@ -27,15 +40,16 @@ for(var i=0; i<STAGESELECT_BUTTON_AMOUNT; i++){
 var sprite_x = 450;
 var sprite_y = 56;
 var width = 704;
-var height = 540+4;//+4で32の倍数になる 実際のステージのサイズは540
+var height = 540+4;//+4で32の倍数になるのではみ出さない表示になる 実際のステージのサイズは540
 width *= 0.6;
 height *= 0.6;
-if(selecting_button != -1){
+
+if(selecting_button != -1 and selecting_button != 8){
 	tiny_window(s_window, 1, stage_select_button[selecting_button, stageselectbutton.window_x], stage_select_button[selecting_button, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH+60, STAGESELECT_BUTTON_HEIGHT+20, 1);
 	var x_offset = stage_select_button[selecting_button, stageselectbutton.window_x];
 	var y_offset = stage_select_button[selecting_button, stageselectbutton.window_y];
 	var selecting_stage = selecting_button+1;
-	draw_text(x_offset+10, y_offset+16, "STAGE"+string(selecting_stage)+"   Score:"+string(global.stagescore[selecting_stage]));
+	draw_text(x_offset+10, y_offset+20, "STAGE"+string(selecting_stage)+"   Score:"+string(global.stagescore[selecting_stage]));
 
 	draw_set_color(COLOR_STAGESELECT_STAGEVIEW_BACKGROUND);
 	draw_set_alpha(1);
@@ -94,6 +108,14 @@ if(selecting_button != -1){
 	draw_set_halign(fa_middle);
 	draw_text(sprite_x+width-136, sprite_y+height+20, stage_description);
 }
+else if(selecting_button = 8){
+	tiny_window(s_window, 1, stage_select_button[selecting_button, stageselectbutton.window_x], stage_select_button[selecting_button, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH+60, STAGESELECT_BUTTON_HEIGHT+20, 1);
+	var x_offset = stage_select_button[selecting_button, stageselectbutton.window_x];
+	var y_offset = stage_select_button[selecting_button, stageselectbutton.window_y];
+	var selecting_stage = selecting_button+1;
+	draw_text(x_offset+10, y_offset+20, "クリア画面へ");
+}
+
 //スコア表示
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
