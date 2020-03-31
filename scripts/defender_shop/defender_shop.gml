@@ -132,6 +132,7 @@ if(grab_defender_id != -1){
 				drop_defender_effect(create_defender.x, create_defender.y, grab_defender_id)//配置エフェクト
 				nearest_marker.on_defender = true;
 				grab_defender_id = -1;
+				grab_item_possession_id = -1;
 			}
 			else{
 				if(!drop_result){
@@ -144,6 +145,7 @@ if(grab_defender_id != -1){
 				}//返金
 				
 				grab_defender_id = -1;
+				grab_item_possession_id = -1;
 				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.17, false);
 			}
 		}
@@ -157,6 +159,7 @@ if(grab_defender_id != -1){
 			global.gold += floor(return_gold);
 			
 			grab_defender_id = -1;
+			grab_item_possession_id = -1;
 			play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.17, false);
 			
 		}
@@ -233,6 +236,7 @@ if(grab_item_id != -1){
 				}
 			}
 			grab_item_id = -1;
+			grab_item_possession_id = -1;
 		}
 		else{
 			if(grab_item_possession_id = -1){//返金
@@ -249,6 +253,7 @@ if(grab_item_id != -1){
 				play_se(SE_SHOP_BOUGHT_CANCEL, 40, 0.2, false);
 			}
 			grab_item_id = -1;
+			grab_item_possession_id = -1;
 		}
 	}
 }

@@ -415,14 +415,6 @@
             }
         },
         {
-            "Key": "270d640d-be8e-43af-be0e-c47d6f87ec9b",
-            "Value": {
-                "id": "aa3c155e-669e-4114-a04c-ab98847ca5b4",
-                "resourcePath": "sprites\\s_menuButton\\s_menuButton.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "275429c8-001e-457a-9533-8100f0d80052",
             "Value": {
                 "id": "d31b6de1-9f0d-4ff6-9dba-2fa0c526f737",
@@ -483,6 +475,14 @@
             "Value": {
                 "id": "805bfeb8-8752-44af-a2ef-d30aeeadc5a9",
                 "resourcePath": "sprites\\s_greenHeart\\s_greenHeart.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2b6153c5-2b9c-4e80-b987-9d0f7b039341",
+            "Value": {
+                "id": "eab46bda-74cf-43cc-b636-43228ec74570",
+                "resourcePath": "sprites\\s_menuButton\\s_menuButton.yy",
                 "resourceType": "GMSprite"
             }
         },

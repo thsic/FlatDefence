@@ -3,7 +3,7 @@
 #macro START_ROOM r_title
 #macro GAMENAME "FLAT DEFENCE"
 #macro STAGE_AMOUNT 8
-#macro GAME_VERSION 0.9
+#macro GAME_VERSION 0.92
 
 //ソート
 #macro NEARGOAL 0
@@ -24,10 +24,10 @@
 #macro STAGE2_RELEASE_SCORE 0
 #macro STAGE3_RELEASE_SCORE 30000
 #macro STAGE4_RELEASE_SCORE 70000
-#macro STAGE5_RELEASE_SCORE 120000
-#macro STAGE6_RELEASE_SCORE 180000
-#macro STAGE7_RELEASE_SCORE 250000
-#macro STAGE8_RELEASE_SCORE 350000
+#macro STAGE5_RELEASE_SCORE 115000
+#macro STAGE6_RELEASE_SCORE 160000
+#macro STAGE7_RELEASE_SCORE 230000
+#macro STAGE8_RELEASE_SCORE 300000
 
 //shop
 #macro POSSESSION_ITEM_MAX 12//持てるアイテムの数
@@ -59,14 +59,14 @@
 //enemy
 #macro BERSERKER_LV1_RAGE_SPEED 2
 #macro BERSERKER_LV2_RAGE_SPEED 2.5
-#macro BERSERKER_LV3_RAGE_SPEED 3
+#macro BERSERKER_LV3_RAGE_SPEED 2
 #macro REGEN_LV1_HEAL 0.25
 #macro REGEN_LV2_HEAL 1
 #macro REGEN_LV3_HEAL 2
 #macro BOSS_LIFEDAMAGE 3
 
 //timemachine
-#macro TIMEMACHINE_WIDTH 224
+#macro TIMEMACHINE_WIDTH 208
 #macro TIMEMACHINE_HEIGHT 100
 
 //ウェーブスタートボタン
@@ -88,7 +88,7 @@
 #macro FREEZEROD_UPGRADE_ 10//わからん なにこれ
 #macro POISONDAGGER_MAGNIFICATION 0.2//ポイズンダガー装備中の追加ダメージ倍率
 #macro CURSEDSWORD_MAGNIFICATION 0.2//呪いの剣装備中のダメージ倍率
-#macro BLAST_MAGNIFICATION 0.2//爆風ダメージ倍率
+#macro BLAST_MAGNIFICATION 0.33//爆風ダメージ倍率
 
 //パラメータ表示バー
 #macro PARAMBAR_POWER_DEFENDER 100
@@ -104,8 +104,8 @@
 #macro CIRCLE_PRECISION 32//円の精度
 
 //option
-#macro BGM_VOLUME_DEFAULT 0.25
-#macro SE_VOLUME_DEFAULT 0.25
+#macro BGM_VOLUME_DEFAULT 0.2
+#macro SE_VOLUME_DEFAULT 0.2
 #macro DRAW_DAMAGE_DEFAULT true
 #macro DRAW_RANGE_ALWAYS_DEFAULT true
 #macro DRAW_COOLDOWN_DEFAULT true
@@ -128,10 +128,10 @@
 
 #macro CRYSTAL_BASIC_DESCRIPTION "アイテムスロットが2つ"+chr(10)+"増える"
 #macro CRYSTAL_SNIPER_DESCRIPTION "射程が2倍になり射程の"+chr(10)+"10分の1がパワーに加算"
-#macro CRYSTAL_BOMBER_DESCRIPTION "爆風の中心はダメージが"+chr(10)+"1.5倍になる"
+#macro CRYSTAL_BOMBER_DESCRIPTION "爆風の中心はダメージが"+chr(10)+"2倍になる"
 #macro CRYSTAL_FREEZER_DESCRIPTION "射程内の敵すべてにスロー"+chr(10)+"を与える"
-#macro CRYSTAL_BLASTER_DESCRIPTION "1秒間攻撃しないでいると"+chr(10)+"次の攻撃のダメージが2倍"
-#macro CRYSTAL_THIEF_DESCRIPTION "敵を倒した時の獲得Gが"+chr(10)+"1.5倍になる"
+#macro CRYSTAL_BLASTER_DESCRIPTION "1秒間攻撃しないでいると"+chr(10)+"次の攻撃のダメージが3倍"
+#macro CRYSTAL_THIEF_DESCRIPTION "敵を倒した時の獲得Gが"+chr(10)+"2倍になる"
 #macro ORB_DESCRIPTION "装備アイテムを"+chr(10)+"アップグレードできる"
 
 #macro STAGE1_DESCRIPTION "アイテムの価格が安い"
@@ -139,7 +139,7 @@
 #macro STAGE3_DESCRIPTION "ウェーブクリア時のゴールドが多い"
 #macro STAGE4_DESCRIPTION "ウェーブ数が少ない"
 #macro STAGE5_DESCRIPTION "ライフが多い"+chr(10)+"ウェーブクリア時のゴールドが少ない"
-#macro STAGE6_DESCRIPTION "HPが多めの敵が多い"+chr(10)+"ウェーブクリア時にゴールドを入手できない"
+#macro STAGE6_DESCRIPTION "HPが多めの敵が多い"+chr(10)+"ウェーブクリア時のゴールドを入手できない"
 #macro STAGE7_DESCRIPTION "敵の数が多い"
 #macro STAGE8_DESCRIPTION "ウェーブ数が多い"+chr(10)+"ライフが少ない"
 

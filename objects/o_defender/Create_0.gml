@@ -24,6 +24,10 @@ if(global.defender_data[defender_number, data.effect2] != -1){//エフェクト2
 	effect_now[1, effectnow.number] = global.defender_data[defender_number,data.effect2];
 	effect_now[1, effectnow.time] = -1
 }
+if(defender_number = 2){
+	effect_now[2, effectnow.number] = 0;
+	effect_now[2, effectnow.time] = -1
+}
 
 
 attack_per_second = attack_per_second_default;

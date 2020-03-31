@@ -90,7 +90,7 @@ case 2:
 	global.life = 10//体力
 	global.gold = 300;//おかね
 	global.wave_total = 7;//総ウェーブ数
-	global.wave_clear_gold =75;//ウェーブクリア時の獲得ゴールド
+	global.wave_clear_gold =100;//ウェーブクリア時の獲得ゴールド
 
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -114,7 +114,7 @@ break
 #region stage3
 case 3:
 	global.life = 10;
-	global.gold = 500;
+	global.gold = 600;
 	global.wave_total = 6;
 	global.wave_clear_gold = 150;
 	
@@ -146,9 +146,9 @@ break
 #region stage4
 case 4:
 	global.life = 10;
-	global.gold = 700;
+	global.gold = 1000;
 	global.wave_total = 4;
-	global.wave_clear_gold = 100;
+	global.wave_clear_gold = 200;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -166,7 +166,7 @@ case 4:
 	global.shop_item[7] = 17;
 	global.shop_item[8] = 23;
 	
-	global.wave_drop_item[1] = 17;
+	global.wave_drop_item[1] = 15;
 	global.wave_drop_item[2] = 0;
 	global.wave_drop_item[3] = 23;
 	
@@ -176,7 +176,7 @@ break
 #region stage5
 case 5:
 	global.life = 20;
-	global.gold = 600;
+	global.gold = 800;
 	global.wave_total = 6;
 	global.wave_clear_gold = 50;
 	
@@ -194,7 +194,8 @@ case 5:
 	global.shop_item[5] = 27;
 	global.shop_item[6] = 21;
 	global.shop_item[7] = 17;
-	global.shop_item[8] = 23;
+	global.shop_item[8] = 15;
+	global.shop_item[9] = 23;
 	
 	global.wave_drop_item[1] = 19;
 	global.wave_drop_item[2] = 23;
@@ -213,7 +214,7 @@ break
 #region stage6
 case 6:
 	global.life = 10;
-	global.gold = 600;
+	global.gold = 800;
 	global.wave_total = 7;
 	global.wave_clear_gold = 0;
 	
@@ -225,18 +226,18 @@ case 6:
 	global.shop_defender[5] = o_dBlaster;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
-	global.shop_item[2] = 3;
-	global.shop_item[3] = 23;
-	global.shop_item[4] = 7;
-	global.shop_item[5] = 9;
-	global.shop_item[6] = 11;
-	global.shop_item[7] = 13;
-	global.shop_item[8] = 15;
-	global.shop_item[9] = 17;
-	global.shop_item[10] = 19;
-	global.shop_item[11] = 21;
-	global.shop_item[12] = 25;
-	global.shop_item[13] = 27;
+	global.shop_item[2] = 19;
+	global.shop_item[3] = 3;
+	global.shop_item[4] = 25;
+	global.shop_item[5] = 27;
+	global.shop_item[6] = 21;
+	global.shop_item[7] = 17;
+	global.shop_item[8] = 7;
+	global.shop_item[9] = 9;
+	global.shop_item[10] = 11;
+	global.shop_item[11] = 13;
+	global.shop_item[12] = 15;
+	global.shop_item[13] = 23;
 	
 	global.wave_drop_item[1] = 7;
 	global.wave_drop_item[2] = 11;
@@ -250,9 +251,9 @@ break
 #region stage7
 case 7:
 	global.life = 10;
-	global.gold = 600;
+	global.gold = 700;
 	global.wave_total = 7;
-	global.wave_clear_gold = 150;
+	global.wave_clear_gold = 250;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -262,18 +263,18 @@ case 7:
 	global.shop_defender[5] = o_dBlaster;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
-	global.shop_item[2] = 3;
-	global.shop_item[3] = 23;
-	global.shop_item[4] = 7;
-	global.shop_item[5] = 9;
-	global.shop_item[6] = 11;
-	global.shop_item[7] = 13;
-	global.shop_item[8] = 15;
-	global.shop_item[9] = 17;
-	global.shop_item[10] = 19;
-	global.shop_item[11] = 21;
-	global.shop_item[12] = 25;
-	global.shop_item[13] = 27;
+	global.shop_item[2] = 19;
+	global.shop_item[3] = 3;
+	global.shop_item[4] = 25;
+	global.shop_item[5] = 27;
+	global.shop_item[6] = 21;
+	global.shop_item[7] = 17;
+	global.shop_item[8] = 7;
+	global.shop_item[9] = 9;
+	global.shop_item[10] = 11;
+	global.shop_item[11] = 13;
+	global.shop_item[12] = 15;
+	global.shop_item[13] = 23;
 	
 	global.wave_drop_item[1] = 27;
 	global.wave_drop_item[2] = 9;
@@ -286,9 +287,9 @@ break
 #region stage8
 case 8:
 	global.life = 5;
-	global.gold = 700;
+	global.gold = 1000;
 	global.wave_total = 9;
-	global.wave_clear_gold = 200;
+	global.wave_clear_gold = 350;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -298,18 +299,18 @@ case 8:
 	global.shop_defender[5] = o_dBlaster;
 	global.shop_item[0] = 0;
 	global.shop_item[1] = 1;
-	global.shop_item[2] = 3;
-	global.shop_item[3] = 23;
-	global.shop_item[4] = 7;
-	global.shop_item[5] = 9;
-	global.shop_item[6] = 11;
-	global.shop_item[7] = 13;
-	global.shop_item[8] = 15;
-	global.shop_item[9] = 17;
-	global.shop_item[10] = 19;
-	global.shop_item[11] = 21;
-	global.shop_item[12] = 25;
-	global.shop_item[13] = 27;
+	global.shop_item[2] = 19;
+	global.shop_item[3] = 3;
+	global.shop_item[4] = 25;
+	global.shop_item[5] = 27;
+	global.shop_item[6] = 21;
+	global.shop_item[7] = 17;
+	global.shop_item[8] = 7;
+	global.shop_item[9] = 9;
+	global.shop_item[10] = 11;
+	global.shop_item[11] = 13;
+	global.shop_item[12] = 15;
+	global.shop_item[13] = 23;
 	
 	global.wave_drop_item[1] = 1;
 	global.wave_drop_item[2] = 23;

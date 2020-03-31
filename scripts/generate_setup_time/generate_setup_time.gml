@@ -620,15 +620,15 @@ case 6:
 			set_enemy_generate_timeline(i*30+470, global.generate_timeline_id, 0, 1, 0);
 		}
 	break
-	case 6://r3 r1*4*2 r3 r1*4 r3 r1*4 r2*3*3  
+	case 6://r3 r1*8*2 r3 r1*4 r3 r1*8 r2*3*3  
 		set_enemy_generate_timeline(30, global.generate_timeline_id, 0, 2, 0);
-		set_enemy_generate_timeline(640, global.generate_timeline_id, 0, 2, 0);
-		set_enemy_generate_timeline(940, global.generate_timeline_id, 0, 2, 0);
-		for(var i=0; i<4; i++){
-			set_enemy_generate_timeline(i*40+60, global.generate_timeline_id, 0, 0, 0);
-			set_enemy_generate_timeline(i*40+300, global.generate_timeline_id, 0, 0, 0);
-			set_enemy_generate_timeline(i*40+700, global.generate_timeline_id, 0, 0, 0);
-			set_enemy_generate_timeline(i*40+1000, global.generate_timeline_id, 0, 0, 0);
+		set_enemy_generate_timeline(650, global.generate_timeline_id, 0, 2, 0);
+		set_enemy_generate_timeline(950, global.generate_timeline_id, 0, 2, 0);
+		for(var i=0; i<8; i++){
+			set_enemy_generate_timeline(i*20+60, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*20+300, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*20+700, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*20+1000, global.generate_timeline_id, 0, 0, 0);
 		}
 		for(var i=0; i<3; i++){
 			set_enemy_generate_timeline(i*50+1250, global.generate_timeline_id, 0, 1, 0);
@@ -820,7 +820,7 @@ case 8:
 			set_enemy_generate_timeline(i*60+390, global.generate_timeline_id, 0, 0, 0);
 		}
 		for(var i=0; i<5; i++){
-			set_enemy_generate_timeline(i*40+395, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*60+395, global.generate_timeline_id, 1, 0, 1);
 		}
 	break
 	case 3://(fast*5) berserker*4 berserker*4 fast*3 (fast*3)
@@ -829,11 +829,11 @@ case 8:
 		}
 		for(var i=0; i<4; i++){
 			set_enemy_generate_timeline(i*60+40, global.generate_timeline_id, 0, 1, 0);
-			set_enemy_generate_timeline(i*60+400, global.generate_timeline_id, 0, 1, 0);
+			set_enemy_generate_timeline(i*60+600, global.generate_timeline_id, 0, 1, 0);
 		}
 		for(var i=0; i<3; i++){
-			set_enemy_generate_timeline(i*40+525, global.generate_timeline_id, 0, 0, 0);
-			set_enemy_generate_timeline(i*40+655, global.generate_timeline_id, 1, 0, 1);
+			set_enemy_generate_timeline(i*40+725, global.generate_timeline_id, 0, 0, 0);
+			set_enemy_generate_timeline(i*40+855, global.generate_timeline_id, 1, 0, 1);
 		}
 	break
 	case 4://tough*3 (regen*3 tough) regen*3 
@@ -858,8 +858,8 @@ case 8:
 			set_enemy_generate_timeline(i*30+435, global.generate_timeline_id, 0, 0, 0);
 		}
 	break
-	case 6://(regen*3 fast*5) regen*3 normal*5 fast*5*2 normal*5*2 fast*5
-		for(var i=0; i<3; i++){
+	case 6://(regen*2 fast*5) regen*2 normal*5 fast*5*2 normal*5*2 fast*5
+		for(var i=0; i<2; i++){
 			set_enemy_generate_timeline(i*60+35, global.generate_timeline_id, 1, 2, 1);
 			set_enemy_generate_timeline(i*60+60, global.generate_timeline_id, 0, 2, 0);
 		}

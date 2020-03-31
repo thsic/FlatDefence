@@ -19,12 +19,12 @@ if(global.gamestate = gamestate.main){
 		case 18:
 		case 19:
 		case 20:
-			freeze_slow_percent = (1-FREEZE_SLOW_PERCENT)*0.5+FREEZE_SLOW_PERCENT;//半減
+			freeze_slow_percent = (1-FREEZE_SLOW_PERCENT)*0.66+FREEZE_SLOW_PERCENT;//半減
 		break
 		case 21://boss
 		case 22:
 		case 23:
-			freeze_slow_percent = (1-FREEZE_SLOW_PERCENT)*0.33+FREEZE_SLOW_PERCENT;
+			freeze_slow_percent = (1-FREEZE_SLOW_PERCENT)*0.5+FREEZE_SLOW_PERCENT;
 		break
 		}
 		

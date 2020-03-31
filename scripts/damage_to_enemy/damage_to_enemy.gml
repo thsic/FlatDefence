@@ -276,11 +276,12 @@ if(instance_exists(target_id)){
 		global.gold += global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]//ゴールドを落とす
 	
 		if(gold_get){//ゴールドゲットあるならそれも
-			global.gold += global.effectdata[22, effectdata.value]
+			global.gold += global.effectdata[22, effectdata.value];
 		}
 		if(gold_get_plus){
 			var get_gold = global.enemydata[enemy_id_conversion(target_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value]
 			global.gold += ceil(get_gold*global.effectdata[20, effectdata.value]);
+			global.score_gold_minus += get_gold;//このゴールドはクリア時のスコアに加算されない
 		}
 	
 		if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
@@ -299,14 +300,14 @@ if(instance_exists(target_id)){
 
 	if(blast_level > 0){
 		//範囲攻撃
-		var blast_power = 2
+		var blast_power = 1.7
 		for(var i=0; i<blast_level; i++){
-			blast_power *= 1.5;
+			blast_power *= 1.3;
 		}
 		blast_power -= 1;
 		var blast_alpha = 1;
-		for(var i=0; i<blast_level-1; i++){
-			blast_alpha *= 0.8;
+		for(var i=0; i<blast_level-2; i++){
+			blast_alpha *= 0.88;
 		}
 		
 		blast_effect(target_id.x, target_id.y, blast_power*EFFECT_BLAST_SIZE, COLOR_BLAST_EFFECT, 10+blast_level*1, blast_alpha);
@@ -375,8 +376,9 @@ if(instance_exists(target_id)){
 							global.gold += global.effectdata[22, effectdata.value]
 						}
 						if(gold_get_plus){
-							var get_gold = global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value]
+							var get_gold = global.enemydata[enemy_id_conversion(enemy_id.object_index), enemydata.dropgold]+global.effectdata[22, effectdata.value];
 							global.gold += ceil(get_gold*global.effectdata[20, effectdata.value]);
+							global.score_gold_minus += get_gold;//このゴールドはクリア時のスコアに加算されない
 						}
 						if(blast_onhit_effect){
 							if(cooldown_reduction_40 != 0){//撃破時クールダウン短縮があるなら
