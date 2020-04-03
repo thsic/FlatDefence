@@ -90,7 +90,6 @@ case 0://defender
 	
 break
 case 1://item
-	sdm(string(grab_item_id)+" "+string(grab_item_possession_id));
 	var effect1 = -1;
 	var effect2 = -1;
 	var crystal = false;

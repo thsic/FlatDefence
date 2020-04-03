@@ -1,7 +1,9 @@
-///@param defender_id,x,y
+///@param defender_id,x,y,rangemag
 var defender_id = argument0;
 var _x = argument1;
 var _y = argument2;
+var range_mag = argument3;
+
 
 var snipe = 0;
 var one_shot_one_kill = 0;
@@ -30,7 +32,7 @@ if(instance_exists(defender_id) and defender_id != -1){
 	var maxrange = defender_id.range;
 }
 else{
-	var maxrange = global.defender_data[1, data.range];
+	var maxrange = global.defender_data[1, data.range]*range_mag;
 }
 var minrange = SNIPER_MIN_RANGE;
 

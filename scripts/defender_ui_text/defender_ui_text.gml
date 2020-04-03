@@ -17,7 +17,7 @@ if(finded_defender_id.defender_number != 1){
 	draw_circle(finded_defender_id.x, finded_defender_id.y, finded_defender_id.range, true)
 }
 else{
-	draw_sniper_circle(finded_defender_id, finded_defender_id.x, finded_defender_id.y);
+	draw_sniper_circle(finded_defender_id, finded_defender_id.x, finded_defender_id.y, 0);
 }
 draw_set_alpha(1);
 usefulwindow(s_window, 0, ui_window_x, ui_window_y, ui_window_width, ui_window_height, 1,alpha);

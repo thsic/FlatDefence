@@ -28,7 +28,6 @@ if(global.gamestate = gamestate.main){
 		break
 		}
 		
-		sdm(freeze_slow_percent)
 		for(var i=0; i<freeze_lv; i++){
 			freeze_power *= freeze_slow_percent;
 		}

@@ -39,7 +39,7 @@ if(change_room){
 }
 draw_set_color(COLOR_TEXT_LTGRAY);
 draw_set_valign(fa_bottom);
-draw_text(0, room_height, "ver "+string_format(GAME_VERSION, 1, 1));
+draw_text(0, room_height, "ver "+string_format(GAME_VERSION, 2, 2));
 draw_set_valign(fa_top);
 /*if(goto_stageselect != -1){
 	draw_set_alpha(1-goto_stageselect/30);

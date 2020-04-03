@@ -228,7 +228,7 @@ case 6:
 break
 case 7:
 	set_spawner(0, -16, 432);
-	set_spawner(1, 592, -16);
+	set_spawner(1, 624, -16);
 	route_type[0] = p_stage7route0;
 	route_type[1] = p_stage7route1;
 	

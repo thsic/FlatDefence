@@ -8,7 +8,7 @@ if(global.stagescore[8] != 0 and global.totalscore > STAGE8_RELEASE_SCORE){//glo
 	button_amount += 1;
 }
 
-
+draw_set_font(FONT_DEFAULT)
 for(var i=0; i<button_amount; i++){
 	if(stage_select_button[i, stageselectbutton.state] = 0){
 		var x_offset = stage_select_button[i, stageselectbutton.window_x];
@@ -81,32 +81,44 @@ if(selecting_button != -1 and selecting_button != 8){
 	switch(selecting_stage){
 	case 1:
 		var stage_description = STAGE1_DESCRIPTION;
+		var stage_indicator_score = STAGE1_INDICATOR_SCORE;
 	break
 	case 2:
 		var stage_description = STAGE2_DESCRIPTION;
+		var stage_indicator_score = STAGE2_INDICATOR_SCORE;
 	break
 	case 3:
 		var stage_description = STAGE3_DESCRIPTION;
+		var stage_indicator_score = STAGE3_INDICATOR_SCORE;
 	break
 	case 4:
 		var stage_description = STAGE4_DESCRIPTION;
+		var stage_indicator_score = STAGE4_INDICATOR_SCORE;
 	break
 	case 5:
 		var stage_description = STAGE5_DESCRIPTION;
+		var stage_indicator_score = STAGE5_INDICATOR_SCORE;
 	break
 	case 6:
 		var stage_description = STAGE6_DESCRIPTION;
+		var stage_indicator_score = STAGE6_INDICATOR_SCORE;
 	break
 	case 7:
 		var stage_description = STAGE7_DESCRIPTION;
+		var stage_indicator_score = STAGE7_INDICATOR_SCORE;
 	break
 	case 8:
 		var stage_description = STAGE8_DESCRIPTION;
+		var stage_indicator_score = STAGE8_INDICATOR_SCORE;
 	break
 	}
 	draw_set_color(COLOR_TEXT_DEEPBLUE);
 	draw_set_halign(fa_middle);
 	draw_text(sprite_x+width-136, sprite_y+height+20, stage_description);
+	draw_set_halign(fa_left);
+	draw_set_color(COLOR_TEXT_GRAY);
+	draw_text(sprite_x, sprite_y+height-16, "目標スコア "+string(stage_indicator_score));
+	draw_set_halign(fa_left);
 }
 else if(selecting_button = 8){
 	tiny_window(s_window, 1, stage_select_button[selecting_button, stageselectbutton.window_x], stage_select_button[selecting_button, stageselectbutton.window_y], STAGESELECT_BUTTON_WIDTH+60, STAGESELECT_BUTTON_HEIGHT+20, 1);
@@ -127,7 +139,7 @@ draw_text(sprite_x+284, sprite_y+height+134, string_format(global.totalscore, 1,
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_set_font(FONT_DEFAULT)
+draw_set_font(FONT_DEFAULT);
 
 if(stage_goto != -1){
 	change_room_1(stage_goto, 30, COLOR_BACKGROUND);
