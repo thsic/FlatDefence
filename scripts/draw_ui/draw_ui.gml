@@ -52,7 +52,7 @@ case gamestate.restpause:
 				draw_set_color(global.enemydata[target_number, enemydata.hptextcolor]);
 				draw_text(x_offset+62, y_offset+18, global.enemydata[target_number, enemydata.hprank]);
 				draw_set_color(global.enemydata[target_number, enemydata.speedtextcolor]);
-				draw_text(x_offset+226, y_offset+18, global.enemydata[target_number, enemydata.speedrank]);
+				draw_text(x_offset+230, y_offset+18, global.enemydata[target_number, enemydata.speedrank]);
 				draw_set_color(global.enemydata[target_number, enemydata.shieldtextcolor]);
 				draw_text(x_offset+150, y_offset+18, global.enemydata[target_number, enemydata.shieldrank]);
 			}
@@ -60,7 +60,7 @@ case gamestate.restpause:
 				//draw_set_color(global.enemydata[target_number, enemydata.hptextcolor]);
 				draw_text(x_offset+60, y_offset+18,string(global.enemydata[target_number, enemydata.hp]));
 				//draw_set_color(global.enemydata[target_number, enemydata.speedtextcolor]);
-				draw_text(x_offset+226, y_offset+18,global.enemydata[target_number, enemydata.speed]*10);//speedは*10して表示する
+				draw_text(x_offset+230, y_offset+18,global.enemydata[target_number, enemydata.speed]*10);//speedは*10して表示する
 				//draw_set_color(global.enemydata[target_number, enemydata.shieldtextcolor]);
 				draw_text(x_offset+146, y_offset+18,string(global.enemydata[target_number, enemydata.shield]));
 			}
@@ -83,8 +83,8 @@ case gamestate.restpause:
 			draw_text(x_offset+40, y_offset+21, "HP");
 			draw_text(x_offset+104, y_offset+21, "Shield");
 			draw_text(x_offset+186, y_offset+21, "Speed");
-			//draw_set_color(COLOR_TEXT_BLUE);
-			draw_set_color(COLOR_TEXT_WHITE_NEARGRAY);
+			draw_set_color(COLOR_TEXT_WHITE);
+			//draw_set_color(COLOR_TEXT_WHITE_NEARGRAY);
 			draw_set_font(FONT_DEFAULT);
 			draw_text(x_offset+amount_text_x+10, y_offset+2,string(global.spawn_enemy[target_objectid, spawnenemy.amount]));
 			draw_set_color(COLOR_DEFAULT);

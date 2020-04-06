@@ -352,7 +352,7 @@ if(overlap){
 		//draw_text(text_x, upgrade_text_y+180, string(description1)+" Lv2");
 	}
 }
-draw_text(text_x, upgrade_text_y+180, string(description1));
+draw_text(text_x, upgrade_text_y+176, string(description1));
 
 //アップグレード後
 var overlap = false//lvupするかどうか
@@ -429,22 +429,22 @@ if(possible_upgrade){
 			//defenderからエフェクトレベルを取得する処理を書いたけどここのテキストはアイテム単体のことなのでLv2固定だった
 			//draw_text(text_x, upgrade_text_y+180, string(description1_upgrade)+" Lv2");
 		//}
-		draw_text(text_x, upgrade_text_y+180, description1_upgrade);
+		draw_text(text_x, upgrade_text_y+176, description1_upgrade);
 		
 		
 	}
 	else{
 		draw_set_color(COLOR_TEXT_WHITE);
-		draw_text(text_x, upgrade_text_y+180, description1_upgrade);
+		draw_text(text_x, upgrade_text_y+176, description1_upgrade);
 	}
 	
 }
 
 if(!line_feed){
-	var text_y = upgrade_text_y+196;
+	var text_y = upgrade_text_y+192;
 }
 else{
-	var text_y = upgrade_text_y+196+16;
+	var text_y = upgrade_text_y+192+16;
 }
 draw_set_color(COLOR_TEXT_WHITE);
 draw_text(x_offset+width/5*1+44/2, text_y, description2);

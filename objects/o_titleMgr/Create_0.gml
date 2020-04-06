@@ -17,6 +17,7 @@ instance_create_layer(0, 0, "UI", o_bgmMgr);
 
 global.debugmode = DEBUGMODE;
 
-if(global.debugmode){
-	instance_create_layer(0, 0, "UI", obj_console);
-}
+//saveファイルのテスト
+/*ini_open("test.ini");
+ini_write_real("Main","Hoge",0);
+ini_close();

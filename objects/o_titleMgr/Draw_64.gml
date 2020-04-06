@@ -12,6 +12,7 @@ draw_set_color(COLOR_DEFAULT);
 draw_set_halign(fa_left)
 */
 
+
 draw_set_color(COLOR_BACKGROUND);
 draw_rectangle(0, 0, room_width, room_height, false);
 draw_set_halign(fa_middle);
@@ -47,4 +48,5 @@ draw_set_valign(fa_top);
 	draw_rectangle(0, 0, room_width, room_height, false);
 	draw_set_color(COLOR_DEFAULT);
 	draw_set_alpha(1);
-}
+}*/
+//draw_text(0, 0, "Save.ini");

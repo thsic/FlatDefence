@@ -27,6 +27,9 @@ if(global.stage <= 4){
 //左
 var offset_x = spawner_x_left+16;
 var offset_y = spawner_y_left-12;
+if(global.stage = 3){
+	offset_y += 128;
+}
 var offset_y2 = offset_y;//offset_y2は行の中心
 if(left_spawner_number = 0){
 	var spawner_generate_data = generate_enemy_spawner0;

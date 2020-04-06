@@ -146,9 +146,9 @@ break
 #region stage4
 case 4:
 	global.life = 10;
-	global.gold = 1000;
+	global.gold = 1200;
 	global.wave_total = 4;
-	global.wave_clear_gold = 200;
+	global.wave_clear_gold = 250;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -166,11 +166,16 @@ case 4:
 	global.shop_item[7] = 17;
 	global.shop_item[8] = 23;
 	
-	global.wave_drop_item[1] = 15;
+	global.wave_drop_item[1] = 21;
 	global.wave_drop_item[2] = 0;
 	global.wave_drop_item[3] = 23;
 	
 	set_shop_item_gold_fill();
+	set_shop_item_gold(0, "=", 100);
+	set_shop_item_gold(6, "=", 100);
+	set_shop_item_gold(8, "-", 100);
+	
+	
 break
 #endregion
 #region stage5
@@ -246,6 +251,10 @@ case 6:
 	global.wave_drop_item[6] = 0;
 	
 	set_shop_item_gold_fill();
+	
+	set_shop_item_gold(5, "-", 50);
+	set_shop_item_gold(6, "=", 100);
+	set_shop_item_gold(9, "-", 50);
 break
 #endregion
 #region stage7
@@ -253,7 +262,7 @@ case 7:
 	global.life = 10;
 	global.gold = 700;
 	global.wave_total = 7;
-	global.wave_clear_gold = 250;
+	global.wave_clear_gold = 300;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -282,6 +291,8 @@ case 7:
 	global.wave_drop_item[5] = 13;
 	global.wave_drop_item[6] = 0;
 	set_shop_item_gold_fill();
+	set_shop_item_gold(7, "-", 100);
+	
 break
 #endregion
 #region stage8
@@ -289,7 +300,7 @@ case 8:
 	global.life = 5;
 	global.gold = 1000;
 	global.wave_total = 9;
-	global.wave_clear_gold = 350;
+	global.wave_clear_gold = 400;
 	
 	global.shop_defender[0] = o_dBasic;
 	global.shop_defender[1] = o_dSniper;
@@ -322,6 +333,9 @@ case 8:
 	global.wave_drop_item[8] = 23;
 	
 	set_shop_item_gold_fill();
+	set_shop_item_gold(0, "/", 2);
+	set_shop_item_gold(13, "-", 50);
+	
 break
 #endregion
 #region default

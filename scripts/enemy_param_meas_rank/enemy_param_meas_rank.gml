@@ -9,6 +9,7 @@ var speed_rank = 0;
 var rank_amount = ENEMY_RANK_AMOUNT;//10
 rank_amount = 11
 #region rankdata
+/*
 rank_color[0] = make_color_rgb(130, 200, 130);
 rank_color[1] = make_color_rgb(140, 220, 140);
 rank_color[2] = make_color_rgb(140, 220, 140);
@@ -18,7 +19,18 @@ rank_color[5] = make_color_rgb(150, 225, 190);
 rank_color[6] = make_color_rgb(150, 225, 190);
 rank_color[7] = make_color_rgb(160, 235, 250);
 rank_color[8] = make_color_rgb(160, 235, 250);
-rank_color[9] = make_color_rgb(250, 180, 255);
+rank_color[9] = make_color_rgb(250, 180, 255);*/
+
+rank_color[0] = make_color_rgb(115, 190, 115);
+rank_color[1] = make_color_rgb(120, 200, 120);
+rank_color[2] = make_color_rgb(120, 200, 120);
+rank_color[3] = make_color_rgb(160, 230, 155);
+rank_color[4] = make_color_rgb(160, 230, 155);
+rank_color[5] = make_color_rgb(190, 225, 240);
+rank_color[6] = make_color_rgb(190, 225, 240);
+rank_color[7] = make_color_rgb(250, 180, 225);//make_color_rgb(150, 235, 255)
+rank_color[8] = make_color_rgb(250, 180, 225);
+rank_color[9] = make_color_rgb(220, 220, 170);
 //ランク名前入れ
 rank_name[0] = "D";
 rank_name[1] = "C";
@@ -49,8 +61,8 @@ shield_rank[3] = 45;
 shield_rank[4] = 75;
 shield_rank[5] = 95;
 shield_rank[6] = 150;
-shield_rank[7] = 230;
-shield_rank[8] = 510;
+shield_rank[7] = 200;
+shield_rank[8] = 500;
 shield_rank[9] = 1000;
 shield_rank[10] = 100000;
 speed_rank[0] = 0;

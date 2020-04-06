@@ -23,7 +23,9 @@ else{
 		disk_effect(goal_x, goal_y, COLOR_LIFEBLOOD, 1, 20, 0.4, 90);
 	}
 }
-
+if(global.life < 0){
+	global.life = 0;
+}
 
 
 

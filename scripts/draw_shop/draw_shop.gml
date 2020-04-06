@@ -251,6 +251,10 @@ if(grab_item_id != -1){//商品を掴んでいる
 				possible_equip = false;
 				break
 			}
+			if(grab_item_id = 23 and nearest_defender_temp.itemslot[j] = 24){
+				possible_equip = false;
+				break
+			}
 			if(grab_item_id = 0 and nearest_defender_temp.itemslot[0] = -1){
 				//オーブを持っていて1番目のスロットが空の場合はオーブを装備できない
 				possible_equip = false;

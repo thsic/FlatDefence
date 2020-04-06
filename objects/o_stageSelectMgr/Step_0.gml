@@ -73,10 +73,10 @@ if(window_x < mouse_x and mouse_x < window_x+STAGESELECT_BUTTON_WIDTH){
 			}
 			//SE再生
 			if(selecting_button != 8){
-				play_se(SE_STAGESELECT_CLICK, 60, 0.4, true);
+				play_se(SE_STAGESELECT_CLICK, 60, 0.25, true);
 			}
 			else{
-				play_se(SE_CLEARSCREEN_BUTTON, 70, 0.55, false);
+				play_se(SE_CLEARSCREEN_BUTTON, 70, 0.4, false);
 			}
 		}
 	}
